@@ -1,4 +1,2 @@
-# no nedd of this
-vim/bundle/**
-zsh/antigen-hs/**
-zsh/cache/*
+# no need of this
+vim/.netrwhist
