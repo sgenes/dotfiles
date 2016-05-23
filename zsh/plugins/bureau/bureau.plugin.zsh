@@ -10,6 +10,15 @@ ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[magenta]%}▾%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
+ZSH_SUSPEND="%{$fg[yellow]%}[+]%{$reset_color%}"
+
+suspend_symbol () {
+  local _suspended=""
+  if [[ $(jobs -l | wc -l ) -gt 0 ]]; then
+    _suspended="$ZSH_SUSPEND"
+  fi
+  echo $_suspended
+}
 
 bureau_git_branch () {
   ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
@@ -96,12 +105,12 @@ _1RIGHT="[%D{%L:%M %P}] "
 
 bureau_precmd () {
   _1SPACES=`get_space $_1LEFT $_1RIGHT`
-  print -rP "$_1LEFT$_1SPACES$_1RIGHT"
+  print -rP '$_1LEFT$_1SPACES$_1RIGHT'
 }
 
 setopt prompt_subst
 PROMPT='$_LIBERTY '
-RPROMPT='$(bureau_git_prompt)'
+RPROMPT='$(suspend_symbol)$(bureau_git_prompt)'
 
 autoload -U add-zsh-hook
 add-zsh-hook precmd bureau_precmd
