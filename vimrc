@@ -82,6 +82,7 @@ let g:syntastic_loc_list_height=3
 
 let g:syntastic_python_checkers = ['pyflakes']
 "let g:syntastic_html_checkers = ['validator']
+let g:syntastic_markdown_checkers = ['textlint']
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='MoonMaster'
