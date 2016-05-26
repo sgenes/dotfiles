@@ -28,8 +28,6 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'jordwalke/flatlandia'
-Plugin 'ajh17/Spacegray.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 " Plugin 'lukerandall/haskellmode-vim'
 " Plugin 'ervandew/supertab'
@@ -71,19 +69,14 @@ set rtp+=~/.vim/bundle/vim-devicons
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 syntax on
-"set ve=block
+set ve=block
 set tabstop=4
 set noswapfile
 set laststatus=2
 set t_Co=256
-"set termguicolors
 set background=dark
 colorscheme MoonMaster
-"colorscheme spacegray
 set number
-set backspace=2
-
-set linespace=0
 
 set encoding=utf-8
 
@@ -109,7 +102,6 @@ let g:syntastic_haskell_checkers = ['ghc_mod']
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='MoonMaster'
-"let g:airline_theme='flatlandia'
 let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#left_sep = ' '
 " let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -126,7 +118,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 
 let NERDTreeMinimalUI=1
 let NERDTreeStatusLine=-1
-let NERDTreeWinSize=25
+let NERDTreeWinSize=30
 "let NERDTreeShowHidden=1
 let g:netrw_banner=0
 
@@ -150,15 +142,12 @@ nmap <silent><TAB>		:tabnext<CR>
 nmap <silent><S-TAB>		:tabprev<CR>
 nmap 			:conf q<CR>
 nmap 			:w<CR>
-inoremap <silent><c-s> <C-o>:update<CR>
 nmap z			u
-imap z			<Esc>:u<CR>
 nmap y			<C-R>
 imap <C-l>			<Esc><Esc>
 nmap .				<C-]>
 nmap \				<C-o>
 nmap 				,ci
-vmap 				,ci
 nmap [1;3C]			%
 "nnoremap <silent>-		<C-w>-
 "nnoremap <silent>+		<C-w>+
