@@ -48,6 +48,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'Shougo/neosnippet-snippets'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 "Plugin 'scrooloose/syntastic'
 Plugin 'jordwalke/VimCompleteLikeAModernEditor'
 Plugin 'godlygeek/tabular'
@@ -80,6 +81,7 @@ set t_Co=256
 set background=dark
 colorscheme MoonMaster
 "colorscheme spacegray
+"colorscheme flatlandia
 set number
 set backspace=2
 
@@ -111,8 +113,8 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='MoonMaster'
 "let g:airline_theme='flatlandia'
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#left_sep = ' '
-" let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
 
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
@@ -126,9 +128,14 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 
 let NERDTreeMinimalUI=1
 let NERDTreeStatusLine=-1
-let NERDTreeWinSize=25
+let NERDTreeWinSize=30
 "let NERDTreeShowHidden=1
 let g:netrw_banner=0
+
+let g:WebDevIconsUnicodeDecorateFolderNodes = 0
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 
 let g:username='Tamado Ramot Sitohang'
 let g:email='tamado.sitohang@gmail.com'
@@ -149,16 +156,18 @@ map <silent><C-n>		:tabnew<CR>
 nmap <silent><TAB>		:tabnext<CR>
 nmap <silent><S-TAB>		:tabprev<CR>
 nmap 			:conf q<CR>
+imap 			<C-o>:conf q<CR>
 nmap 			:w<CR>
 inoremap <silent><c-s> <C-o>:update<CR>
 nmap z			u
-imap z			<Esc>:u<CR>
+imap z			<C-o>u
 nmap y			<C-R>
 imap <C-l>			<Esc><Esc>
 nmap .				<C-]>
 nmap \				<C-o>
 nmap 				,ci
 vmap 				,ci
+imap 				<C-o>,ci
 nmap [1;3C]			%
 "nnoremap <silent>-		<C-w>-
 "nnoremap <silent>+		<C-w>+
@@ -190,7 +199,7 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n><C-y>" : "\<C-R>=UltiSnips#ExpandSnip
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
-packadd! matchit
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 set cursorline
+set ttimeoutlen=50

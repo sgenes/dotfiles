@@ -243,7 +243,7 @@ if s:is_dark " DARK VARIANT
   " and they don't represent the HEX code that they store in this block.
   let s:red     = ['#5faf5f', '71'] "Include/Exception
   let s:green   = ['#dfaf00', '178'] "Boolean/Special
-  let s:blue    = ['#00afaf', '37'] "Keyword
+  let s:blue    = ['#00afaf', '4'] "Keyword
 
   let s:pink    = ['#afdf00', '148'] "Type
   let s:olive   = ['#dfaf5f', '179'] "String
@@ -256,14 +256,14 @@ if s:is_dark " DARK VARIANT
   let s:wine  = ['#af8787', '138']
 
   " Basics:
-  let s:foreground   = ['#d0d0d0', '251']
+  let s:foreground   = ['#d0d0d0', '0']
   let s:background   = ['#2f343f', '8']
   let s:selection    = ['#3a3a3a', '236']
   let s:nontext      = ['#444444', '148']
   let s:window       = ['#3a3a3a', '236']
   let s:divider      = ['#5f8787', '66']
-  let s:linenumber   = ['#606060', '240']
-  let s:comment      = ['#8a8a8a', '244']
+  let s:linenumber   = ['#606060', '245']
+  let s:comment      = ['#8a8a8a', '15']
   let s:todo         = ['#ff8700', '208']
   let s:cursorline   = ['#303030', '7']
   let s:cursorlinenr = ['#ffff00', '226']
@@ -295,7 +295,7 @@ if s:is_dark " DARK VARIANT
   let s:search_bg = ['#00875f', '29']
 
   " Visual:
-  let s:visual_fg = ['#000000', '15']
+  let s:visual_fg = ['#000000', '0']
   let s:visual_bg = ['#8787af', '242']
 
   " Folded:
@@ -435,7 +435,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call s:HL("TabLineSel", s:tabline_active_fg, s:tabline_active_bg, "None")
   call s:HL("StatusLine", s:statusline_active_fg, s:statusline_active_bg, "bold")
   call s:HL("StatusLineNC", s:statusline_inactive_fg, s:statusline_inactive_bg, "None")
-  call s:HL("VertSplit", s:divider, s:background, "none")
+  call s:HL("VertSplit", s:visual_bg, s:visual_bg, "none")
   " call s:HL("VertSplit", s:red, s:background, "none")
   call s:HL("Visual", s:visual_fg, s:visual_bg, "")
   call s:HL("Directory", s:blue, "", "")
@@ -1163,18 +1163,18 @@ call s:HL("cssClassName", s:pink, "", "")
 
   " Plugin: NERDTree
   call s:HL("NERDTreeUp", s:comment, "", "")
-  call s:HL("NERDTreeHelpCommand", s:pink, "", "")
+  call s:HL("NERDTreeHelpCommand", s:blue, "", "")
   call s:HL("NERDTreeHelpTitle", s:blue, "", "bold")
-  call s:HL("NERDTreeHelpKey", s:pink, "", "")
+  call s:HL("NERDTreeHelpKey", s:blue, "", "")
   call s:HL("NERDTreeHelp", s:foreground, "", "")
   call s:HL("NERDTreeToggleOff", s:red, "", "")
   call s:HL("NERDTreeToggleOn", s:green, "", "")
-  call s:HL("NERDTreeDir", s:blue, "", "bold")
-  call s:HL("NERDTreeDirSlash", s:pink, "", "")
+  call s:HL("NERDTreeDir", s:comment, "", "bold")
+  call s:HL("NERDTreeDirSlash", s:blue, "", "")
   call s:HL("NERDTreeFile", s:foreground, "", "")
   call s:HL("NERDTreeExecFile", s:green, "", "")
-  call s:HL("NERDTreeOpenable", s:pink, "", "bold")
-  call s:HL("NERDTreeClosable", s:pink, "", "")
+  call s:HL("NERDTreeOpenable", s:blue, "", "bold")
+  call s:HL("NERDTreeClosable", s:blue, "", "")
 
   " Plugin: Tagbar
   call s:HL("TagbarHelpTitle", s:blue, "", "bold")
