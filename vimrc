@@ -13,7 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -33,24 +33,30 @@ Plugin 'NLKNguyen/papercolor-theme'
 " Plugin 'ervandew/supertab'
 " Plugin 'tpope/vim-surround'
 Plugin 'eagletmt/neco-ghc'
+Plugin 'flazz/vim-colorschemes'
 " Plugin 'davidhalter/jedi-vim'
 Plugin 'Shougo/neocomplete'
 " Plugin 'jordwalke/AutoComplPop'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Townk/vim-autoclose'
-Plugin 'vim-scripts/closetag.vim'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'vim-scripts/closetag.vim'
 "Plugin 'Shougo/neosnippet'
 "Plugin 'Shougo/neosnippet-snippets'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/syntastic'
 Plugin 'jordwalke/VimCompleteLikeAModernEditor'
 Plugin 'godlygeek/tabular'
+"Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+set rtp+=~/.vim/bundle/tsyntastic
+set rtp+=~/.vim/bundle/vim-template-master
+set rtp+=~/.vim/bundle/vim-devicons
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -62,13 +68,17 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+syntax on
+set ve=block
+set tabstop=4
+set noswapfile
 set laststatus=2
 set t_Co=256
 set background=dark
-" colorscheme PaperColor
+colorscheme MoonMaster
 set number
 
-let g:netrw_liststyle=3
+set encoding=utf-8
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -78,11 +88,17 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_loc_list_height=3
+let g:syntastic_loc_list_height=4
+let g:syntastic_error_symbol='!!'
 
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "active_filetypers": [],
+    \ "passive_filetypes": ["html"]}
 let g:syntastic_python_checkers = ['pyflakes']
-"let g:syntastic_html_checkers = ['validator']
+let g:syntastic_html_checkers = ['validator']
 let g:syntastic_markdown_checkers = ['textlint']
+let g:syntastic_haskell_checkers = ['ghc_mod']
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='MoonMaster'
@@ -91,7 +107,7 @@ let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#left_alt_sep = '|'
 
 let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 2
+let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 let g:neocomplete#sources#dictionary#dictionaries = {
@@ -100,15 +116,61 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'scheme' : $HOME.'/.gosh_completions'
         \ }
 
+let NERDTreeMinimalUI=1
+let NERDTreeStatusLine=-1
+let NERDTreeWinSize=30
+"let NERDTreeShowHidden=1
+let g:netrw_banner=0
+
+let g:username='Tamado Ramot Sitohang'
+let g:email='tamado.sitohang@gmail.com'
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 "if !exists('g:neocomplete#keyword_patterns')
     "let g:neocomplete#keyword_patterns = {}
 "endif
 "let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
+inoremap <expr><C-g>	neocomplete#undo_completion()
+inoremap <expr><C-l>	neocomplete#complete_common_string()
 
-nnoremap <C-p>	:40Lexplore<CR>
+let mapleader=","
+map <silent><C-e>		:NERDTreeToggle<CR>
+map <silent><C-n>		:tabnew<CR>
+nmap <silent><TAB>		:tabnext<CR>
+nmap <silent><S-TAB>		:tabprev<CR>
+nmap 			:conf q<CR>
+nmap 			:w<CR>
+nmap z			u
+nmap y			<C-R>
+imap <C-l>			<Esc><Esc>
+nmap .				<C-]>
+nmap \				<C-o>
+nmap 				,ci
+nmap [1;3C]			%
+"nnoremap <silent>-		<C-w>-
+"nnoremap <silent>+		<C-w>+
+"nnoremap <silent>=		<C-w>=
+map <C-S-Down>			<C-w><C-w>
+map <C-S-Up>			<C-w>w
+"nmap <silent><C-c>		:close<CR>
+"nnoremap <silent><S-s>		:w<CR>
+"nnoremap <silent><S-q>		:q<CR>
+"imap <silent><C-l>		<Esc><Esc>
+"nmap <silent><C-\>		%
+"map <silent><C-p>		:NERDTreeToggle<CR>
+"nmap .				<C-]>
+"nnoremap \			<C-o>
+nmap <silent><S-Space>	 	:bp<CR>
+nmap <silent><Space>		:bnext<CR>
+"nmap <silent><C-n>		:tabnew<CR>
+"nmap <silent><TAB>		:tabnext<CR>
+"nmap <silent><S-TAB>		:tabprev<CR>
+nmap <silent><Del>		:tabclose<CR>
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 let g:UltiSnipsExpandTrigger="<TAB>"
 let g:UltiSnipsJumpForwardTrigger="<TAB>"
@@ -116,3 +178,8 @@ let g:UltiSnipsJumpBackwardTrigger="<s-Tab>"
 inoremap <expr><TAB> pumvisible() ? "\<C-n><C-y>" : "\<C-R>=UltiSnips#ExpandSnippet()"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
+packadd! matchit
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+set cursorline

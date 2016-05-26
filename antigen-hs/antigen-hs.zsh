@@ -18,6 +18,7 @@ source /home/tama/Documents/DOTFILES/zsh/plugins/custom/custom.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/history-substring-search/history-substring-search.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh
+source /home/tama/Documents/DOTFILES/zsh/plugins/spectrum/spectrum.plugin.zsh
 fpath+=/home/tama/.zsh/plugins/colors
 fpath+=/home/tama/.zsh/plugins/key-bindings
 fpath+=/home/tama/.zsh/plugins/extract
@@ -36,3 +37,4 @@ fpath+=/home/tama/.zsh/plugins/custom
 fpath+=/home/tama/.zsh/plugins/colored-man-pages
 fpath+=/home/tama/.zsh/plugins/history-substring-search
 fpath+=/home/tama/.zsh/plugins/fancy-ctrl-z
+fpath+=/home/tama/.zsh/plugins/spectrum

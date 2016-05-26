@@ -36,3 +36,8 @@ function command_not_found_handler {
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 #xset b 100
+
+stty stop ''
+stty start ''
+stty -ixon
+stty -ixoff

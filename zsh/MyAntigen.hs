@@ -33,6 +33,7 @@ bundles =
   , local "/home/tama/.zsh/plugins/colored-man-pages"
   , local "/home/tama/.zsh/plugins/history-substring-search"
   , local "/home/tama/.zsh/plugins/fancy-ctrl-z"
+  , local "/home/tama/.zsh/plugins/spectrum"
 
   -- If you use a plugin that doesn't have a *.plugin.zsh file. You can set a
   -- more liberal sourcing strategy.
