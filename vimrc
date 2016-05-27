@@ -130,6 +130,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeStatusLine=-1
 let NERDTreeWinSize=30
 "let NERDTreeShowHidden=1
+let NERDTreeHijackNetrw=0
 let g:netrw_banner=0
 
 let g:WebDevIconsUnicodeDecorateFolderNodes = 0
@@ -163,30 +164,23 @@ nmap z			u
 imap z			<C-o>u
 nmap y			<C-R>
 imap <C-l>			<Esc><Esc>
+vmap <C-l>			<Esc><Esc>
 nmap .				<C-]>
 nmap \				<C-o>
 nmap 				,ci
 vmap 				,ci
 imap 				<C-o>,ci
 nmap [1;3C]			%
-"nnoremap <silent>-		<C-w>-
-"nnoremap <silent>+		<C-w>+
-"nnoremap <silent>=		<C-w>=
+nnoremap <silent>-		<C-w>-
+nnoremap <silent>+		<C-w>+
+nnoremap <silent>=		<C-w>=
 map <C-S-Down>			<C-w><C-w>
 map <C-S-Up>			<C-w>w
-"nmap <silent><C-c>		:close<CR>
-"nnoremap <silent><S-s>		:w<CR>
 "nnoremap <silent><S-q>		:q<CR>
-"imap <silent><C-l>		<Esc><Esc>
 "nmap <silent><C-\>		%
-"map <silent><C-p>		:NERDTreeToggle<CR>
-"nmap .				<C-]>
-"nnoremap \			<C-o>
 nmap <silent><S-Space>	 	:bp<CR>
 nmap <silent><Space>		:bnext<CR>
-"nmap <silent><C-n>		:tabnew<CR>
-"nmap <silent><TAB>		:tabnext<CR>
-"nmap <silent><S-TAB>		:tabprev<CR>
+nmap <silent><C-Del>				:bdelete<CR>
 nmap <silent><Del>		:tabclose<CR>
 
 let g:ctrlp_map = '<c-p>'
