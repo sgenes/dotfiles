@@ -37,7 +37,6 @@ bundles =
   , local "/home/tama/.zsh/plugins/per-directory-history"
   , local "/home/tama/.zsh/plugins/cp"
   , local "/home/tama/.zsh/plugins/copyfile"
-  , local "/home/tama/.zsh/plugins/emotty"
   , local "/home/tama/.zsh/plugins/catimg"
 
   -- If you use a plugin that doesn't have a *.plugin.zsh file. You can set a

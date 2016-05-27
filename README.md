@@ -24,7 +24,8 @@ Features
 
 [vim](http://www.vim.org) conf:
 
-* (C-p) remapped to ````:40Lexplore<CR>````
+* [NERDTree](http://github.com/scrooloose/nerdtree)
+* [CtrlP](http://github.com/ctrlpvim/ctrlp)
 * [vim-airline](http://github.com/vim-airline/vim-airline) with modified PaperColor theme
 * [neco-ghc](http://github.com/eagletmt/neco-ghc) to provide Haskell completion
 * [neocomplete](http://github.com/Shougo/neocomplete) to provide autocompletion
@@ -36,6 +37,7 @@ Features
 * [Syntastic](http://github.com/scrooloose/syntastic) for syntax checking
 * [VimCompleteLikeAModernEditor](http://github.com/jordwalke/VimCompleteLikeAModernEditor) to make Ultisnips and neocomplete work together
 * [Tabular](http://github.com/godlygeek/tabular)
+* [vim-devicons](http://github.com/ryanoasis/vim-devicons)
 
 [zsh](http://www.zsh.org) conf:
 
