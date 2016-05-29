@@ -243,7 +243,7 @@ if s:is_dark " DARK VARIANT
   " and they don't represent the HEX code that they store in this block.
   let s:red     = ['#5faf5f', '71'] "Include/Exception
   let s:green   = ['#dfaf00', '178'] "Boolean/Special
-  let s:blue    = ['#00afaf', '4'] "Keyword
+  let s:blue    = ['#00afaf', '12'] "Keyword
 
   let s:pink    = ['#afdf00', '148'] "Type
   let s:olive   = ['#dfaf5f', '179'] "String
