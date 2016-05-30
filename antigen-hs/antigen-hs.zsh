@@ -11,6 +11,7 @@ source /home/tama/Documents/DOTFILES/zsh/plugins/history/history.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/directories/directories.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/grep/grep.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/git/git.plugin.zsh
+source /home/tama/Documents/DOTFILES/zsh/plugins/gitplugin/git.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/theme/theme.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/terminal/terminal.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/bureau/bureau.plugin.zsh
@@ -34,6 +35,7 @@ fpath+=/home/tama/.zsh/plugins/history
 fpath+=/home/tama/.zsh/plugins/directories
 fpath+=/home/tama/.zsh/plugins/grep
 fpath+=/home/tama/.zsh/plugins/git
+fpath+=/home/tama/.zsh/plugins/gitplugin
 fpath+=/home/tama/.zsh/plugins/theme
 fpath+=/home/tama/.zsh/plugins/terminal
 fpath+=/home/tama/.zsh/plugins/bureau

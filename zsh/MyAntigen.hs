@@ -26,6 +26,7 @@ bundles =
   , local "/home/tama/.zsh/plugins/directories"
   , local "/home/tama/.zsh/plugins/grep"
   , local "/home/tama/.zsh/plugins/git"
+  , local "/home/tama/.zsh/plugins/gitplugin"
   , local "/home/tama/.zsh/plugins/theme"
   , local "/home/tama/.zsh/plugins/terminal"
   , local "/home/tama/.zsh/plugins/bureau"
