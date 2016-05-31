@@ -1,37 +1,37 @@
 let mapleader=","
 
-inoremap <expr><C-g>	neocomplete#undo_completion()
-inoremap <expr><C-k>	neocomplete#complete_common_string()
+inoremap <expr><C-g>        neocomplete#undo_completion()
+inoremap <expr><C-k>        neocomplete#complete_common_string()
 
-map <silent><C-e>		:NERDTreeToggle<CR>
-map <silent><C-n>		:tabnew<CR>
-nmap <silent><TAB>		:tabnext<CR>
-nmap <silent><S-TAB>	:tabprev<CR>
-nmap 					:conf q<CR>
-imap 					<C-o>:conf q<CR>
-nmap 					:w<CR>
-inoremap <silent><c-s>	<C-o>:update<CR>
-nmap z				u
-imap z				<C-o>u
-nmap x				<C-R>
-imap x				<C-o><C-R>
-imap <C-l>				<Esc><Esc>
-vmap <C-l>				<Esc><Esc>
-nmap .					<C-]>
-nmap \					<C-o>
-nmap 					,ci
-vmap 					,ci
-imap 					<C-o>,ci
-nmap 					%
-nnoremap <silent>-		<C-w>-
-nnoremap <silent>+		<C-w>+
-nnoremap <silent>=		<C-w>=
-map <C-S-Down>			<C-w><C-w>
-map <C-S-Up>			<C-w>w
-nmap <silent><S-Space>	:bp<CR>
-nmap <silent><Space>	:bnext<CR>
-nmap <silent><Del>		:bdelete<CR>
-nmap <silent><C-Del>	:tabclose<CR>
-inoremap <expr><TAB> pumvisible() ? "\<C-n><C-y>" : "\<C-R>=UltiSnips#ExpandSnippet()"
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+map <silent><C-e>           :NERDTreeToggle<CR>
+map <silent><C-n>           :tabnew<CR>
+nmap <silent><TAB>          :tabnext<CR>
+nmap <silent><S-TAB>        :tabprev<CR>
+nmap                      :conf q<CR>
+imap                      <C-o>:conf q<CR>
+nmap                      :w<CR>
+inoremap <silent><c-s>      <C-o>:update<CR>
+nmap z                    u
+imap                      <C-o>u
+nmap x                    <C-R>
+imap x                    <C-o><C-R>
+imap <C-l>                  <Esc><Esc>
+vmap <C-l>                  <Esc><Esc>
+nmap .                      <C-]>
+nmap \                      <C-o>
+nmap                      ,ci
+vmap                      ,ci
+imap                      <C-o>,ci
+nmap                      %
+nnoremap <silent>-          <C-w>-
+nnoremap <silent>+          <C-w>+
+nnoremap <silent>=          <C-w>=
+map <C-S-Down>              <C-w><C-w>
+map <C-S-Up>                <C-w>w
+nmap <silent><S-Space>      :bp<CR>
+nmap <silent><Space>        :bnext<CR>
+nmap <silent><Del>          :bdelete<CR>
+nmap <silent><C-Del>        :tabclose<CR>
+inoremap <expr><TAB>        pumvisible() ? "\<C-n><C-y>" : "\<C-R>=UltiSnips#ExpandSnippet()"
+inoremap <expr><C-h>        neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS>         neocomplete#smart_close_popup()."\<C-h>"

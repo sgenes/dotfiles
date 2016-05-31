@@ -47,7 +47,7 @@ Plugin 'godlygeek/tabular'
 
 set rtp+=~/.vim/bundle/tsyntastic
 set rtp+=~/.vim/bundle/nerdcommenter
-set rtp+=~/.vim/bundle/vim-template-master
+" set rtp+=~/.vim/bundle/vim-template-master
 set rtp+=~/.vim/bundle/vim-devicons
 
 " All of your Plugins must be added before the following line
@@ -68,6 +68,7 @@ filetype plugin indent on    " required
 
 syntax on
 set tabstop=4
+set softtabstop=4
 set laststatus=2
 set t_Co=256
 set background=dark
