@@ -5,7 +5,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -69,6 +69,7 @@ filetype plugin indent on    " required
 syntax on
 set tabstop=4
 set softtabstop=4
+set sw=0
 set laststatus=2
 set t_Co=256
 set background=dark
@@ -86,6 +87,7 @@ set formatoptions+=or
 set expandtab
 set sm!
 set shortmess+=filmnrxoOtTc
+set updatetime=0
 colorscheme MoonMaster
 
 set statusline+=%#warningmsg#
@@ -130,8 +132,9 @@ let g:ctrlp_cmd = 'CtrlP'
 
 let g:UltiSnipsExpandTrigger="<TAB>"
 let g:UltiSnipsJumpForwardTrigger="<TAB>"
-let g:UltiSnipsJumpBackwardTrigger="<s-Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd BufWritePre *.* :%s/\s\+$//e
 
-source ~/.vim/keysrc
+source ~/.vim/keysrc.vim

@@ -8,9 +8,9 @@ autoload -U colors && colors
 
 source ~/.zsh/antigen-hs/init.zsh
 
-export VISUAL='/usr/bin/vim'
-export EDITOR='/usr/bin/vim'
-export SELECTED_EDITOR='/usr/bin/vim'
+export VISUAL='/usr/local/bin/vim'
+export EDITOR='/usr/local/bin/vim'
+export SELECTED_EDITOR='/usr/local/bin/vim'
 export PATH=$PATH:/home/tama/.bin:/home/tama/.local/bin
 setopt histignorealldups
 
