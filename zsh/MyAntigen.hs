@@ -35,7 +35,7 @@ bundles =
   , local "/home/tama/.zsh/plugins/history-substring-search"
   , local "/home/tama/.zsh/plugins/fancy-ctrl-z"
   , local "/home/tama/.zsh/plugins/spectrum"
-  , local "/home/tama/.zsh/plugins/per-directory-history"
+  -- , local "/home/tama/.zsh/plugins/per-directory-history"
   , local "/home/tama/.zsh/plugins/cp"
   , local "/home/tama/.zsh/plugins/copyfile"
   , local "/home/tama/.zsh/plugins/catimg"

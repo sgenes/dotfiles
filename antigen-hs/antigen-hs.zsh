@@ -20,7 +20,6 @@ source /home/tama/Documents/DOTFILES/zsh/plugins/colored-man-pages/colored-man-p
 source /home/tama/Documents/DOTFILES/zsh/plugins/history-substring-search/history-substring-search.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/spectrum/spectrum.plugin.zsh
-source /home/tama/Documents/DOTFILES/zsh/plugins/per-directory-history/per-directory-history.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/cp/cp.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/copyfile/copyfile.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/catimg/catimg.plugin.zsh
@@ -44,7 +43,6 @@ fpath+=/home/tama/.zsh/plugins/colored-man-pages
 fpath+=/home/tama/.zsh/plugins/history-substring-search
 fpath+=/home/tama/.zsh/plugins/fancy-ctrl-z
 fpath+=/home/tama/.zsh/plugins/spectrum
-fpath+=/home/tama/.zsh/plugins/per-directory-history
 fpath+=/home/tama/.zsh/plugins/cp
 fpath+=/home/tama/.zsh/plugins/copyfile
 fpath+=/home/tama/.zsh/plugins/catimg
