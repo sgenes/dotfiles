@@ -88,11 +88,10 @@ set expandtab
 set sm!
 set shortmess+=filmnrxoOtTc
 set updatetime=0
-colorscheme MoonMaster
-
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+colorscheme MoonMaster
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1

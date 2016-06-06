@@ -8,14 +8,11 @@ autoload -U colors && colors
 
 source ~/.zsh/antigen-hs/init.zsh
 
+setopt histignorealldups
 export VISUAL='/usr/local/bin/vim'
 export EDITOR='/usr/local/bin/vim'
 export SELECTED_EDITOR='/usr/local/bin/vim'
 export PATH=$PATH:/home/tama/.bin:/home/tama/.local/bin
-setopt histignorealldups
-
-#export PROMPT_EOL_MARK=""
-
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS"
 
@@ -49,3 +46,4 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 alias vimpath='cd ~/Documents/WORKSPACE/GIT/vim'
 alias wip='cd ~/Documents/WORKSPACE'
+alias dotfiles='cd ~/Documents/DOTFILES'
