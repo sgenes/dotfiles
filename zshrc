@@ -15,6 +15,7 @@ export SELECTED_EDITOR='/usr/local/bin/vim'
 export PATH=$PATH:/home/tama/.bin:/home/tama/.local/bin
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS"
+export PROMPT_EOL_MARK=""
 
 function command_not_found_handler {
 	if [[ -x /usr/lib/command-not-found ]] ; then
