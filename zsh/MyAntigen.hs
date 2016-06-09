@@ -25,8 +25,8 @@ bundles =
   , local "/home/tama/.zsh/plugins/history"
   , local "/home/tama/.zsh/plugins/directories"
   , local "/home/tama/.zsh/plugins/grep"
-  , local "/home/tama/.zsh/plugins/git"
-  , local "/home/tama/.zsh/plugins/gitplugin"
+  -- , local "/home/tama/.zsh/plugins/git"
+  -- , local "/home/tama/.zsh/plugins/gitplugin"
   , local "/home/tama/.zsh/plugins/theme"
   , local "/home/tama/.zsh/plugins/terminal"
   , local "/home/tama/.zsh/plugins/bureau"
@@ -39,6 +39,7 @@ bundles =
   , local "/home/tama/.zsh/plugins/cp"
   , local "/home/tama/.zsh/plugins/copyfile"
   , local "/home/tama/.zsh/plugins/catimg"
+  , local "/home/tama/.zsh/plugins/zsh-autosuggestions"
 
   -- If you use a plugin that doesn't have a *.plugin.zsh file. You can set a
   -- more liberal sourcing strategy.

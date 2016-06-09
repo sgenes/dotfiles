@@ -7,6 +7,7 @@ fi
 autoload -U colors && colors
 
 source ~/.zsh/antigen-hs/init.zsh
+# source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 setopt histignorealldups
 export VISUAL='/usr/local/bin/vim'
@@ -48,3 +49,4 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 alias vimpath='cd ~/Documents/WORKSPACE/GIT/vim'
 alias wip='cd ~/Documents/WORKSPACE'
 alias dotfiles='cd ~/Documents/DOTFILES'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
