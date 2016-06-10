@@ -1,3 +1,10 @@
+" ============================= "
+" ViM configuration file        "
+" Author: Tamado Ramot Sitohang "
+" License: MIT                  "
+" ============================= "
+
+" Vundle Plugin: {{{
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -65,7 +72,9 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+" }}}
 
+" UI settings: {{{
 syntax on
 set tabstop=4
 set softtabstop=4
@@ -92,7 +101,9 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 colorscheme MoonMaster
+" }}}
 
+" Syntastic settings: {{{
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -102,38 +113,57 @@ let g:syntastic_error_symbol='!!'
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_markdown_checkers = ['textlint']
 let g:syntastic_haskell_checkers = ['ghc_mod']
+" }}}
 
+" Airline settings: {{{
 let g:airline_powerline_fonts = 1
 let g:airline_theme='MoonMaster'
 let g:airline#extensions#tabline#enabled = 1
+" }}}
 
+" Neocmplete settings: {{{
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+" }}}
 
+" NERDTree settings: {{{
 let NERDTreeMinimalUI=1
 let NERDTreeStatusLine=-1
 let NERDTreeWinSize=30
 let NERDTreeHijackNetrw=0
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" }}}
+
+" NERDCommenter settings: {{{
 let NERDSpaceDelims=1
 let NERDRemoveExtraSpaces=1
+" }}}
 
+" DevIcons settings: {{{
 let g:WebDevIconsUnicodeDecorateFolderNodes = 0
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+" }}}
 
-let g:username='Tamado Ramot Sitohang'
-let g:email='tamado.sitohang@gmail.com'
-
+" CtrlP settings: {{{
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+" }}}
 
+" UltiSnips settings: {{{
 let g:UltiSnipsExpandTrigger="<TAB>"
 let g:UltiSnipsJumpForwardTrigger="<TAB>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+" }}}
 
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Misc seetings: {{{
+let g:username='Tamado Ramot Sitohang'
+let g:email='tamado.sitohang@gmail.com'
 autocmd BufWritePre *.* :%s/\s\+$//e
+" }}}
 
 source ~/.vim/keysrc.vim
+
+" vim: fdm=marker

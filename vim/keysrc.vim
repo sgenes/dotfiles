@@ -1,3 +1,9 @@
+" ============================= "
+" ViM keymap                    "
+" Author: Tamado Ramot Sitohang "
+" License: MIT                  "
+" ============================= "
+
 let mapleader=","
 
 inoremap <expr><C-g>            neocomplete#undo_completion()
