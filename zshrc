@@ -55,6 +55,7 @@ stty stop ''
 stty start ''
 stty -ixon
 stty -ixoff
+stty -echoctl
 
 export NVM_DIR="/home/tama/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
