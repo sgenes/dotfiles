@@ -2,3 +2,4 @@
 vim/.netrwhist
 vim/bundle/*
 zsh/cache
+zsh/antigen-hs
