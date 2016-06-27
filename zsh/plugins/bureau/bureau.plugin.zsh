@@ -10,7 +10,7 @@ ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[magenta]%}▾%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
-ZSH_SUSPEND="%{$fg[yellow]%}[+]%{$reset_color%}"
+ZSH_SUSPEND="[%{$fg[yellow]%}+%{$reset_color%}]"
 
 suspend_symbol () {
   local _suspended=""
@@ -72,7 +72,7 @@ bureau_git_prompt () {
 }
 
 
-_PATH="%{$fg_bold[white]%}%c%{$reset_color%}"
+_PATH="in %{$fg_bold[white]%}%c%{$reset_color%}"
 
 if [[ $EUID -eq 0 ]]; then
   _USERNAME="%{$fg_bold[red]%}%n"
@@ -81,7 +81,7 @@ else
   _USERNAME="%{$fg_bold[white]%}%n"
   _LIBERTY="%{$fg[green]%}$"
 fi
-_USERNAME="$_USERNAME%{$reset_color%}@%m"
+_USERNAME="$_USERNAME%{$reset_color%} at %m"
 _LIBERTY="$_LIBERTY%{$reset_color%}"
 
 
@@ -100,6 +100,12 @@ get_space () {
   echo $SPACES
 }
 
+return_status () {
+    local return_code="%(?..[%{$fg_bold[red]%}%?%{$reset_color%}])"
+    return_code="$return_code"
+    echo $return_code
+}
+
 _1LEFT="$_USERNAME $_PATH"
 _1RIGHT="[%D{%L:%M %P}] "
 
@@ -110,7 +116,7 @@ bureau_precmd () {
 
 setopt prompt_subst
 PROMPT='$_LIBERTY '
-RPROMPT='$(suspend_symbol)$(bureau_git_prompt)'
+RPROMPT='$(return_status)$(suspend_symbol)$(bureau_git_prompt)'
 
 autoload -U add-zsh-hook
 add-zsh-hook precmd bureau_precmd

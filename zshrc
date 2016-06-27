@@ -70,4 +70,5 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 alias vimpath='cd ~/Documents/WORKSPACE/GIT/vim'
 alias wip='cd ~/Documents/WORKSPACE'
 alias dotfiles='cd ~/Documents/DOTFILES'
+alias :q='exit'
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
