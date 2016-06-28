@@ -10,7 +10,7 @@ ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[magenta]%}▾%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
-ZSH_SUSPEND="[%{$fg[yellow]%}+%{$reset_color%}]"
+ZSH_SUSPEND="%{$fg[yellow]%}[SUS]%{$reset_color%}"
 
 suspend_symbol () {
   local _suspended=""
@@ -53,6 +53,9 @@ bureau_git_status () {
   if $(echo "$_INDEX" | grep '^## .*diverged' &> /dev/null); then
     _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_DIVERGED"
   fi
+  if [[ $_STATUS == "" ]]; then
+      _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_CLEAN"
+  fi
 
   echo $_STATUS
 }
@@ -81,7 +84,7 @@ else
   _USERNAME="%{$fg_bold[white]%}%n"
   _LIBERTY="%{$fg[green]%}$"
 fi
-_USERNAME="$_USERNAME%{$reset_color%} at %m"
+_USERNAME="$_USERNAME%{$reset_color%} at %{$fg_bold[blue]%}%m%{$reset_color%}"
 _LIBERTY="$_LIBERTY%{$reset_color%}"
 
 
@@ -101,7 +104,7 @@ get_space () {
 }
 
 return_status () {
-    local return_code="%(?..[%{$fg_bold[red]%}%?%{$reset_color%}])"
+    local return_code="%(?..%{$fg[red]%}[%{$fg[red]%}%?%{$fg[red]%}]%{$reset_color%})"
     return_code="$return_code"
     echo $return_code
 }
