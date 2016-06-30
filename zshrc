@@ -56,6 +56,8 @@ stty start ''
 stty -ixon
 stty -ixoff
 
+# export GTK_THEME=Arc-Darker:dark
+
 export NVM_DIR="/home/tama/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
