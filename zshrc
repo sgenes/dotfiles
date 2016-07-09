@@ -34,7 +34,7 @@ setopt histignorealldups
 export VISUAL='/usr/local/bin/vim'
 export EDITOR='/usr/local/bin/vim'
 export SELECTED_EDITOR='/usr/local/bin/vim'
-export PATH=$PATH:/home/tama/.bin:/home/tama/.local/bin
+export PATH="$PATH:/home/tama/.bin:/home/tama/.local/bin"
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS"
 export PROMPT_EOL_MARK=""
@@ -51,8 +51,6 @@ function command_not_found_handler {
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-stty stop ''
-stty start ''
 stty -ixon
 stty -ixoff
 
@@ -67,10 +65,10 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 # Unset manpath so we can inherit from /etc/manpath via the `manpath`
 # command
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
-export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+export MANPATH="$NPM_PACKAGES/share/man:/home/tama/.local/share/man:$(manpath)"
 
 alias vimpath='cd ~/Documents/WORKSPACE/GIT/vim'
 alias wip='cd ~/Documents/WORKSPACE'
 alias dotfiles='cd ~/Documents/DOTFILES'
 alias :q='exit'
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
