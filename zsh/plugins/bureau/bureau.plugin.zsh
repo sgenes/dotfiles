@@ -110,13 +110,13 @@ return_status () {
 }
 
 if [[ $(date '+%p') == 'pm' ]]; then
-    _PMAM="p.m."
+    _PMAM="PM"
 else
-    _PMAM="a.m."
+    _PMAM="AM"
 fi
 
 _1LEFT="$_USERNAME $_PATH"
-_1RIGHT="[%D{%L.%M} $_PMAM] "
+_1RIGHT="[%D{%L:%M} $_PMAM %D{%z}] "
 
 bureau_precmd () {
   _1SPACES=`get_space $_1LEFT $_1RIGHT`
