@@ -72,3 +72,5 @@ alias wip='cd ~/Documents/WORKSPACE'
 alias dotfiles='cd ~/Documents/DOTFILES'
 alias :q='exit'
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
+export DEBEMAIL="tamado.sitohang@gmail.com"
+export DEBFULLNAME="Tamado Sitohang"
