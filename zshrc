@@ -20,6 +20,7 @@
 # OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ZSH="$HOME/.zsh"
+export WORKON_HOME=~/Documents/WORKSPACE/PYTHON
 
 if [[ -z "$ZSH_CACHE_DIR" ]]; then
 	ZSH_CACHE_DIR="$ZSH/cache/"
@@ -29,8 +30,11 @@ autoload -U colors && colors
 
 source ~/.zsh/antigen-hs/init.zsh
 # source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /etc/bash_completion.d/virtualenvwrapper
 
 setopt histignorealldups
+setopt correct
+
 export VISUAL='/usr/local/bin/vim'
 export EDITOR='/usr/local/bin/vim'
 export SELECTED_EDITOR='/usr/local/bin/vim'
@@ -74,3 +78,5 @@ alias :q='exit'
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
 export DEBEMAIL="tamado.sitohang@gmail.com"
 export DEBFULLNAME="Tamado Sitohang"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

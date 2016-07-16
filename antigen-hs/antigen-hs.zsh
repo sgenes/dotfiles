@@ -10,6 +10,8 @@ source /home/tama/Documents/DOTFILES/zsh/plugins/misc/misc.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/history/history.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/directories/directories.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/grep/grep.plugin.zsh
+source /home/tama/Documents/DOTFILES/zsh/plugins/nvm/nvm.plugin.zsh
+source /home/tama/Documents/DOTFILES/zsh/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/theme/theme.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/terminal/terminal.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/bureau/bureau.plugin.zsh
@@ -32,6 +34,8 @@ fpath+=/home/tama/.zsh/plugins/misc
 fpath+=/home/tama/.zsh/plugins/history
 fpath+=/home/tama/.zsh/plugins/directories
 fpath+=/home/tama/.zsh/plugins/grep
+fpath+=/home/tama/.zsh/plugins/nvm
+fpath+=/home/tama/.zsh/plugins/virtualenvwrapper
 fpath+=/home/tama/.zsh/plugins/theme
 fpath+=/home/tama/.zsh/plugins/terminal
 fpath+=/home/tama/.zsh/plugins/bureau

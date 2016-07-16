@@ -1,5 +1,8 @@
 # oh-my-zsh Bureau Theme
 
+ZSH_THEME_NVM_PROMPT_PREFIX="[%{$fg[green]%}%B⬡ %b "
+ZSH_THEME_NVM_PROMPT_SUFFIX="%{$reset_color%}]"
+
 ### Git [git: master ▾●]
 
 ZSH_THEME_GIT_PROMPT_PREFIX="[%{$fg_bold[green]%}git: %{$reset_color%}%{$fg_bold[white]%}"
@@ -10,7 +13,7 @@ ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[magenta]%}▾%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
-ZSH_SUSPEND="%{$fg[yellow]%}[SUS]%{$reset_color%}"
+ZSH_SUSPEND="[%{$fg[yellow]%}SUS%{$reset_color%}]"
 AVAILABLE_WIDTH=""
 ((AVAILABLE_WIDTH=$COLUMNS - 45))
 
@@ -82,13 +85,18 @@ _PATH="in %{$fg_bold[white]%}%$AVAILABLE_WIDTH<..<%c%<<%{$reset_color%}"
 if [[ $EUID -eq 0 ]]; then
   _USERNAME="%{$fg_bold[red]%}%n"
   _LIBERTY="%{$fg[red]%}#"
+  _LIBERTY2="%_ %{$fg[red]%}>"
+  _LIBERTY3="%{$fg[red]%}?#"
 else
   _USERNAME="%{$fg_bold[white]%}%n"
   _LIBERTY="%{$fg[green]%}$"
+  _LIBERTY2="%_ %{$fg[green]%}>"
+  _LIBERTY3="%{$fg[green]%}?#"
 fi
 _USERNAME="$_USERNAME%{$reset_color%} at %{$fg_bold[blue]%}%m%{$reset_color%}"
 _LIBERTY="$_LIBERTY%{$reset_color%}"
-
+_LIBERTY2="$_LIBERTY2%{$reset_color%}"
+_LIBERTY3="$_LIBERTY3%{$reset_color%}"
 
 get_space () {
   local STR=$1$2
@@ -106,7 +114,7 @@ get_space () {
 }
 
 return_status () {
-    local return_code="%(?..%{$fg[red]%}[%{$fg[red]%}%?%{$fg[red]%}]%{$reset_color%})"
+    local return_code="%(?..[%{$fg[red]%}%?%{$reset_color%}])"
     return_code="$return_code"
     echo $return_code
 }
@@ -127,7 +135,10 @@ bureau_precmd () {
 
 setopt prompt_subst
 PROMPT='$_LIBERTY '
-RPROMPT='$(return_status)$(suspend_symbol)$(bureau_git_prompt)'
+RPROMPT='$(nvm_prompt_info)$(bureau_git_prompt)$(return_status)$(suspend_symbol)'
+PROMPT2='$_LIBERTY2 '
+PROMPT3='$_LIBERTY3 '
+SPROMPT="Correct $fg_bold[red]%R$reset_color to $fg_bold[green]%r$reset_color [Yes, No, Abort, Edit]? "
 
 autoload -U add-zsh-hook
 add-zsh-hook precmd bureau_precmd

@@ -16,7 +16,7 @@ nmap <silent><S-TAB>            :tabprev<CR>
 nmap <silent>q                  :conf q<CR>
 nmap                          <nop>
 imap <silent>                 <C-o>:conf q<CR>
-nmap <silent>                 :w<CR>
+nmap <silent>                 :w!<CR>
 inoremap <silent><c-s>          <C-o>:update<CR>
 nmap e                          <C-R>
 imap <silent>                 <C-o>u
