@@ -119,6 +119,17 @@ return_status () {
     echo $return_code
 }
 
+ssh_prompt_info () {
+    local prompt_host=""
+    if [[ -z "$SSH_CLIENT" ]]; then
+        prompt_host=""
+        echo $prompt_host
+    else
+        prompt_host="[%Bssh:%b %{$fg_bold[blue]%}$(hostname -s)%{$reset_color%}]"
+        echo $prompt_host
+    fi
+}
+
 if [[ $(date '+%p') == 'pm' ]]; then
     _PMAM="%{$fg_bold[yellow]%}PM%{$reset_color%}"
 else
@@ -135,7 +146,7 @@ bureau_precmd () {
 
 setopt prompt_subst
 PROMPT='$_LIBERTY '
-RPROMPT='$(nvm_prompt_info)$(bureau_git_prompt)$(return_status)$(suspend_symbol)'
+RPROMPT='$(nvm_prompt_info)$(bureau_git_prompt)$(return_status)$(suspend_symbol)$(ssh_prompt_info)'
 PROMPT2='$_LIBERTY2 '
 PROMPT3='$_LIBERTY3 '
 SPROMPT="Correct $fg_bold[red]%R$reset_color to $fg_bold[green]%r$reset_color [Yes, No, Abort, Edit]? "
