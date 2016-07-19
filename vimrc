@@ -121,10 +121,11 @@ let g:airline_theme='MoonMaster'
 let g:airline#extensions#tabline#enabled = 1
 " }}}
 
-" Neocmplete settings: {{{
+" Neocomplete settings: {{{
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplete#enable_auto_close_preview = 1
 " }}}
 
 " NERDTree settings: {{{

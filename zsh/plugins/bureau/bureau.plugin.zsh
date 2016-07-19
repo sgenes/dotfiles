@@ -120,13 +120,13 @@ return_status () {
 }
 
 if [[ $(date '+%p') == 'pm' ]]; then
-    _PMAM="PM"
+    _PMAM="%{$fg_bold[yellow]%}PM%{$reset_color%}"
 else
-    _PMAM="AM"
+    _PMAM="%{$fg_bold[green]%}AM%{$reset_color%}"
 fi
 
 _1LEFT="$_USERNAME $_PATH"
-_1RIGHT="[%D{%L:%M} $_PMAM %D{%z}] "
+_1RIGHT="[%{$fg[cyan]%}%D{%L:%M}%{$reset_color%} $_PMAM %{$reset_color%}%B%D{%z}%b%{$reset_color%}] "
 
 bureau_precmd () {
   _1SPACES=`get_space $_1LEFT $_1RIGHT`

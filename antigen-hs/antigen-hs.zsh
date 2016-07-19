@@ -11,7 +11,6 @@ source /home/tama/Documents/DOTFILES/zsh/plugins/history/history.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/directories/directories.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/grep/grep.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/nvm/nvm.plugin.zsh
-source /home/tama/Documents/DOTFILES/zsh/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/theme/theme.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/terminal/terminal.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/bureau/bureau.plugin.zsh
@@ -20,10 +19,9 @@ source /home/tama/Documents/DOTFILES/zsh/plugins/colored-man-pages/colored-man-p
 source /home/tama/Documents/DOTFILES/zsh/plugins/history-substring-search/history-substring-search.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/spectrum/spectrum.plugin.zsh
-source /home/tama/Documents/DOTFILES/zsh/plugins/cp/cp.plugin.zsh
-source /home/tama/Documents/DOTFILES/zsh/plugins/copyfile/copyfile.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/catimg/catimg.plugin.zsh
 source /home/tama/Documents/DOTFILES/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source /home/tama/Documents/DOTFILES/zsh/plugins/virtualenvwrapperondemand/virtualenvwrapperondemand.plugin.zsh
 fpath+=/home/tama/.zsh/plugins/colors
 fpath+=/home/tama/.zsh/plugins/key-bindings
 fpath+=/home/tama/.zsh/plugins/extract
@@ -35,7 +33,6 @@ fpath+=/home/tama/.zsh/plugins/history
 fpath+=/home/tama/.zsh/plugins/directories
 fpath+=/home/tama/.zsh/plugins/grep
 fpath+=/home/tama/.zsh/plugins/nvm
-fpath+=/home/tama/.zsh/plugins/virtualenvwrapper
 fpath+=/home/tama/.zsh/plugins/theme
 fpath+=/home/tama/.zsh/plugins/terminal
 fpath+=/home/tama/.zsh/plugins/bureau
@@ -44,7 +41,6 @@ fpath+=/home/tama/.zsh/plugins/colored-man-pages
 fpath+=/home/tama/.zsh/plugins/history-substring-search
 fpath+=/home/tama/.zsh/plugins/fancy-ctrl-z
 fpath+=/home/tama/.zsh/plugins/spectrum
-fpath+=/home/tama/.zsh/plugins/cp
-fpath+=/home/tama/.zsh/plugins/copyfile
 fpath+=/home/tama/.zsh/plugins/catimg
 fpath+=/home/tama/.zsh/plugins/zsh-autosuggestions
+fpath+=/home/tama/.zsh/plugins/virtualenvwrapperondemand

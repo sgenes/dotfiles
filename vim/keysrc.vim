@@ -35,7 +35,7 @@ nnoremap <silent>+              <C-w>+
 nnoremap <silent>=              <C-w>=
 map <C-S-Down>                  <C-w><C-w>
 map <C-S-Up>                    <C-w>w
-nmap <silent><S-Space>          :bp<CR>
+nmap <silent>                 :bp<CR>
 nmap <silent><Space>            :bnext<CR>
 nmap <silent><Del>              :bdelete<CR>
 nmap <silent><C-Del>            :tabclose<CR>

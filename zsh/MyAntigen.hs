@@ -26,7 +26,7 @@ bundles =
   , local "/home/tama/.zsh/plugins/directories"
   , local "/home/tama/.zsh/plugins/grep"
   , local "/home/tama/.zsh/plugins/nvm"
-  , local "/home/tama/.zsh/plugins/virtualenvwrapper"
+  -- , local "/home/tama/.zsh/plugins/virtualenvwrapper"
   , local "/home/tama/.zsh/plugins/theme"
   , local "/home/tama/.zsh/plugins/terminal"
   , local "/home/tama/.zsh/plugins/bureau"
@@ -36,10 +36,11 @@ bundles =
   , local "/home/tama/.zsh/plugins/fancy-ctrl-z"
   , local "/home/tama/.zsh/plugins/spectrum"
   -- , local "/home/tama/.zsh/plugins/per-directory-history"
-  , local "/home/tama/.zsh/plugins/cp"
-  , local "/home/tama/.zsh/plugins/copyfile"
+  -- , local "/home/tama/.zsh/plugins/cp"
+  -- , local "/home/tama/.zsh/plugins/copyfile"
   , local "/home/tama/.zsh/plugins/catimg"
   , local "/home/tama/.zsh/plugins/zsh-autosuggestions"
+  , local "/home/tama/.zsh/plugins/virtualenvwrapperondemand"
 
   -- If you use a plugin that doesn't have a *.plugin.zsh file. You can set a
   -- more liberal sourcing strategy.
