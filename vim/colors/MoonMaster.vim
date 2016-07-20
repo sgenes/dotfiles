@@ -256,7 +256,7 @@ if s:is_dark " DARK VARIANT
   let s:wine  = ['#af8787', '138']
 
   " Basics:
-  let s:foreground   = ['#d0d0d0', '0']
+  let s:foreground   = ['#d0d0d0', '7']
   let s:background   = ['#2f343f', '8']
   let s:selection    = ['#3a3a3a', '236']
   let s:nontext      = ['#444444', '148']
@@ -265,7 +265,7 @@ if s:is_dark " DARK VARIANT
   let s:linenumber   = ['#606060', '245']
   let s:comment      = ['#8a8a8a', '15']
   let s:todo         = ['#ff8700', '208']
-  let s:cursorline   = ['#303030', '7']
+  let s:cursorline   = ['#303030', '0']
   let s:cursorlinenr = ['#ffff00', '226']
   let s:cursorcolumn = ['#303030', '235']
   let s:error        = ['#5f0000', '52']
