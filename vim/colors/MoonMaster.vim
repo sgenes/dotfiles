@@ -266,7 +266,7 @@ if s:is_dark " DARK VARIANT
   let s:comment      = ['#8a8a8a', '15']
   let s:todo         = ['#ff8700', '208']
   let s:cursorline   = ['#303030', '0']
-  let s:cursorlinenr = ['#ffff00', '226']
+  let s:cursorlinenr = ['#ffff00', '245']
   let s:cursorcolumn = ['#303030', '235']
   let s:error        = ['#5f0000', '52']
   let s:matchparen   = ['#4e4e4e', '239']
@@ -291,12 +291,12 @@ if s:is_dark " DARK VARIANT
   let s:statusline_inactive_bg = ['#444444', '237']
 
   " Search:
-  let s:search_fg = ['#000000', '16']
-  let s:search_bg = ['#00875f', '29']
+  let s:search_fg = ['#000000', '7']
+  let s:search_bg = ['#00875f', '58']
 
   " Visual:
   let s:visual_fg = ['#000000', '0']
-  let s:visual_bg = ['#8787af', '242']
+  let s:visual_bg = ['#8787af', '7']
 
   " Folded:
   let s:folded_fg = ['#afdf00', '11']

@@ -34,12 +34,13 @@ source ~/.zsh/antigen-hs/init.zsh
 # source /etc/bash_completion.d/virtualenvwrapper
 
 setopt histignorealldups
-setopt correct
+# setopt correct
 
 export VISUAL='/usr/local/bin/vim'
 export EDITOR='/usr/local/bin/vim'
 export SELECTED_EDITOR='/usr/local/bin/vim'
-export PATH="$PATH:/home/tama/.bin:/home/tama/.local/bin"
+export PATH="$PATH:/home/shinzjr/.bin:/home/shinzjr/.local/bin"
+export GOPATH="/home/shinzjr/.go"
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS"
 export PROMPT_EOL_MARK=""
@@ -61,16 +62,16 @@ stty -ixoff
 
 # export GTK_THEME=Arc-Darker:dark
 
-export NVM_DIR="/home/tama/.nvm"
+export NVM_DIR="/home/shinzjr/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-export NPM_PACKAGES="/home/tama/.local/share/npm-packages/.npm-packages"
+export NPM_PACKAGES="/home/shinzjr/.local/share/npm-packages/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 # Unset manpath so we can inherit from /etc/manpath via the `manpath`
 # command
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
-export MANPATH="$NPM_PACKAGES/share/man:/home/tama/.local/share/man:$(manpath)"
+export MANPATH="$NPM_PACKAGES/share/man:/home/shinzjr/.local/share/man:$(manpath)"
 
 alias vimpath='cd ~/Documents/WORKSPACE/GIT/vim'
 alias wip='cd ~/Documents/WORKSPACE'
