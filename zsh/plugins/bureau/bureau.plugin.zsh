@@ -130,7 +130,7 @@ ssh_prompt_info () {
     fi
 }
 
-if [[ $(date '+%p') == 'pm' ]]; then
+if [[ $(date '+%p') == 'PM' ]]; then
     _PMAM="%{$fg_bold[yellow]%}PM%{$reset_color%}"
 else
     _PMAM="%{$fg_bold[green]%}AM%{$reset_color%}"
