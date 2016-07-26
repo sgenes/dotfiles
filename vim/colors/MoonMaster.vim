@@ -256,16 +256,16 @@ if s:is_dark " DARK VARIANT
   let s:wine  = ['#af8787', '138']
 
   " Basics:
-  let s:foreground   = ['#d0d0d0', '7']
-  let s:background   = ['#2f343f', '8']
+  let s:foreground   = ['#d0d0d0', '231']
+  let s:background   = ['#2f343f', '15']
   let s:selection    = ['#3a3a3a', '236']
   let s:nontext      = ['#444444', '148']
   let s:window       = ['#3a3a3a', '236']
   let s:divider      = ['#5f8787', '66']
   let s:linenumber   = ['#606060', '245']
-  let s:comment      = ['#8a8a8a', '15']
+  let s:comment      = ['#8a8a8a', '0']
   let s:todo         = ['#ff8700', '208']
-  let s:cursorline   = ['#303030', '0']
+  let s:cursorline   = ['#303030', '7']
   let s:cursorlinenr = ['#ffff00', '245']
   let s:cursorcolumn = ['#303030', '235']
   let s:error        = ['#5f0000', '52']
@@ -291,16 +291,16 @@ if s:is_dark " DARK VARIANT
   let s:statusline_inactive_bg = ['#444444', '237']
 
   " Search:
-  let s:search_fg = ['#000000', '7']
-  let s:search_bg = ['#00875f', '58']
+  let s:search_fg = ['#000000', '231']
+  let s:search_bg = ['#00875f', '12']
 
   " Visual:
-  let s:visual_fg = ['#000000', '0']
-  let s:visual_bg = ['#8787af', '7']
+  let s:visual_fg = ['#000000', '15']
+  let s:visual_bg = ['#8787af', '231']
 
   " Folded:
   let s:folded_fg = ['#afdf00', '11']
-  let s:folded_bg = ['#444444', '8']
+  let s:folded_bg = ['#444444', '15']
 
   " WildMenu:
   let s:wildmenu_fg  = s:background
@@ -501,7 +501,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   "call s:HL("Ignore", "666666", "", "")
 
   call s:HL("Error", s:foreground, s:error, "")
-  call s:HL("Todo", s:todo, s:background, "bold")
+  call s:HL("Todo", s:todo, s:blue, "bold")
 
   call s:HL("Title", s:comment, "", "")
   call s:HL("Global", s:blue, "", "")
@@ -1292,4 +1292,6 @@ delf s:grey_level
 delf s:grey_number
 " }}}
 
+hi ErrorMsg ctermfg=8
+hi NonText ctermfg=15
 " vim: fdm=marker

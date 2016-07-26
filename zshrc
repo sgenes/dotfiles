@@ -82,3 +82,7 @@ export DEBEMAIL="tamado.sitohang@gmail.com"
 export DEBFULLNAME="Tamado Sitohang"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+rvm_def () {
+    exec rvm use default
+}

@@ -5,7 +5,7 @@ ZSH_THEME_NVM_PROMPT_SUFFIX="%{$reset_color%}]"
 
 ### Git [git: master ▾●]
 
-ZSH_THEME_GIT_PROMPT_PREFIX="[%{$fg_bold[green]%}git: %{$reset_color%}%{$fg_bold[white]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="[%{$fg_bold[green]%}git: %{$reset_color%}%{$fg_bold[black]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}]"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✓%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[cyan]%}▴%{$reset_color%}"
@@ -80,7 +80,7 @@ bureau_git_prompt () {
 }
 
 
-_PATH="in %{$fg_bold[white]%}%$AVAILABLE_WIDTH<..<%c%<<%{$reset_color%}"
+_PATH="in %B%$AVAILABLE_WIDTH<..<%c%<<%b"
 
 if [[ $EUID -eq 0 ]]; then
   _USERNAME="%{$fg_bold[red]%}%n"
@@ -88,7 +88,7 @@ if [[ $EUID -eq 0 ]]; then
   _LIBERTY2="%_ %{$fg[red]%}>"
   _LIBERTY3="%{$fg[red]%}?#"
 else
-  _USERNAME="%{$fg_bold[white]%}%n"
+  _USERNAME="%B%n%b"
   _LIBERTY="%{$fg[green]%}$"
   _LIBERTY2="%_ %{$fg[green]%}>"
   _LIBERTY3="%{$fg[green]%}?#"
