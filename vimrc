@@ -80,7 +80,8 @@ set tabstop=4
 set softtabstop=4
 set sw=0
 set laststatus=2
-set t_Co=256
+" set t_Co=256
+set termguicolors
 set background=dark
 set number
 set backspace=2
