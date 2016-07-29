@@ -36,6 +36,7 @@ source ~/.zsh/antigen-hs/init.zsh
 setopt histignorealldups
 # setopt correct
 
+export LESS="-~"
 export VISUAL='/usr/local/bin/vim'
 export EDITOR='/usr/local/bin/vim'
 export SELECTED_EDITOR='/usr/local/bin/vim'
