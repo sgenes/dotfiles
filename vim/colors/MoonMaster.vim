@@ -236,9 +236,7 @@ endfun
 " }}}
 
 " Color Palette: {{{
-let s:is_dark=(&background == 'dark')
 
-if s:is_dark " DARK VARIANT
   " These color names are corresponding to the original light version,
   " and they don't represent the HEX code that they store in this block.
   let s:red     = ['#5faf5f', '71'] "Include/Exception
@@ -264,7 +262,7 @@ if s:is_dark " DARK VARIANT
   let s:divider      = ['#5f8787', '66']
   let s:linenumber   = ['#808080', '245']
   let s:comment      = ['#d3dae3', '0']
-  let s:todo         = ['#ff8700', '208']
+  let s:todo         = ['#ffffff', '208']
   let s:cursorline   = ['#454c5c', '7']
   let s:cursorlinenr = ['#ffff00', '245']
   let s:cursorcolumn = ['#303030', '235']
@@ -324,91 +322,6 @@ if s:is_dark " DARK VARIANT
     call s:Load_Settings_Override(g:MoonMaster_Dark_Override)
   endif
 
-else " LIGHT VARIANT
-
-  let s:red     = ['#df0000', '160'] "Include/Exception
-  let s:green   = ['#008700', '28'] "Boolean/Special
-  let s:blue    = ['#4271ae', '25'] "Keyword
-
-  let s:pink    = ['#d7005f', '161'] "Type
-  let s:olive   = ['#718c00', '64'] "String
-  let s:navy    = ['#005f87', '24'] "StorageClass
-
-  let s:orange  = ['#d75f00', '166'] "Number
-  let s:purple  = ['#8959a8', '97'] "Repeat/Conditional
-  let s:aqua    = ['#3e999f', '31'] "Operator/Delimiter
-
-  let s:wine  = ['#870087', '90']
-
-  " Basics:
-  let s:foreground   = ['#444444', '238']
-  let s:background   = ['#F5F5F5', '255']
-  let s:selection    = ['#d0d0d0', '252']
-  let s:nontext      = ['#dfafff', '189']
-  let s:window       = ['#e4e4e4', '254']
-  let s:divider      = s:navy
-  let s:linenumber   = ['#bcbcbc', '249']
-  let s:comment      = ['#878787', '102']
-  let s:todo         = ['#00af5f', '35']
-  let s:cursorline   = ['#e4e4e4', '254']
-  let s:cursorlinenr = ['#af0000', '124']
-  let s:cursorcolumn = ['#e4e4e4', '254']
-  let s:error        = ['#ffafdf', '218']
-  let s:matchparen   = ['#c6c6c6', '251']
-
-  " Spelling:
-  let s:spellbad   = ['#ffafdf', '218']
-  let s:spellcap   = ['#ffffaf', '229']
-  let s:spellrare  = ['#afff87', '156']
-  let s:spelllocal = ['#dfdfff', '189']
-
-  " Tabline:
-  let s:tabline_bg          = s:navy
-  let s:tabline_active_fg   = s:foreground
-  let s:tabline_active_bg   = s:window
-  let s:tabline_inactive_fg = s:background
-  let s:tabline_inactive_bg = s:aqua
-
-  " Statusline:
-  let s:statusline_active_fg   = s:window
-  let s:statusline_active_bg   = s:navy
-  let s:statusline_inactive_fg = s:foreground
-  let s:statusline_inactive_bg = ['#d0d0d0', '252']
-
-  " Search:
-  let s:search_fg = s:foreground
-  let s:search_bg = ['#ffff5f', '227']
-
-  " Visual:
-  let s:visual_fg = s:background
-  let s:visual_bg = s:blue
-
-  " Folded:
-  let s:folded_fg = s:navy
-  let s:folded_bg = ['#afdfff', '153']
-
-  " WildMenu:
-  let s:wildmenu_fg  = s:foreground
-  let s:wildmenu_bg  = ['#ffff00', '226']
-
-  " Diff:
-  let s:diffadd_fg    = []
-  let s:diffadd_bg    = ['#afffaf', '157']
-
-  let s:diffdelete_fg = []
-  let s:diffdelete_bg = ['#ffdfff', '225']
-
-  let s:difftext_fg   = []
-  let s:difftext_bg   = ['#ffffdf', '230']
-
-  let s:diffchange_fg = []
-  let s:diffchange_bg = ['#ffffaf', '229']
-
-  " User Override Settings:
-  if exists("g:MoonMaster_Light_Override")
-    call s:Load_Settings_Override(g:MoonMaster_Light_Override)
-  endif
-endif
 " }}}
 
 " Syntax Highlighting: {{{
@@ -419,11 +332,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   " Switching between dark & light variant through `set background`
   " https://github.com/NLKNguyen/papercolor-theme/pull/20
-  if s:is_dark " DARK VARIANT
-    set background=dark
-  else " LIGHT VARIANT
-    set background=light
-  endif
+  set background=dark
 
   highlight LineNr term=bold cterm=NONE ctermfg=darkgrey ctermbg=NONE gui=NONE guifg=darkgrey guibg=NONE
   call s:HL("NonText", s:nontext, "", "")

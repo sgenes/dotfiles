@@ -20,7 +20,7 @@ source /home/shinzjr/Documents/DOTFILES/zsh/plugins/fancy-ctrl-z/fancy-ctrl-z.pl
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/spectrum/spectrum.plugin.zsh
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/catimg/catimg.plugin.zsh
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source /home/shinzjr/Documents/DOTFILES/zsh/plugins/virtualenvwrapperondemand/virtualenvwrapperondemand.plugin.zsh
+source /home/shinzjr/Documents/DOTFILES/zsh/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
 fpath+=/home/shinzjr/.zsh/plugins/colors
 fpath+=/home/shinzjr/.zsh/plugins/key-bindings
 fpath+=/home/shinzjr/.zsh/plugins/extract
@@ -41,4 +41,4 @@ fpath+=/home/shinzjr/.zsh/plugins/fancy-ctrl-z
 fpath+=/home/shinzjr/.zsh/plugins/spectrum
 fpath+=/home/shinzjr/.zsh/plugins/catimg
 fpath+=/home/shinzjr/.zsh/plugins/zsh-autosuggestions
-fpath+=/home/shinzjr/.zsh/plugins/virtualenvwrapperondemand
+fpath+=/home/shinzjr/.zsh/plugins/virtualenvwrapper

@@ -35,9 +35,10 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'jordwalke/flatlandia'
+" Plugin 'bling/vim-bufferline'
+Plugin 'jordwalke/flatlandia'
 " Plugin 'ajh17/Spacegray.vim'
-Plugin 'NLKNguyen/papercolor-theme'
+" Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'eagletmt/neco-ghc'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'Shougo/neocomplete'
@@ -51,6 +52,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jordwalke/VimCompleteLikeAModernEditor'
 Plugin 'godlygeek/tabular'
 " Plugin 'ryanoasis/vim-devicons'
+Plugin 'sjl/gundo.vim'
+Plugin 'jmcantrell/vim-virtualenv'
 
 set rtp+=~/.vim/bundle/tsyntastic
 set rtp+=~/.vim/bundle/nerdcommenter
@@ -118,8 +121,9 @@ let g:syntastic_haskell_checkers = ['ghc_mod']
 
 " Airline settings: {{{
 let g:airline_powerline_fonts = 1
-let g:airline_theme='MoonMaster'
+let g:airline_theme = 'MoonMaster'
 let g:airline#extensions#tabline#enabled = 1
+" let g:airline_section_c = '%t'
 " }}}
 
 " Neocomplete settings: {{{
@@ -132,7 +136,7 @@ let g:neocomplete#enable_auto_close_preview = 1
 " NERDTree settings: {{{
 let NERDTreeMinimalUI=1
 let NERDTreeStatusLine=-1
-let NERDTreeWinSize=30
+let NERDTreeWinSize=40
 let NERDTreeHijackNetrw=0
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " }}}
@@ -150,7 +154,7 @@ let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 " }}}
 
 " CtrlP settings: {{{
-let g:ctrlp_map = '<c-p>'
+let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " }}}
 
@@ -160,7 +164,13 @@ let g:UltiSnipsJumpForwardTrigger="<TAB>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 " }}}
 
-" Misc seetings: {{{
+" Gundo setings{{{
+let g:gundo_help = 0
+let g:gundo_width = 40
+let g:gundo_preview_height = 12
+" }}}
+
+" Misc settings: {{{
 let g:username='Tamado Ramot Sitohang'
 let g:email='tamado.sitohang@gmail.com'
 autocmd BufWritePre *.* :%s/\s\+$//e
