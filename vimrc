@@ -126,7 +126,6 @@ let g:syntastic_haskell_checkers = ['ghc_mod']
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'MoonMaster'
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_section_c = '%-12.40t'
 " }}}
 
 " Neocomplete settings: {{{
