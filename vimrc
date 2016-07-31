@@ -125,7 +125,7 @@ let g:syntastic_haskell_checkers = ['ghc_mod']
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'MoonMaster'
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_section_c = '%t'
+let g:airline_section_c = '%.20t'
 " }}}
 
 " Neocomplete settings: {{{
@@ -185,7 +185,7 @@ set pastetoggle=<F2>
 
 " Listchars option {{{
 if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
-    set listchars=tab:▸\ ,trail:·,extends:>,precedes:<,nbsp:·
+    set listchars=tab:│·,trail:·,extends:>,precedes:<,nbsp:·
     set fillchars=fold:·
 endif
 set list

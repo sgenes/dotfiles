@@ -257,7 +257,7 @@ endfun
   let s:foreground   = ['#ffffff', '231']
   let s:background   = ['#2f343f', '15']
   let s:selection    = ['#3a3a3a', '236']
-  let s:nontext      = ['#808080', '148']
+  let s:nontext      = ['#2f343f', '148']
   let s:window       = ['#3a3a3a', '236']
   let s:divider      = ['#5f8787', '66']
   let s:linenumber   = ['#808080', '245']
@@ -336,7 +336,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
   highlight LineNr term=bold cterm=NONE ctermfg=darkgrey ctermbg=NONE gui=NONE guifg=darkgrey guibg=NONE
   call s:HL("NonText", s:nontext, "", "")
-  call s:HL("SpecialKey", s:nontext, "", "")
+  call s:HL("SpecialKey", s:comment, "", "")
   call s:HL("Search", s:search_fg, s:search_bg, "")
   call s:HL("LineNr", s:linenumber, "", "")
   call s:HL("TabLine", s:tabline_inactive_fg, s:tabline_inactive_bg, "None")
