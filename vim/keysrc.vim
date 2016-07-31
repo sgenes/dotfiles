@@ -8,7 +8,7 @@ let mapleader=","
 
 inoremap <expr><C-g>            neocomplete#undo_completion()
 inoremap <expr><C-k>            neocomplete#complete_common_string()
-
+nnoremap <silent><F2>           :set invpaste paste?<CR>
 nnoremap <silent><C-a>          :GundoToggle<CR>
 map <silent><C-e>               :NERDTreeToggle<CR>
 map <silent><C-n>               :tabnew<CR>
