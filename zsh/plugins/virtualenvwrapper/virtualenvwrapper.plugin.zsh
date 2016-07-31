@@ -1,4 +1,4 @@
-virtualenvwrapper='virtualenvwrapper.sh'
+virtualenvwrapper='virtualenvwrapper_lazy.sh'
 
 if (( $+commands[$virtualenvwrapper] )); then
   function {

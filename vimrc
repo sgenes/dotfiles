@@ -54,6 +54,8 @@ Plugin 'godlygeek/tabular'
 " Plugin 'ryanoasis/vim-devicons'
 Plugin 'sjl/gundo.vim'
 Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'chrisbra/csv.vim'
+Plugin 'airblade/vim-gitgutter'
 
 set rtp+=~/.vim/bundle/tsyntastic
 set rtp+=~/.vim/bundle/nerdcommenter
@@ -167,13 +169,18 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 " Gundo setings{{{
 let g:gundo_help = 0
 let g:gundo_width = 40
-let g:gundo_preview_height = 12
+let g:gundo_preview_height = 10
 " }}}
 
 " Misc settings: {{{
 let g:username='Tamado Ramot Sitohang'
 let g:email='tamado.sitohang@gmail.com'
 autocmd BufWritePre *.* :%s/\s\+$//e
+set backupdir=~/.cache/vimbackup
+set directory=~/.cache/vimswap
+set shortmess+=I
+nnoremap <silent><F2>   :set invpaste paste?<CR>
+set pastetoggle=<F2>
 " }}}
 
 source ~/.vim/keysrc.vim

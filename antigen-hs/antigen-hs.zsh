@@ -3,7 +3,6 @@
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/colors/zsh-syntax-highlighting.plugin.zsh
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/key-bindings/key-bindings.plugin.zsh
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/extract/extract.plugin.zsh
-source /home/shinzjr/Documents/DOTFILES/zsh/plugins/emoji/emoji.plugin.zsh
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/completion/completion.plugin.zsh
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/misc/misc.plugin.zsh
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/history/history.plugin.zsh
@@ -17,14 +16,12 @@ source /home/shinzjr/Documents/DOTFILES/zsh/plugins/custom/custom.plugin.zsh
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/history-substring-search/history-substring-search.plugin.zsh
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh
-source /home/shinzjr/Documents/DOTFILES/zsh/plugins/spectrum/spectrum.plugin.zsh
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/catimg/catimg.plugin.zsh
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
 fpath+=/home/shinzjr/.zsh/plugins/colors
 fpath+=/home/shinzjr/.zsh/plugins/key-bindings
 fpath+=/home/shinzjr/.zsh/plugins/extract
-fpath+=/home/shinzjr/.zsh/plugins/emoji
 fpath+=/home/shinzjr/.zsh/plugins/completion
 fpath+=/home/shinzjr/.zsh/plugins/misc
 fpath+=/home/shinzjr/.zsh/plugins/history
@@ -38,7 +35,6 @@ fpath+=/home/shinzjr/.zsh/plugins/custom
 fpath+=/home/shinzjr/.zsh/plugins/colored-man-pages
 fpath+=/home/shinzjr/.zsh/plugins/history-substring-search
 fpath+=/home/shinzjr/.zsh/plugins/fancy-ctrl-z
-fpath+=/home/shinzjr/.zsh/plugins/spectrum
 fpath+=/home/shinzjr/.zsh/plugins/catimg
 fpath+=/home/shinzjr/.zsh/plugins/zsh-autosuggestions
 fpath+=/home/shinzjr/.zsh/plugins/virtualenvwrapper

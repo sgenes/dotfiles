@@ -61,8 +61,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 stty -ixon
 stty -ixoff
 
-# export GTK_THEME=Arc-Darker:dark
-
 export NVM_DIR="/home/shinzjr/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
@@ -83,4 +81,5 @@ export DEBEMAIL="tamado.sitohang@gmail.com"
 export DEBFULLNAME="Tamado Sitohang"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export MANPATH="$MANPATH:$HOME/.rvm/man"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

@@ -257,7 +257,7 @@ endfun
   let s:foreground   = ['#ffffff', '231']
   let s:background   = ['#2f343f', '15']
   let s:selection    = ['#3a3a3a', '236']
-  let s:nontext      = ['#afd700', '148']
+  let s:nontext      = ['#2f343f', '148']
   let s:window       = ['#3a3a3a', '236']
   let s:divider      = ['#5f8787', '66']
   let s:linenumber   = ['#808080', '245']
