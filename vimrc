@@ -183,6 +183,14 @@ nnoremap <silent><F2>   :set invpaste paste?<CR>
 set pastetoggle=<F2>
 " }}}
 
+" Listchars option {{{
+if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
+    set listchars=tab:▸\ ,trail:·,extends:>,precedes:<,nbsp:·
+    set fillchars=fold:·
+endif
+set list
+" }}}
+
 source ~/.vim/keysrc.vim
 
 " vim: fdm=marker
