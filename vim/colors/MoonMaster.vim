@@ -263,7 +263,8 @@ endfun
   let s:divider      = ['#5f8787', '66']
   let s:linenumber   = ['#808080', '245']
   let s:comment      = ['#d3dae3', '0']
-  let s:todo         = ['#ffffff', '208']
+  let s:todo         = ['#ffff00', '208']
+  let s:todobg       = ['#0000ff', '11']
   let s:cursorline   = ['#2a2e38', '7']
   let s:cursorlinenr = ['#ffff00', '245']
   let s:cursorcolumn = ['#303030', '235']
@@ -411,7 +412,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   "call s:HL("Ignore", "666666", "", "")
 
   call s:HL("Error", s:foreground, s:error, "")
-  call s:HL("Todo", s:todo, s:blue, "bold")
+  call s:HL("Todo", s:todo, s:todobg, "bold")
 
   call s:HL("Title", s:comment, "", "")
   call s:HL("Global", s:blue, "", "")

@@ -59,7 +59,6 @@ Plugin 'airblade/vim-gitgutter'
 
 set rtp+=~/.vim/bundle/tsyntastic
 set rtp+=~/.vim/bundle/nerdcommenter
-" set rtp+=~/.vim/bundle/vim-template-master
 set rtp+=~/.vim/bundle/vim-devicons
 
 " All of your Plugins must be added before the following line
@@ -80,10 +79,16 @@ filetype plugin indent on    " required
 " }}}
 
 " UI settings: {{{
+scriptencoding utf-8
 syntax on
-set tabstop=4
-set softtabstop=4
-set sw=0
+set virtualedit=all
+set tabstop=2
+" set softtabstop=4
+" set sw=0
+let &tabstop=exists('g:tabSize') ? g:tabSize : 2
+let &softtabstop=exists('g:tabSize') ? g:tabSize : 2
+let &shiftwidth=exists('g:tabSize') ? g:tabSize : 2
+set expandtab
 set laststatus=2
 " set t_Co=256
 set termguicolors
@@ -91,22 +96,24 @@ set background=dark
 set number
 set backspace=2
 set linespace=0
-scriptencoding utf-8
 set encoding=utf-8
-set switchbuf+=usetab,newtab
+" set switchbuf+=usetab,newtab
 set grepprg=grep\ -nH\ $*
 set cursorline
 set ttimeoutlen=50
 set scs
 set hlsearch
-set formatoptions+=or
-set expandtab
+set formatoptions=cql
 set sm!
 set shortmess+=filmnrxoOtTc
 set updatetime=0
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+set nowrap
+set textwidth=80
+set wrapmargin=0
+set nolinebreak
 colorscheme MoonMaster
 " }}}
 
@@ -175,11 +182,11 @@ let g:gundo_preview_height = 10
 " Misc settings: {{{
 let g:username='Tamado Ramot Sitohang'
 let g:email='tamado.sitohang@gmail.com'
-autocmd BufWritePre *.* :%s/\s\+$//e
+au BufWritePre *.* :%s/\s\+$//e
+au FileType * setlocal formatoptions-=ro
 set backupdir=~/.cache/vimbackup
 set directory=~/.cache/vimswap
 set shortmess+=I
-nnoremap <silent><F2>   :set invpaste paste?<CR>
 set pastetoggle=<F2>
 " }}}
 

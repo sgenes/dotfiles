@@ -6,6 +6,8 @@
 
 let mapleader=","
 
+nnoremap ;                      :
+nnoremap <silent><F3>           :noh<CR><Esc>
 inoremap <expr><C-g>            neocomplete#undo_completion()
 inoremap <expr><C-k>            neocomplete#complete_common_string()
 nnoremap <silent><F2>           :set invpaste paste?<CR>
@@ -21,8 +23,8 @@ nmap <silent>                 :w!<CR>
 inoremap <silent><c-s>          <C-o>:update<CR>
 nmap e                          <C-R>
 imap <silent>                 <C-o>u
-nmap <silent>x                <C-R>
-imap <silent>x                <C-o><C-R>
+" nmap <silent>x                <C-R>
+imap <silent>                 <C-o><C-R>
 imap <C-l>                      <Esc><Esc>
 vmap <C-l>                      <Esc><Esc>
 nmap .                          <C-]>
