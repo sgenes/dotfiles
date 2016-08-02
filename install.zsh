@@ -22,43 +22,52 @@ fi
 local VIMDIR=~/.vim
 if [[ -d $VIMDIR ]]; then
 	rm -rf $VIMDIR
-	ln -s vim $VIMDIR
+	ln -s $PWD/vim $VIMDIR
 else
-	ln -s vim $VIMDIR
+	ln -s $PWD/vim $VIMDIR
 fi
 
 # Create .vimrc
 local VIMRC=~/.vimrc
 if [[ -e $VIMRC ]]; then
 	rm $VIMRC
-	ln -s vimrc $VIMRC
+	ln -s $PWD/vimrc $VIMRC
 else
-	ln -s vimrc $VIMRC
+	ln -s $PWD/vimrc $VIMRC
 fi
 
 # Create .zshrc
 local ZSHRC=~/.zshrc
 if [[ -e $ZSHRC ]]; then
 	rm $ZSHRC
-	ln -s zshrc $ZSHRC
+	ln -s $PWD/zshrc $ZSHRC
 else
-	ln -s zshrc $ZSHRC
+	ln -s $PWD/zshrc $ZSHRC
 fi
 
 # Create .zsh
 local ZSHDIR=~/.zsh
 if [[ -d $ZSHDIR ]]; then
 	rm -rf $ZSHDIR
-	ln -s zsh $ZSHDIR
+	ln -s $PWD/zsh $ZSHDIR
 else
-	ln -s zsh $ZSHDIR
+	ln -s $PWD/zsh $ZSHDIR
 fi
 
 # Create .antigen-hs
 local ANTIGEN=~/.antigen-hs
 if [[ -d $ANTIGEN ]]; then
 	rm -rf $ANTIGEN
-	ln -s antigen-hs $ANTIGEN
+	ln -s $PWD/antigen-hs $ANTIGEN
 else
-	ln -s antigen-hs $ANTIGEN
+	ln -s $PWD/antigen-hs $ANTIGEN
+fi
+
+# Create .bin
+local BINDIR=~/.bin
+if [[ -d $BINDIR ]]; then
+	rm -rf $BINDIR
+	ln -s $PWD/bin $BINDIR
+else
+	ln -s $PWD/bin $BINDIR
 fi

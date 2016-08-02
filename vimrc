@@ -81,7 +81,7 @@ filetype plugin indent on    " required
 " UI settings: {{{
 scriptencoding utf-8
 syntax on
-set virtualedit=all
+set virtualedit=onemore
 set tabstop=2
 " set softtabstop=4
 " set sw=0
