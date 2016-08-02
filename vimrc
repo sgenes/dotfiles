@@ -114,6 +114,7 @@ set nowrap
 set textwidth=80
 set wrapmargin=0
 set nolinebreak
+let g:gitgutter_signs=0
 colorscheme MoonMaster
 " }}}
 
@@ -146,8 +147,8 @@ let g:neocomplete#enable_auto_close_preview = 1
 let NERDTreeMinimalUI=1
 let NERDTreeStatusLine=-1
 let NERDTreeWinSize=40
-let NERDTreeHijackNetrw=0
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeHijackNetrw=1
+
 " }}}
 
 " NERDCommenter settings: {{{
@@ -182,20 +183,36 @@ let g:gundo_preview_height = 10
 " Misc settings: {{{
 let g:username='Tamado Ramot Sitohang'
 let g:email='tamado.sitohang@gmail.com'
-au BufWritePre *.* :%s/\s\+$//e
-au FileType * setlocal formatoptions-=ro
 set backupdir=~/.cache/vimbackup
 set directory=~/.cache/vimswap
-set shortmess+=I
+" set shortmess+=I
 set pastetoggle=<F2>
 " }}}
 
 " Listchars option {{{
 if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
     set listchars=tab:\│\ ,trail:·,extends:>,precedes:<,nbsp:·
-    set fillchars=fold:·
+    set fillchars=fold:\ ,
 endif
 set list
+" }}}
+
+" Fold text: {{{
+function! MyFoldText()
+    let lines = printf('%' . len(line('$')) . 'd', v:foldend - v:foldstart + 1)
+    let line  = substitute(foldtext(), '^+-\+ *\d\+ lines: ', '', '')
+    return '[ ' . lines . ' lines: ' . line . ' ]'
+endfunction
+" }}}
+
+" Autocommand setings: {{{
+au BufWritePre        *.*     :%s/\s\+$//e
+au FileType           *       setlocal formatoptions-=ro
+au BufWrite,VimLeave  *.*     mkview
+au BufRead            *.*     silent loadview
+au BufEnter           *       if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+au FileType           *       set foldtext=MyFoldText()
+au FileType           *       set foldmethod=manual
 " }}}
 
 source ~/.vim/keysrc.vim
