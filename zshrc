@@ -64,7 +64,6 @@ stty -ixoff
 
 export NVM_DIR="/home/shinzjr/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 export NPM_PACKAGES="/home/shinzjr/.local/share/npm-packages/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
 export PATH="$NPM_PACKAGES/bin:$PATH"
