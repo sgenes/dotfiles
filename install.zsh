@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 
 # Create Backup dir, Swap dir and View dir
-local CACHE='~/.cache'
+local CACHE=~/.cache
 if [[ -d $CACHE/vimbackup ]]; then
 	echo 'Backup dir already exists'
 else
@@ -19,7 +19,7 @@ else
 fi
 
 # Create .vim directory in home directory
-local VIMDIR='~/.vim'
+local VIMDIR=~/.vim
 if [[ -d $VIMDIR ]]; then
 	rm -rf $VIMDIR
 	ln -s vim $VIMDIR
@@ -28,7 +28,7 @@ else
 fi
 
 # Create .vimrc
-local VIMRC='~/.vimrc'
+local VIMRC=~/.vimrc
 if [[ -e $VIMRC ]]; then
 	rm $VIMRC
 	ln -s vimrc $VIMRC
@@ -37,7 +37,7 @@ else
 fi
 
 # Create .zshrc
-local ZSHRC='~/.zshrc'
+local ZSHRC=~/.zshrc
 if [[ -e $ZSHRC ]]; then
 	rm $ZSHRC
 	ln -s zshrc $ZSHRC
@@ -46,7 +46,7 @@ else
 fi
 
 # Create .zsh
-local ZSHDIR='~/.zsh'
+local ZSHDIR=~/.zsh
 if [[ -d $ZSHDIR ]]; then
 	rm -rf $ZSHDIR
 	ln -s zsh $ZSHDIR
@@ -55,7 +55,7 @@ else
 fi
 
 # Create .antigen-hs
-local ANTIGEN='~/.antigen-hs'
+local ANTIGEN=~/.antigen-hs
 if [[ -d $ANTIGEN ]]; then
 	rm -rf $ANTIGEN
 	ln -s antigen-hs $ANTIGEN
