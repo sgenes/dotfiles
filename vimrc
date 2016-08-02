@@ -185,6 +185,7 @@ let g:username='Tamado Ramot Sitohang'
 let g:email='tamado.sitohang@gmail.com'
 set backupdir=~/.cache/vimbackup
 set directory=~/.cache/vimswap
+set viewdir=~/.cache/vimview
 " set shortmess+=I
 set pastetoggle=<F2>
 " }}}
