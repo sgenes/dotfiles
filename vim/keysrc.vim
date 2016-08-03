@@ -45,5 +45,4 @@ nmap <silent><C-Del>                  :tabclose<CR>
 inoremap <expr><TAB>                  pumvisible() ? "\<C-n><C-y>" : "\<C-R>=UltiSnips#ExpandSnippet()"
 inoremap <expr><C-h>                  neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS>                   neocomplete#smart_close_popup()."\<C-h>"
-nnoremap o                            o<Esc>
 nnoremap <silent><Leader><Leader>     :noh<CR>

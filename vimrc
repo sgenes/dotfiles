@@ -106,6 +106,7 @@ set hlsearch
 set formatoptions=cql
 set sm!
 set shortmess+=filmnrxoOtTc
+set shortmess+=I
 set updatetime=0
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
