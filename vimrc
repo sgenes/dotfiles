@@ -147,9 +147,8 @@ let g:neocomplete#enable_auto_close_preview = 1
 " NERDTree settings: {{{
 let NERDTreeMinimalUI=1
 let NERDTreeStatusLine=-1
-let NERDTreeWinSize=40
+let NERDTreeWinSize=30
 let NERDTreeHijackNetrw=1
-
 " }}}
 
 " NERDCommenter settings: {{{
@@ -177,7 +176,7 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
 " Gundo setings{{{
 let g:gundo_help = 0
-let g:gundo_width = 40
+let g:gundo_width = 30
 let g:gundo_preview_height = 10
 " }}}
 
