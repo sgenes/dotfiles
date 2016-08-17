@@ -5,8 +5,12 @@
 #
 alias q='exit'
 alias quit='exit'
+alias :q='exit'
 alias c='clear'
-#alias vim='nano'
+alias wip='cd $HOME/Documents/WORKSPACE'
+alias vimpath='cd $HOME/Documents/WORKSPACE/GIT/vim'
+alias dotfiles='cd $HOME/Documents/DOTFILES'
+alias apt='sudo apt'
 
 alias editrc='$VISUAL $HOME/.zshrc'
 

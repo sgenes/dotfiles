@@ -69,10 +69,6 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:/home/shinzjr/.local/share/man:$(manpath)"
 
-alias vimpath='cd ~/Documents/WORKSPACE/GIT/vim'
-alias wip='cd ~/Documents/WORKSPACE'
-alias dotfiles='cd ~/Documents/DOTFILES'
-alias :q='exit'
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
 export DEBEMAIL="tamado.sitohang@gmail.com"
 export DEBFULLNAME="Tamado Sitohang"
