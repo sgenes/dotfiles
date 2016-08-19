@@ -47,20 +47,11 @@ export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndF
 export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS"
 export PROMPT_EOL_MARK=""
 
-function command_not_found_handler {
-	if [[ -x /usr/lib/command-not-found ]] ; then
-		/usr/lib/command-not-found -- "$1"
-		return 0
-	else
-		printf "%s: command not found\n" "$1" >&2
-		return 127
-	fi
-}
-
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 export NVM_DIR="/home/shinzjr/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 export NPM_PACKAGES="/home/shinzjr/.local/share/npm-packages/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
 export PATH="$NPM_PACKAGES/bin:$PATH"
@@ -80,3 +71,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export MANPATH="$MANPATH:$HOME/.rvm/man"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s /home/shinzjr/.rsvm/rsvm.sh ]] && . /home/shinzjr/.rsvm/rsvm.sh # This loads RSVM
+source $HOME/.zsh/function.zsh
