@@ -1,5 +1,5 @@
 # no need of this
-vim/.netrwhist
-vim/bundle/*
-zsh/cache
-zsh/antigen-hs
+/vim/.netrwhist
+/vim/bundle/*
+/zsh/cache
+/zsh/antigen-hs
