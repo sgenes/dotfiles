@@ -46,19 +46,19 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Townk/vim-autoclose'
 Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 " Plugin 'scrooloose/syntastic'
 Plugin 'jordwalke/VimCompleteLikeAModernEditor'
 Plugin 'godlygeek/tabular'
-" Plugin 'ryanoasis/vim-devicons'
+Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'chrisbra/csv.vim'
 Plugin 'airblade/vim-gitgutter'
 
-set rtp+=~/.vim/bundle/tsyntastic
-set rtp+=~/.vim/bundle/nerdcommenter
+" set rtp+=~/.vim/bundle/tsyntastic
+" set rtp+=~/.vim/bundle/nerdcommenter
 set rtp+=~/.vim/bundle/vim-devicons
 set rtp+=~/.vim/bundle/vim-template-master
 
