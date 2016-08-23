@@ -72,3 +72,4 @@ export MANPATH="$MANPATH:$HOME/.rvm/man"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s /home/shinzjr/.rsvm/rsvm.sh ]] && . /home/shinzjr/.rsvm/rsvm.sh # This loads RSVM
 source $HOME/.zsh/function.zsh
+fpath+=/home/shinzjr/.zsh/Completion

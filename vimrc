@@ -60,6 +60,7 @@ Plugin 'airblade/vim-gitgutter'
 set rtp+=~/.vim/bundle/tsyntastic
 set rtp+=~/.vim/bundle/nerdcommenter
 set rtp+=~/.vim/bundle/vim-devicons
+set rtp+=~/.vim/bundle/vim-template-master
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
