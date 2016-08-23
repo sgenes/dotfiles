@@ -55,11 +55,11 @@ Plugin 'sjl/gundo.vim'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'chrisbra/csv.vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'ryanoasis/vim-devicons'
+" Plugin 'ryanoasis/vim-devicons'
 
 " set rtp+=~/.vim/bundle/tsyntastic
 " set rtp+=~/.vim/bundle/nerdcommenter
-" set rtp+=~/.vim/bundle/vim-devicons
+set rtp+=~/.vim/bundle/vim-devicons
 set rtp+=~/.vim/bundle/vim-template-master
 
 " All of your Plugins must be added before the following line
