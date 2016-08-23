@@ -48,18 +48,18 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-" Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 Plugin 'jordwalke/VimCompleteLikeAModernEditor'
 Plugin 'godlygeek/tabular'
-Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'chrisbra/csv.vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'ryanoasis/vim-devicons'
 
 " set rtp+=~/.vim/bundle/tsyntastic
 " set rtp+=~/.vim/bundle/nerdcommenter
-set rtp+=~/.vim/bundle/vim-devicons
+" set rtp+=~/.vim/bundle/vim-devicons
 set rtp+=~/.vim/bundle/vim-template-master
 
 " All of your Plugins must be added before the following line
