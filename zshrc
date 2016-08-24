@@ -72,4 +72,17 @@ export MANPATH="$MANPATH:$HOME/.rvm/man"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s /home/shinzjr/.rsvm/rsvm.sh ]] && . /home/shinzjr/.rsvm/rsvm.sh # This loads RSVM
 source $HOME/.zsh/function.zsh
-fpath+=/home/shinzjr/.zsh/Completion
+# The following lines were added by compinstall
+
+# zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+# zstyle ':completion:*' expand prefix suffix
+# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:]}={[:upper:]}' '+r:|[._-]=* r:|=* l:|=*'
+# zstyle ':completion:*' menu select=long-list select=0
+# zstyle ':completion:*' original true
+# zstyle ':completion:*' use-compctl true
+# zstyle :compinstall filename '/home/shinzjr/.zshrc'
+
+# autoload -Uz compinit
+# compinit
+# End of lines added by compinstall
