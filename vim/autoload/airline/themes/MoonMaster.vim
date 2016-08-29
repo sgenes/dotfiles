@@ -56,10 +56,10 @@ let g:airline#themes#MoonMaster#palette = {}
 
 
   " CtrlP:
-  if !get(g:, 'loaded_ctrlp', 0)
-    finish
-  endif
-  let g:airline#themes#MoonMaster#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(
-        \ [ '#2f343f' , '#ffffff' , 15 , 8  , ''     ] ,
-        \ [ '#2f343f' , '#5294e2' , 8 , 12  , ''     ] ,
-        \ [ '#2f343f' , '#5294e2' , 8 , 15 , '' ] )
+  " if !get(g:, 'loaded_ctrlp', 0)
+    " finish
+  " endif
+  " let g:airline#themes#MoonMaster#palette.ctrlp = airline#extensions#ctrlp#generate_color_map(
+        " \ [ '#2f343f' , '#ffffff' , 15 , 8  , ''     ] ,
+        " \ [ '#2f343f' , '#5294e2' , 8 , 12  , ''     ] ,
+        " \ [ '#2f343f' , '#5294e2' , 8 , 15 , '' ] )

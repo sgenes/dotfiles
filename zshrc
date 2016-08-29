@@ -41,7 +41,7 @@ export LESS="-~"
 export VISUAL='/usr/local/bin/vim'
 export EDITOR='/usr/local/bin/vim'
 export SELECTED_EDITOR='/usr/local/bin/vim'
-export PATH="$PATH:/home/shinzjr/.bin:/home/shinzjr/.local/bin"
+export PATH="$PATH:/home/shinzjr/.bin:/home/shinzjr/.local/bin:/home/shinzjr/.cabal/bin"
 export GOPATH="/home/shinzjr/.go"
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS"
@@ -72,17 +72,3 @@ export MANPATH="$MANPATH:$HOME/.rvm/man"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s /home/shinzjr/.rsvm/rsvm.sh ]] && . /home/shinzjr/.rsvm/rsvm.sh # This loads RSVM
 source $HOME/.zsh/function.zsh
-# The following lines were added by compinstall
-
-# zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
-# zstyle ':completion:*' expand prefix suffix
-# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:]}={[:upper:]}' '+r:|[._-]=* r:|=* l:|=*'
-# zstyle ':completion:*' menu select=long-list select=0
-# zstyle ':completion:*' original true
-# zstyle ':completion:*' use-compctl true
-# zstyle :compinstall filename '/home/shinzjr/.zshrc'
-
-# autoload -Uz compinit
-# compinit
-# End of lines added by compinstall

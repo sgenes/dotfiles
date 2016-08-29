@@ -56,6 +56,7 @@ Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'chrisbra/csv.vim'
 Plugin 'airblade/vim-gitgutter'
 " Plugin 'ryanoasis/vim-devicons'
+Plugin 'KabbAmine/zeavim.vim'
 
 " set rtp+=~/.vim/bundle/tsyntastic
 " set rtp+=~/.vim/bundle/nerdcommenter
@@ -83,22 +84,17 @@ filetype plugin indent on    " required
 scriptencoding utf-8
 syntax on
 set virtualedit=onemore
-set tabstop=2
-" set softtabstop=4
-" set sw=0
 let &tabstop=exists('g:tabSize') ? g:tabSize : 2
 let &softtabstop=exists('g:tabSize') ? g:tabSize : 2
 let &shiftwidth=exists('g:tabSize') ? g:tabSize : 2
 set expandtab
-set laststatus=2
+set ls=2
 " set t_Co=256
 set termguicolors
 set background=dark
 set number
 set backspace=2
-set linespace=0
-set encoding=utf-8
-" set switchbuf+=usetab,newtab
+set switchbuf+=usetab,newtab
 set grepprg=grep\ -nH\ $*
 set cursorline
 set ttimeoutlen=50
@@ -106,16 +102,13 @@ set scs
 set hlsearch
 set formatoptions=cql
 set sm!
-set shortmess+=filmnrxoOtTc
-set shortmess+=I
-set updatetime=0
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set shortmess+=filmnrxoOtTc
+" set shortmess+=I
+set updatetime=4000
 set nowrap
-set textwidth=80
 set wrapmargin=0
 set nolinebreak
+set autoread
 let g:gitgutter_signs=0
 colorscheme MoonMaster
 " }}}
@@ -126,10 +119,15 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height=4
-let g:syntastic_error_symbol='!!'
+" let g:syntastic_error_symbol='!!'
 let g:syntastic_python_checkers = ['pyflakes']
-let g:syntastic_markdown_checkers = ['textlint']
-let g:syntastic_haskell_checkers = ['ghc_mod']
+let g:syntastic_markdown_checkers = ['mdl']
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_html_checkers = ['jshint']
+let g:syntastic_perl_checkers = ['perl']
+let g:syntastic_r_checkers = ['lintr']
+let g:syntastic_enable_r_lintr_checker = 1
+let g:syntastic_enable_perl_checker = 1
 " }}}
 
 " Airline settings: {{{
@@ -187,7 +185,6 @@ let g:email='tamado.sitohang@gmail.com'
 set backupdir=~/.cache/vimbackup
 set directory=~/.cache/vimswap
 set viewdir=~/.cache/vimview
-" set shortmess+=I
 set pastetoggle=<F2>
 " }}}
 
@@ -215,6 +212,7 @@ au BufRead            *.*     silent loadview
 au BufEnter           *       if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 au FileType           *       set foldtext=MyFoldText()
 au FileType           *       set foldmethod=manual
+" au BufWritePost       *.js    silent !standard-format -w %
 " }}}
 
 source ~/.vim/keysrc.vim

@@ -3,3 +3,8 @@
 /vim/bundle
 /zsh/cache
 /zsh/antigen-hs
+*.pyc
+*~
+*.log
+*.tmp
+*.swp
