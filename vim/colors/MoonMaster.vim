@@ -1203,6 +1203,7 @@ delf s:grey_level
 delf s:grey_number
 " }}}
 
-hi ErrorMsg ctermfg=8 guibg='#d52735'
-hi NonText ctermfg=15
+hi ErrorMsg ctermfg=8       guibg='#d52735'
+hi NonText  ctermfg=15
+hi Conceal  guibg='#2f343f' guifg='#d3dae3'
 " vim: fdm=marker

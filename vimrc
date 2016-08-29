@@ -55,6 +55,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'chrisbra/csv.vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'lervag/vimtex'
 " Plugin 'ryanoasis/vim-devicons'
 Plugin 'KabbAmine/zeavim.vim'
 
@@ -131,9 +132,12 @@ let g:syntastic_enable_perl_checker = 1
 " }}}
 
 " Airline settings: {{{
+let g:airline#extensions#quickfix#quickfix_text = "Quickfix"
+let g:airline#extensions#quickfix#location_text = "Location"
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'MoonMaster'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#hunks#non_zero_only = 1
 " }}}
 
 " Neocomplete settings: {{{
@@ -157,14 +161,15 @@ let NERDRemoveExtraSpaces=1
 
 " DevIcons settings: {{{
 let g:WebDevIconsUnicodeDecorateFolderNodes = 0
-let g:DevIconsEnableFoldersOpenClose = 1
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 " }}}
 
 " CtrlP settings: {{{
 let g:ctrlp_map = '<C-p>'
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlPMRUFiles'
+let g:ctrlp_regexp = 1
+let g:ctrlp_match_window = 'bottom,order:ttb'
 " }}}
 
 " UltiSnips settings: {{{
@@ -213,6 +218,13 @@ au BufEnter           *       if (winnr("$") == 1 && exists("b:NERDTree") && b:N
 au FileType           *       set foldtext=MyFoldText()
 au FileType           *       set foldmethod=manual
 " au BufWritePost       *.js    silent !standard-format -w %
+" }}}
+
+" CSV Plugin {{{
+hi link CSVColumnOdd  Normal
+hi link CSVColumnEven Normal
+let g:csv_highlight_column = 1
+let g:csv_autocmd_arrange = 1
 " }}}
 
 source ~/.vim/keysrc.vim

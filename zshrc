@@ -46,6 +46,7 @@ export GOPATH="/home/shinzjr/.go"
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS"
 export PROMPT_EOL_MARK=""
+export PYTHONSTARTUP=~/.pythonrc
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
