@@ -8,6 +8,8 @@ let mapleader=","
 
 nnoremap ;                            :
 nnoremap <silent><F3>                 :noh<CR><Esc>
+nnoremap <silent><leader>l            :TagbarToggle<CR>
+nnoremap <silent><leader>k            <C-w>h
 inoremap <expr><C-g>                  neocomplete#undo_completion()
 inoremap <expr><C-k>                  neocomplete#complete_common_string()
 nnoremap <silent><F2>                 :set invpaste paste?<CR>

@@ -59,6 +59,9 @@ Plugin 'lervag/vimtex'
 " Plugin 'ryanoasis/vim-devicons'
 Plugin 'KabbAmine/zeavim.vim'
 Plugin 'mattn/emmet-vim'
+Plugin 'alvan/vim-closetag'
+Plugin 'majutsushi/tagbar'
+Plugin 'Raimondi/delimitMate'
 
 " set rtp+=~/.vim/bundle/tsyntastic
 " set rtp+=~/.vim/bundle/nerdcommenter
@@ -192,6 +195,11 @@ set backupdir=~/.cache/vimbackup
 set directory=~/.cache/vimswap
 set viewdir=~/.cache/vimview
 set pastetoggle=<F2>
+let g:closetag_filenames = "*.html,*.xhtml,*.xml,*.html.erb"
+let g:tagbar_left = 1
+let g:tagbar_width = 30
+let g:goldenview__enable_default_mapping = 0
+let b:delimitMate_matchpairs = "(:),[:],{:},<:>"
 " }}}
 
 " Listchars option {{{
@@ -211,13 +219,14 @@ endfunction
 " }}}
 
 " Autocommand setings: {{{
-au BufWritePre        *.*     :%s/\s\+$//e
-au FileType           *       setlocal formatoptions-=ro
-au BufWrite,VimLeave  *.*     mkview
-au BufRead            *.*     silent loadview
-au BufEnter           *       if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-au FileType           *       set foldtext=MyFoldText()
-au FileType           *       set foldmethod=manual
+au BufWritePre        *.*           :%s/\s\+$//e
+au FileType           *             setlocal formatoptions-=ro
+au BufWrite,VimLeave  *.*           mkview
+au BufRead            *.*           silent loadview
+au BufEnter           *             if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+au FileType           *             set foldtext=MyFoldText()
+au FileType           *             set foldmethod=manual
+au FileType           html,eruby    let b:delimitMate_matchpairs = "(:),[:],{:}"
 " au BufWritePost       *.js    silent !standard-format -w %
 " }}}
 
