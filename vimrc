@@ -58,6 +58,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'lervag/vimtex'
 " Plugin 'ryanoasis/vim-devicons'
 Plugin 'KabbAmine/zeavim.vim'
+Plugin 'mattn/emmet-vim'
 
 " set rtp+=~/.vim/bundle/tsyntastic
 " set rtp+=~/.vim/bundle/nerdcommenter
