@@ -307,17 +307,17 @@ endfun
   let s:wildmenu_bg  = ['#afdf00', '148']
 
   " Diff:
-  let s:diffadd_fg    = ['#000000', '16']
+  let s:diffadd_fg    = ['#ffffff', '16']
   let s:diffadd_bg    = ['#5faf00', '70']
 
-  let s:diffdelete_fg = ['#000000', '16']
+  let s:diffdelete_fg = ['#ffffff', '16']
   let s:diffdelete_bg = ['#5f0000', '52']
 
-  let s:difftext_fg   = ['#000000', '16']
-  let s:difftext_bg   = ['#ffdf5f', '221']
+  let s:difftext_fg   = ['#ffffff', '16']
+  let s:difftext_bg   = ['#f57c00', '221']
 
-  let s:diffchange_fg = ['#000000', '16']
-  let s:diffchange_bg = ['#dfaf00', '178']
+  let s:diffchange_fg = ['#ffffff', '16']
+  let s:diffchange_bg = ['#ef6c00', '178']
 
   " User Override Settings:
   if exists("g:MoonMaster_Dark_Override")

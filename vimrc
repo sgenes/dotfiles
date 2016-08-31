@@ -44,7 +44,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'Shougo/neocomplete'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'Townk/vim-autoclose'
+" Plugin 'Townk/vim-autoclose'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -60,8 +60,9 @@ Plugin 'lervag/vimtex'
 Plugin 'KabbAmine/zeavim.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'alvan/vim-closetag'
-Plugin 'majutsushi/tagbar'
-Plugin 'Raimondi/delimitMate'
+" Plugin 'majutsushi/tagbar'
+" Plugin 'Raimondi/delimitMate'
+Plugin 'jiangmiao/auto-pairs'
 
 " set rtp+=~/.vim/bundle/tsyntastic
 " set rtp+=~/.vim/bundle/nerdcommenter
@@ -114,6 +115,7 @@ set nowrap
 set wrapmargin=0
 set nolinebreak
 set autoread
+set hidden
 let g:gitgutter_signs=0
 colorscheme MoonMaster
 " }}}
@@ -141,7 +143,15 @@ let g:airline#extensions#quickfix#location_text = "Location"
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'MoonMaster'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_splits = 0
+" let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#hunks#non_zero_only = 1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.maxlinenr = ''
 " }}}
 
 " Neocomplete settings: {{{
@@ -156,6 +166,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeStatusLine=-1
 let NERDTreeWinSize=30
 let NERDTreeHijackNetrw=1
+" let NERDTreeMapOpenInTab='<CR>'
 " }}}
 
 " NERDCommenter settings: {{{
@@ -196,10 +207,8 @@ set directory=~/.cache/vimswap
 set viewdir=~/.cache/vimview
 set pastetoggle=<F2>
 let g:closetag_filenames = "*.html,*.xhtml,*.xml,*.html.erb"
-let g:tagbar_left = 1
-let g:tagbar_width = 30
-let g:goldenview__enable_default_mapping = 0
-let b:delimitMate_matchpairs = "(:),[:],{:},<:>"
+" let g:tagbar_left = 1
+" let g:tagbar_width = 30
 " }}}
 
 " Listchars option {{{
@@ -221,12 +230,9 @@ endfunction
 " Autocommand setings: {{{
 au BufWritePre        *.*           :%s/\s\+$//e
 au FileType           *             setlocal formatoptions-=ro
-au BufWrite,VimLeave  *.*           mkview
-au BufRead            *.*           silent loadview
 au BufEnter           *             if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 au FileType           *             set foldtext=MyFoldText()
 au FileType           *             set foldmethod=manual
-au FileType           html,eruby    let b:delimitMate_matchpairs = "(:),[:],{:}"
 " au BufWritePost       *.js    silent !standard-format -w %
 " }}}
 
@@ -238,5 +244,4 @@ let g:csv_autocmd_arrange = 1
 " }}}
 
 source ~/.vim/keysrc.vim
-
 " vim: fdm=marker
