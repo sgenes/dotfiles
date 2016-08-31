@@ -15,12 +15,14 @@ import Antigen (
               )
 
 bundles =
-  [ local "/home/shinzjr/.zsh/plugins/colors"
+  [ local "/home/shinzjr/.zsh/plugins/zsh-autosuggestions"
+  , local "/home/shinzjr/.zsh/plugins/colors"
   , local "/home/shinzjr/.zsh/plugins/key-bindings"
   , local "/home/shinzjr/.zsh/plugins/extract"
   -- , local "/home/shinzjr/.zsh/plugins/emoji"
   , local "/home/shinzjr/.zsh/plugins/completion"
   , local "/home/shinzjr/.zsh/plugins/misc"
+  -- , local "/home/shinzjr/.zsh/plugins/zsh-autosuggestions"
   , local "/home/shinzjr/.zsh/plugins/history"
   , local "/home/shinzjr/.zsh/plugins/directories"
   , local "/home/shinzjr/.zsh/plugins/grep"
@@ -30,11 +32,10 @@ bundles =
   , local "/home/shinzjr/.zsh/plugins/bureau"
   , local "/home/shinzjr/.zsh/plugins/custom"
   , local "/home/shinzjr/.zsh/plugins/colored-man-pages"
-  -- , local "/home/shinzjr/.zsh/plugins/history-substring-search"
+  , local "/home/shinzjr/.zsh/plugins/history-substring-search"
   , local "/home/shinzjr/.zsh/plugins/fancy-ctrl-z"
   -- , local "/home/shinzjr/.zsh/plugins/spectrum"
   , local "/home/shinzjr/.zsh/plugins/catimg"
-  , local "/home/shinzjr/.zsh/plugins/zsh-autosuggestions"
   , local "/home/shinzjr/.zsh/plugins/virtualenvwrapper"
   , local "/home/shinzjr/.zsh/plugins/rvm"
   -- , bundle "mafredri/zsh-async"

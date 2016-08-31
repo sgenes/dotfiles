@@ -41,7 +41,7 @@ Plugin 'jordwalke/flatlandia'
 " Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'eagletmt/neco-ghc'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'Shougo/neocomplete'
+Plugin 'Shougo/neocomplete.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 " Plugin 'Townk/vim-autoclose'
@@ -63,6 +63,11 @@ Plugin 'alvan/vim-closetag'
 " Plugin 'majutsushi/tagbar'
 " Plugin 'Raimondi/delimitMate'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-surround'
+" Plugin 'valloric/youcompleteme'
+" Plugin 'vim-ruby/vim-ruby'
+" Plugin 'tpope/vim-rails'
+" Plugin 'vim-scripts/OmniCppComplete'
 
 " set rtp+=~/.vim/bundle/tsyntastic
 " set rtp+=~/.vim/bundle/nerdcommenter
@@ -159,6 +164,16 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplete#enable_auto_close_preview = 1
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.ruby =
+  \ '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplete#force_omni_input_patterns.php =
+  \ '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+let g:neocomplete#force_omni_input_patterns.cpp =
+  \ '[^. *\t]\%(\.\|->\)\w*\|[A-Za-z>]\w*::\w*'
+set tags+=~/.vim/tags/cpp
 " }}}
 
 " NERDTree settings: {{{
@@ -209,6 +224,14 @@ set pastetoggle=<F2>
 let g:closetag_filenames = "*.html,*.xhtml,*.xml,*.html.erb"
 " let g:tagbar_left = 1
 " let g:tagbar_width = 30
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " }}}
 
 " Listchars option {{{
@@ -234,6 +257,10 @@ au BufEnter           *             if (winnr("$") == 1 && exists("b:NERDTree") 
 au FileType           *             set foldtext=MyFoldText()
 au FileType           *             set foldmethod=manual
 " au BufWritePost       *.js    silent !standard-format -w %
+au FileType           ruby,eruby    let g:rubycomplete_buffer_loading = 1
+au FileType           ruby,eruby    let g:rubycomplete_classes_in_global = 1
+au FileType           ruby,eruby    let g:rubycomplete_rails = 1
+au FileType           cpp           set omnifunc=omni#cpp#complete#Main
 " }}}
 
 " CSV Plugin {{{

@@ -360,6 +360,8 @@ function _history-substring-search-end() {
 
   # highlight command line using zsh-syntax-highlighting
   _zsh_highlight
+  # fix zsh-autosuggest
+  _zsh_autosuggest_highlight_apply
 
   # highlight the search query inside the command line
   if [[ -n $_history_substring_search_query_highlight && -n $_history_substring_search_query ]]; then
