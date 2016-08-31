@@ -30,7 +30,7 @@ bundles =
   , local "/home/shinzjr/.zsh/plugins/bureau"
   , local "/home/shinzjr/.zsh/plugins/custom"
   , local "/home/shinzjr/.zsh/plugins/colored-man-pages"
-  , local "/home/shinzjr/.zsh/plugins/history-substring-search"
+  -- , local "/home/shinzjr/.zsh/plugins/history-substring-search"
   , local "/home/shinzjr/.zsh/plugins/fancy-ctrl-z"
   -- , local "/home/shinzjr/.zsh/plugins/spectrum"
   , local "/home/shinzjr/.zsh/plugins/catimg"

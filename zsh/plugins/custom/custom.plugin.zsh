@@ -11,6 +11,7 @@ alias wip='cd $HOME/Documents/WORKSPACE'
 alias vimpath='cd $HOME/Documents/WORKSPACE/GIT/vim'
 alias dotfiles='cd $HOME/Documents/DOTFILES'
 alias apt='sudo apt'
+alias apt-get='sudo apt-get'
 alias gitinit='git init && git add -A && git commit -m "Initial Commit"'
 
 alias editrc='$VISUAL $HOME/.zshrc'
