@@ -17,8 +17,8 @@ nnoremap <silent><C-a>                :GundoToggle<CR>
 inoremap <silent><C-a>                <C-o>:GundoToggle<CR>
 map <silent><C-e>                     :NERDTreeToggle<CR>
 map <silent><C-n>                     :ene<CR>
-nmap <silent><TAB>                    :tabnext<CR>
-nmap <silent><S-TAB>                  :tabprev<CR>
+" nmap <silent><TAB>                    :tabnext<CR>
+" nmap <silent><S-TAB>                  :tabprev<CR>
 nmap <silent>q                        :conf q<CR>
 nmap                                <nop>
 imap <silent>                       <C-o>:conf q<CR>
@@ -43,8 +43,8 @@ map <C-S-Up>                          <C-w>w
 nmap <silent>                       :bp<CR>
 nmap <silent><Space>                  :bnext<CR>
 nmap <silent><Del>                    :bdelete!<CR>
-nmap <silent><C-Del>                  :tabclose<CR>
+" nmap <silent><C-Del>                  :tabclose<CR>
 inoremap <expr><TAB>                  pumvisible() ? "\<C-n><C-y>" : "\<C-R>=UltiSnips#ExpandSnippet()"
-inoremap <expr><C-h>                  neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS>                   neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><C-h>                  neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS>                   pumvisible() ? "\<C-h>=neocomplete#smart_close_popup()" : "<Plug>delimitMateBS"
 nnoremap <silent><Leader><Leader>     :noh<CR>

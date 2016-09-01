@@ -24,8 +24,14 @@ function title {
   fi
 }
 
-ZSH_THEME_TERM_TAB_TITLE_IDLE="%15<..<%~%<<" #15 char left truncated PWD
-ZSH_THEME_TERM_TITLE_IDLE="%n at %m in %c"
+if [[ $(date '+%p') == 'PM' ]]; then
+    _PMAM="PM"
+else
+    _PMAM="AM"
+fi
+# ZSH_THEME_TERM_TAB_TITLE_IDLE="%15<..<%~%<<" #15 char left truncated PWD
+# ZSH_THEME_TERM_TITLE_IDLE="%c"
+ZSH_THEME_TERM_TAB_TITLE_IDLE="%n in %c [%D{%L:%M} $_PMAM %D{%z}] "
 # Avoid duplication of directory in terminals with independent dir display
 if [[ $TERM_PROGRAM == Apple_Terminal ]]; then
   ZSH_THEME_TERM_TITLE_IDLE="%n@%m"

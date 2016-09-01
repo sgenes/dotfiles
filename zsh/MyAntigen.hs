@@ -38,7 +38,7 @@ bundles =
   , local "/home/shinzjr/.zsh/plugins/catimg"
   , local "/home/shinzjr/.zsh/plugins/virtualenvwrapper"
   , local "/home/shinzjr/.zsh/plugins/rvm"
-  -- , bundle "mafredri/zsh-async"
+  , local "/home/shinzjr/.zsh/plugins/dircycle"
 
   -- If you use a plugin that doesn't have a *.plugin.zsh file. You can set a
   -- more liberal sourcing strategy.

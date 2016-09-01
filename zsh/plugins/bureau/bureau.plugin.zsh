@@ -1,5 +1,7 @@
 # oh-my-zsh Bureau Theme
 
+setopt prompt_subst
+
 ZSH_THEME_NVM_PROMPT_PREFIX="[%{$fg[green]%}%B⬡ %b "
 ZSH_THEME_NVM_PROMPT_SUFFIX="%{$reset_color%}]"
 
@@ -84,14 +86,14 @@ _PATH="in %B%$AVAILABLE_WIDTH<..<%c%<<%b"
 
 if [[ $EUID -eq 0 ]]; then
   _USERNAME="%{$fg_bold[red]%}%n"
-  _LIBERTY="%{$fg[red]%}#"
-  _LIBERTY2="%_ %{$fg[red]%}>"
-  _LIBERTY3="%{$fg[red]%}?#"
+  _LIBERTY="%{$fg[red]%}❯❯❯"
+  _LIBERTY2="%_ %{$fg[red]%}!❯❯❯"
+  _LIBERTY3="%{$fg[red]%}?❯❯❯"
 else
   _USERNAME="%B%n%b"
-  _LIBERTY="%{$fg[green]%}$"
-  _LIBERTY2="%_ %{$fg[green]%}>"
-  _LIBERTY3="%{$fg[green]%}?#"
+  _LIBERTY="%{$fg[green]%}❯❯❯"
+  _LIBERTY2="%_ %{$fg[green]%}!❯❯❯"
+  _LIBERTY3="%{$fg[green]%}?❯❯❯"
 fi
 _USERNAME="$_USERNAME%{$reset_color%} at %{$fg_bold[blue]%}%m%{$reset_color%}"
 _LIBERTY="$_LIBERTY%{$reset_color%}"
@@ -130,26 +132,19 @@ ssh_prompt_info () {
     fi
 }
 
-if [[ $(date '+%p') == 'PM' ]]; then
-    _PMAM="%{$fg_bold[yellow]%}PM%{$reset_color%}"
-else
-    _PMAM="%{$fg_bold[green]%}AM%{$reset_color%}"
-fi
+# if [[ $(date '+%p') == 'PM' ]]; then
+    # _PMAM="%{$fg[yellow]%}PM%{$reset_color%}"
+# else
+    # _PMAM="%{$fg[green]%}AM%{$reset_color%}"
+# fi
 
 _1LEFT="$_USERNAME $_PATH"
-_1RIGHT="[%{$fg[cyan]%}%D{%L:%M}%{$reset_color%} $_PMAM %{$reset_color%}%B%D{%z}%b%{$reset_color%}] "
+# _1RIGHT="[%{$fg[cyan]%}%D{%L:%M}%{$reset_color%} $_PMAM %{$reset_color%}%D{%z}%{$reset_color%}] "
+# _1RIGHT="[%{$fg[cyan]%}%D{%L:%M}%{$reset_color%} $_PMAM]"
 
-bureau_precmd () {
-  _1SPACES=`get_space $_1LEFT $_1RIGHT`
-  print -rP '$_1LEFT$_1SPACES$_1RIGHT'
-}
-
-setopt prompt_subst
-PROMPT='$_LIBERTY '
+PROMPT="$_1LEFT
+$_LIBERTY "
 RPROMPT='$(nvm_prompt_info)$(bureau_git_prompt)$(return_status)$(suspend_symbol)$(ssh_prompt_info)'
 PROMPT2='$_LIBERTY2 '
 PROMPT3='$_LIBERTY3 '
 SPROMPT="Correct $fg_bold[red]%R$reset_color to $fg_bold[green]%r$reset_color [Yes, No, Abort, Edit]? "
-
-autoload -U add-zsh-hook
-add-zsh-hook precmd bureau_precmd

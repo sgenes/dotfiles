@@ -61,8 +61,8 @@ Plugin 'KabbAmine/zeavim.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'alvan/vim-closetag'
 " Plugin 'majutsushi/tagbar'
-" Plugin 'Raimondi/delimitMate'
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'Raimondi/delimitMate'
+" Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-surround'
 " Plugin 'valloric/youcompleteme'
 " Plugin 'vim-ruby/vim-ruby'
@@ -161,8 +161,9 @@ let g:airline_symbols.maxlinenr = ''
 
 " Neocomplete settings: {{{
 let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#sources#syntax#min_keyword_length = 2
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+" let g:neocomplete#enable_auto_select = 1
 let g:neocomplete#enable_auto_close_preview = 1
 if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
@@ -232,6 +233,11 @@ let OmniCpp_MayCompleteDot = 1 " autocomplete after .
 let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
 let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+let g:delimitMate_balance_matchpairs = 1
+let g:delimitMate_expand_cr = 2
+let g:delimitMate_expand_space = 1
+" let g:AutoPairs = {'(':')', '[':']', '{':'}', '`':'`'}
+" let g:AutoClosePairs = " \" \' "
 " }}}
 
 " Listchars option {{{
