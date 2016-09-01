@@ -37,6 +37,21 @@ source ~/.zsh/antigen-hs/init.zsh
 setopt histignorealldups
 # setopt correct
 
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=green
+ZSH_HIGHLIGHT_STYLES[path]=fg=cyan,bold
+ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=53
+ZSH_HIGHLIGHT_STYLES[assign]=fg=10
+ZSH_HIGHLIGHT_STYLES[globbing]=fg=11
+# ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=207,bold
+# ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=207,bold
+# ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]=fg=207,bold
+# ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=207,bold
+# ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=207,bold
+# ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]=fg=207,bold
+
 export LESS="-~"
 export VISUAL='/usr/local/bin/vim'
 export EDITOR='/usr/local/bin/vim'
