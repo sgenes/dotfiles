@@ -17,7 +17,7 @@ import Antigen (
 bundles =
   [ local "/home/shinzjr/.zsh/plugins/zsh-autosuggestions"
   , local "/home/shinzjr/.zsh/plugins/key-bindings"
-  , local "/home/shinzjr/.zsh/plugins/extract"
+  -- , local "/home/shinzjr/.zsh/plugins/extract"
   -- , local "/home/shinzjr/.zsh/plugins/emoji"
   , local "/home/shinzjr/.zsh/plugins/misc"
   -- , local "/home/shinzjr/.zsh/plugins/zsh-autosuggestions"
