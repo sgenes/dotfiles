@@ -106,8 +106,8 @@ TERM xterm-termite
 NORMAL 00;38;5;7 # no color code at all
 FILE 00 # regular file: use no color at all
 RESET 0 # reset to "normal" color
-DIR 00;38;5;33 # directory 01;34
-LINK 00;38;5;37 # symbolic link. (If you set this to 'target' instead of a
+DIR 00;38;5;39 # directory 01;34
+LINK 00;38;5;44 # symbolic link. (If you set this to 'target' instead of a
  # numerical value, the color is as for the file pointed to.)
 MULTIHARDLINK 00 # regular file with more than one link
 FIFO 38;5;13;01 # pipe
@@ -209,6 +209,7 @@ EXEC 00;38;5;10
 *Dockerfile      00;38;5;204
 *build.xml       00;38;5;204
 *rc              00;38;5;204
+*profile         00;38;5;204
 *1               00;38;5;204
 .nfo             00;38;5;204
 *README          00;38;5;204
@@ -231,6 +232,13 @@ EXEC 00;38;5;10
 .go              00;38;5;204
 .sql             00;38;5;204
 .csv             00;38;5;204
+.py              00;38;5;204
+.rb              00;38;5;204
+.js              00;38;5;204
+.html            00;38;5;204
+.erb             00;38;5;204
+.hs              00;38;5;204
+.php             00;38;5;204
 
 # "unimportant" files as logs and backups (base01)
 .log        00;38;5;245
@@ -245,6 +253,7 @@ EXEC 00;38;5;10
 .blg        00;38;5;245
 *~          00;38;5;245
 *#          00;38;5;245
+*-          00;38;5;245
 .part       00;38;5;245
 .incomplete 00;38;5;245
 .swp        00;38;5;245
@@ -252,8 +261,10 @@ EXEC 00;38;5;10
 .temp       00;38;5;245
 .o          00;38;5;245
 .pyc        00;38;5;245
+.pyo        00;38;5;245
 .class      00;38;5;245
 .cache      00;38;5;245
+*history    00;38;5;245
 
 # Audio formats (orange)
 .aac    00;38;5;166
