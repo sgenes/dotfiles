@@ -1,2 +1,0 @@
-# zsh-colors
-Hello

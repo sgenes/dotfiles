@@ -30,6 +30,35 @@ fi
 
 autoload -U colors && colors
 
+
+export PATH="$PATH:/home/shinzjr/.bin:/home/shinzjr/.local/bin:/home/shinzjr/.cabal/bin"
+export GOPATH="/home/shinzjr/.go"
+export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS"
+export PROMPT_EOL_MARK=""
+export PYTHONSTARTUP=~/.pythonrc
+
+
+
+export NVM_DIR="/home/shinzjr/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+export NPM_PACKAGES="/home/shinzjr/.local/share/npm-packages/.npm-packages"
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
+export PATH="$NPM_PACKAGES/bin:$PATH"
+# Unset manpath so we can inherit from /etc/manpath via the `manpath`
+# command
+unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
+export MANPATH="$NPM_PACKAGES/share/man:/home/shinzjr/.local/share/man:$(manpath)"
+
+
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export MANPATH="$MANPATH:$HOME/.rvm/man"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+[[ -s /home/shinzjr/.rsvm/rsvm.sh ]] && . /home/shinzjr/.rsvm/rsvm.sh # This loads RSVM
+source $HOME/.zsh/function.zsh
+
 source ~/.zsh/antigen-hs/init.zsh
 # source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source /etc/bash_completion.d/virtualenvwrapper
@@ -40,7 +69,7 @@ setopt histignorealldups
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=green
-ZSH_HIGHLIGHT_STYLES[path]=fg=cyan,bold
+ZSH_HIGHLIGHT_STYLES[path]=fg=33
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=53
 ZSH_HIGHLIGHT_STYLES[assign]=fg=10
@@ -56,35 +85,16 @@ export LESS="-~"
 export VISUAL='/usr/local/bin/vim'
 export EDITOR='/usr/local/bin/vim'
 export SELECTED_EDITOR='/usr/local/bin/vim'
-export PATH="$PATH:/home/shinzjr/.bin:/home/shinzjr/.local/bin:/home/shinzjr/.cabal/bin"
-export GOPATH="/home/shinzjr/.go"
-export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
-export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS"
-export PROMPT_EOL_MARK=""
-export PYTHONSTARTUP=~/.pythonrc
-
+eval `dircolors $ZSH/dircolors`
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
-export NVM_DIR="/home/shinzjr/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
-export NPM_PACKAGES="/home/shinzjr/.local/share/npm-packages/.npm-packages"
-export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
-export PATH="$NPM_PACKAGES/bin:$PATH"
-# Unset manpath so we can inherit from /etc/manpath via the `manpath`
-# command
-unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
-export MANPATH="$NPM_PACKAGES/share/man:/home/shinzjr/.local/share/man:$(manpath)"
-
+# zstyle ':completion:*:tasks:*' list-colors "=(#b) #([^ ]#)*=$color[white]=$color[yellow]=$color[red]"
+# zstyle ':completion:*:options' list-colors "=^(-- *)=0;36"
+# zstyle ':completion:*:parameters'  list-colors '=*=32'
+# zstyle ':completion:*:builtins' list-colors '=*=1;33;5;142'
+# setopt menu_complete
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
 export DEBEMAIL="tamado.sitohang@gmail.com"
 export DEBFULLNAME="Tamado Sitohang"
 
 stty -ixon
 stty -ixoff
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export MANPATH="$MANPATH:$HOME/.rvm/man"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-[[ -s /home/shinzjr/.rsvm/rsvm.sh ]] && . /home/shinzjr/.rsvm/rsvm.sh # This loads RSVM
-source $HOME/.zsh/function.zsh
