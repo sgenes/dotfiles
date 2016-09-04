@@ -107,6 +107,12 @@ let g:neocomplete#sources#syntax#min_keyword_length = 2
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 " let g:neocomplete#enable_auto_select = 1
 let g:neocomplete#enable_auto_close_preview = 1
+let g:neocomplete#force_omni_input_patterns.ruby =
+  \ '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplete#force_omni_input_patterns.php =
+  \ '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+let g:neocomplete#force_omni_input_patterns.cpp =
+  \ '[^. *\t]\%(\.\|->\)\w*\|[A-Za-z>]\w*::\w*'
 set tags+=~/.vim/tags/cpp
 " }}}
 
