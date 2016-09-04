@@ -31,6 +31,7 @@ Plug 'lervag/vimtex'
 Plug 'alvan/vim-closetag'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
