@@ -4,100 +4,43 @@
 " License: MIT                  "
 " ============================= "
 
-" Vundle Plugin: {{{
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" vim-plug
+set nocompatible
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-" call vundle#begin('~/some/path/here')
+call plug#begin('~/.vim/bundle')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'eagletmt/neco-ghc'
+Plug 'flazz/vim-colorschemes'
+Plug 'Shougo/neocomplete.vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle'  }
+Plug 'scrooloose/syntastic'
+Plug 'jordwalke/VimCompleteLikeAModernEditor'
+Plug 'godlygeek/tabular'
+Plug 'sjl/gundo.vim'
+Plug 'jmcantrell/vim-virtualenv'
+Plug 'chrisbra/csv.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'lervag/vimtex'
+Plug 'alvan/vim-closetag'
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-surround'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-" Plugin 'user/L9', {'name': 'newL9'}
-
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'bling/vim-bufferline'
-Plugin 'jordwalke/flatlandia'
-" Plugin 'ajh17/Spacegray.vim'
-" Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'eagletmt/neco-ghc'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-" Plugin 'Townk/vim-autoclose'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'jordwalke/VimCompleteLikeAModernEditor'
-Plugin 'godlygeek/tabular'
-Plugin 'sjl/gundo.vim'
-Plugin 'jmcantrell/vim-virtualenv'
-Plugin 'chrisbra/csv.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'lervag/vimtex'
-" Plugin 'ryanoasis/vim-devicons'
-Plugin 'KabbAmine/zeavim.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'alvan/vim-closetag'
-" Plugin 'majutsushi/tagbar'
-Plugin 'Raimondi/delimitMate'
-" Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-surround'
-" Plugin 'valloric/youcompleteme'
-" Plugin 'vim-ruby/vim-ruby'
-" Plugin 'tpope/vim-rails'
-" Plugin 'vim-scripts/OmniCppComplete'
-
-" set rtp+=~/.vim/bundle/tsyntastic
-" set rtp+=~/.vim/bundle/nerdcommenter
-set rtp+=~/.vim/bundle/vim-devicons
-set rtp+=~/.vim/bundle/vim-template-master
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" To ignore plugin indent changes, instead use:
-" filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-" }}}
+call plug#end()
 
 " UI settings: {{{
 scriptencoding utf-8
 syntax on
 set virtualedit=onemore
-let &tabstop=exists('g:tabSize') ? g:tabSize : 2
-let &softtabstop=exists('g:tabSize') ? g:tabSize : 2
-let &shiftwidth=exists('g:tabSize') ? g:tabSize : 2
+set ts=4
+set sts=4
+set sw=4
 set expandtab
 set ls=2
 " set t_Co=256
@@ -113,8 +56,6 @@ set scs
 set hlsearch
 set formatoptions=cql
 set sm!
-" set shortmess+=filmnrxoOtTc
-" set shortmess+=I
 set updatetime=4000
 set nowrap
 set wrapmargin=0
@@ -165,15 +106,6 @@ let g:neocomplete#sources#syntax#min_keyword_length = 2
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 " let g:neocomplete#enable_auto_select = 1
 let g:neocomplete#enable_auto_close_preview = 1
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.ruby =
-  \ '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplete#force_omni_input_patterns.php =
-  \ '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
-let g:neocomplete#force_omni_input_patterns.cpp =
-  \ '[^. *\t]\%(\.\|->\)\w*\|[A-Za-z>]\w*::\w*'
 set tags+=~/.vim/tags/cpp
 " }}}
 
@@ -218,10 +150,9 @@ let g:gundo_preview_height = 10
 " Misc settings: {{{
 let g:username='Tamado Ramot Sitohang'
 let g:email='tamado.sitohang@gmail.com'
-set backupdir=~/.cache/vimbackup
-set directory=~/.cache/vimswap
-set viewdir=~/.cache/vimview
 set pastetoggle=<F2>
+set nobackup
+set noswapfile
 let g:closetag_filenames = "*.html,*.xhtml,*.xml,*.html.erb"
 " let g:tagbar_left = 1
 " let g:tagbar_width = 30
@@ -236,8 +167,6 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 let g:delimitMate_balance_matchpairs = 1
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
-" let g:AutoPairs = {'(':')', '[':']', '{':'}', '`':'`'}
-" let g:AutoClosePairs = " \" \' "
 " }}}
 
 " Listchars option {{{
