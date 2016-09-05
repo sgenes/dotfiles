@@ -11,10 +11,9 @@ function command_not_found_handler {
 autoload -U add-zsh-hook
 load-nvmrc() {
 	if [[ -f .nvmrc && -r .nvmrc ]]; then
-		nvm use $(cat .nvmrc)
+		nvm use $(cat .nvmrc) --silent
 	elif [[ $(nvm version) != $(nvm version default)  ]]; then
-		echo "Reverting to nvm default version"
-		nvm use default
+		nvm use default --silent
 	fi
 }
 add-zsh-hook chpwd load-nvmrc

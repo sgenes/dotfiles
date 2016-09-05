@@ -32,6 +32,7 @@ Plug 'alvan/vim-closetag'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'
+Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
@@ -39,10 +40,10 @@ call plug#end()
 scriptencoding utf-8
 syntax on
 set virtualedit=onemore
-set ts=4
-set sts=4
-set sw=4
-set expandtab
+" set ts=4
+" set sts=4
+" set sw=4
+" set expandtab
 set ls=2
 " set t_Co=256
 set termguicolors
@@ -102,18 +103,30 @@ let g:airline_symbols.maxlinenr = ''
 " }}}
 
 " Neocomplete settings: {{{
+set tags+=~/.vim/tags/cpp
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 2
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-" let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#enable_auto_select = 1
 let g:neocomplete#enable_auto_close_preview = 1
-let g:neocomplete#force_omni_input_patterns.ruby =
-  \ '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplete#force_omni_input_patterns.php =
-  \ '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#smart_auto_mappings = 0
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.c =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
 let g:neocomplete#force_omni_input_patterns.cpp =
-  \ '[^. *\t]\%(\.\|->\)\w*\|[A-Za-z>]\w*::\w*'
-set tags+=~/.vim/tags/cpp
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+let g:neocomplete#force_omni_input_patterns.objc =
+      \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)'
+let g:neocomplete#force_omni_input_patterns.objcpp =
+      \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)\|\h\w*::\w*'
+let g:neocomplete#force_omni_input_patterns.ruby =
+      \ '[^. *\t]\.\w*\|\h\w*::'
+let g:neocomplete#force_omni_input_patterns.python =
+      \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 " }}}
 
 " NERDTree settings: {{{
@@ -167,10 +180,10 @@ let OmniCpp_NamespaceSearch = 1
 let OmniCpp_GlobalScopeSearch = 1
 let OmniCpp_ShowAccess = 1
 let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
-let OmniCpp_MayCompleteDot = 1 " autocomplete after .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+" let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+" let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+" let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 let g:delimitMate_balance_matchpairs = 1
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
@@ -202,7 +215,9 @@ au FileType           *             set foldmethod=manual
 au FileType           ruby,eruby    let g:rubycomplete_buffer_loading = 1
 au FileType           ruby,eruby    let g:rubycomplete_classes_in_global = 1
 au FileType           ruby,eruby    let g:rubycomplete_rails = 1
-au FileType           cpp           set omnifunc=omni#cpp#complete#Main
+au FileType           cpp           setlocal omnifunc=omni#cpp#complete#Main
+au FileType           python        setlocal omnifunc=jedi#completions
+
 " }}}
 
 " CSV Plugin {{{

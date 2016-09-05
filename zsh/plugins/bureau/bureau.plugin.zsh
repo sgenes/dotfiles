@@ -81,7 +81,6 @@ bureau_git_prompt () {
   echo $_result
 }
 
-
 _PATH="in %B%$AVAILABLE_WIDTH<..<%c%<<%b"
 
 if [[ $EUID -eq 0 ]]; then

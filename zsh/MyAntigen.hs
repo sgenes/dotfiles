@@ -40,6 +40,7 @@ bundles =
   , local "/home/shinzjr/.zsh/plugins/completion"
   , local "/home/shinzjr/.zsh/plugins/colors"
   , local "/home/shinzjr/.zsh/plugins/history-substring-search"
+  {- , bundle "mafredri/zsh-async" -}
 
 
   -- If you use a plugin that doesn't have a *.plugin.zsh file. You can set a
