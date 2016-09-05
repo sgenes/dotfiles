@@ -1,9 +1,9 @@
 ShinzJr dotfiles
 ================
 
-![Prompt](https://gist.github.com/ShinzJr/86ab39dd02c37da90f04211ccb7aa6e6/raw/57b49e400ef14f5f404b2f3efb50afe14422407a/s1.png)
-![zshrc](https://gist.github.com/ShinzJr/86ab39dd02c37da90f04211ccb7aa6e6/raw/57b49e400ef14f5f404b2f3efb50afe14422407a/s2.png)
-![vimrc](https://gist.github.com/ShinzJr/86ab39dd02c37da90f04211ccb7aa6e6/raw/57b49e400ef14f5f404b2f3efb50afe14422407a/s3.png)
+![Prompt](https://gist.githubusercontent.com/ShinzJr/86ab39dd02c37da90f04211ccb7aa6e6/raw/14f39b15a3c39454db5233ddfd2b7d327312f049/s1.png)
+![Terminal](https://gist.githubusercontent.com/ShinzJr/86ab39dd02c37da90f04211ccb7aa6e6/raw/14f39b15a3c39454db5233ddfd2b7d327312f049/s2.png)
+![vimrc](https://gist.githubusercontent.com/ShinzJr/86ab39dd02c37da90f04211ccb7aa6e6/raw/14f39b15a3c39454db5233ddfd2b7d327312f049/s3.png)
 
 Requirements
 ------------
