@@ -30,9 +30,9 @@ else
     _PMAM="AM"
 fi
 
-ZSH_THEME_TERM_TAB_TITLE_IDLE="%15<..<%~%<<" #15 char left truncated PWD
+ZSH_THEME_TERM_TAB_TITLE_IDLE="%c" #15 char left truncated PWD
 # ZSH_THEME_TERM_TITLE_IDLE="%c"
-ZSH_THEME_TERM_TITLE_IDLE="%n in %c"
+ZSH_THEME_TERM_TITLE_IDLE="%c"
 # Avoid duplication of directory in terminals with independent dir display
 
 # Runs before showing the prompt
