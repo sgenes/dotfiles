@@ -46,11 +46,11 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$HOME/.local/share/man:$MANPATH"
+[[ -s /home/shinzjr/.rsvm/rsvm.sh ]] && . /home/shinzjr/.rsvm/rsvm.sh # This loads RSVM
 
 export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 export MANPATH="$HOME/.rvm/man:$MANPATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-[[ -s /home/shinzjr/.rsvm/rsvm.sh ]] && . /home/shinzjr/.rsvm/rsvm.sh # This loads RSVM
 
 source $ZSH/antigen-hs/init.zsh
 source $ZSH/function.zsh

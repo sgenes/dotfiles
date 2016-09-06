@@ -16,8 +16,6 @@ ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
 ZSH_SUSPEND="[%{$fg[yellow]%}SUS%{$reset_color%}]"
-AVAILABLE_WIDTH=""
-((AVAILABLE_WIDTH=$COLUMNS - 45))
 
 suspend_symbol () {
   local _suspended=""
@@ -81,21 +79,18 @@ bureau_git_prompt () {
   echo $_result
 }
 
+local AVAILABLE_WIDTH
+((AVAILABLE_WIDTH=$COLUMNS - 23))
+
 _PATH="in %B%$AVAILABLE_WIDTH<..<%c%<<%b"
 
 if [[ $EUID -eq 0 ]]; then
   _USERNAME="%{$fg_bold[red]%}%n"
-  # _LIBERTY="%{$fg[red]%}❯❯❯"
-  # _LIBERTY2="%_ %{$fg[red]%}!❯❯❯"
-  # _LIBERTY3="%{$fg[red]%}?❯❯❯"
   _LIBERTY="%{$fg[red]%}#"
   _LIBERTY2="%_ %{$fg[red]%}>"
   _LIBERTY3="%{$fg[red]%}?>"
 else
   _USERNAME="%B%n%b"
-  # _LIBERTY="%{$fg[green]%}❯❯❯"
-  # _LIBERTY2="%_ %{$fg[green]%}!❯❯❯"
-  # _LIBERTY3="%{$fg[green]%}?❯❯❯"
   _LIBERTY="%{$fg[green]%}$"
   _LIBERTY2="%_ %{$fg[green]%}>"
   _LIBERTY3="%{$fg[green]%}?>"
@@ -105,20 +100,20 @@ _LIBERTY="$_LIBERTY%{$reset_color%}"
 _LIBERTY2="$_LIBERTY2%{$reset_color%}"
 _LIBERTY3="$_LIBERTY3%{$reset_color%}"
 
-get_space () {
-  local STR=$1$2
-  local zero='%([BSUbfksu]|([FB]|){*})'
-  local LENGTH=${#${(S%%)STR//$~zero/}}
-  local SPACES=""
-  (( LENGTH = ${COLUMNS} - $LENGTH - 1))
+# get_space () {
+  # local STR=$1$2
+  # local zero='%([BSUbfksu]|([FB]|){*})'
+  # local LENGTH=${#${(S%%)STR//$~zero/}}
+  # local SPACES=""
+  # (( LENGTH = ${COLUMNS} - $LENGTH - 1))
 
-  for i in {0..$LENGTH}
-    do
-      SPACES="$SPACES "
-    done
+  # for i in {0..$LENGTH}
+    # do
+      # SPACES="$SPACES "
+    # done
 
-  echo $SPACES
-}
+  # echo $SPACES
+# }
 
 return_status () {
     local return_code="%(?..[%{$fg[red]%}%?%{$reset_color%}])"
