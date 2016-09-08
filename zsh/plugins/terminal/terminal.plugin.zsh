@@ -24,15 +24,9 @@ function title {
   fi
 }
 
-if [[ $(date '+%p') == 'PM' ]]; then
-    _PMAM="PM"
-else
-    _PMAM="AM"
-fi
-
-ZSH_THEME_TERM_TAB_TITLE_IDLE="%c" #15 char left truncated PWD
+# ZSH_THEME_TERM_TAB_TITLE_IDLE="%c — %m" #15 char left truncated PWD
 # ZSH_THEME_TERM_TITLE_IDLE="%c"
-ZSH_THEME_TERM_TITLE_IDLE="%c"
+# ZSH_THEME_TERM_TITLE_IDLE="%c — %m"
 # Avoid duplication of directory in terminals with independent dir display
 
 # Runs before showing the prompt
@@ -42,7 +36,8 @@ function omz_termsupport_precmd {
     return
   fi
 
-  title $ZSH_THEME_TERM_TAB_TITLE_IDLE $ZSH_THEME_TERM_TITLE_IDLE
+  # title $ZSH_THEME_TERM_TAB_TITLE_IDLE $ZSH_THEME_TERM_TITLE_IDLE
+  print -Pn '\e]0;%c  —  %m\a'
 }
 
 # Runs before executing the command
@@ -55,10 +50,13 @@ function omz_termsupport_preexec {
   setopt extended_glob
 
   # cmd name only, or if this is sudo or ssh, the next cmd
-  local CMD=${1[(wr)^(*=*|sudo|ssh|mosh|rake|-*)]:gs/%/%%}
-  local LINE="${2:gs/%/%%}"
+  # local CMD=${1[(wr)^(*=*|sudo|ssh|mosh|rake|-*)]:gs/%/%%}
+  # local LINE="${2:gs/%/%%}"
 
-  title '$CMD' '%100>...>$LINE%<<'
+  # title '$CMD' '%100>...>$LINE%<<'
+  print -Pn "\e]0;"
+  echo -nE "$2  —  $(hostname -s)"
+  print -Pn "\a"
 }
 
 precmd_functions+=(omz_termsupport_precmd)

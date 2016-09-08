@@ -8,6 +8,8 @@ function command_not_found_handler {
 	fi
 }
 
+zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
+
 autoload -U add-zsh-hook
 load-nvmrc() {
 	if [[ -f .nvmrc && -r .nvmrc ]]; then
