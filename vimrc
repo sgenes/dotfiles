@@ -15,13 +15,16 @@ Plug 'vim-airline/vim-airline'
 Plug 'eagletmt/neco-ghc'
 " Plug 'flazz/vim-colorschemes'
 Plug 'Shougo/neocomplete.vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neoinclude.vim'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle'  }
 Plug 'scrooloose/syntastic'
-Plug 'jordwalke/VimCompleteLikeAModernEditor'
+" Plug 'jordwalke/VimCompleteLikeAModernEditor'
 Plug 'godlygeek/tabular'
 Plug 'sjl/gundo.vim'
 Plug 'jmcantrell/vim-virtualenv'
@@ -33,6 +36,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'
 Plug 'davidhalter/jedi-vim'
+Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
@@ -40,10 +44,10 @@ call plug#end()
 scriptencoding utf-8
 syntax on
 set virtualedit=onemore
-" set ts=4
-" set sts=4
-" set sw=4
-" set expandtab
+set ts=4
+set sts=4
+set sw=4
+set expandtab
 set ls=2
 " set t_Co=256
 set termguicolors

@@ -8,8 +8,6 @@ let mapleader=","
 
 nnoremap ;                            :
 nnoremap <silent><F3>                 :noh<CR><Esc>
-" nnoremap <silent><leader>l            :TagbarToggle<CR>
-" nnoremap <silent><leader>k            <C-w>h
 inoremap <expr><C-g>                  neocomplete#undo_completion()
 inoremap <expr><C-k>                  neocomplete#complete_common_string()
 nnoremap <silent><F2>                 :set invpaste paste?<CR>
@@ -17,8 +15,6 @@ nnoremap <silent><C-a>                :GundoToggle<CR>
 inoremap <silent><C-a>                <C-o>:GundoToggle<CR>
 map <silent><C-e>                     :NERDTreeToggle<CR>
 map <silent><C-n>                     :ene<CR>
-" nmap <silent><TAB>                    :tabnext<CR>
-" nmap <silent><S-TAB>                  :tabprev<CR>
 nmap <silent>q                        :conf q<CR>
 nmap                                <nop>
 imap <silent>                       <C-o>:conf q<CR>
@@ -43,8 +39,23 @@ map <C-S-Up>                          <C-w>w
 nmap <silent>                       :bp<CR>
 nmap <silent><Space>                  :bnext<CR>
 nmap <silent><Del>                    :bdelete!<CR>
-" nmap <silent><C-Del>                  :tabclose<CR>
-inoremap <expr><TAB>                  pumvisible() ? "\<C-n><C-y>" : "\<C-R>=UltiSnips#ExpandSnippet()"
+" inoremap <expr><TAB>                  pumvisible() ? "\<C-n><C-y>" : "\<C-R>=neosnippet#mappings#expand_or_jump_impl()"
 " inoremap <expr><C-h>                  neocomplete#smart_close_popup()."\<C-h>"
 " inoremap <expr><BS>                   pumvisible() ? "\<C-h>=neocomplete#smart_close_popup()" : "<Plug>delimitMateBS"
 nnoremap <silent><Leader><Leader>     :noh<CR>
+imap <C-k>                            <Plug>(neosnippet_expand_or_jump)
+smap <C-k>                            <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>                            <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB>
+\ pumvisible() ? "\<C-y>" :
+\ neosnippet#expandable_or_jumpable() ?
+\    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
