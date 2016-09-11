@@ -36,7 +36,10 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'
 Plug 'davidhalter/jedi-vim'
-Plug 'pangloss/vim-javascript'
+" Plug 'pangloss/vim-javascript'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'plasticboy/vim-markdown'
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
 
@@ -68,6 +71,7 @@ set wrapmargin=0
 set nolinebreak
 set autoread
 set hidden
+set noshowmode
 let g:gitgutter_signs=0
 colorscheme MoonMaster
 " }}}
@@ -160,9 +164,9 @@ let g:ctrlp_match_window = 'bottom,order:ttb'
 " }}}
 
 " UltiSnips settings: {{{
-let g:UltiSnipsExpandTrigger="<TAB>"
-let g:UltiSnipsJumpForwardTrigger="<TAB>"
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+" let g:UltiSnipsExpandTrigger="<TAB>"
+" let g:UltiSnipsJumpForwardTrigger="<TAB>"
+" let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 " }}}
 
 " Gundo setings{{{
@@ -191,6 +195,19 @@ let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
 let g:delimitMate_balance_matchpairs = 1
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
+" Called once right before you start selecting multiple cursors
+function! Multiple_cursors_before()
+  if exists(':NeoCompleteLock')==2
+    exe 'NeoCompleteLock'
+  endif
+endfunction
+
+" Called once only when the multiple selection is canceled (default <Esc>)
+function! Multiple_cursors_after()
+  if exists(':NeoCompleteUnlock')==2
+    exe 'NeoCompleteUnlock'
+  endif
+endfunction
 " }}}
 
 " Listchars option {{{
@@ -229,6 +246,12 @@ hi link CSVColumnOdd  Normal
 hi link CSVColumnEven Normal
 let g:csv_highlight_column = 1
 let g:csv_autocmd_arrange = 1
+" }}}
+
+" Markdown {{{
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_json_frontmatter = 1
 " }}}
 
 source ~/.vim/keysrc.vim
