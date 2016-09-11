@@ -10,11 +10,11 @@ nnoremap ;                            :
 nnoremap <silent><F3>                 :noh<CR><Esc>
 inoremap <expr><C-g>                  neocomplete#undo_completion()
 inoremap <expr><C-k>                  neocomplete#complete_common_string()
-nnoremap <silent><F2>                 :set invpaste paste?<CR>
+nnoremap <silent><F4>                 :set invpaste paste?<CR>
 nnoremap <silent><C-a>                :GundoToggle<CR>
 inoremap <silent><C-a>                <C-o>:GundoToggle<CR>
 map <silent><C-e>                     :NERDTreeToggle<CR>
-map <silent><C-n>                     :ene<CR>
+map <silent><F2>                     :ene<CR>
 nmap <silent>q                        :conf q<CR>
 nmap                                <nop>
 imap <silent>                       <C-o>:conf q<CR>
