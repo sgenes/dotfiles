@@ -162,11 +162,11 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_by_filename = 1
 let g:ctrlp_regexp = 1
 let g:ctrlp_use_caching = 1
-let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_show_hidden = 0
 set wildignore+=*/.gvfs/*,*/.rpmdb/*,*/.cache/*,*/.gconf/*,*/tmp/*,*/.adobe/*,*/.dbus/*,*/.compiz/*,*/.ghc/*,*/.gimp-2.8/*,*/.gnome*/*,*/.gnupg/*,*/.go/*,*/.goldendict/*,*/.google*/*,*/.mozilla/*,*/.ordbrand/*,*/.purple/*,*/.rvm/*,*/.rsvm/*,*/.nvm/*,*/.*cache/*,*/Music/*,*/Videos/*,*/Documents/BOOKS/*,*/Documents/RESEARCH*/*,*/Documents/TORRENTS/*,*/WINDOWS/*,*/PAK/*
-set wildignore+=*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.JPG,*.jpeg,*.JPEG,*.xpm,*.gif,*.pdf,*.beam,*.mp3,*.ogg,*.mp4,*.m4a,*.mkv,*.mov,*.flv,*.oga,*.ogv,*.aac,*.mid,*.flac,*.wav,*.snip,*.docx,*.doc,*.ppt,*.pptx,*.odt,*.xls,*.xlsx,*.odp,*.ods,*.old,*.log,*.tar.*,*.gz,*.zip,*.deb,*.rar,*.jar,*.pyc,*.pyo,*.gzip,*.7z,*.torrent,*.added,*cache,*.BIOS,*.apk,*.aux,*.gp*,*.sav,*.pls,*.sps,*.cab,*.CAB,*.msi,*.exe,*.epub
-let g:ctrlp_match_window = 'bottom,order:ttb'
+set wildignore+=*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.JPG,*.jpeg,*.JPEG,*.xpm,*.gif,*.pdf,*.beam,*.mp3,*.ogg,*.mp4,*.m4a,*.mkv,*.mov,*.flv,*.oga,*.ogv,*.aac,*.mid,*.flac,*.wav,*.docx,*.doc,*.ppt,*.pptx,*.odt,*.xls,*.xlsx,*.odp,*.ods,*.old,*.log,*.tar.*,*.gz,*.zip,*.deb,*.rar,*.jar,*.pyc,*.pyo,*.gzip,*.7z,*.torrent,*.added,*cache,*.BIOS,*.apk,*.aux,*.gp*,*.sav,*.pls,*.sps,*.cab,*.CAB,*.msi,*.exe,*.epub
+let g:ctrlp_match_window = 'bottom,order:btt'
 " }}}
 
 " UltiSnips settings: {{{
