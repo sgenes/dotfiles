@@ -106,7 +106,10 @@ let g:airline#extensions#hunks#non_zero_only = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-let g:airline_symbols.maxlinenr = ''
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
 let g:airline_symbols.maxlinenr = ''
 " }}}
 
@@ -135,6 +138,7 @@ let g:neocomplete#force_omni_input_patterns.ruby =
       \ '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplete#force_omni_input_patterns.python =
       \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+let g:neosnippet#data_directory = "~/.cache/neosnippet"
 " }}}
 
 " NERDTree settings: {{{
@@ -148,12 +152,13 @@ let NERDTreeHijackNetrw=1
 " NERDCommenter settings: {{{
 let NERDSpaceDelims=1
 let NERDRemoveExtraSpaces=1
+let g:NERDAltDelims_haskell=1
 " }}}
 
 " DevIcons settings: {{{
-let g:WebDevIconsUnicodeDecorateFolderNodes = 0
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+" let g:WebDevIconsUnicodeDecorateFolderNodes = 0
+" let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+" let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 " }}}
 
 " CtrlP settings: {{{
@@ -198,6 +203,7 @@ let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
 " let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
 " let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 " let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+let g:delimitMate_matchpairs = "(:),[:],{:}"
 let g:delimitMate_balance_matchpairs = 1
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
@@ -244,7 +250,8 @@ au FileType           ruby,eruby    let g:rubycomplete_classes_in_global = 1
 au FileType           ruby,eruby    let g:rubycomplete_rails = 1
 au FileType           cpp           setlocal omnifunc=omni#cpp#complete#Main
 au FileType           python        setlocal omnifunc=jedi#completions
-
+" au FileType           *             let delimitMate_matchpairs="(:),{:},[:]"
+au FileType           ruby,eruby    let b:delimitMate_quotes="\" ' ` |"
 " }}}
 
 " CSV Plugin {{{

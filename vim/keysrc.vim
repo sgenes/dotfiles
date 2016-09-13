@@ -14,7 +14,7 @@ nnoremap <silent><F4>                 :set invpaste paste?<CR>
 nnoremap <silent><C-a>                :GundoToggle<CR>
 inoremap <silent><C-a>                <C-o>:GundoToggle<CR>
 map <silent><C-e>                     :NERDTreeToggle<CR>
-map <silent><F2>                     :ene<CR>
+map <silent><F2>                      :ene<CR>
 nmap <silent>q                        :conf q<CR>
 nmap                                <nop>
 imap <silent>                       <C-o>:conf q<CR>
