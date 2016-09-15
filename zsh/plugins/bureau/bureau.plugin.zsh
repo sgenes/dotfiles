@@ -3,6 +3,7 @@
 setopt prompt_subst
 
 ZSH_THEME_NVM_PROMPT_PREFIX="[%{$fg[green]%}%B⬡ %b "
+# ZSH_THEME_NVM_PROMPT_PREFIX="[%{$fg[green]%}%Bnode:%b "
 ZSH_THEME_NVM_PROMPT_SUFFIX="%{$reset_color%}]"
 
 ### Git [git: master ▾●]
@@ -144,7 +145,8 @@ _1LEFT="$_USERNAME $_PATH"
 
 PROMPT="$_1LEFT
 $_LIBERTY "
-RPROMPT='$(nvm_prompt_info)$(bureau_git_prompt)$(return_status)$(suspend_symbol)$(ssh_prompt_info)'
+# RPROMPT='$(nvm_prompt_info)$(bureau_git_prompt)$(return_status)$(suspend_symbol)$(ssh_prompt_info)'
+RPROMPT='$(nvm_prompt_info)$(bureau_git_prompt)$(suspend_symbol)$(ssh_prompt_info)'
 PROMPT2='$_LIBERTY2 '
 PROMPT3='$_LIBERTY3 '
 SPROMPT="Correct $fg_bold[red]%R$reset_color to $fg_bold[green]%r$reset_color [Yes, No, Abort, Edit]? "

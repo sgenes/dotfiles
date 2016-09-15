@@ -52,6 +52,7 @@ export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 export MANPATH="$HOME/.rvm/man:$MANPATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+fpath+=/home/shinzjr/.zsh/function
 source $ZSH/antigen-hs/init.zsh
 source $ZSH/function.zsh
 # source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
