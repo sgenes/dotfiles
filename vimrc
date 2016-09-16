@@ -91,6 +91,10 @@ let g:syntastic_perl_checkers = ['perl']
 let g:syntastic_r_checkers = ['lintr']
 let g:syntastic_enable_r_lintr_checker = 1
 let g:syntastic_enable_perl_checker = 1
+let g:syntastic_css_checkers = ['']
+let g:syntastic_haskell_hdevtools_quiet_messages = {
+  \ "type": "error",
+  \ "regex": '\mAntigen' }
 " }}}
 
 " Airline settings: {{{

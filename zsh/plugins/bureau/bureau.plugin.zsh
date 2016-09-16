@@ -8,7 +8,7 @@ ZSH_THEME_NVM_PROMPT_SUFFIX="%{$reset_color%}]"
 
 ### Git [git: master ▾●]
 
-ZSH_THEME_GIT_PROMPT_PREFIX="[%{$fg_bold[green]%}git: %{$reset_color%}%{$fg_bold[black]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="[%{$fg_bold[green]%}git: %{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}]"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✓%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[cyan]%}▴%{$reset_color%}"
