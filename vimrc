@@ -4,7 +4,7 @@
 " License: MIT                  "
 " ============================= "
 
-" vim-plug
+" vim-plug {{{
 set nocompatible
 
 call plug#begin('~/.vim/bundle')
@@ -42,8 +42,9 @@ Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/vim-easy-align'
 
 call plug#end()
+" }}}
 
-" UI settings: {{{
+" UI settings {{{
 scriptencoding utf-8
 syntax on
 " set notitle
@@ -77,7 +78,7 @@ let g:gitgutter_signs=0
 colorscheme MoonMaster
 " }}}
 
-" Syntastic settings: {{{
+" Syntastic settings {{{
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -98,7 +99,7 @@ let g:syntastic_haskell_hdevtools_quiet_messages = {
   \ "regex": '\mAntigen' }
 " }}}
 
-" Airline settings: {{{
+" Airline settings {{{
 let g:airline#extensions#quickfix#quickfix_text = "Quickfix"
 let g:airline#extensions#quickfix#location_text = "Location"
 let g:airline_powerline_fonts = 1
@@ -118,7 +119,7 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.maxlinenr = ''
 " }}}
 
-" Neocomplete settings: {{{
+" Neocomplete settings {{{
 set tags+=~/.vim/tags/cpp
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 2
@@ -146,7 +147,7 @@ let g:neocomplete#force_omni_input_patterns.python =
 let g:neosnippet#data_directory = "~/.cache/neosnippet"
 " }}}
 
-" NERDTree settings: {{{
+" NERDTree settings {{{
 let NERDTreeMinimalUI=1
 let NERDTreeStatusLine=-1
 let NERDTreeWinSize=30
@@ -154,19 +155,13 @@ let NERDTreeHijackNetrw=1
 " let NERDTreeMapOpenInTab='<CR>'
 " }}}
 
-" NERDCommenter settings: {{{
+" NERDCommenter settings {{{
 let NERDSpaceDelims=1
 let NERDRemoveExtraSpaces=1
 let g:NERDAltDelims_haskell=1
 " }}}
 
-" DevIcons settings: {{{
-" let g:WebDevIconsUnicodeDecorateFolderNodes = 0
-" let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-" let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
-" }}}
-
-" CtrlP settings: {{{
+" CtrlP settings {{{
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_by_filename = 1
@@ -179,19 +174,19 @@ set wildignore+=*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.JPG,*.j
 let g:ctrlp_match_window = 'bottom,order:btt'
 " }}}
 
-" UltiSnips settings: {{{
+" UltiSnips settings {{{
 " let g:UltiSnipsExpandTrigger="<TAB>"
 " let g:UltiSnipsJumpForwardTrigger="<TAB>"
 " let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 " }}}
 
-" Gundo setings{{{
+" Gundo setings {{{
 let g:gundo_help = 0
 let g:gundo_width = 30
 let g:gundo_preview_height = 10
 " }}}
 
-" Misc settings: {{{
+" Misc settings {{{
 let g:username='Tamado Ramot Sitohang'
 let g:email='tamado.sitohang@gmail.com'
 set pastetoggle=<F2>
@@ -235,15 +230,27 @@ endif
 set list
 " }}}
 
-" Fold text: {{{
+" Fold text {{{
 function! MyFoldText()
-    let lines = printf('%' . len(line('$')) . 'd', v:foldend - v:foldstart + 1)
-    let line  = substitute(foldtext(), '^+-\+ *\d\+ lines: ', '', '')
-    return '[ ' . lines . ' lines: ' . line . ' ]'
+  let lines = printf('%' . len(line('$')) . 'd', v:foldend - v:foldstart + 1)
+  let line  = substitute(foldtext(), '^+-\+ *\d\+ lines: ', '', '')
+  return '[ ' . lines . ' lines: ' . line . ' ]'
+endfunction
+
+
+" }}}
+
+" Pretty Title {{{
+function! BufferName()
+  let name_buf = expand("%:t")
+  if name_buf == ""
+    let name_buf = "[NO NAME]"
+  endif
+  return name_buf
 endfunction
 " }}}
 
-" Autocommand setings: {{{
+" Autocommand setings {{{
 au BufWritePre        *.*           :%s/\s\+$//e
 au FileType           *             setlocal formatoptions-=ro
 au BufEnter           *             if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -257,7 +264,8 @@ au FileType           cpp           setlocal omnifunc=omni#cpp#complete#Main
 au FileType           python        setlocal omnifunc=jedi#completions
 " au FileType           *             let delimitMate_matchpairs="(:),{:},[:]"
 au FileType           ruby,eruby    let b:delimitMate_quotes="\" ' ` |"
-au BufEnter           *             let &titlestring = expand("%:t"). "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
+au BufEnter           *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
+au BufWritePost       *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
 " }}}
 
 " CSV Plugin {{{
