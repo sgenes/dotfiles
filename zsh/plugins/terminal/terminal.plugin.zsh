@@ -37,7 +37,7 @@ function omz_termsupport_precmd {
   fi
 
   # title $ZSH_THEME_TERM_TAB_TITLE_IDLE $ZSH_THEME_TERM_TITLE_IDLE
-  print -Pn '\e]0;%c  —  %m  —  $COLUMNS✕$LINES\a'
+  print -Pn '\e]0;%c  —  zsh  —  $COLUMNS✕$LINES\a'
 }
 
 # Runs before executing the command
@@ -54,7 +54,7 @@ function omz_termsupport_preexec {
   # local LINE="${2:gs/%/%%}"
 
   # title '$CMD' '%100>...>$LINE%<<'
-  print -Pn '\e]0;$2  —  %m  —  $COLUMNS✕$LINES\a'
+  print -Pn '\e]0;$2  —  zsh  —  $COLUMNS✕$LINES\a'
   # echo -nE "$2  —  $(hostname -s)"
   # print -Pn "\a"
 }

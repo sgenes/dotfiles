@@ -46,6 +46,7 @@ call plug#end()
 " UI settings: {{{
 scriptencoding utf-8
 syntax on
+" set notitle
 set virtualedit=onemore
 set ts=4
 set sts=4
@@ -256,6 +257,7 @@ au FileType           cpp           setlocal omnifunc=omni#cpp#complete#Main
 au FileType           python        setlocal omnifunc=jedi#completions
 " au FileType           *             let delimitMate_matchpairs="(:),{:},[:]"
 au FileType           ruby,eruby    let b:delimitMate_quotes="\" ' ` |"
+au BufEnter           *             let &titlestring = expand("%:t"). "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
 " }}}
 
 " CSV Plugin {{{
