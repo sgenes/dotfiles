@@ -266,6 +266,7 @@ au FileType           python        setlocal omnifunc=jedi#completions
 au FileType           ruby,eruby    let b:delimitMate_quotes="\" ' ` |"
 au BufEnter           *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
 au BufWritePost       *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
+au VimResized         *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
 " }}}
 
 " CSV Plugin {{{

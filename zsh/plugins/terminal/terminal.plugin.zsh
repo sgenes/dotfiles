@@ -37,7 +37,7 @@ function omz_termsupport_precmd {
   fi
 
   # title $ZSH_THEME_TERM_TAB_TITLE_IDLE $ZSH_THEME_TERM_TITLE_IDLE
-  print -Pn '\e]0;%c  —  zsh  —  $COLUMNS✕$LINES\a'
+  print -Pn '\e]0;%1d  —  zsh  —  $COLUMNS✕$LINES\a'
 }
 
 # Runs before executing the command
