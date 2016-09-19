@@ -40,6 +40,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/vim-easy-align'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 " }}}
@@ -186,6 +187,12 @@ let g:gundo_width = 30
 let g:gundo_preview_height = 10
 " }}}
 
+" DevIcons settings {{{
+let g:WebDevIconsUnicodeDecorateFolderNodes = 0
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+" }}}
+
 " Misc settings {{{
 let g:username='Tamado Ramot Sitohang'
 let g:email='tamado.sitohang@gmail.com'
@@ -267,6 +274,7 @@ au FileType           ruby,eruby    let b:delimitMate_quotes="\" ' ` |"
 au BufEnter           *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
 au BufWritePost       *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
 au VimResized         *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
+au FileType           nerdtree      setlocal nolist
 " }}}
 
 " CSV Plugin {{{
