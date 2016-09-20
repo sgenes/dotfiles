@@ -40,7 +40,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/vim-easy-align'
-Plug 'ryanoasis/vim-devicons'
+Plug '~/.vim/bundle/vim-devicons'
 
 call plug#end()
 " }}}
