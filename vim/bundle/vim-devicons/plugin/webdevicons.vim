@@ -256,7 +256,19 @@ function! s:setDictionaries()
         \ 'psd'      : '',
         \ 'psb'      : '',
         \ 'ts'       : '',
-        \ 'jl'       : ''
+        \ 'mkv'      : '',
+        \ 'mp4'      : '',
+        \ '3gp'      : '',
+        \ 'wmv'      : '',
+        \ 'ogv'      : '',
+        \ 'jl'       : '',
+        \ 'ogg'      : '',
+        \ 'mp3'      : '',
+        \ 'flac'     : '',
+        \ 'oga'      : '',
+        \ 'aac'      : '',
+        \ 'wav'      : '',
+        \ 'm4a'      : ''
         \}
 
   let s:file_node_exact_matches = {
