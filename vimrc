@@ -122,6 +122,7 @@ let g:airline_symbols.maxlinenr = ''
 
 " Neocomplete settings {{{
 set tags+=~/.vim/tags/cpp
+set completeopt-=preview
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 2
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
@@ -130,6 +131,7 @@ let g:neocomplete#enable_auto_close_preview = 1
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#smart_auto_mappings = 0
+let g:jedi#popup_on_dot = 0
 if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
@@ -144,7 +146,8 @@ let g:neocomplete#force_omni_input_patterns.objcpp =
 let g:neocomplete#force_omni_input_patterns.ruby =
       \ '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplete#force_omni_input_patterns.python =
-      \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+      \ '\h\w*\|[^. \t]\.\w*'
+      " \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 let g:neosnippet#data_directory = "~/.cache/neosnippet"
 " }}}
 
