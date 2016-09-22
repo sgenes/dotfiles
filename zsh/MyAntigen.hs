@@ -27,7 +27,6 @@ bundles =
   , local "/home/shinzjr/.zsh/plugins/nvm"
   , local "/home/shinzjr/.zsh/plugins/theme"
   , local "/home/shinzjr/.zsh/plugins/terminal"
-  , local "/home/shinzjr/.zsh/plugins/bureau"
   , local "/home/shinzjr/.zsh/plugins/custom"
   , local "/home/shinzjr/.zsh/plugins/colored-man-pages"
   , local "/home/shinzjr/.zsh/plugins/fancy-ctrl-z"
@@ -40,7 +39,9 @@ bundles =
   , local "/home/shinzjr/.zsh/plugins/completion"
   , local "/home/shinzjr/.zsh/plugins/colors"
   , local "/home/shinzjr/.zsh/plugins/history-substring-search"
-  {- , bundle "mafredri/zsh-async" -}
+  , local "/home/shinzjr/.zsh/plugins/bureau"
+  -- , bundle "mafredri/zsh-async"
+  -- , bundle "sindresorhus/pure"
 
 
   -- If you use a plugin that doesn't have a *.plugin.zsh file. You can set a

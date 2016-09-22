@@ -146,8 +146,8 @@ let g:neocomplete#force_omni_input_patterns.objcpp =
 let g:neocomplete#force_omni_input_patterns.ruby =
       \ '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplete#force_omni_input_patterns.python =
-      \ '\h\w*\|[^. \t]\.\w*'
-      " \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+      \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+      " \ '\h\w*\|[^. \t]\.\w*'
 let g:neosnippet#data_directory = "~/.cache/neosnippet"
 " }}}
 
@@ -176,12 +176,6 @@ let g:ctrlp_show_hidden = 0
 set wildignore+=*/.gvfs/*,*/.rpmdb/*,*/.cache/*,*/.gconf/*,*/tmp/*,*/.adobe/*,*/.dbus/*,*/.compiz/*,*/.ghc/*,*/.gimp-2.8/*,*/.gnome*/*,*/.gnupg/*,*/.go/*,*/.goldendict/*,*/.google*/*,*/.mozilla/*,*/.ordbrand/*,*/.purple/*,*/.rvm/*,*/.rsvm/*,*/.nvm/*,*/.*cache/*,*/Music/*,*/Videos/*,*/Documents/BOOKS/*,*/Documents/RESEARCH*/*,*/Documents/TORRENTS/*,*/WINDOWS/*,*/PAK/*
 set wildignore+=*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.JPG,*.jpeg,*.JPEG,*.xpm,*.gif,*.pdf,*.beam,*.mp3,*.ogg,*.mp4,*.m4a,*.mkv,*.mov,*.flv,*.oga,*.ogv,*.aac,*.mid,*.flac,*.wav,*.docx,*.doc,*.ppt,*.pptx,*.odt,*.xls,*.xlsx,*.odp,*.ods,*.old,*.log,*.tar.*,*.gz,*.zip,*.deb,*.rar,*.jar,*.pyc,*.pyo,*.gzip,*.7z,*.torrent,*.added,*cache,*.BIOS,*.apk,*.aux,*.gp*,*.sav,*.pls,*.sps,*.cab,*.CAB,*.msi,*.exe,*.epub
 let g:ctrlp_match_window = 'bottom,order:btt'
-" }}}
-
-" UltiSnips settings {{{
-" let g:UltiSnipsExpandTrigger="<TAB>"
-" let g:UltiSnipsJumpForwardTrigger="<TAB>"
-" let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 " }}}
 
 " Gundo setings {{{
@@ -214,7 +208,7 @@ let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
 " let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 " let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 let g:delimitMate_matchpairs = "(:),[:],{:}"
-let g:delimitMate_balance_matchpairs = 1
+let g:delimitMate_balance_matchpairs = 0
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
 " Called once right before you start selecting multiple cursors
