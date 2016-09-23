@@ -20,6 +20,11 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 # OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+if [[ $(todo) != '' ]]; then
+	echo "TODO:"
+	todo --filter -done
+fi
+
 ZSH="$HOME/.zsh"
 
 if [[ -z "$ZSH_CACHE_DIR" ]]; then
@@ -55,6 +60,7 @@ export MANPATH="$HOME/.rvm/man:$MANPATH"
 fpath+=/home/shinzjr/.zsh/function
 source $ZSH/antigen-hs/init.zsh
 source $ZSH/function.zsh
+source $ZSH/autopair.zsh
 # source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source /etc/bash_completion.d/virtualenvwrapper
 

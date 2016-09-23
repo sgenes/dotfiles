@@ -74,7 +74,7 @@ set wrapmargin=0
 set nolinebreak
 set autoread
 set hidden
-set noshowmode
+" set noshowmode
 let g:gitgutter_signs=0
 colorscheme MoonMaster
 " }}}
