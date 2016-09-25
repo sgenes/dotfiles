@@ -24,8 +24,8 @@ function title {
   fi
 }
 
-# ZSH_THEME_TERM_TAB_TITLE_IDLE="%c — %m" #15 char left truncated PWD
-# ZSH_THEME_TERM_TITLE_IDLE="%c"
+ZSH_THEME_TERM_TAB_TITLE_IDLE="%1d  —  zsh  —  $COLUMNS✕$LINES" #15 char left truncated PWD
+ZSH_THEME_TERM_TITLE_IDLE="%1d  —  zsh  —  $COLUMNS✕$LINES"
 # ZSH_THEME_TERM_TITLE_IDLE="%c — %m"
 # Avoid duplication of directory in terminals with independent dir display
 
@@ -36,8 +36,8 @@ function omz_termsupport_precmd {
     return
   fi
 
-  # title $ZSH_THEME_TERM_TAB_TITLE_IDLE $ZSH_THEME_TERM_TITLE_IDLE
-  print -Pn '\e]0;%1d  —  zsh  —  $COLUMNS✕$LINES\a'
+  title $ZSH_THEME_TERM_TAB_TITLE_IDLE $ZSH_THEME_TERM_TITLE_IDLE
+  # print -Pn "\e]0;%1d  —  zsh  —  $COLUMNS✕$LINES\a"
 }
 
 # Runs before executing the command
@@ -50,11 +50,11 @@ function omz_termsupport_preexec {
   setopt extended_glob
 
   # cmd name only, or if this is sudo or ssh, the next cmd
-  # local CMD=${1[(wr)^(*=*|sudo|ssh|mosh|rake|-*)]:gs/%/%%}
-  # local LINE="${2:gs/%/%%}"
+  local CMD=${1[(wr)^(*=*|sudo|ssh|mosh|rake|-*)]:gs/%/%%}
+  local LINE="${2:gs/%/%%}"
 
-  # title '$CMD' '%100>...>$LINE%<<'
-  print -Pn '\e]0;$2  —  zsh  —  $COLUMNS✕$LINES\a'
+  title '$CMD  —  zsh  —  $COLUMNS✕$LINES' '$CMD  —  zsh  —  $COLUMNS✕$LINES'
+  # print -Pn "\e]0;$2  —  zsh  —  $COLUMNS✕$LINES\a"
   # echo -nE "$2  —  $(hostname -s)"
   # print -Pn "\a"
 }
