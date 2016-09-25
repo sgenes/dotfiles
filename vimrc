@@ -4,6 +4,8 @@
 " License: MIT                  "
 " ============================= "
 
+if &term ==# 'xterm-256color'
+
 " vim-plug {{{
 set nocompatible
 
@@ -288,4 +290,6 @@ let g:vim_markdown_json_frontmatter = 1
 " }}}
 
 source ~/.vim/keysrc.vim
+
+endif
 " vim: fdm=marker
