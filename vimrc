@@ -76,6 +76,7 @@ set wrapmargin=0
 set nolinebreak
 set autoread
 set hidden
+set shortmess+=c
 " set noshowmode
 let g:gitgutter_signs=0
 colorscheme MoonMaster
@@ -125,6 +126,7 @@ let g:airline_symbols.maxlinenr = ''
 " Neocomplete settings {{{
 set tags+=~/.vim/tags/cpp
 set completeopt-=preview
+set completeopt+=noinsert
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 2
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
@@ -148,8 +150,8 @@ let g:neocomplete#force_omni_input_patterns.objcpp =
 let g:neocomplete#force_omni_input_patterns.ruby =
       \ '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplete#force_omni_input_patterns.python =
-      \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
-      " \ '\h\w*\|[^. \t]\.\w*'
+      \ '\h\w*\|[^. \t]\.\w*'
+" \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 let g:neosnippet#data_directory = "~/.cache/neosnippet"
 " }}}
 
