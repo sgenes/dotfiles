@@ -21,6 +21,7 @@ source /home/shinzjr/Documents/DOTFILES/zsh/plugins/completion/completion.plugin
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/colors/zsh-syntax-highlighting.plugin.zsh
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/history-substring-search/history-substring-search.plugin.zsh
 source /home/shinzjr/Documents/DOTFILES/zsh/plugins/bureau/bureau.plugin.zsh
+source /home/shinzjr/Documents/DOTFILES/zsh/plugins/thefuck/thefuck.plugin.zsh
 fpath+=/home/shinzjr/.zsh/plugins/zsh-autosuggestions
 fpath+=/home/shinzjr/.zsh/plugins/key-bindings
 fpath+=/home/shinzjr/.zsh/plugins/misc
@@ -42,3 +43,4 @@ fpath+=/home/shinzjr/.zsh/plugins/completion
 fpath+=/home/shinzjr/.zsh/plugins/colors
 fpath+=/home/shinzjr/.zsh/plugins/history-substring-search
 fpath+=/home/shinzjr/.zsh/plugins/bureau
+fpath+=/home/shinzjr/.zsh/plugins/thefuck

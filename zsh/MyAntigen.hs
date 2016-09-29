@@ -40,6 +40,7 @@ bundles =
   , local "/home/shinzjr/.zsh/plugins/colors"
   , local "/home/shinzjr/.zsh/plugins/history-substring-search"
   , local "/home/shinzjr/.zsh/plugins/bureau"
+  , local "/home/shinzjr/.zsh/plugins/thefuck"
   -- , bundle "mafredri/zsh-async"
   -- , bundle "sindresorhus/pure"
 
