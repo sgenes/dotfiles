@@ -11,15 +11,15 @@ nnoremap <silent><F3>                 :noh<CR><Esc>
 inoremap <expr><C-g>                  neocomplete#undo_completion()
 inoremap <expr><C-k>                  neocomplete#complete_common_string()
 nnoremap <silent><F4>                 :set invpaste paste?<CR>
-nnoremap <silent><C-a>                :GundoToggle<CR>
-inoremap <silent><C-a>                <C-o>:GundoToggle<CR>
+nnoremap <silent><F5>                 :GundoToggle<CR>
+inoremap <silent><F5>                 <C-o>:GundoToggle<CR>
 map <silent><C-e>                     :NERDTreeToggle<CR>
 map <silent><F2>                      :ene<CR>
 nmap <silent>q                        :conf q<CR>
 nmap                                <nop>
 imap <silent>                       <C-o>:conf q<CR>
 nmap <silent>                       :w!<CR>
-inoremap <silent><c-s>                <C-o>:update<CR>
+inoremap <silent><C-s>                <C-o>:update<CR>
 nmap e                                <C-R>
 imap <silent>                       <C-o>u
 imap <silent>                       <C-o><C-R>
@@ -31,9 +31,9 @@ nmap <silent>                       ,ci
 vmap <silent>                       ,ci
 imap <silent>                       <C-o>,ci
 nmap                                %
-nnoremap <silent>-                    <C-w>-
-nnoremap <silent>+                    <C-w>+
-nnoremap <silent>=                    <C-w>=
+nnoremap <silent>-                  <C-w>-
+nnoremap <silent>+                  <C-w>+
+nnoremap <silent>=                  <C-w>=
 map <C-S-Down>                        <C-w><C-w>
 map <C-S-Up>                          <C-w>w
 nmap <silent>                       :bp<CR>
