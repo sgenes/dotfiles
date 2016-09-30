@@ -101,6 +101,9 @@ let g:syntastic_css_checkers = ['']
 let g:syntastic_haskell_hdevtools_quiet_messages = {
   \ "type": "error",
   \ "regex": '\mAntigen' }
+let g:syntastic_xml_xmllint_quiet_messages = {
+  \ "type": "error",
+  \ "regex": "\mfonts.dtd" }
 " }}}
 
 " Airline settings {{{
