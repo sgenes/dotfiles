@@ -37,7 +37,7 @@ export WORKON_HOME=$HOME/Documents/WORKSPACE/VIRTUALENV
 export PROJECT_HOME=$HOME/Documents/WORKSPACE/PYTHON
 export PATH="$HOME/.bin:$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
 export GOPATH="$HOME/.go"
-# export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS"
 export PROMPT_EOL_MARK=""
 export PYTHONSTARTUP=~/.pythonrc
