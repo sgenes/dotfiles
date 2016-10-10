@@ -247,8 +247,6 @@ function! MyFoldText()
   let line  = substitute(foldtext(), '^+-\+ *\d\+ lines: ', '', '')
   return '[ ' . lines . ' lines: ' . line . ' ]'
 endfunction
-
-
 " }}}
 
 " Pretty Title {{{
@@ -297,4 +295,6 @@ let g:vim_markdown_json_frontmatter = 1
 source ~/.vim/keysrc.vim
 
 endif
+
+set t_RV=
 " vim: fdm=marker
