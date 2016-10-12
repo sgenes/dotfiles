@@ -29,5 +29,5 @@ zle -N insert-cycledright
 
 # add key bindings for iTerm2
 
-bindkey "\e[1;6C" insert-cycledleft
-bindkey "\e[1;6D" insert-cycledright
+bindkey "\e[1;6C" insert-cycledright
+bindkey "\e[1;6D" insert-cycledleft

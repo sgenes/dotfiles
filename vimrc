@@ -153,7 +153,7 @@ let g:neocomplete#force_omni_input_patterns.objcpp =
 let g:neocomplete#force_omni_input_patterns.ruby =
       \ '[^. *\t]\.\w*\|\h\w*::'
 let g:neocomplete#force_omni_input_patterns.python =
-      \ '\h\w*\|[^. \t]\.\w*'
+      \ '[^. *\t]\.\w*\|\h\w*\'
 " \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 let g:neosnippet#data_directory = "~/.cache/neosnippet"
 " }}}
