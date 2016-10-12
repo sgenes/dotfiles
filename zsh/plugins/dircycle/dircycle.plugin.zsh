@@ -12,7 +12,7 @@ insert-cycledleft () {
 	emulate -L zsh
 	setopt nopushdminus
 
-	builtin pushd -q +1 &>/dev/null || true
+	builtin pushd -q -0 &>/dev/null || true
 	zle reset-prompt
 }
 zle -N insert-cycledleft
@@ -21,7 +21,7 @@ insert-cycledright () {
 	emulate -L zsh
 	setopt nopushdminus
 
-	builtin pushd -q -0 &>/dev/null || true
+	builtin pushd -q +1 &>/dev/null || true
 	zle reset-prompt
 }
 zle -N insert-cycledright
@@ -29,5 +29,5 @@ zle -N insert-cycledright
 
 # add key bindings for iTerm2
 
-bindkey "\e[1;6C" insert-cycledright
-bindkey "\e[1;6D" insert-cycledleft
+bindkey "\e[1;6C" insert-cycledleft
+bindkey "\e[1;6D" insert-cycledright
