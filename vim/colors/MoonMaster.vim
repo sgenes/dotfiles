@@ -1185,7 +1185,7 @@ call s:HL("cssClassName", s:pink, "", "")
   " Git
   call s:HL("diffAdded", s:olive, "", "")
   call s:HL("diffRemoved", s:pink, "", "")
-  call s:HL("gitcommitSummary", "", "", "bold")
+  call s:HL("gitcommitSummary", s:blue, "", "bold")
 
 endif
 " }}}
