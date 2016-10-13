@@ -76,7 +76,7 @@ ZSH_HIGHLIGHT_STYLES[assign]=fg=10
 ZSH_HIGHLIGHT_STYLES[globbing]=fg=11
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
 
-export LESS="-~"
+export LESS="-~R"
 export VISUAL='/usr/local/bin/vim'
 export EDITOR='/usr/local/bin/vim'
 export SELECTED_EDITOR='/usr/local/bin/vim'

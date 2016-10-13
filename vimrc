@@ -71,7 +71,7 @@ set hlsearch
 set formatoptions=cql
 set sm!
 set updatetime=4000
-set nowrap
+set wrap
 set wrapmargin=0
 set nolinebreak
 set autoread
