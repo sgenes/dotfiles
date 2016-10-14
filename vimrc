@@ -277,6 +277,7 @@ au BufEnter           *             let &titlestring = BufferName() . "\ \ —\ 
 au BufWritePost       *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
 au VimResized         *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
 au FileType           nerdtree      setlocal nolist
+au VimLeavePre        *             let @/ = ""
 " }}}
 
 " CSV Plugin {{{
