@@ -58,9 +58,11 @@ export MANPATH="$HOME/.rvm/man:$MANPATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 fpath+=/home/shinzjr/.zsh/function
-source $ZSH/antigen-hs/init.zsh
 source $ZSH/function.zsh
 source $ZSH/autopair.zsh
+if [[ $TERM == "xterm-256color" ]]; then
+	source $ZSH/antigen-hs/init.zsh
+fi
 # source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source /etc/bash_completion.d/virtualenvwrapper
 
