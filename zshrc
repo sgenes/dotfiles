@@ -57,6 +57,10 @@ export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 export MANPATH="$HOME/.rvm/man:$MANPATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/shinzjr/.sdkman"
+[[ -s "/home/shinzjr/.sdkman/bin/sdkman-init.sh" ]] && source "/home/shinzjr/.sdkman/bin/sdkman-init.sh"
+
 fpath+=/home/shinzjr/.zsh/function
 source $ZSH/function.zsh
 source $ZSH/autopair.zsh
