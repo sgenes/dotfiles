@@ -51,20 +51,21 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$HOME/.local/share/man:$MANPATH"
-[[ -s /home/shinzjr/.rsvm/rsvm.sh ]] && . /home/shinzjr/.rsvm/rsvm.sh # This loads RSVM
+export PATH="$HOME/.cargo/bin:$PATH"
+# [[ -s /home/ramot/.rsvm/rsvm.sh ]] && . /home/ramot/.rsvm/rsvm.sh # This loads RSVM
 
 export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 export MANPATH="$HOME/.rvm/man:$MANPATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/shinzjr/.sdkman"
-[[ -s "/home/shinzjr/.sdkman/bin/sdkman-init.sh" ]] && source "/home/shinzjr/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="/home/ramot/.sdkman"
+[[ -s "/home/ramot/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ramot/.sdkman/bin/sdkman-init.sh"
 
-fpath+=/home/shinzjr/.zsh/function
+fpath+=/home/ramot/.zsh/function
 source $ZSH/function.zsh
 source $ZSH/autopair.zsh
-if [[ $TERM == "xterm-256color" ]]; then
+if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then
 	source $ZSH/antigen-hs/init.zsh
 fi
 # source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -73,7 +74,7 @@ fi
 setopt histignorealldups
 # setopt correct
 
-if [[ $TERM == "xterm-256color" ]]; then
+if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then
 	ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 	ZSH_HIGHLIGHT_STYLES[precommand]=fg=green
 	ZSH_HIGHLIGHT_STYLES[path]=fg=39
@@ -101,3 +102,13 @@ export DEBFULLNAME="Tamado Sitohang"
 # stop mapping Ctrl+S
 stty -ixon
 stty -ixoff
+
+# key-binding for tmux
+bindkey '\e[1~'   beginning-of-line  # Linux console
+bindkey '\e[H'    beginning-of-line  # xterm
+bindkey '\eOH'    beginning-of-line  # gnome-terminal
+bindkey '\e[2~'   overwrite-mode     # Linux console, xterm, gnome-terminal
+bindkey '\e[3~'   delete-char        # Linux console, xterm, gnome-terminal
+bindkey '\e[4~'   end-of-line        # Linux console
+bindkey '\e[F'    end-of-line        # xterm
+bindkey '\eOF'    end-of-line        # gnome-terminal

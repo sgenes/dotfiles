@@ -74,6 +74,8 @@ bindkey '\C-x\C-e' edit-command-line
 bindkey "^[m" copy-prev-shell-word
 
 # consider emacs keybindings:
+bindkey '\e[OH' beginning-of-line
+bindkey '\e[OF' end-of-line
 
 #bindkey -e  ## emacs key bindings
 #

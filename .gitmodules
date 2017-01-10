@@ -79,3 +79,6 @@
 [submodule "vim/bundle/vim-multiple-cursors"]
 	path = vim/bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors
+[submodule "vim/bundle/tmuxline.vim"]
+    path = vim/bundle/tmuxline.vim
+    url = https://github.com/edkolev/tmuxline.vim

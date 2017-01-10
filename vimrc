@@ -4,7 +4,7 @@
 " License: MIT                  "
 " ============================= "
 
-if &term ==# 'xterm-256color'
+if &term ==# 'xterm-256color' || &term ==# 'screen-256color'
 
 " vim-plug {{{
 set nocompatible
@@ -43,6 +43,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/vim-easy-align'
 Plug '~/.vim/bundle/vim-devicons'
+Plug 'edkolev/tmuxline.vim'
 
 call plug#end()
 " }}}
@@ -109,6 +110,7 @@ let g:syntastic_xml_xmllint_quiet_messages = {
 " Airline settings {{{
 let g:airline#extensions#quickfix#quickfix_text = "Quickfix"
 let g:airline#extensions#quickfix#location_text = "Location"
+let g:airline#extensions#tmuxline#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'MoonMaster'
 let g:airline#extensions#tabline#enabled = 0
@@ -124,6 +126,28 @@ let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.maxlinenr = ''
+" }}}
+
+" Tmuxline Settings {{{
+let g:tmuxline_separators = {
+  \ 'left' : ' ',
+  \ 'left_alt' : ' ',
+  \ 'right' : ' ',
+  \ 'right_alt' : ' ',
+  \ 'space' : ' '}
+" let g:tmuxline_preset = {
+  " \'b'    : '#S',
+  " \'c'    : ['#(whoami)', '#(uptime | cud -d " " -f 1,2,3)'],
+  " \'win'  : ['#I', '#W'],
+  " \'cwin' : ['#I', '#W', '#F'],
+  " \'x'    : '#(date)',
+  " \'y'    : ['%R', '%a', '%Y'],
+  " \'z'    : '#H'}
+let g:tmuxline_preset = {
+  \'a'    : '#S',
+  \'c'    : '#W [#F] - Window #I',
+  \'x'    : ' #H ',
+  \'z'    : [' %R %a %Y']}
 " }}}
 
 " Neocomplete settings {{{
