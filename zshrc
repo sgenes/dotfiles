@@ -71,7 +71,7 @@ fi
 # source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source /etc/bash_completion.d/virtualenvwrapper
 
-setopt histignorealldups
+# setopt histignorealldups
 # setopt correct
 
 if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then
