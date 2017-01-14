@@ -13,6 +13,7 @@ alias dotfiles='cd $HOME/Documents/DOTFILES'
 alias gitfolder='cd $HOME/Documents/WORKSPACE/GIT'
 alias apt='sudo apt'
 alias apt-get='sudo apt-get'
+alias snap='sudo snap'
 alias gitinit='git init && git add -A && git commit -m "Initial Commit"'
 alias ccompile='g++ -Wall '
 

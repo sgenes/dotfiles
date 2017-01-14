@@ -51,16 +51,12 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$HOME/.local/share/man:$MANPATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-# [[ -s /home/ramot/.rsvm/rsvm.sh ]] && . /home/ramot/.rsvm/rsvm.sh # This loads RSVM
 
 export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 export MANPATH="$HOME/.rvm/man:$MANPATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/ramot/.sdkman"
-[[ -s "/home/ramot/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ramot/.sdkman/bin/sdkman-init.sh"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 fpath+=/home/ramot/.zsh/function
 source $ZSH/function.zsh
