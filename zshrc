@@ -57,6 +57,7 @@ export MANPATH="$HOME/.rvm/man:$MANPATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.go/bin:$PATH"
 
 fpath+=/home/ramot/.zsh/function
 source $ZSH/function.zsh
