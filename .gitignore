@@ -12,3 +12,7 @@
 /tmp
 *.old
 *.bak
+/virtualenvs/*/bin
+/virtualenvs/*/include
+/virtualenvs/*/lib
+/virtualenvs/*/local

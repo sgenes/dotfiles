@@ -33,7 +33,7 @@ fi
 
 autoload -U colors && colors
 
-export WORKON_HOME=$HOME/Documents/WORKSPACE/VIRTUALENV
+export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Documents/WORKSPACE/PYTHON
 export PATH="$HOME/.bin:$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
 export GOPATH="$HOME/.go"
