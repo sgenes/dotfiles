@@ -1,9 +1,9 @@
-ShinzJr dotfiles
+ramottamado dotfiles
 ================
 
-![Prompt](https://gist.githubusercontent.com/ShinzJr/86ab39dd02c37da90f04211ccb7aa6e6/raw/14f39b15a3c39454db5233ddfd2b7d327312f049/s1.png)
-![Terminal](https://gist.githubusercontent.com/ShinzJr/86ab39dd02c37da90f04211ccb7aa6e6/raw/14f39b15a3c39454db5233ddfd2b7d327312f049/s2.png)
-![vimrc](https://gist.githubusercontent.com/ShinzJr/86ab39dd02c37da90f04211ccb7aa6e6/raw/14f39b15a3c39454db5233ddfd2b7d327312f049/s3.png)
+![Prompt](https://gist.githubusercontent.com/ramottamado/86ab39dd02c37da90f04211ccb7aa6e6/raw/14f39b15a3c39454db5233ddfd2b7d327312f049/s1.png)
+![Terminal](https://gist.githubusercontent.com/ramottamado/86ab39dd02c37da90f04211ccb7aa6e6/raw/14f39b15a3c39454db5233ddfd2b7d327312f049/s2.png)
+![vimrc](https://gist.githubusercontent.com/ramottamado/86ab39dd02c37da90f04211ccb7aa6e6/raw/14f39b15a3c39454db5233ddfd2b7d327312f049/s3.png)
 
 Requirements
 ------------
@@ -17,7 +17,7 @@ Install
 
 Clone:
 
-    git clone git://github.com/ShinzJr/dotfiles.github
+    git clone git://github.com/ramottamado/dotfiles.github
 
 Features
 --------
