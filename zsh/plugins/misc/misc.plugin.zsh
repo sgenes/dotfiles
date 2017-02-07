@@ -25,6 +25,8 @@ export LESS="-R"
 ## super user alias
 alias _='sudo'
 alias please='sudo'
+alias pbcopy='xclip -sel clip'
+alias pbpaste='xclip -sel clip -o'
 
 ## more intelligent acking for ubuntu users
 if which ack-grep &> /dev/null; then
