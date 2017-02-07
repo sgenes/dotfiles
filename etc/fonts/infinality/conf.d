@@ -1,1 +1,1 @@
-styles.conf.avail/osx2
+styles.conf.avail/osx
