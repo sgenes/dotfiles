@@ -82,3 +82,9 @@
 [submodule "vim/bundle/tmuxline.vim"]
     path = vim/bundle/tmuxline.vim
     url = https://github.com/edkolev/tmuxline.vim
+[submodule "vim/bundle/ale"]
+	path = vim/bundle/ale
+	url = https://github.com/w0rp/ale
+[submodule "vim/bundle/YouCompleteMe"]
+	path = vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe

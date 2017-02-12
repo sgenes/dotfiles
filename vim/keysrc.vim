@@ -8,8 +8,8 @@ let mapleader=","
 
 nnoremap ;                            :
 nnoremap <silent><F3>                 :noh<CR><Esc>
-inoremap <expr><C-g>                  neocomplete#undo_completion()
-inoremap <expr><C-k>                  neocomplete#complete_common_string()
+" inoremap <expr><C-g>                  neocomplete#undo_completion()
+" inoremap <expr><C-k>                  neocomplete#complete_common_string()
 nnoremap <silent><F4>                 :set invpaste paste?<CR>
 nnoremap <silent><F5>                 :GundoToggle<CR>
 inoremap <silent><F5>                 <C-o>:GundoToggle<CR>
@@ -43,17 +43,17 @@ nmap <silent><Del>                    :bdelete!<CR>
 " inoremap <expr><C-h>                  neocomplete#smart_close_popup()."\<C-h>"
 " inoremap <expr><BS>                   pumvisible() ? "\<C-h>=neocomplete#smart_close_popup()" : "<Plug>delimitMateBS"
 nnoremap <silent><Leader><Leader>     :noh<CR>
-imap <C-k>                            <Plug>(neosnippet_expand_or_jump)
-smap <C-k>                            <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>                            <Plug>(neosnippet_expand_target)
+" imap <C-k>                            <Plug>(neosnippet_expand_or_jump)
+" smap <C-k>                            <Plug>(neosnippet_expand_or_jump)
+" xmap <C-k>                            <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
-imap <expr><TAB>
-\ pumvisible() ? "\<C-y>" :
-\ neosnippet#expandable_or_jumpable() ?
-\    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" imap <expr><TAB>
+" \ pumvisible() ? "\<C-y>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+" \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For conceal markers.
 if has('conceal')

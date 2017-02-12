@@ -16,16 +16,18 @@ Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 Plug 'eagletmt/neco-ghc'
 " Plug 'flazz/vim-colorschemes'
-Plug 'Shougo/neocomplete.vim'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'Shougo/neoinclude.vim'
+" Plug 'Shougo/neocomplete.vim'
+" Plug 'Shougo/neosnippet.vim'
+" Plug 'Shougo/neosnippet-snippets'
+" Plug 'Shougo/neoinclude.vim'
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
+Plug 'Valloric/YouCompleteMe'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle'  }
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 " Plug 'jordwalke/VimCompleteLikeAModernEditor'
 Plug 'godlygeek/tabular'
 Plug 'sjl/gundo.vim'
@@ -36,8 +38,8 @@ Plug 'lervag/vimtex'
 Plug 'alvan/vim-closetag'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
-Plug 'sheerun/vim-polyglot'
-Plug 'davidhalter/jedi-vim'
+" Plug 'sheerun/vim-polyglot'
+" Plug 'davidhalter/jedi-vim'
 " Plug 'pangloss/vim-javascript'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'plasticboy/vim-markdown'
@@ -84,27 +86,27 @@ colorscheme MoonMaster
 " }}}
 
 " Syntastic settings {{{
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_loc_list_height=4
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_loc_list_height=4
 " let g:syntastic_error_symbol='!!'
-let g:syntastic_python_checkers = ['pyflakes']
-let g:syntastic_markdown_checkers = ['mdl']
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_html_checkers = ['jshint']
-let g:syntastic_perl_checkers = ['perl']
-let g:syntastic_r_checkers = ['lintr']
-let g:syntastic_enable_r_lintr_checker = 1
-let g:syntastic_enable_perl_checker = 1
-let g:syntastic_css_checkers = ['']
-let g:syntastic_haskell_hdevtools_quiet_messages = {
-  \ "type": "error",
-  \ "regex": '\mAntigen' }
-let g:syntastic_xml_xmllint_quiet_messages = {
-  \ "type": "error",
-  \ "regex": "\mfonts.dtd" }
+" let g:syntastic_python_checkers = ['pyflakes']
+" let g:syntastic_markdown_checkers = ['mdl']
+" let g:syntastic_javascript_checkers = ['jshint']
+" let g:syntastic_html_checkers = ['jshint']
+" let g:syntastic_perl_checkers = ['perl']
+" let g:syntastic_r_checkers = ['lintr']
+" let g:syntastic_enable_r_lintr_checker = 1
+" let g:syntastic_enable_perl_checker = 1
+" let g:syntastic_css_checkers = ['']
+" let g:syntastic_haskell_hdevtools_quiet_messages = {
+  " \ "type": "error",
+  " \ "regex": '\mAntigen' }
+" let g:syntastic_xml_xmllint_quiet_messages = {
+  " \ "type": "error",
+  " \ "regex": "\mfonts.dtd" }
 " }}}
 
 " Airline settings {{{
@@ -151,35 +153,35 @@ let g:tmuxline_preset = {
 " }}}
 
 " Neocomplete settings {{{
-set tags+=~/.vim/tags/cpp
-set completeopt-=preview
-set completeopt+=noinsert
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 2
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-let g:neocomplete#enable_auto_select = 1
-let g:neocomplete#enable_auto_close_preview = 1
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#smart_auto_mappings = 0
-let g:jedi#popup_on_dot = 0
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.c =
-      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-let g:neocomplete#force_omni_input_patterns.cpp =
-      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-let g:neocomplete#force_omni_input_patterns.objc =
-      \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)'
-let g:neocomplete#force_omni_input_patterns.objcpp =
-      \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)\|\h\w*::\w*'
-let g:neocomplete#force_omni_input_patterns.ruby =
-      \ '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplete#force_omni_input_patterns.python =
-      \ '[^. *\t]\.\w*\|\h\w*\'
+" set tags+=~/.vim/tags/cpp
+" set completeopt-=preview
+" set completeopt+=noinsert
+" let g:neocomplete#enable_at_startup = 1
+" let g:neocomplete#sources#syntax#min_keyword_length = 2
+" let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+" let g:neocomplete#enable_auto_select = 1
+" let g:neocomplete#enable_auto_close_preview = 1
+" let g:jedi#completions_enabled = 0
+" let g:jedi#auto_vim_configuration = 0
+" let g:jedi#smart_auto_mappings = 0
+" let g:jedi#popup_on_dot = 0
+" if !exists('g:neocomplete#force_omni_input_patterns')
+  " let g:neocomplete#force_omni_input_patterns = {}
+" endif
+" let g:neocomplete#force_omni_input_patterns.c =
+      " \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+" let g:neocomplete#force_omni_input_patterns.cpp =
+      " \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+" let g:neocomplete#force_omni_input_patterns.objc =
+      " \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)'
+" let g:neocomplete#force_omni_input_patterns.objcpp =
+      " \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)\|\h\w*::\w*'
+" let g:neocomplete#force_omni_input_patterns.ruby =
+      " \ '[^. *\t]\.\w*\|\h\w*::'
+" let g:neocomplete#force_omni_input_patterns.python =
+      " \ '[^. *\t]\.\w*\|\h\w*\'
 " \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
-let g:neosnippet#data_directory = "~/.cache/neosnippet"
+" let g:neosnippet#data_directory = "~/.cache/neosnippet"
 " }}}
 
 " NERDTree settings {{{
@@ -230,10 +232,10 @@ set noswapfile
 let g:closetag_filenames = "*.html,*.xhtml,*.xml,*.html.erb"
 " let g:tagbar_left = 1
 " let g:tagbar_width = 30
-let OmniCpp_NamespaceSearch = 1
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_ShowAccess = 1
-let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+" let OmniCpp_NamespaceSearch = 1
+" let OmniCpp_GlobalScopeSearch = 1
+" let OmniCpp_ShowAccess = 1
+" let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
 " let OmniCpp_MayCompleteDot = 1 " autocomplete after .
 " let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
 " let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
@@ -243,18 +245,18 @@ let g:delimitMate_balance_matchpairs = 0
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
 " Called once right before you start selecting multiple cursors
-function! Multiple_cursors_before()
-  if exists(':NeoCompleteLock')==2
-    exe 'NeoCompleteLock'
-  endif
-endfunction
+" function! Multiple_cursors_before()
+  " if exists(':NeoCompleteLock')==2
+    " exe 'NeoCompleteLock'
+  " endif
+" endfunction
 
 " Called once only when the multiple selection is canceled (default <Esc>)
-function! Multiple_cursors_after()
-  if exists(':NeoCompleteUnlock')==2
-    exe 'NeoCompleteUnlock'
-  endif
-endfunction
+" function! Multiple_cursors_after()
+  " if exists(':NeoCompleteUnlock')==2
+    " exe 'NeoCompleteUnlock'
+  " endif
+" endfunction
 " }}}
 
 " Listchars option {{{
@@ -290,11 +292,11 @@ au BufEnter           *             if (winnr("$") == 1 && exists("b:NERDTree") 
 au FileType           *             set foldtext=MyFoldText()
 au FileType           *             set foldmethod=manual
 " au BufWritePost       *.js    silent !standard-format -w %
-au FileType           ruby,eruby    let g:rubycomplete_buffer_loading = 1
-au FileType           ruby,eruby    let g:rubycomplete_classes_in_global = 1
-au FileType           ruby,eruby    let g:rubycomplete_rails = 1
-au FileType           cpp           setlocal omnifunc=omni#cpp#complete#Main
-au FileType           python        setlocal omnifunc=jedi#completions
+" au FileType           ruby,eruby    let g:rubycomplete_buffer_loading = 1
+" au FileType           ruby,eruby    let g:rubycomplete_classes_in_global = 1
+" au FileType           ruby,eruby    let g:rubycomplete_rails = 1
+" au FileType           cpp           setlocal omnifunc=omni#cpp#complete#Main
+" au FileType           python        setlocal omnifunc=jedi#completions
 " au FileType           *             let delimitMate_matchpairs="(:),{:},[:]"
 au FileType           ruby,eruby    let b:delimitMate_quotes="\" ' ` |"
 au BufEnter           *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
