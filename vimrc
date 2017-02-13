@@ -25,8 +25,8 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle'  }
-" Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdtree', { 'on' :  'NERDTreeToggle'  }
+Plug 'scrooloose/syntastic', { 'for' : 'xml' }
 Plug 'w0rp/ale'
 " Plug 'jordwalke/VimCompleteLikeAModernEditor'
 Plug 'godlygeek/tabular'
@@ -55,11 +55,11 @@ scriptencoding utf-8
 syntax on
 " set notitle
 set virtualedit=onemore
-set ts=4
-set sts=4
-set sw=4
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set expandtab
-set ls=2
+set laststatus=2
 " set t_Co=256
 set termguicolors
 set background=dark
@@ -69,10 +69,10 @@ set switchbuf+=usetab,newtab
 set grepprg=grep\ -nH\ $*
 set cursorline
 set ttimeoutlen=50
-set scs
+set smartcase
 set hlsearch
 set formatoptions=cql
-set sm!
+set showmatch!
 set updatetime=4000
 set nowrap
 " set wrapmargin=0
@@ -86,8 +86,8 @@ colorscheme MoonMaster
 " }}}
 
 " Airline settings {{{
-let g:airline#extensions#quickfix#quickfix_text = "Quickfix"
-let g:airline#extensions#quickfix#location_text = "Location"
+let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
+let g:airline#extensions#quickfix#location_text = 'Location'
 let g:airline#extensions#tmuxline#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'MoonMaster'
@@ -171,16 +171,16 @@ set completeopt-=preview
 " }}}
 
 " NERDTree settings {{{
-let NERDTreeMinimalUI=1
-let NERDTreeStatusLine=-1
-let NERDTreeWinSize=30
-let NERDTreeHijackNetrw=1
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeStatusLine=-1
+let g:NERDTreeWinSize=30
+let g:NERDTreeHijackNetrw=1
 " let NERDTreeMapOpenInTab='<CR>'
 " }}}
 
 " NERDCommenter settings {{{
-let NERDSpaceDelims=1
-let NERDRemoveExtraSpaces=1
+let g:NERDSpaceDelims=1
+let g:NERDRemoveExtraSpaces=1
 let g:NERDAltDelims_haskell=1
 " }}}
 
@@ -216,7 +216,7 @@ let g:ycm_python_binary_path = 'python'
 set pastetoggle=<F2>
 set nobackup
 set noswapfile
-let g:closetag_filenames = "*.html,*.xhtml,*.xml,*.html.erb"
+let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.html.erb'
 " let g:tagbar_left = 1
 " let g:tagbar_width = 30
 " let OmniCpp_NamespaceSearch = 1
@@ -227,7 +227,7 @@ let g:closetag_filenames = "*.html,*.xhtml,*.xml,*.html.erb"
 " let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
 " let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 " let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-let g:delimitMate_matchpairs = "(:),[:],{:}"
+let g:delimitMate_matchpairs = '(:),[:],{:}'
 let g:delimitMate_balance_matchpairs = 0
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
@@ -256,19 +256,19 @@ set list
 
 " Fold text {{{
 function! MyFoldText()
-  let lines = printf('%' . len(line('$')) . 'd', v:foldend - v:foldstart + 1)
-  let line  = substitute(foldtext(), '^+-\+ *\d\+ lines: ', '', '')
-  return '[ ' . lines . ' lines: ' . line . ' ]'
+  let l:lines = printf('%' . len(line('$')) . 'd', v:foldend - v:foldstart + 1)
+  let l:line  = substitute(foldtext(), '^+-\+ *\d\+ lines: ', '', '')
+  return '[ ' . l:lines . ' lines: ' . l:line . ' ]'
 endfunction
 " }}}
 
 " Pretty Title {{{
 function! BufferName()
-  let name_buf = expand("%:t")
-  if name_buf == ""
-    let name_buf = "[NO NAME]"
+  let l:name_buf = expand('%:t')
+  if l:name_buf ==? ''
+    let l:name_buf = '[NO NAME]'
   endif
-  return name_buf
+  return l:name_buf
 endfunction
 " }}}
 
