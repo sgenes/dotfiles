@@ -20,7 +20,7 @@ Plug 'eagletmt/neco-ghc'
 " Plug 'Shougo/neosnippet.vim'
 " Plug 'Shougo/neosnippet-snippets'
 " Plug 'Shougo/neoinclude.vim'
-" Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -130,6 +130,12 @@ let g:tmuxline_preset = {
 
 " ALE settings {{{
 let g:ale_lint_on_save = 1
+" }}}
+
+" UltiSnips settings {{{
+let g:UltiSnipsExpandTrigger = '<C-Tab>'
+let g:UltiSnipsJumpForwardTrigger = '<C-Tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-Tab>'
 " }}}
 
 " Completion settings {{{
@@ -279,7 +285,7 @@ au FileType           python        nnoremap <Leader>= :0,$!yapf<CR>
 " au FileType           ruby,eruby    let g:rubycomplete_rails = 1
 " au FileType           cpp           setlocal omnifunc=omni#cpp#complete#Main
 " au FileType           python        setlocal omnifunc=jedi#completions
-" au FileType           *             let delimitMate_matchpairs="(:),{:},[:]"
+au FileType           *             let delimitMate_matchpairs="(:),{:},[:]"
 au FileType           ruby,eruby    let b:delimitMate_quotes="\" ' ` |"
 au BufEnter           *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
 au BufWritePost       *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"

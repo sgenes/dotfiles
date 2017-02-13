@@ -88,3 +88,6 @@
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
+[submodule "vim/bundle/YouCompleteMe"]
+	path = vim/bundle/UltiSnips
+	url = https://github.com/SirVer/UltiSnips
