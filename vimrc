@@ -38,8 +38,8 @@ Plug 'lervag/vimtex'
 Plug 'alvan/vim-closetag'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
-" Plug 'sheerun/vim-polyglot'
-" Plug 'davidhalter/jedi-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'davidhalter/jedi-vim'
 " Plug 'pangloss/vim-javascript'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'plasticboy/vim-markdown'
@@ -85,30 +85,6 @@ let g:gitgutter_signs=0
 colorscheme MoonMaster
 " }}}
 
-" Syntastic settings {{{
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_loc_list_height=4
-" let g:syntastic_error_symbol='!!'
-" let g:syntastic_python_checkers = ['pyflakes']
-" let g:syntastic_markdown_checkers = ['mdl']
-" let g:syntastic_javascript_checkers = ['jshint']
-" let g:syntastic_html_checkers = ['jshint']
-" let g:syntastic_perl_checkers = ['perl']
-" let g:syntastic_r_checkers = ['lintr']
-" let g:syntastic_enable_r_lintr_checker = 1
-" let g:syntastic_enable_perl_checker = 1
-" let g:syntastic_css_checkers = ['']
-" let g:syntastic_haskell_hdevtools_quiet_messages = {
-  " \ "type": "error",
-  " \ "regex": '\mAntigen' }
-" let g:syntastic_xml_xmllint_quiet_messages = {
-  " \ "type": "error",
-  " \ "regex": "\mfonts.dtd" }
-" }}}
-
 " Airline settings {{{
 let g:airline#extensions#quickfix#quickfix_text = "Quickfix"
 let g:airline#extensions#quickfix#location_text = "Location"
@@ -152,9 +128,13 @@ let g:tmuxline_preset = {
   \'z'    : [' %R %a %Y']}
 " }}}
 
-" Neocomplete settings {{{
+" ALE settings {{{
+let g:ale_lint_on_save = 1
+" }}}
+
+" Completion settings {{{
 " set tags+=~/.vim/tags/cpp
-" set completeopt-=preview
+set completeopt-=preview
 " set completeopt+=noinsert
 " let g:neocomplete#enable_at_startup = 1
 " let g:neocomplete#sources#syntax#min_keyword_length = 2
@@ -226,6 +206,7 @@ let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
 " Misc settings {{{
 let g:username='Tamado Ramot Sitohang'
 let g:email='tamado.sitohang@gmail.com'
+let g:ycm_python_binary_path = 'python'
 set pastetoggle=<F2>
 set nobackup
 set noswapfile
@@ -291,6 +272,7 @@ au FileType           *             setlocal formatoptions-=ro
 au BufEnter           *             if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 au FileType           *             set foldtext=MyFoldText()
 au FileType           *             set foldmethod=manual
+au FileType           python        nnoremap <Leader>= :0,$!yapf<CR>
 " au BufWritePost       *.js    silent !standard-format -w %
 " au FileType           ruby,eruby    let g:rubycomplete_buffer_loading = 1
 " au FileType           ruby,eruby    let g:rubycomplete_classes_in_global = 1
