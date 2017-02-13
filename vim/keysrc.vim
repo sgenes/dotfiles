@@ -20,7 +20,6 @@ nmap                                <nop>
 imap <silent>                       <C-o>:conf q<CR>
 nmap <silent>                       :w!<CR>
 inoremap <silent><C-s>                <C-o>:update<CR>
-nmap e                                <C-R>
 imap <silent>                       <C-o>u
 imap <silent>                       <C-o><C-R>
 imap <C-l>                            <Esc><Esc>
