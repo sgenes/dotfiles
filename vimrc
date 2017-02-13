@@ -26,7 +26,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on' :  'NERDTreeToggle'  }
-Plug 'scrooloose/syntastic', { 'for' : 'xml' }
+Plug 'scrooloose/syntastic', { 'for' : ['xml', 'r'] }
 Plug 'w0rp/ale'
 " Plug 'jordwalke/VimCompleteLikeAModernEditor'
 Plug 'godlygeek/tabular'
@@ -196,6 +196,31 @@ set wildignore+=*/.gvfs/*,*/.rpmdb/*,*/.cache/*,*/.gconf/*,*/tmp/*,*/.adobe/*,*/
 set wildignore+=*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.JPG,*.jpeg,*.JPEG,*.xpm,*.gif,*.pdf,*.beam,*.mp3,*.ogg,*.mp4,*.m4a,*.mkv,*.mov,*.flv,*.oga,*.ogv,*.aac,*.mid,*.flac,*.wav,*.docx,*.doc,*.ppt,*.pptx,*.odt,*.xls,*.xlsx,*.odp,*.ods,*.old,*.log,*.tar.*,*.gz,*.zip,*.deb,*.rar,*.jar,*.pyc,*.pyo,*.gzip,*.7z,*.torrent,*.added,*cache,*.BIOS,*.apk,*.aux,*.gp*,*.sav,*.pls,*.sps,*.cab,*.CAB,*.msi,*.exe,*.epub
 let g:ctrlp_match_window = 'bottom,order:btt'
 " }}}
+
+" Syntastic settings {{{
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height=4
+" let g:syntastic_error_symbol='!!'
+let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_markdown_checkers = ['mdl']
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_html_checkers = ['jshint']
+let g:syntastic_perl_checkers = ['perl']
+let g:syntastic_r_checkers = ['lintr']
+let g:syntastic_enable_r_lintr_checker = 1
+let g:syntastic_enable_perl_checker = 1
+let g:syntastic_css_checkers = ['']
+let g:syntastic_haskell_hdevtools_quiet_messages = {
+  \ 'type': 'error',
+  \ 'regex': '\mAntigen' }
+let g:syntastic_xml_xmllint_quiet_messages = {
+  \ 'type': 'error',
+  \ 'regex': '\mfonts.dtd' }
+" }}}
+
 
 " Gundo setings {{{
 let g:gundo_help = 0
