@@ -64,6 +64,8 @@ source $ZSH/function.zsh
 source $ZSH/autopair.zsh
 if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then
 	source $ZSH/antigen-hs/init.zsh
+else
+	source $ZSH/plugins/history/history.plugin.zsh
 fi
 # source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source /etc/bash_completion.d/virtualenvwrapper
