@@ -65,14 +65,14 @@
 	path = vim/bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors
 [submodule "vim/bundle/tmuxline.vim"]
-    path = vim/bundle/tmuxline.vim
-    url = https://github.com/edkolev/tmuxline.vim
+	path = vim/bundle/tmuxline.vim
+	url = https://github.com/edkolev/tmuxline.vim
 [submodule "vim/bundle/ale"]
 	path = vim/bundle/ale
 	url = https://github.com/w0rp/ale
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
-[submodule "vim/bundle/UltiSnips"]
-	path = vim/bundle/UltiSnips
-	url = https://github.com/SirVer/UltiSnips
+[submodule "vim/bundle/ultiunips"]
+	path = vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips
