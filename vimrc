@@ -14,7 +14,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
-Plug 'eagletmt/neco-ghc'
+" Plug 'eagletmt/neco-ghc'
 " Plug 'flazz/vim-colorschemes'
 " Plug 'Shougo/neocomplete.vim'
 " Plug 'Shougo/neosnippet.vim'
@@ -82,6 +82,7 @@ set hidden
 set shortmess+=c
 " set noshowmode
 let g:gitgutter_signs=0
+let g:tex_conceal=''
 colorscheme MoonMaster
 " }}}
 
