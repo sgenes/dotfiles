@@ -37,7 +37,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex'
 Plug 'alvan/vim-closetag'
 Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'svermeulen/vim-easyclip'
 Plug 'sheerun/vim-polyglot'
 Plug 'davidhalter/jedi-vim'
 " Plug 'pangloss/vim-javascript'
@@ -222,7 +224,6 @@ let g:syntastic_xml_xmllint_quiet_messages = {
   \ 'regex': '\mfonts.dtd' }
 " }}}
 
-
 " Gundo setings {{{
 let g:gundo_help = 0
 let g:gundo_width = 30
@@ -318,6 +319,9 @@ au BufWritePost       *             let &titlestring = BufferName() . "\ \ —\ 
 au VimResized         *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
 au FileType           nerdtree      setlocal nolist
 au VimLeavePre        *             let @/ = ""
+augroup filetype_help
+  au BufWinEnter      *             if &l:buftype ==# 'help' | nmap  | endif
+augroup END
 " }}}
 
 " CSV Plugin {{{

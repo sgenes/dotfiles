@@ -24,7 +24,6 @@ imap <silent>                       <C-o>u
 imap <silent>                       <C-o><C-R>
 imap <C-l>                            <Esc><Esc>
 vmap <C-l>                            <Esc><Esc>
-nmap .                                <C-]>
 nmap \                                <C-o>
 nmap <silent>                       ,ci
 vmap <silent>                       ,ci

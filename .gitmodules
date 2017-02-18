@@ -76,3 +76,9 @@
 [submodule "vim/bundle/vim-snippets"]
 	path = vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets
+[submodule "vim/bundle/vim-easyclip"]
+	path = vim/bundle/vim-easyclip
+	url = https://github.com/svermeulen/vim-easyclip
+[submodule "vim/bundle/vim-repeat"]
+	path = vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat
