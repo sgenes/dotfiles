@@ -31,7 +31,7 @@ bundles =
   , local "/home/ramot/.zsh/plugins/colored-man-pages"
   , local "/home/ramot/.zsh/plugins/fancy-ctrl-z"
   -- , local "/home/ramot/.zsh/plugins/spectrum"
-  , local "/home/ramot/.zsh/plugins/catimg"
+  -- , local "/home/ramot/.zsh/plugins/catimg"
   , local "/home/ramot/.zsh/plugins/virtualenvwrapper"
   , local "/home/ramot/.zsh/plugins/rvm"
   , local "/home/ramot/.zsh/plugins/dircycle"
