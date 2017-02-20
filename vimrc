@@ -64,6 +64,7 @@ set expandtab
 set laststatus=2
 " set t_Co=256
 set termguicolors
+set clipboard=unnamedplus
 set background=dark
 set number
 set backspace=2
@@ -85,6 +86,7 @@ set shortmess+=c
 " set noshowmode
 let g:gitgutter_signs=0
 let g:tex_conceal=''
+let g:EasyClipEnableBlackHoleRedirect=0
 colorscheme MoonMaster
 " }}}
 
