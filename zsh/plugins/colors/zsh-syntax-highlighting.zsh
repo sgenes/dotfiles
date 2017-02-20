@@ -27,13 +27,6 @@
 # vim: ft=zsh sw=2 ts=2 et
 # -------------------------------------------------------------------------------------------------
 
-# First of all, ensure predictable parsing.
-zsh_highlight__aliases=`builtin alias -Lm '[^+]*'`
-# In zsh <= 5.2, `alias -L` emits aliases that begin with a plus sign ('alias -- +foo=42')
-# them without a '--' guard, so they don't round trip.
-#
-# Hence, we exclude them from unaliasing:
-builtin unalias -m '[^+]*'
 
 # Set $0 to the expected value, regardless of functionargzero.
 0=${(%):-%N}
@@ -99,11 +92,7 @@ _zsh_highlight()
       typeset -ga ${cache_place}
 
       # If highlighter needs to be invoked
-      if ! type "_zsh_highlight_highlighter_${highlighter}_predicate" >&/dev/null; then
-        echo "zsh-syntax-highlighting: warning: disabling the ${(qq)highlighter} highlighter as it has not been loaded" >&2
-        # TODO: use ${(b)} rather than ${(q)} if supported
-        ZSH_HIGHLIGHT_HIGHLIGHTERS=( ${ZSH_HIGHLIGHT_HIGHLIGHTERS:#${highlighter}} )
-      elif "_zsh_highlight_highlighter_${highlighter}_predicate"; then
+      if "_zsh_highlight_highlighter_${highlighter}_predicate"; then
 
         # save a copy, and cleanup region_highlight
         region_highlight_copy=("${region_highlight[@]}")
@@ -340,8 +329,8 @@ _zsh_highlight_load_highlighters()
   local highlighter highlighter_dir
   for highlighter_dir ($1/*/); do
     highlighter="${highlighter_dir:t}"
-    [[ -f "$highlighter_dir${highlighter}-highlighter.zsh" ]] &&
-      . "$highlighter_dir${highlighter}-highlighter.zsh"
+    [[ -f "$highlighter_dir/${highlighter}-highlighter.zsh" ]] &&
+      . "$highlighter_dir/${highlighter}-highlighter.zsh"
     if type "_zsh_highlight_highlighter_${highlighter}_paint" &> /dev/null &&
        type "_zsh_highlight_highlighter_${highlighter}_predicate" &> /dev/null;
     then
@@ -358,7 +347,7 @@ _zsh_highlight_load_highlighters()
         eval "_zsh_highlight_highlighter_${(q)highlighter}_paint() { _zsh_highlight_${(q)highlighter}_highlighter \"\$@\" }"
         eval "_zsh_highlight_highlighter_${(q)highlighter}_predicate() { _zsh_highlight_${(q)highlighter}_highlighter_predicate \"\$@\" }"
     else
-        print -r -- >&2 "zsh-syntax-highlighting: ${(qq)highlighter} highlighter should define both required functions '_zsh_highlight_highlighter_${highlighter}_paint' and '_zsh_highlight_highlighter_${highlighter}_predicate' in ${(qq):-"$highlighter_dir${highlighter}-highlighter.zsh"}."
+        print -r -- >&2 "zsh-syntax-highlighting: ${(qq)highlighter} highlighter should define both required functions '_zsh_highlight_highlighter_${highlighter}_paint' and '_zsh_highlight_highlighter_${highlighter}_predicate' in ${(qq):-"$highlighter_dir/${highlighter}-highlighter.zsh"}."
     fi
   done
 }
@@ -397,11 +386,4 @@ zmodload zsh/parameter 2>/dev/null || true
 autoload -U is-at-least
 
 # Initialize the array of active highlighters if needed.
-[[ $#ZSH_HIGHLIGHT_HIGHLIGHTERS -eq 0 ]] && ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
-
-# Restore the aliases we unned
-eval "$zsh_highlight__aliases"
-builtin unset zsh_highlight__aliases
-
-# Set $?.
-true
+[[ $#ZSH_HIGHLIGHT_HIGHLIGHTERS -eq 0 ]] && ZSH_HIGHLIGHT_HIGHLIGHTERS=(main) || true

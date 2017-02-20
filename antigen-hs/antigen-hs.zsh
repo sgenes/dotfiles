@@ -12,6 +12,7 @@ source /home/ramot/Documents/DOTFILES/zsh/plugins/terminal/terminal.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/custom/custom.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh
+source /home/ramot/Documents/DOTFILES/zsh/plugins/catimg/catimg.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/rvm/rvm.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/dircycle/dircycle.plugin.zsh
@@ -33,6 +34,7 @@ fpath+=/home/ramot/.zsh/plugins/terminal
 fpath+=/home/ramot/.zsh/plugins/custom
 fpath+=/home/ramot/.zsh/plugins/colored-man-pages
 fpath+=/home/ramot/.zsh/plugins/fancy-ctrl-z
+fpath+=/home/ramot/.zsh/plugins/catimg
 fpath+=/home/ramot/.zsh/plugins/virtualenvwrapper
 fpath+=/home/ramot/.zsh/plugins/rvm
 fpath+=/home/ramot/.zsh/plugins/dircycle
