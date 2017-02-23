@@ -20,6 +20,7 @@ Plug 'vim-airline/vim-airline'
 " Plug 'Shougo/neosnippet.vim'
 " Plug 'Shougo/neosnippet-snippets'
 " Plug 'Shougo/neoinclude.vim'
+" Plug 'roman/golden-ratio'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe'
@@ -48,6 +49,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/vim-easy-align'
 Plug '~/.vim/bundle/vim-devicons'
 Plug 'edkolev/tmuxline.vim'
+Plug 'tpope/vim-endwise'
+Plug 'majutsushi/tagbar'
 
 call plug#end()
 " }}}
@@ -139,9 +142,19 @@ let g:ale_lint_on_save = 1
 " }}}
 
 " UltiSnips settings {{{
-let g:UltiSnipsExpandTrigger = '<C-Tab>'
-let g:UltiSnipsJumpForwardTrigger = '<C-Tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<C-Tab>'
+let g:UltiSnipsExpandTrigger = '<F10>'
+let g:UltiSnipsJumpForwardTrigger = '<Tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+let g:ulti_expand_or_jump_res = 0
+function! <SID>ExpandSnippetOrReturn()
+  let b:snippet = UltiSnips#ExpandSnippetOrJump()
+  if g:ulti_expand_or_jump_res > 0
+    return b:snippet
+  else
+    return "\<CR>"
+  endif
+endfunction
+inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "\<CR>\<C-R>=EndwiseDiscretionary()\<CR>"
 " }}}
 
 " Completion settings {{{
@@ -348,6 +361,7 @@ let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_json_frontmatter = 1
 " }}}
 
+source ~/.vim/tagbar.vim
 source ~/.vim/keysrc.vim
 
 endif
