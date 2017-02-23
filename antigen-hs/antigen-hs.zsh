@@ -21,7 +21,7 @@ source /home/ramot/Documents/DOTFILES/zsh/plugins/completion/completion.plugin.z
 source /home/ramot/Documents/DOTFILES/zsh/plugins/colors/zsh-syntax-highlighting.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/history-substring-search/history-substring-search.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/bureau/bureau.plugin.zsh
-source /home/ramot/Documents/DOTFILES/zsh/plugins/thefuck/thefuck.plugin.zsh
+# source /home/ramot/Documents/DOTFILES/zsh/plugins/thefuck/thefuck.plugin.zsh
 fpath+=/home/ramot/.zsh/plugins/zsh-autosuggestions
 fpath+=/home/ramot/.zsh/plugins/key-bindings
 fpath+=/home/ramot/.zsh/plugins/misc
@@ -43,4 +43,4 @@ fpath+=/home/ramot/.zsh/plugins/completion
 fpath+=/home/ramot/.zsh/plugins/colors
 fpath+=/home/ramot/.zsh/plugins/history-substring-search
 fpath+=/home/ramot/.zsh/plugins/bureau
-fpath+=/home/ramot/.zsh/plugins/thefuck
+# fpath+=/home/ramot/.zsh/plugins/thefuck

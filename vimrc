@@ -109,6 +109,7 @@ let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.maxlinenr = ''
+let g:airline#extensions#ctrlp#show_adjacent_modes = 0
 " }}}
 
 " Tmuxline Settings {{{
@@ -200,6 +201,14 @@ let g:ctrlp_show_hidden = 0
 set wildignore+=*/.gvfs/*,*/.rpmdb/*,*/.cache/*,*/.gconf/*,*/tmp/*,*/.adobe/*,*/.dbus/*,*/.compiz/*,*/.ghc/*,*/.gimp-2.8/*,*/.gnome*/*,*/.gnupg/*,*/.go/*,*/.goldendict/*,*/.google*/*,*/.mozilla/*,*/.ordbrand/*,*/.purple/*,*/.rvm/*,*/.rsvm/*,*/.nvm/*,*/.*cache/*,*/Music/*,*/Videos/*,*/Documents/BOOKS/*,*/Documents/RESEARCH*/*,*/Documents/TORRENTS/*,*/WINDOWS/*,*/PAK/*
 set wildignore+=*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.JPG,*.jpeg,*.JPEG,*.xpm,*.gif,*.pdf,*.beam,*.mp3,*.ogg,*.mp4,*.m4a,*.mkv,*.mov,*.flv,*.oga,*.ogv,*.aac,*.mid,*.flac,*.wav,*.docx,*.doc,*.ppt,*.pptx,*.odt,*.xls,*.xlsx,*.odp,*.ods,*.old,*.log,*.tar.*,*.gz,*.zip,*.deb,*.rar,*.jar,*.pyc,*.pyo,*.gzip,*.7z,*.torrent,*.added,*cache,*.BIOS,*.apk,*.aux,*.gp*,*.sav,*.pls,*.sps,*.cab,*.CAB,*.msi,*.exe,*.epub
 let g:ctrlp_match_window = 'bottom,order:btt'
+let g:ctrlp_working_path_mode='ra'
+let g:ctrlp_max_files = 50000
+let g:ctrlp_max_depth = 15
+let g:ctrlp_open_new_file = 't'
+let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_regexp = 0
+let g:ctrlp_by_filename = 1
+let g:ctrlp_types = ['mru', 'fil']
 " }}}
 
 " Syntastic settings {{{
