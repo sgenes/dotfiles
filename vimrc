@@ -91,6 +91,9 @@ let g:gitgutter_signs=0
 let g:tex_conceal=''
 let g:EasyClipEnableBlackHoleRedirect=0
 colorscheme MoonMaster
+let g:tagbar_show_visibility = 0
+let g:tagbar_left = 1
+let g:tagbar_width = 33
 " }}}
 
 " Airline settings {{{
