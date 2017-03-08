@@ -114,8 +114,9 @@ let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
-let g:airline_symbols.maxlinenr = ''
 let g:airline#extensions#ctrlp#show_adjacent_modes = 0
+let g:airline_symbols.linenr = '☰  '
+let g:airline_symbols.maxlinenr = ' '
 " }}}
 
 " Tmuxline Settings {{{
