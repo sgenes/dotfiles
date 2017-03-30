@@ -191,6 +191,8 @@ set completeopt-=preview
       " \ '[^. *\t]\.\w*\|\h\w*\'
 " \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 " let g:neosnippet#data_directory = "~/.cache/neosnippet"
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
 " }}}
 
 " NERDTree settings {{{
