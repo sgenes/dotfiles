@@ -3,6 +3,7 @@
 setopt prompt_subst
 
 ZSH_THEME_NVM_PROMPT_PREFIX="[%{$fg[green]%}%B⬡ %b "
+ZSH_THEME_NVM_ALTERNATE_PROMPT_PREFIX="[%{$fg[red]%}%B⬡ %b "
 # ZSH_THEME_NVM_PROMPT_PREFIX="[%{$fg[green]%}%Bnode:%b "
 ZSH_THEME_NVM_PROMPT_SUFFIX="%{$reset_color%}]"
 
