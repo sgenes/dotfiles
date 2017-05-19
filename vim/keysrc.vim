@@ -6,6 +6,7 @@
 
 let mapleader=","
 
+nnoremap ;                            :
 nnoremap <silent><F3>                 :noh<CR><Esc>
 " inoremap <expr><C-g>                  neocomplete#undo_completion()
 " inoremap <expr><C-k>                  neocomplete#complete_common_string()
