@@ -350,7 +350,7 @@ au VimResized         *             let &titlestring = BufferName() . "\ \ —\ 
 au FileType           nerdtree      setlocal nolist
 au VimLeavePre        *             let @/ = ""
 augroup filetype_help
-  au BufWinEnter      *             if &l:buftype ==# 'help' | nmap  | endif
+  au BufWinEnter      *             if &l:buftype ==# 'help' | nmap <C-M> <C-]>| endif
 augroup END
 " }}}
 
@@ -373,4 +373,5 @@ source ~/.vim/keysrc.vim
 endif
 
 set t_RV=
-" vim: fdm=marker
+
+" vim:fdm=marker

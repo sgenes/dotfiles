@@ -4,7 +4,7 @@
 " License: MIT                  "
 " ============================= "
 
-let mapleader=","
+let g:mapleader=','
 
 nnoremap <silent><F3>                 :noh<CR><Esc>
 " inoremap <expr><C-g>                  neocomplete#undo_completion()
@@ -15,25 +15,25 @@ inoremap <silent><F5>                 <C-o>:GundoToggle<CR>
 map <silent><C-e>                     :NERDTreeToggle<CR>
 map <silent><F2>                      :ene<CR>
 nmap <silent>q                        :conf q<CR>
-nmap                                <nop>
-imap <silent>                       <C-o>:conf q<CR>
-nmap <silent>                       :w!<CR>
+nmap <C-q>                            <nop>
+imap <silent><C-q>                    <C-o>:conf q<CR>
+nmap <silent><C-s>                    :w!<CR>
 inoremap <silent><C-s>                <C-o>:update<CR>
-imap <silent>                       <C-o>u
-imap <silent>                       <C-o><C-R>
+imap <silent><C-Z>                    <C-o>u
+imap <silent><C-R>                    <C-o><C-R>
 imap <C-l>                            <Esc><Esc>
 vmap <C-l>                            <Esc><Esc>
 nmap \                                <C-o>
-nmap <silent>                       ,ci
-vmap <silent>                       ,ci
-imap <silent>                       <C-o>,ci
-nmap                                %
-nnoremap <silent>-                  <C-w>-
-nnoremap <silent>+                  <C-w>+
-nnoremap <silent>=                  <C-w>=
+nmap <silent><C-/>                    ,ci
+vmap <silent><C-/>                    ,ci
+imap <silent><C-/>                    <C-o>,ci
+nmap <C-M>                            %
+nnoremap <silent>-                    <C-w>-
+nnoremap <silent>+                    <C-w>+
+nnoremap <silent>=                    <C-w>=
 map <C-S-Down>                        <C-w><C-w>
 map <C-S-Up>                          <C-w>w
-nmap <silent>                       :bp<CR>
+nmap <silent><C-\>                    :bp<CR>
 nmap <silent><Space>                  :bnext<CR>
 nmap <silent><Del>                    :bdelete!<CR>
 " inoremap <expr><TAB>                  pumvisible() ? "\<C-n><C-y>" : "\<C-R>=neosnippet#mappings#expand_or_jump_impl()"
