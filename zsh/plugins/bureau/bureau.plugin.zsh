@@ -48,7 +48,7 @@ bureau_git_status () {
   if $(echo "$_INDEX" | grep '^UU ' &> /dev/null); then
     _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_UNMERGED"
   fi
-  if $(command git rev-parse --verify refs/stash >/dev/null 2>&1); then
+  if $(command git rev-parse --verify refs/stash &> /dev/null); then
     _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_STASHED"
   fi
   if $(echo "$_INDEX" | grep '^## .*ahead' &> /dev/null); then
