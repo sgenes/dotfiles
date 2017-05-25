@@ -118,7 +118,7 @@ let g:airline#extensions#ctrlp#show_adjacent_modes = 0
 let g:airline_symbols.linenr = '☰  '
 let g:airline_symbols.maxlinenr = ' '
 let g:airline_symbols.crypt = ''
-let g:airline_symbols.notexists = ' '
+let g:airline_symbols.notexists = ' '
 " }}}
 
 " Tmuxline Settings {{{
