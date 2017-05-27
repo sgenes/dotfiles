@@ -92,8 +92,14 @@ let g:tex_conceal=''
 let g:EasyClipEnableBlackHoleRedirect=0
 colorscheme MoonMaster
 let g:tagbar_show_visibility = 0
-let g:tagbar_left = 1
-let g:tagbar_width = 33
+let g:tagbar_compact = 1
+let g:tagbar_left = 0
+let g:tagbar_width = 30
+let g:tagbar_indent = 3
+let g:tagbar_iconchars = ['▶ ', '▼ ']
+hi TagbarKind term=bold ctermfg=0 cterm=bold gui=bold guifg=#d3dae3
+hi link TagbarFoldIcon Directory
+hi link TagbarScope TagbarKind
 " }}}
 
 " Airline settings {{{
@@ -276,7 +282,7 @@ let g:email='tamado.sitohang@gmail.com'
 let g:ycm_python_binary_path = 'python'
 set pastetoggle=<F2>
 set nobackup
-set noswapfile
+" set noswapfile
 let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.html.erb'
 " let g:tagbar_left = 1
 " let g:tagbar_width = 30
