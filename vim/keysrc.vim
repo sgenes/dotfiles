@@ -6,6 +6,7 @@
 
 let g:mapleader=','
 
+nnoremap ;                            :
 nnoremap <silent><F3>                 :noh<CR><Esc>
 " inoremap <expr><C-g>                  neocomplete#undo_completion()
 " inoremap <expr><C-k>                  neocomplete#complete_common_string()
@@ -37,7 +38,7 @@ nmap <Tab>                            <C-w><C-w>
 nmap <S-Tab>                          <C-w>w
 nmap <silent><C-\>                    :bp<CR>
 nmap <silent><Space>                  :bnext<CR>
-nmap <silent><Del>                    :bdelete!<CR>
+nmap <silent><Del>                    :conf bdelete<CR>
 " inoremap <expr><TAB>                  pumvisible() ? "\<C-n><C-y>" : "\<C-R>=neosnippet#mappings#expand_or_jump_impl()"
 " inoremap <expr><C-h>                  neocomplete#smart_close_popup()."\<C-h>"
 " inoremap <expr><BS>                   pumvisible() ? "\<C-h>=neocomplete#smart_close_popup()" : "<Plug>delimitMateBS"

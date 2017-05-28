@@ -84,7 +84,7 @@ set nowrap
 " set wrapmargin=0
 set nolinebreak
 set autoread
-set hidden
+" set hidden
 set shortmess+=c
 " set noshowmode
 let g:gitgutter_signs=0
