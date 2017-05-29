@@ -27,7 +27,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on' :  'NERDTreeToggle'  }
-Plug 'scrooloose/syntastic', { 'for' : ['xml', 'r'] }
+Plug 'scrooloose/syntastic', { 'for' : ['r'] }
 Plug 'w0rp/ale'
 " Plug 'jordwalke/VimCompleteLikeAModernEditor'
 Plug 'godlygeek/tabular'
@@ -81,6 +81,7 @@ set formatoptions=cql
 set showmatch!
 set updatetime=4000
 set nowrap
+set history=10000
 " set wrapmargin=0
 set nolinebreak
 set autoread
@@ -151,6 +152,7 @@ let g:tmuxline_preset = {
 
 " ALE settings {{{
 let g:ale_lint_on_save = 1
+let g:ale_vim_vint_show_style_issues = 0
 " }}}
 
 " UltiSnips settings {{{
