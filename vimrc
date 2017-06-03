@@ -67,7 +67,6 @@ set expandtab
 set laststatus=2
 " set t_Co=256
 set termguicolors
-set clipboard=unnamedplus
 set background=dark
 set number
 set backspace=2
@@ -342,25 +341,39 @@ endfunction
 " }}}
 
 " Autocommand setings {{{
-au BufWritePre        *.*           :%s/\s\+$//e
-au FileType           *             setlocal formatoptions-=ro
-au BufEnter           *             if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-au FileType           *             set foldtext=MyFoldText()
-au FileType           *             set foldmethod=manual
-au FileType           python        nnoremap <Leader>= :0,$!yapf<CR>
+augroup autoremove_trail
+  au BufWritePre        *.*           :%s/\s\+$//e
+augroup END
+augroup formatting
+  au FileType           *             setlocal formatoptions-=ro
+augroup END
+augroup nerd_tree
+  au BufEnter           *             if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  au FileType           nerdtree      setlocal nolist
+augroup END
+augroup folding
+  au FileType           *             set foldtext=MyFoldText()
+  au FileType           *             set foldmethod=manual
+  au FileType           python        nnoremap <Leader>= :0,$!yapf<CR>
+augroup END
 " au BufWritePost       *.js    silent !standard-format -w %
 " au FileType           ruby,eruby    let g:rubycomplete_buffer_loading = 1
 " au FileType           ruby,eruby    let g:rubycomplete_classes_in_global = 1
 " au FileType           ruby,eruby    let g:rubycomplete_rails = 1
 " au FileType           cpp           setlocal omnifunc=omni#cpp#complete#Main
 " au FileType           python        setlocal omnifunc=jedi#completions
-au FileType           *             let delimitMate_matchpairs="(:),{:},[:]"
-au FileType           ruby,eruby    let b:delimitMate_quotes="\" ' ` |"
-au BufEnter           *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
-au BufWritePost       *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
-au VimResized         *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
-au FileType           nerdtree      setlocal nolist
-au VimLeavePre        *             let @/ = ""
+augroup pairing
+  au FileType           *             let delimitMate_matchpairs="(:),{:},[:]"
+  au FileType           ruby,eruby    let b:delimitMate_quotes="\" ' ` |"
+augroup END
+augroup title_string
+  au BufEnter           *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
+  au BufWritePost       *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
+  au VimResized         *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
+augroup END
+augroup clipboard_opt
+  au VimLeavePre        *             let @/ = ""
+augroup END
 augroup filetype_help
   au BufWinEnter      *             if &l:buftype ==# 'help' | nmap <C-M> <C-]>| endif
 augroup END
