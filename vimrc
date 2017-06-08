@@ -375,7 +375,10 @@ augroup clipboard_opt
   au VimLeavePre        *             let @/ = ""
 augroup END
 augroup filetype_help
-  au BufWinEnter      *             if &l:buftype ==# 'help' | nmap <C-M> <C-]>| endif
+  au BufWinEnter        *             if &l:buftype ==# 'help' | nmap <C-M> <C-]>| endif
+augroup END
+augroup vimfiles
+  au FileType           vim           let b:ale_enabled=0
 augroup END
 " }}}
 

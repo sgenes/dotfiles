@@ -81,6 +81,7 @@ if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then
 	ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=226
 	ZSH_HIGHLIGHT_STYLES[assign]=fg=10
 	ZSH_HIGHLIGHT_STYLES[globbing]=fg=11
+	ZSH_HIGHLIGHT_STYLES[comment]=fg=7
 	export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
 fi
 

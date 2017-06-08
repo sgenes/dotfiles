@@ -8,6 +8,9 @@
 #  pushd +N: start counting from left of `dirs' output
 #  pushd -N: start counting from right of `dirs' output
 
+# don't add same dirs to directory stack
+setopt pushdignoredups
+
 insert-cycledleft () {
 	emulate -L zsh
 	setopt nopushdminus
