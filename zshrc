@@ -20,10 +20,7 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 # OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-if [[ $(todo) != '' ]]; then
-	echo "TODO:"
-	todo --filter -done
-fi
+
 
 ZSH="$HOME/.zsh"
 
@@ -35,7 +32,7 @@ autoload -U colors && colors
 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Documents/WORKSPACE/PYTHON
-export PATH="$HOME/.bin:$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
+export PATH="$HOME/.bin:$HOME/.bin/platform-tools:$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
 export GOPATH="$HOME/.go"
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS"
@@ -66,6 +63,11 @@ if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then
 	source $ZSH/antigen-hs/init.zsh
 else
 	source $ZSH/plugins/history/history.plugin.zsh
+fi
+if [[ $(todo) != '' ]]; then
+	JOAO="$fg_bold[white]TODO:$reset_color"
+	echo $JOAO
+	todo --filter -done +children
 fi
 # source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source /etc/bash_completion.d/virtualenvwrapper
