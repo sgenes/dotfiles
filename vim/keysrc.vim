@@ -18,8 +18,6 @@ map <silent><F2>                      :ene<CR>
 nmap <silent>q                        :conf q<CR>
 nmap <C-q>                            <nop>
 imap <silent><C-q>                    <C-o>:conf q<CR>
-nmap <silent><C-s>                    :w!<CR>
-inoremap <silent><C-s>                <C-o>:update<CR>
 imap <silent><C-Z>                    <C-o>u
 imap <silent><C-R>                    <C-o><C-R>
 imap <C-l>                            <Esc><Esc>
