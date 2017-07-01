@@ -102,8 +102,8 @@ export DEBEMAIL="tamado.sitohang@gmail.com"
 export DEBFULLNAME="Tamado Sitohang"
 
 # stop mapping Ctrl+S
-stty -ixon
-stty -ixoff
+# stty -ixon
+# stty -ixoff
 
 # key-binding for tmux
 bindkey '\e[1~'   beginning-of-line  # Linux console
