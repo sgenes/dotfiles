@@ -86,6 +86,7 @@ set nolinebreak
 set autoread
 " set hidden
 set shortmess+=c
+set showtabline=0
 " set noshowmode
 let g:gitgutter_signs=0
 let g:tex_conceal=''
@@ -109,8 +110,8 @@ let g:airline#extensions#tmuxline#enabled = 0
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'MoonMaster'
 let g:airline#extensions#tabline#enabled = 0
-let g:airline#extensions#tabline#show_splits = 1
-let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 if !exists('g:airline_symbols')
