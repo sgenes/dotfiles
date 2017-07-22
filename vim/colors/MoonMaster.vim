@@ -381,7 +381,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call s:HL("Float", s:orange, "", "")
 
   call s:HL("Identifier", s:navy, "", "")
-  call s:HL("Function", s:foreground, "", "")
+  call s:HL("Function", s:foreground, "", "bold")
 
   call s:HL("Statement", s:pink, "", "none")
   call s:HL("Conditional", s:purple, "", "bold")
@@ -654,10 +654,10 @@ call s:HL("cssClassName", s:pink, "", "")
   call s:HL("rstInterpretedTextOrHyperlinkReference", s:blue, "", "")
 
   " Python Highlighting
-  call s:HL("pythonImport", s:pink, "", "bold")
+  call s:HL("pythonImport", s:pink, "", "")
   call s:HL("pythonExceptions", s:red, "", "")
   call s:HL("pythonException", s:purple, "", "bold")
-  call s:HL("pythonInclude", s:red, "", "")
+  call s:HL("pythonInclude", s:pink, "", "")
   call s:HL("pythonStatement", s:pink, "", "")
   call s:HL("pythonConditional", s:purple, "", "bold")
   call s:HL("pythonRepeat", s:purple, "", "bold")
@@ -665,7 +665,7 @@ call s:HL("cssClassName", s:pink, "", "")
   call s:HL("pythonPreCondit", s:purple, "", "")
   call s:HL("pythonExClass", s:orange, "", "")
   call s:HL("pythonOperator", s:purple, "", "bold")
-  call s:HL("pythonBuiltin", s:foreground, "", "")
+  call s:HL("pythonBuiltin", s:foreground, "", "bold")
   call s:HL("pythonDecorator", s:orange, "", "")
 
   call s:HL("pythonString", s:olive, "", "")
@@ -677,8 +677,8 @@ call s:HL("cssClassName", s:pink, "", "")
   call s:HL("pythonBytesEscape", s:olive, "", "bold")
   call s:HL("pythonDottedName", s:purple, "", "")
   call s:HL("pythonStrFormat", s:foreground, "", "")
-  call s:HL("pythonBuiltinFunc", s:foreground, "", "")
-  call s:HL("pythonBuiltinObj", s:foreground, "", "")
+  call s:HL("pythonBuiltinFunc", s:aqua, "", "bold")
+  call s:HL("pythonBuiltinObj", s:aqua, "", "")
 
   " Java Highlighting
   call s:HL("javaExternal", s:pink, "", "")

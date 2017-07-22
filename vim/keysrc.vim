@@ -45,6 +45,7 @@ nnoremap <silent><Leader><Leader>     :noh<CR>
 " smap <C-k>                            <Plug>(neosnippet_expand_or_jump)
 " xmap <C-k>                            <Plug>(neosnippet_expand_target)
 nnoremap <silent><F6>                 :TagbarToggle<CR>
+nnoremap <space>                      za
 
 " SuperTab like snippets behavior.
 " imap <expr><TAB>

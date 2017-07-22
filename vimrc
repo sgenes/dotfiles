@@ -32,7 +32,6 @@ Plug 'w0rp/ale'
 " Plug 'jordwalke/VimCompleteLikeAModernEditor'
 Plug 'godlygeek/tabular'
 Plug 'sjl/gundo.vim'
-Plug 'jmcantrell/vim-virtualenv'
 Plug 'chrisbra/csv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex'
@@ -41,7 +40,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'svermeulen/vim-easyclip'
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'davidhalter/jedi-vim'
 " Plug 'pangloss/vim-javascript'
 Plug 'terryma/vim-multiple-cursors'
@@ -51,6 +50,7 @@ Plug '~/.vim/bundle/vim-devicons'
 Plug 'edkolev/tmuxline.vim'
 Plug 'tpope/vim-endwise'
 Plug 'majutsushi/tagbar'
+Plug 'tmhedberg/SimpylFold', { 'for' : ['python'] }
 
 call plug#end()
 " }}}
@@ -88,7 +88,7 @@ set autoread
 set shortmess+=c
 set showtabline=0
 " set noshowmode
-let g:gitgutter_signs=0
+let g:gitgutter_signs=1
 let g:tex_conceal=''
 let g:EasyClipEnableBlackHoleRedirect=0
 colorscheme MoonMaster
@@ -354,7 +354,7 @@ augroup nerd_tree
 augroup END
 augroup folding
   au FileType           *             set foldtext=MyFoldText()
-  au FileType           *             set foldmethod=manual
+  au BufWritePre        *             set foldmethod=manual
   au FileType           python        nnoremap <Leader>= :0,$!yapf<CR>
 augroup END
 " au BufWritePost       *.js    silent !standard-format -w %

@@ -25,9 +25,6 @@
 [submodule "vim/bundle/gundo.vim"]
 	path = vim/bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim
-[submodule "vim/bundle/vim-virtualenv"]
-	path = vim/bundle/vim-virtualenv
-	url = https://github.com/jmcantrell/vim-virtualenv
 [submodule "vim/bundle/csv.vim"]
 	path = vim/bundle/csv.vim
 	url = https://github.com/chrisbra/csv.vim
@@ -88,3 +85,6 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
+[submodule "vim/bundle/SimpylFold"]
+    path = vim/bundle/SimpylFold
+    url = https://github.com/tmhedberg/SimpylFold
