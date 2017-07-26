@@ -33,14 +33,14 @@ Plug 'w0rp/ale'
 Plug 'godlygeek/tabular'
 Plug 'sjl/gundo.vim'
 Plug 'chrisbra/csv.vim'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex'
 Plug 'alvan/vim-closetag'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'svermeulen/vim-easyclip'
-" Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 Plug 'davidhalter/jedi-vim'
 " Plug 'pangloss/vim-javascript'
 Plug 'terryma/vim-multiple-cursors'
@@ -59,7 +59,10 @@ call plug#end()
 scriptencoding utf-8
 syntax on
 " set notitle
+set splitbelow
+set splitright
 set virtualedit=onemore
+set clipboard=unnamedplus
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -203,6 +206,7 @@ set completeopt-=preview
 " let g:neosnippet#data_directory = "~/.cache/neosnippet"
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
+let g:ycm_autoclose_preview_window_after_completion = 1
 " }}}
 
 " NERDTree settings {{{
@@ -313,6 +317,15 @@ let g:delimitMate_expand_space = 1
     " exe 'NeoCompleteUnlock'
   " endif
 " endfunction
+" Virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
 " }}}
 
 " Listchars option {{{
@@ -354,7 +367,7 @@ augroup nerd_tree
 augroup END
 augroup folding
   au FileType           *             set foldtext=MyFoldText()
-  au BufWritePre        *             set foldmethod=manual
+  au FileType           *             set foldmethod=manual
   au FileType           python        nnoremap <Leader>= :0,$!yapf<CR>
 augroup END
 " au BufWritePost       *.js    silent !standard-format -w %
