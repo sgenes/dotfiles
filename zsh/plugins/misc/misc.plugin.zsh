@@ -27,6 +27,7 @@ alias _='sudo'
 alias please='sudo'
 alias pbcopy='xclip -sel clip'
 alias pbpaste='xclip -sel clip -o'
+alias a='browse . &> /dev/null'
 
 ## more intelligent acking for ubuntu users
 if which ack-grep &> /dev/null; then
