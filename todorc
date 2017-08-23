@@ -1,4 +1,4 @@
 sort created
-format displayi=%2>%[priority]%+2i● %T %[low]-- %p, %[verylow]%F\n
+format displayi=%1>%[priority]%+2i● %T %[low]-- %p, %[verylow]%F\n
 use-format display=displayi
 # use-format generated=verbose-generated

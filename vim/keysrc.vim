@@ -36,10 +36,10 @@ nnoremap <silent>+                    <C-w>+
 nnoremap <silent>=                    <C-w>=
 map <C-S-Down>                        <C-w><C-w>
 map <C-S-Up>                          <C-w>w
-nmap <Tab>                            <C-w><C-w>
-nmap <S-Tab>                          <C-w>w
-nmap <silent><C-\>                    :bp<CR>
-nmap <silent><Space>                  :bnext<CR>
+nmap <Tab>                            :bp!<CR>
+nmap <S-Tab>                          :bnext!<CR>
+" nmap <silent><C-\>                    :bp<CR>
+" nmap <silent><Space>                  :bnext<CR>
 nmap <silent><Del>                    :conf bdelete<CR>
 " inoremap <expr><TAB>                  pumvisible() ? "\<C-n><C-y>" : "\<C-R>=neosnippet#mappings#expand_or_jump_impl()"
 " inoremap <expr><C-h>                  neocomplete#smart_close_popup()."\<C-h>"
