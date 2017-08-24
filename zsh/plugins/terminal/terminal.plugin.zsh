@@ -24,8 +24,8 @@ function title {
   fi
 }
 
-ZSH_THEME_TERM_TAB_TITLE_IDLE="%1d  —  zsh  —  $COLUMNS✕$LINES" #15 char left truncated PWD
-ZSH_THEME_TERM_TITLE_IDLE="%1d  —  zsh  —  $COLUMNS✕$LINES"
+ZSH_THEME_TERM_TAB_TITLE_IDLE="%-50<..<%1d%<<  —  zsh  —  $COLUMNS✕$LINES" #15 char left truncated PWD
+ZSH_THEME_TERM_TITLE_IDLE="%-50<..<%1d%<<  —  zsh  —  $COLUMNS✕$LINES"
 # ZSH_THEME_TERM_TITLE_IDLE="%c — %m"
 # Avoid duplication of directory in terminals with independent dir display
 

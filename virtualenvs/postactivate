@@ -3,4 +3,6 @@
 
 PS1="$_OLD_VIRTUAL_PS1"
 _OLD_PROMPT="$PROMPT"
-PROMPT="$PROMPT%{$reset_color%}· %{$fg_bold[cyan]%}`basename \"$VIRTUAL_ENV\"`%{$reset_color%} "
+PROMPT="$PROMPT%{$reset_color%}· %{$fg_bold[blue]%}%-25<..<`basename \"$VIRTUAL_ENV\"`%<<%{$reset_color%} "
+_OLD_RPROMPT="$RPROMPT"
+RPROMPT="$RPROMPT"

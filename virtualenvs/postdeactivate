@@ -1,4 +1,5 @@
 #!/usr/bin/zsh
 # This hook is sourced after every virtualenv is deactivated.
 
+PROMPT="$_OLD_PROMPT"
 RPROMPT="$_OLD_RPROMPT"
