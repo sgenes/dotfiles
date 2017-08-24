@@ -1,27 +1,3 @@
-# zshrc with antigen-hs
-# Copyright © 2016 Tamado Ramot Sitohang
-
-# License: MIT
-# Permission is hereby granted, free of charge, to any person obtaining
-# a copy of this software and associated documentation files (the "Software"),
-# to deal in the Software without restriction, including without limitation
-# the rights to use, copy, modify, merge, publish, distribute, sublicense,
-# and/or sell copies of the Software, and to permit persons to whom the
-# Software is furnished to do so, subject to the following conditions:
-
-# The above copyright notice and this permission notice shall be included
-# in all copies or substantial portions of the Software.
-
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-# OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
-# OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
-
 ZSH="$HOME/.zsh"
 
 if [[ -z "$ZSH_CACHE_DIR" ]]; then
@@ -34,19 +10,20 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Documents/WORKSPACE/PYTHON
 export PATH="$HOME/.bin:$HOME/.bin/platform-tools:$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
 export GOPATH="$HOME/.go"
-export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
-export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS"
+export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'    # Use GTK for Java
+export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS" # Applications
 export PROMPT_EOL_MARK=""
 export PYTHONSTARTUP=~/.pythonrc
 
 export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-# [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+
 export NPM_PACKAGES="$HOME/.local/share/npm-packages/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
-unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
+# unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$HOME/.local/share/man:$MANPATH"
 
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -56,19 +33,21 @@ export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 export MANPATH="$HOME/.rvm/man:$MANPATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-fpath+=/home/ramot/.zsh/function
 source $ZSH/function.zsh
 source $ZSH/autopair.zsh
+fpath+=/home/ramot/.zsh/function
+
+# antigen init
 if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then
 	source $ZSH/antigen-hs/init.zsh
 else
 	source $ZSH/plugins/history/history.plugin.zsh
 fi
-if [[ $(todo) != '' ]]; then
-	JOAO="$fg_bold[white]TODO:$reset_color"
-	echo $JOAO
-	todo --filter -done +children
-fi
+# if [[ $(todo) != '' ]]; then
+#	 JOAO="$fg_bold[white]TODO:$reset_color"
+#	 echo $JOAO
+#	 todo --filter -done +children
+# fi
 # source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source /etc/bash_completion.d/virtualenvwrapper
 
@@ -87,7 +66,7 @@ if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then
 	export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
 fi
 
-export LESS="-~R"
+export LESS="-~R" # output raw control chars
 export VISUAL='/usr/local/bin/vim'
 export EDITOR='/usr/local/bin/vim'
 export SELECTED_EDITOR='/usr/local/bin/vim'

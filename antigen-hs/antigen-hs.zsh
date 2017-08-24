@@ -19,7 +19,7 @@ source /home/ramot/Documents/DOTFILES/antigen-hs/repos/https-COLON--SLASH--SLASH
 source /home/ramot/Documents/DOTFILES/zsh/plugins/completion/completion.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/colors/zsh-syntax-highlighting.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/history-substring-search/history-substring-search.plugin.zsh
-source /home/ramot/Documents/DOTFILES/zsh/plugins/bureau2/bureau2.plugin.zsh
+source /home/ramot/Documents/DOTFILES/zsh/plugins/arc/arc.plugin.zsh
 fpath+=/home/ramot/.zsh/plugins/zsh-autosuggestions
 fpath+=/home/ramot/.zsh/plugins/key-bindings
 fpath+=/home/ramot/.zsh/plugins/misc
@@ -39,4 +39,4 @@ fpath+=/home/ramot/.antigen-hs/repos/https-COLON--SLASH--SLASH-github.com-SLASH-
 fpath+=/home/ramot/.zsh/plugins/completion
 fpath+=/home/ramot/.zsh/plugins/colors
 fpath+=/home/ramot/.zsh/plugins/history-substring-search
-fpath+=/home/ramot/.zsh/plugins/bureau2
+fpath+=/home/ramot/.zsh/plugins/arc
