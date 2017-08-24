@@ -20,7 +20,7 @@ ZSH_THEME_GIT_TIME_SINCE_COMMIT_SHORT="%{$fg[green]%}"
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_MEDIUM="%{$fg[yellow]%}"
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_LONG="%{$fg[red]%}"
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL="%{$fg[white]%}"
-ZSH_SUSPEND=" %{$fg[yellow]%}⚐ %{$reset_color%}"
+ZSH_SUSPEND=" %{$fg[yellow]%}⚐%{$reset_color%}"
 
 # Determine the time since last commit. If branch is clean,
 # use a neutral color, otherwise colors will vary according to time.
