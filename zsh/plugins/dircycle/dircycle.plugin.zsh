@@ -11,11 +11,23 @@
 # don't add same dirs to directory stack
 setopt pushdignoredups
 
+switch-to-dir() {
+	[[ ${#dirstack} -eq 0 ]] && return
+	while ! builtin pushd -q $1 &> /dev/null; do
+		builtin popd -1 $1
+		[[ ${#dirstack} -eq 0 ]] && break
+	done
+}
+
 insert-cycledleft () {
 	emulate -L zsh
 	setopt nopushdminus
 
 	builtin pushd -q -0 &>/dev/null || true
+	omz_termsupport_precmd
+	zle reset-prompt
+	sleep 1
+	precmd
 	zle reset-prompt
 }
 zle -N insert-cycledleft
@@ -25,6 +37,10 @@ insert-cycledright () {
 	setopt nopushdminus
 
 	builtin pushd -q +1 &>/dev/null || true
+	zle reset-prompt
+	sleep 1
+	omz_termsupport_precmd
+	precmd
 	zle reset-prompt
 }
 zle -N insert-cycledright

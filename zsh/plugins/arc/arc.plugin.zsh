@@ -86,7 +86,7 @@ arc_git_status () {
   local ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●%{$reset_color%}"
   local ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●%{$reset_color%}"
   local ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
-  local _INDEX=$(command git status --porcelain 2> /dev/null)
+  local _INDEX=$(command git status --porcelain -b 2> /dev/null)
   local _STATUS=""
   if $(echo "$_INDEX" | grep '^[AMRD]. ' &> /dev/null); then
     _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_STAGED"
@@ -96,10 +96,6 @@ arc_git_status () {
   fi
   if $(echo "$_INDEX" | command grep -E '^\?\? ' &> /dev/null); then
     _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_UNTRACKED"
-  fi
-  _INDEX=$(command git status --porcelain -b 2> /dev/null)
-  if $(command git rev-parse --verify refs/stash &> /dev/null); then
-    _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_STASHED"
   fi
   if $(echo "$_INDEX" | grep '^## .*ahead' &> /dev/null); then
     _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_AHEAD"
@@ -134,7 +130,28 @@ _get_path () {
   echo $_PATH
 }
 
-PROMPT='$(_get_path)$(arc_git_prompt)'
-RPROMPT='$(_git_time_since_commit)$(suspend_symbol)'
+PROMPT='$(_get_path)'
+RPROMPT='$(suspend_symbol)'
 PROMPT2="  %{$fg[green]%}>%{$reset_color%} "
 SPROMPT="Correct $fg_bold[red]%R$reset_color to $fg_bold[green]%r$reset_color [Yes, No, Abort, Edit]? "
+
+ASYNC_PROC=0
+function precmd() {
+  function async() {
+    printf "%s" "$(arc_git_prompt)" > "/tmp/git_prompt_$$"
+    printf "%s" "$(_git_time_since_commit)" > "/tmp/time_commit_$$"
+    kill -s USR1 $$
+  }
+  if [[ "${ASYNC_PROC}" != 0 ]]; then
+    kill -s HUP $ASYNC_PROC > /dev/null 2>&1 || :
+  fi
+  async &!
+  ASYNC_PROC=$!
+}
+
+function TRAPUSR1() {
+  PROMPT="$(_get_path)$(cat /tmp/git_prompt_$$)"
+  RPROMPT="$(cat /tmp/time_commit_$$)$(suspend_symbol)"
+  ASYNC_PROC=0
+  zle && zle reset-prompt
+}
