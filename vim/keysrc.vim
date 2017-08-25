@@ -31,13 +31,13 @@ nmap <silent>                       ,ci
 vmap <silent>                       ,ci
 imap <silent>                       <C-o>,ci
 nmap <C-M>                            %
-nnoremap <silent>-                    <C-w>-
-nnoremap <silent>+                    <C-w>+
-nnoremap <silent>=                    <C-w>=
+nnoremap -                            <C-w>-
+nnoremap +                            <C-w>+
+nnoremap =                            <C-w>=
 map <C-S-Down>                        <C-w><C-w>
 map <C-S-Up>                          <C-w>w
-nmap <Tab>                            :bp!<CR>
-nmap <S-Tab>                          :bnext!<CR>
+nmap <silent><Tab>                    :bp!<CR>
+nmap <silent><S-Tab>                  :bnext!<CR>
 " nmap <silent><C-\>                    :bp<CR>
 " nmap <silent><Space>                  :bnext<CR>
 nmap <silent><Del>                    :conf bdelete<CR>

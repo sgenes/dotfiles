@@ -20,7 +20,7 @@ Plug 'vim-airline/vim-airline'
 " Plug 'Shougo/neosnippet.vim'
 " Plug 'Shougo/neosnippet-snippets'
 " Plug 'Shougo/neoinclude.vim'
-" Plug 'roman/golden-ratio'
+Plug 'roman/golden-ratio'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe'
@@ -98,7 +98,7 @@ colorscheme MoonMaster
 let g:tagbar_show_visibility = 0
 let g:tagbar_compact = 1
 let g:tagbar_left = 0
-let g:tagbar_width = 30
+" let g:tagbar_width = 30
 let g:tagbar_indent = 3
 let g:tagbar_iconchars = ['▶ ', '▼ ']
 hi TagbarKind term=bold ctermfg=0 cterm=bold gui=bold guifg=#d3dae3
@@ -212,7 +212,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 " NERDTree settings {{{
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeStatusLine=-1
-let g:NERDTreeWinSize=30
+" let g:NERDTreeWinSize=30
 let g:NERDTreeHijackNetrw=1
 " let NERDTreeMapOpenInTab='<CR>'
 " }}}
@@ -272,7 +272,7 @@ let g:syntastic_xml_xmllint_quiet_messages = {
 
 " Gundo setings {{{
 let g:gundo_help = 0
-let g:gundo_width = 30
+" let g:gundo_width = 30
 let g:gundo_preview_height = 10
 " }}}
 
