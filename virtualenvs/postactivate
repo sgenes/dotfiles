@@ -1,8 +1,2 @@
 #!/usr/bin/zsh
 # This hook is sourced after every virtualenv is activated.
-
-PS1="$_OLD_VIRTUAL_PS1"
-_OLD_PROMPT="$PROMPT"
-PROMPT="$PROMPT%{$reset_color%}· %{$fg_bold[blue]%}%-25<..<`basename \"$VIRTUAL_ENV\"`%<<%{$reset_color%} "
-_OLD_RPROMPT="$RPROMPT"
-RPROMPT="$RPROMPT"

@@ -24,8 +24,9 @@ insert-cycledleft () {
 	setopt nopushdminus
 
 	builtin pushd -q -0 &>/dev/null || true
-	omz_termsupport_precmd
 	zle reset-prompt
+	omz_termsupport_precmd
+	cwd_venv
 	sleep 1
 	precmd
 	zle reset-prompt
@@ -38,8 +39,9 @@ insert-cycledright () {
 
 	builtin pushd -q +1 &>/dev/null || true
 	zle reset-prompt
-	sleep 1
 	omz_termsupport_precmd
+	cwd_venv
+	sleep 1
 	precmd
 	zle reset-prompt
 }

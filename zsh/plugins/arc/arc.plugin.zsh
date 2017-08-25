@@ -4,7 +4,6 @@ setopt prompt_subst
 
 _git_time_since_commit() {
   local ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL="%{$fg[white]%}"
-  local ZSH_SUSPEND=" %{$fg[yellow]%}⚐%{$reset_color%}"
   # Only proceed if there is actually a commit.
   if git log -1 > /dev/null 2>&1; then
     # Get the last commit.
@@ -37,6 +36,7 @@ _git_time_since_commit() {
 }
 
 suspend_symbol () {
+  local ZSH_SUSPEND=" %{$fg[yellow]%}⚐%{$reset_color%}"
   local _suspended=""
   if [[ $(jobs -l | wc -l ) -gt 0 ]]; then
     _suspended="$ZSH_SUSPEND"
@@ -130,7 +130,14 @@ _get_path () {
   echo $_PATH
 }
 
-PROMPT='$(_get_path)'
+_venv_status() {
+  if [[ -n $VIRTUAL_ENV ]]; then
+    venv_name="· %{$fg_bold[blue]%}${VIRTUAL_ENV:t}%{$reset_color%} "
+  fi
+  echo $venv_name
+}
+
+PROMPT='$(_get_path)$(_venv_status)'
 RPROMPT='$(suspend_symbol)'
 PROMPT2="  %{$fg[green]%}>%{$reset_color%} "
 SPROMPT="Correct $fg_bold[red]%R$reset_color to $fg_bold[green]%r$reset_color [Yes, No, Abort, Edit]? "
@@ -150,7 +157,7 @@ function precmd() {
 }
 
 function TRAPUSR1() {
-  PROMPT="$(_get_path)$(cat /tmp/git_prompt_$$)"
+  PROMPT="$(_get_path)$(cat /tmp/git_prompt_$$)$(_venv_status)"
   RPROMPT="$(cat /tmp/time_commit_$$)$(suspend_symbol)"
   ASYNC_PROC=0
   zle && zle reset-prompt

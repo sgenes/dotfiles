@@ -6,6 +6,7 @@ fi
 
 autoload -U colors && colors
 
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Documents/WORKSPACE/PYTHON
 export PATH="$HOME/.bin:$HOME/.bin/platform-tools:$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
