@@ -2,13 +2,75 @@
 
 setopt prompt_subst
 
+zmodload zsh/datetime
+zmodload zsh/zle
+zmodload zsh/parameter
+
+autoload -Uz add-zsh-hook
+autoload -Uz vcs_info
+autoload -Uz async && async
+add-zsh-hook precmd arc_precmd
+add-zsh-hook preexec arc_preexec
+
+arc_precmd() {
+  arc_cmd_timestamp=
+  arc_async_tasks
+  arc_render "precmd"
+  unset arc_cmd_timestamp
+}
+
+arc_preexec() {
+  arc_cmd_timestamp=$EPOCHSECONDS
+}
+
+arc_async_tasks() {
+  (( !${arc_async_init:-0} )) && {
+    async_start_worker "arc_prompt" -u -n
+    async_register_callback "arc_prompt" arc_async_callback
+    arc_async_init=1
+  }
+
+  typeset -gA arc_vcs_info
+  local -H MATCH
+  if ! [[ $PWD = ${arc_vcs_info[pwd]}* ]]; then
+    # stop any running async jobs
+    async_flush_jobs "arc_prompt"
+    arc_vcs_info[top]=
+    arc_vcs_info[branch]=
+    arc_vcs_info[time]=
+  fi
+  unset MATCH
+  async_job "arc_prompt" arc_async_vcs_info $PWD
+}
+
+arc_async_vcs_info() {
+  builtin cd -q $1 > /dev/null
+
+  zstyle ':vcs_info:*' enable git
+  zstyle ':vcs_info:*' use-simple true
+  # only export two msg variables from vcs_info
+  zstyle ':vcs_info:*' max-exports 2
+  # export branch (%b) and git toplevel (%R)
+  zstyle ':vcs_info:git*' formats '%b' '%R'
+  zstyle ':vcs_info:git*' actionformats '%b|%a' '%R'
+
+  vcs_info
+
+  local -A info
+  info[top]=$vcs_info_msg_1_
+  info[branch]=$(arc_git_prompt)
+  info[time]=$(_git_time_since_commit)
+
+  print -r - ${(@kvq)info}
+}
+
 _git_time_since_commit() {
   local ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL="%{$fg[white]%}"
   # Only proceed if there is actually a commit.
   if git log -1 > /dev/null 2>&1; then
     # Get the last commit.
     local last_commit=$(git log --pretty=format:'%at' -1 2> /dev/null)
-    local now=$(date +%s)
+    local now=$EPOCHSECONDS
     local seconds_since_last_commit=$((now-last_commit))
 
     # Totals
@@ -132,33 +194,66 @@ _get_path () {
 
 _venv_status() {
   if [[ -n $VIRTUAL_ENV ]]; then
-    venv_name="· %{$fg_bold[blue]%}${VIRTUAL_ENV:t}%{$reset_color%} "
+    venv_name=" · %{$fg_bold[blue]%}${VIRTUAL_ENV:t}%{$reset_color%}"
   fi
   echo $venv_name
 }
 
-PROMPT='$(_get_path)$(_venv_status)'
-RPROMPT='$(suspend_symbol)'
-PROMPT2="  %{$fg[green]%}>%{$reset_color%} "
-SPROMPT="Correct $fg_bold[red]%R$reset_color to $fg_bold[green]%r$reset_color [Yes, No, Abort, Edit]? "
-
-ASYNC_PROC=0
-function precmd() {
-  function async() {
-    printf "%s" "$(arc_git_prompt)" > "/tmp/git_prompt_$$"
-    printf "%s" "$(_git_time_since_commit)" > "/tmp/time_commit_$$"
-    kill -s USR1 $$
-  }
-  if [[ "${ASYNC_PROC}" != 0 ]]; then
-    kill -s HUP $ASYNC_PROC > /dev/null 2>&1 || :
-  fi
-  async &!
-  ASYNC_PROC=$!
+arc_async_callback() {
+  setopt localoptions noshwordsplit
+  local job=$1 code=$2 output=$3 exec_time=$4
+  case $job in
+    arc_async_vcs_info)
+      local -A info
+      typeset -gA arc_vcs_info
+      info=("${(Q@)${(z)output}}")
+      local -H MATCH
+      if [[ $info[top] = $arc_vcs_info[top] ]]; then
+        if [[ $arc_vcs_info[pwd] = ${PWD}* ]]; then
+          arc_vcs_info[pwd]=$PWD
+        fi
+      else
+        arc_vcs_info[pwd]=$PWD
+      fi
+      unset match
+      arc_vcs_info[top]=$info[top]
+      arc_vcs_info[branch]=$info[branch]
+      arc_vcs_info[time]=$info[time]
+      arc_render
+      ;;
+  esac
 }
 
-function TRAPUSR1() {
-  PROMPT="$(_get_path)$(cat /tmp/git_prompt_$$)$(_venv_status)"
-  RPROMPT="$(cat /tmp/time_commit_$$)$(suspend_symbol)"
-  ASYNC_PROC=0
-  zle && zle reset-prompt
+arc_render() {
+  setopt localoptions noshwordsplit
+  [[ -n ${arc_cmd_timestamp+x} ]] && [[ $1 != precmd ]] && return
+  local -a arc_parts arc_rparts
+  arc_parts+=($(_get_path))
+  typeset -gA arc_vcs_info
+  if [[ -n $arc_vcs_info[branch] ]]; then
+    arc_parts+=(" ${arc_vcs_info[branch]% }")
+  fi
+  if [[ -n $arc_vcs_info[time] ]]; then
+    arc_rparts+=("${arc_vcs_info[time]}")
+  fi
+  arc_rparts+=($(suspend_symbol))
+  local -ah ps1
+  ps1=(
+      ${(j..)arc_parts}
+  )
+  clps1="${(j..)arc_parts}"
+  PROMPT="$clps1$(_venv_status) "
+  # PROMPT='$(_get_path)$(_venv_status)'
+  RPROMPT="${(j. .)arc_rparts}"
+  # RPROMPT='$(suspend_symbol)'
+  PROMPT2="  %{$fg[green]%}>%{$reset_color%} "
+  SPROMPT="Correct $fg_bold[red]%R$reset_color to $fg_bold[green]%r$reset_color [Yes, No, Abort, Edit]? "
+  local expanded_prompt expanded_rprompt
+  expanded_prompt="${(S%%)PROMPT}"
+  expanded_rprompt="${(S%%)RPROMPT}"
+  # if [[ $arc_last_prompt != $expanded_prompt ]] && [[ $arc_last_rprompt != $expanded_rprompt ]]; then
+    zle && zle reset-prompt
+  # fi
+  arc_last_prompt=$expanded_prompt
+  arc_last_rprompt=$expanded_rprompt
 }
