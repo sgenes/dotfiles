@@ -2,6 +2,7 @@
 
 source /home/ramot/Documents/DOTFILES/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/key-bindings/key-bindings.plugin.zsh
+source /home/ramot/Documents/DOTFILES/zsh/plugins/extract/extract.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/misc/misc.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/history/history.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/directories/directories.plugin.zsh
@@ -15,14 +16,16 @@ source /home/ramot/Documents/DOTFILES/zsh/plugins/fancy-ctrl-z/fancy-ctrl-z.plug
 source /home/ramot/Documents/DOTFILES/zsh/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/rvm/rvm.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/dircycle/dircycle.plugin.zsh
-source /home/ramot/Documents/DOTFILES/antigen-hs/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-completions/zsh-completions.plugin.zsh
+source /home/ramot/Documents/DOTFILES/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/completion/completion.plugin.zsh
-source /home/ramot/Documents/DOTFILES/zsh/plugins/colors/zsh-syntax-highlighting.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/history-substring-search/history-substring-search.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/async/async.plugin.zsh
 source /home/ramot/Documents/DOTFILES/zsh/plugins/arc/arc.plugin.zsh
+source /home/ramot/Documents/DOTFILES/zsh/plugins/colors/zsh-syntax-highlighting.plugin.zsh
+source /home/ramot/Documents/DOTFILES/zsh/plugins/autopair/autopair.plugin.zsh
 fpath+=/home/ramot/.zsh/plugins/zsh-autosuggestions
 fpath+=/home/ramot/.zsh/plugins/key-bindings
+fpath+=/home/ramot/.zsh/plugins/extract
 fpath+=/home/ramot/.zsh/plugins/misc
 fpath+=/home/ramot/.zsh/plugins/history
 fpath+=/home/ramot/.zsh/plugins/directories
@@ -36,9 +39,10 @@ fpath+=/home/ramot/.zsh/plugins/fancy-ctrl-z
 fpath+=/home/ramot/.zsh/plugins/virtualenvwrapper
 fpath+=/home/ramot/.zsh/plugins/rvm
 fpath+=/home/ramot/.zsh/plugins/dircycle
-fpath+=/home/ramot/.antigen-hs/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zsh-completions
+fpath+=/home/ramot/.zsh/plugins/zsh-completions
 fpath+=/home/ramot/.zsh/plugins/completion
-fpath+=/home/ramot/.zsh/plugins/colors
 fpath+=/home/ramot/.zsh/plugins/history-substring-search
 fpath+=/home/ramot/.zsh/plugins/async
 fpath+=/home/ramot/.zsh/plugins/arc
+fpath+=/home/ramot/.zsh/plugins/colors
+fpath+=/home/ramot/.zsh/plugins/autopair

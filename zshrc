@@ -1,7 +1,7 @@
 ZSH="$HOME/.zsh"
 
 if [[ -z "$ZSH_CACHE_DIR" ]]; then
-	ZSH_CACHE_DIR="$ZSH/cache/"
+  ZSH_CACHE_DIR="$ZSH/cache/"
 fi
 
 autoload -U colors && colors
@@ -30,24 +30,24 @@ export MANPATH="$NPM_PACKAGES/share/man:$HOME/.local/share/man:$MANPATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.go/bin:$PATH"
 
+export RVM_DIR="$HOME/.rvm"
 export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 export MANPATH="$HOME/.rvm/man:$MANPATH"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 source $ZSH/function.zsh
-source $ZSH/autopair.zsh
 fpath+=/home/ramot/.zsh/function
 
 # antigen init
 if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then
-	source $ZSH/antigen-hs/init.zsh
+  source $ZSH/antigen-hs/init.zsh
 else
-	source $ZSH/plugins/history/history.plugin.zsh
+  source $ZSH/plugins/history/history.plugin.zsh
 fi
 # if [[ $(todo) != '' ]]; then
-#	 JOAO="$fg_bold[white]TODO:$reset_color"
-#	 echo $JOAO
-#	 todo --filter -done +children
+#  JOAO="$fg_bold[white]TODO:$reset_color"
+#  echo $JOAO
+#  todo --filter -done +children
 # fi
 # source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source /etc/bash_completion.d/virtualenvwrapper
@@ -56,15 +56,15 @@ fi
 # setopt correct
 
 if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then
-	ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-	ZSH_HIGHLIGHT_STYLES[precommand]=fg=green
-	ZSH_HIGHLIGHT_STYLES[path]=fg=39
-	ZSH_HIGHLIGHT_STYLES[path_prefix]=none
-	ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=226
-	ZSH_HIGHLIGHT_STYLES[assign]=fg=10
-	ZSH_HIGHLIGHT_STYLES[globbing]=fg=11
-	ZSH_HIGHLIGHT_STYLES[comment]=fg=7
-	export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
+  ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+  ZSH_HIGHLIGHT_STYLES[precommand]=fg=green
+  ZSH_HIGHLIGHT_STYLES[path]=fg=39
+  ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+  ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=226
+  ZSH_HIGHLIGHT_STYLES[assign]=fg=10
+  ZSH_HIGHLIGHT_STYLES[globbing]=fg=11
+  ZSH_HIGHLIGHT_STYLES[comment]=fg=7
+  export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
 fi
 
 export LESS="-~R" # output raw control chars

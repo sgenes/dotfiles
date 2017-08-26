@@ -12,30 +12,30 @@
 setopt pushdignoredups
 
 insert-cycledleft () {
-	emulate -L zsh
-	setopt nopushdminus
+  emulate -L zsh
+  setopt nopushdminus
 
-	builtin pushd -q -0 &>/dev/null || true
-	zle reset-prompt
-	omz_termsupport_precmd
-	cwd_venv
-	arc_precmd
-	sleep 1
-	zle reset-prompt
+  builtin pushd -q -0 &>/dev/null || true
+  zle reset-prompt
+  omz_termsupport_precmd
+  cwd_venv
+  arc_precmd
+  sleep 1
+  zle reset-prompt
 }
 zle -N insert-cycledleft
 
 insert-cycledright () {
-	emulate -L zsh
-	setopt nopushdminus
+  emulate -L zsh
+  setopt nopushdminus
 
-	builtin pushd -q +1 &>/dev/null || true
-	zle reset-prompt
-	omz_termsupport_precmd
-	cwd_venv
-	arc_precmd
-	sleep 1
-	zle reset-prompt
+  builtin pushd -q +1 &>/dev/null || true
+  zle reset-prompt
+  omz_termsupport_precmd
+  cwd_venv
+  arc_precmd
+  sleep 1
+  zle reset-prompt
 }
 zle -N insert-cycledright
 

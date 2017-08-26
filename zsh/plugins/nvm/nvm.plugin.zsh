@@ -51,13 +51,13 @@ function nvm_prompt_info() {
 
 autoload -U add-zsh-hook
 load-nvmrc() {
-	if [[ -f .nvmrc && -r .nvmrc ]]; then
-		nvm use $(cat .nvmrc) --silent
-	elif [[ $(type -w node) == "node: command" ]]; then
-		if [[ $(nvm version) != $(nvm version default) ]]; then
-			nvm use default --silent
-		fi
-	fi
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    nvm use $(cat .nvmrc) --silent
+  elif [[ $(type -w node) == "node: command" ]]; then
+    if [[ $(nvm version) != $(nvm version default) ]]; then
+      nvm use default --silent
+    fi
+  fi
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc

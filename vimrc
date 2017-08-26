@@ -381,9 +381,9 @@ augroup pairing
   au FileType           ruby,eruby    let b:delimitMate_quotes="\" ' ` |"
 augroup END
 augroup title_string
-  au BufEnter           *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
-  au BufWritePost       *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
-  au VimResized         *             let &titlestring = BufferName() . "\ \ —\ \ VIM\ \ —\ \ %{&columns}✕%{&lines}"
+  au BufEnter           *             let &titlestring = BufferName() . "\ \ —\ \ VIM"
+  au BufWritePost       *             let &titlestring = BufferName() . "\ \ —\ \ VIM"
+  au VimResized         *             let &titlestring = BufferName() . "\ \ —\ \ VIM"
 augroup END
 augroup clipboard_opt
   au VimLeavePre        *             let @/ = ""
@@ -393,6 +393,12 @@ augroup filetype_help
 augroup END
 augroup vimfiles
   au FileType           vim           let b:ale_enabled=0
+augroup END
+augroup zsh
+  au FileType           zsh           set ts=2
+  au FileType           zsh           set sts=2
+  au FileType           zsh           set sw=2
+  au FileType           zsh           set expandtab
 augroup END
 " }}}
 

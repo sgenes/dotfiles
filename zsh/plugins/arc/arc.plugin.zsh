@@ -41,6 +41,7 @@ arc_async_tasks() {
   fi
   unset MATCH
   async_job "arc_prompt" arc_async_vcs_info $PWD
+  [[ -n $arc_async_vcs_info[top] ]] || return
 }
 
 arc_async_vcs_info() {
@@ -57,7 +58,7 @@ arc_async_vcs_info() {
   vcs_info
 
   local -A info
-  info[top]=$vcs_info_msg_1_
+  info[top]=$vcs_info_last_msg_1_
   info[branch]=$(arc_git_prompt)
   info[time]=$(_git_time_since_commit)
 
@@ -148,26 +149,26 @@ arc_git_status () {
   local ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●%{$reset_color%}"
   local ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●%{$reset_color%}"
   local ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
-  local _INDEX=$(command git status --porcelain -b 2> /dev/null)
+  local _INDEX=$(git status --porcelain -b 2> /dev/null)
   local _STATUS=""
-  if $(echo "$_INDEX" | grep '^[AMRD]. ' &> /dev/null); then
+  if [[ $_INDEX =~ $'\n[AMRD]. ' ]]; then
     _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_STAGED"
   fi
-  if $(echo "$_INDEX" | grep '^.[MTD] ' &> /dev/null); then
+  if [[ $_INDEX =~ $'\n.[MTD] ' ]]; then
     _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_UNSTAGED"
   fi
-  if $(echo "$_INDEX" | command grep -E '^\?\? ' &> /dev/null); then
+  if [[ $_INDEX =~ '\?\? ' ]]; then
     _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_UNTRACKED"
   fi
-  if $(echo "$_INDEX" | grep '^## .*ahead' &> /dev/null); then
+  if [[ $_INDEX =~ '## .*ahead' ]]; then
     _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_AHEAD"
   fi
-  if $(echo "$_INDEX" | grep '^## .*behind' &> /dev/null); then
+  if [[ $_INDEX =~ '## .*behind' ]]; then
     _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_BEHIND"
   fi
-  if [[ $_STATUS == "" ]]; then
-    _STATUS="$_STATUS"
-  fi
+  # if [[ $_STATUS == "" ]]; then
+    # _STATUS="$_STATUS"
+  # fi
 
   echo $_STATUS
 }
@@ -239,7 +240,7 @@ arc_render() {
   arc_rparts+=($(suspend_symbol))
   local -ah ps1
   ps1=(
-      ${(j..)arc_parts}
+    ${(j..)arc_parts}
   )
   clps1="${(j..)arc_parts}"
   PROMPT="$clps1$(_venv_status) "
@@ -248,12 +249,10 @@ arc_render() {
   # RPROMPT='$(suspend_symbol)'
   PROMPT2="  %{$fg[green]%}>%{$reset_color%} "
   SPROMPT="Correct $fg_bold[red]%R$reset_color to $fg_bold[green]%r$reset_color [Yes, No, Abort, Edit]? "
-  local expanded_prompt expanded_rprompt
+  local expanded_prompt
   expanded_prompt="${(S%%)PROMPT}"
-  expanded_rprompt="${(S%%)RPROMPT}"
-  # if [[ $arc_last_prompt != $expanded_prompt ]] && [[ $arc_last_rprompt != $expanded_rprompt ]]; then
+  if [[ $1 != "precmd" ]] && [[ $arc_last_prompt != $expanded_prompt ]]; then
     zle && zle reset-prompt
-  # fi
+  fi
   arc_last_prompt=$expanded_prompt
-  arc_last_rprompt=$expanded_rprompt
 }
