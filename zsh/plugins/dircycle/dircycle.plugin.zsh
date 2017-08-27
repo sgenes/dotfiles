@@ -8,9 +8,6 @@
 #  pushd +N: start counting from left of `dirs' output
 #  pushd -N: start counting from right of `dirs' output
 
-# don't add same dirs to directory stack
-setopt pushdignoredups
-
 insert-cycledleft () {
   emulate -L zsh
   setopt nopushdminus
@@ -18,8 +15,9 @@ insert-cycledleft () {
   builtin pushd -q -0 &>/dev/null || true
   zle reset-prompt
   omz_termsupport_precmd
-  cwd_venv
-  sleep 0.3 &> /dev/null
+  workon_cwd
+  load-nvmrc
+  sleep 0.1
   arc_precmd
 }
 zle -N insert-cycledleft
@@ -31,14 +29,13 @@ insert-cycledright () {
   builtin pushd -q +1 &>/dev/null || true
   zle reset-prompt
   omz_termsupport_precmd
-  cwd_venv
-  sleep 0.3 &> /dev/null
+  workon_cwd
+  load-nvmrc
+  sleep 0.1
   arc_precmd
 }
 zle -N insert-cycledright
 
-
 # add key bindings for iTerm2
-
 bindkey "\e[1;6C" insert-cycledleft
 bindkey "\e[1;6D" insert-cycledright

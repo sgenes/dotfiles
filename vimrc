@@ -63,9 +63,9 @@ set splitbelow
 set splitright
 set virtualedit=onemore
 set clipboard=unnamedplus
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
 set laststatus=2
 " set t_Co=256

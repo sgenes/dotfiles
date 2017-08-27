@@ -1,16 +1,6 @@
 # fixme - the load process here seems a bit bizarre
 
-# do not autoselect the first completion entry
-unsetopt menu_complete
-# unsetopt flowcontrol
-# show completion menu on succesive tab press
-setopt auto_menu
-setopt complete_in_word
-setopt always_to_end
-
 WORDCHARS=''
-
-zmodload -i zsh/complist
 
 ## case-insensitive (all),partial-word and then substring completion
 if [ "x$CASE_SENSITIVE" = "xtrue" ]; then
@@ -25,7 +15,7 @@ else
   fi
 fi
 
-zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # should this be in keybindings?
 bindkey -M menuselect '^o' accept-and-infer-next-history
@@ -59,18 +49,3 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
 
 # ... unless we really want to.
 zstyle '*' single-ignored show
-
-if [[ $COMPLETION_WAITING_DOTS = true ]]; then
-  expand-or-complete-with-dots() {
-    # toggle line-wrapping off and back on again
-    [[ -n "$terminfo[rmam]" && -n "$terminfo[smam]" ]] && echoti rmam
-    print -Pn "%{%F{red}......%f%}"
-    [[ -n "$terminfo[rmam]" && -n "$terminfo[smam]" ]] && echoti smam
-
-    zle expand-or-complete
-    zle redisplay
-  }
-  zle -N expand-or-complete-with-dots
-  bindkey "^I" expand-or-complete-with-dots
-fi
-autoload -U compinit && compinit

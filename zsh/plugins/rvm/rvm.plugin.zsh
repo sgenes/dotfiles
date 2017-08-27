@@ -1,5 +1,3 @@
-# fpath=($rvm_path/scripts/zsh/Completion $fpath)
-
 load_rvm() {
   # If these already exist, then rvm won't override them.
   unset -f "${rvm_funcs[@]}"
@@ -39,7 +37,3 @@ function gems {
     -e "s/$current_ruby@global/$fg[yellow]&$reset_color/g" \
     -e "s/$current_ruby$current_gemset$/$fg[green]&$reset_color/g"
 }
-
-# function _rvm_completion {
-  # source "$RVM_DIR/scripts/zsh/Completion/_rvm"
-# }

@@ -1,6 +1,4 @@
 # Changing/making/removing directory
-setopt auto_pushd
-
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'

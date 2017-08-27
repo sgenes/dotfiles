@@ -1,14 +1,7 @@
 # oh-my-zsh arc Theme
 
-setopt prompt_subst
-
-zmodload zsh/datetime
-zmodload zsh/zle
-zmodload zsh/parameter
-
-autoload -Uz add-zsh-hook
-autoload -Uz vcs_info
 autoload -Uz async && async
+
 add-zsh-hook precmd arc_precmd
 add-zsh-hook preexec arc_preexec
 
@@ -238,12 +231,7 @@ arc_render() {
     arc_rparts+=("${arc_vcs_info[time]}")
   fi
   arc_rparts+=($(suspend_symbol))
-  local -ah ps1
-  ps1=(
-    ${(j..)arc_parts}
-  )
-  clps1="${(j..)arc_parts}"
-  PROMPT="$clps1$(_venv_status) "
+  PROMPT="${(j..)arc_parts}$(_venv_status) "
   # PROMPT='$(_get_path)$(_venv_status)'
   RPROMPT="${(j. .)arc_rparts}"
   # RPROMPT='$(suspend_symbol)'

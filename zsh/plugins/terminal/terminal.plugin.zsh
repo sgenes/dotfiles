@@ -6,6 +6,10 @@
 # Fully supports screen, iterm, and probably most modern xterm and rxvt
 # (In screen, only short_tab_title is used)
 # Limited support for Apple Terminal (Terminal can't set window and tab separately)
+
+ZSH_THEME_TERM_TAB_TITLE_IDLE="%-50<..<%1d%<<  —  zsh" #15 char left truncated PWD
+ZSH_THEME_TERM_TITLE_IDLE="%-50<..<%1d%<<  —  zsh"
+
 function title {
   emulate -L zsh
   setopt prompt_subst
@@ -24,11 +28,6 @@ function title {
   fi
 }
 
-ZSH_THEME_TERM_TAB_TITLE_IDLE="%-50<..<%1d%<<  —  zsh" #15 char left truncated PWD
-ZSH_THEME_TERM_TITLE_IDLE="%-50<..<%1d%<<  —  zsh"
-# ZSH_THEME_TERM_TITLE_IDLE="%c — %m"
-# Avoid duplication of directory in terminals with independent dir display
-
 # Runs before showing the prompt
 function omz_termsupport_precmd {
   emulate -L zsh
@@ -37,7 +36,6 @@ function omz_termsupport_precmd {
   fi
 
   title $ZSH_THEME_TERM_TAB_TITLE_IDLE $ZSH_THEME_TERM_TITLE_IDLE
-  # print -Pn "\e]0;%1d  —  zsh  —  $COLUMNS✕$LINES\a"
 }
 
 # Runs before executing the command

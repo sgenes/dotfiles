@@ -49,8 +49,7 @@ function nvm_prompt_info() {
   fi
 }
 
-autoload -U add-zsh-hook
-load-nvmrc() {
+function load-nvmrc() {
   if [[ -f .nvmrc && -r .nvmrc ]]; then
     nvm use $(cat .nvmrc) --silent
   elif [[ $(type -w node) == "node: command" ]]; then
@@ -59,5 +58,7 @@ load-nvmrc() {
     fi
   fi
 }
+
 add-zsh-hook chpwd load-nvmrc
+
 load-nvmrc

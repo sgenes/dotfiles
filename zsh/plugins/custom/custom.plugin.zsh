@@ -11,8 +11,27 @@ alias apt='sudo apt'
 alias apt-get='sudo apt-get'
 alias snap='sudo snap'
 alias gitinit='git init && git add -A && git commit -m "Initial Commit"'
+alias fuck='sudo'
+alias pbcopy='xclip -sel clip'
+alias pbpaste='xclip -sel clip -o'
+alias browsedir='browse . &> /dev/null'
 
-alias editrc='$VISUAL $HOME/.zshrc'
+ls --color -d . &>/dev/null 2>&1 && alias ls='ls --color=tty' || alias ls='ls -G'
+
+man() {
+  env \
+    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+    PAGER="${commands[less]:-$PAGER}" \
+    _NROFF_U=1 \
+    PATH="$HOME/bin:$PATH" \
+    man "$@"
+}
 
 # reload zshrc
 function reload()
@@ -28,7 +47,15 @@ function reload()
   source ~/.zshrc
 }
 
-#bindkey '^[[1;5A' history-beginning-search-backward
-#bindkey '^[[1;5B' history-beginning-search-forward
-
-unsetopt no_match
+# zsh highlight
+if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then
+  ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+  ZSH_HIGHLIGHT_STYLES[precommand]=fg=green
+  ZSH_HIGHLIGHT_STYLES[path]=fg=39
+  ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+  ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=226
+  ZSH_HIGHLIGHT_STYLES[assign]=fg=10
+  ZSH_HIGHLIGHT_STYLES[globbing]=fg=11
+  ZSH_HIGHLIGHT_STYLES[comment]=fg=7
+  export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
+fi

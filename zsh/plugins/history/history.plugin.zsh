@@ -13,14 +13,3 @@ case $HIST_STAMPS in
   "yyyy-mm-dd") alias history='fc -il 1' ;;
   *) alias history='fc -l 1' ;;
 esac
-
-setopt append_history
-setopt extended_history
-setopt hist_expire_dups_first
-# ignore duplication command history list
-setopt hist_ignore_all_dups
-# setopt hist_ignore_space
-# setopt hist_verify
-setopt inc_append_history
-# share command history data
-setopt share_history
