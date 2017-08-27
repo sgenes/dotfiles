@@ -19,9 +19,8 @@ insert-cycledleft () {
   zle reset-prompt
   omz_termsupport_precmd
   cwd_venv
+  sleep 0.3 &> /dev/null
   arc_precmd
-  sleep 1
-  zle reset-prompt
 }
 zle -N insert-cycledleft
 
@@ -33,9 +32,8 @@ insert-cycledright () {
   zle reset-prompt
   omz_termsupport_precmd
   cwd_venv
+  sleep 0.3 &> /dev/null
   arc_precmd
-  sleep 1
-  zle reset-prompt
 }
 zle -N insert-cycledright
 
