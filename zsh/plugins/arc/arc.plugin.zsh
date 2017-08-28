@@ -108,27 +108,27 @@ arc_git_branch () {
   local r=""
   if [ -d "$g/rebase-merge" ]; then
     if [ -f "$g/rebase-merge/interactive" ]; then
-      r="|REBASE-i"
+      r="|%{$fg[cyan]%}REBASE-i%{$reset_color%}"
     else
-      r="REBASE-m"
+      r="|%{$fg[blue]%}REBASE-m%{$reset_color%}"
     fi
   else
     if [ -d "$g/rebase-apply" ]; then
       if [ -f "$g/rebase-apply/rebasing" ]; then
-        r="|REBASE"
+        r="|%{$fg[green]%}REBASE%{$reset_color%}"
       elif [ -f "$g/rebase-apply/applying" ]; then
-        r="|AM"
+        r="|%{$fg[green]%}AM%{$reset_color%}"
       else
-        r="|AM/REBASE"
+        r="|%{$fg[green]%}AM/REBASE%{$reset_color%}"
       fi
     elif [ -f "$g/MERGE_HEAD" ]; then
-      r="|MERGING"
+      r="|%{$fg[green]%}MERGING%{$reset_color%}"
     elif [ -f "$g/CHERRY_PICK_HEAD" ]; then
-      r="|CHERRY-PICKING"
+      r="|%U%{$fg[magenta]%}CHERRY-PICKING%{$reset_color%}%u"
     elif [ -f "$g/REVERT_HEAD" ]; then
-      r="|REVERTING"
+      r="|%{$fg[yellow]%}REVERTING%{$reset_color%}"
     elif [ -f "$g/BISECT_LOG" ]; then
-      r="|BISECTING"
+      r="|%{$fg[blue]%}BISECTING%{$reset_color%}"
     fi
   fi
   echo "%{$fg_bold[green]%}%-45<..<${ref#refs/heads/}%<<%{$reset_color%}$r"
@@ -144,7 +144,7 @@ arc_git_status () {
   local ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
   local _INDEX=$(git status --porcelain -b 2> /dev/null)
   local _STATUS=""
-  if [[ $_INDEX =~ $'\n[AMRD]. ' ]]; then
+  if [[ $_INDEX =~ $'\n[AMRDU]. ' ]]; then
     _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_STAGED"
   fi
   if [[ $_INDEX =~ $'\n.[MTD] ' ]]; then
