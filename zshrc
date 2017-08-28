@@ -7,24 +7,23 @@ ZSH="$HOME/.zsh"
 ZSH_CACHE_DIR="$ZSH/cache/"
 
 # autoload
-autoload -U colors && colors
-autoload -U add-zsh-hook
-autoload -U compinit
 autoload -Uz add-zsh-hook
+autoload -U colors && colors
+autoload -U compinit
 autoload -Uz vcs_info
 
 # zmodload
 zmodload -i zsh/complist
 zmodload zsh/datetime
-zmodload zsh/zle
 zmodload zsh/parameter
+zmodload zsh/zle
 
 # set environment
 export PROMPT_EOL_MARK=""
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1 # disable venv prompt
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Documents/WORKSPACE/PYTHON
+export PROJECT_HOME=$HOME/Documents/workspace/python
 export PYTHONSTARTUP=~/.pythonrc
 
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'    # Use GTK for Java

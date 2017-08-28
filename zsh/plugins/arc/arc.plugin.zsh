@@ -182,7 +182,7 @@ arc_git_prompt () {
 
 _get_path () {
   local _PATH=""
-  _PATH="%{$fg[cyan]%}%-60<..<%c%<<%{$reset_color%} "
+  _PATH="%{$fg[cyan]%}%-60<..<%1~%<<%{$reset_color%} "
   echo $_PATH
 }
 
