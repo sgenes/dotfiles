@@ -177,6 +177,7 @@ inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "
 " Completion settings {{{
 " set tags+=~/.vim/tags/cpp
 set completeopt-=preview
+let g:polyglot_disabled = ['haskell']
 " set completeopt+=noinsert
 " let g:neocomplete#enable_at_startup = 1
 " let g:neocomplete#sources#syntax#min_keyword_length = 2
