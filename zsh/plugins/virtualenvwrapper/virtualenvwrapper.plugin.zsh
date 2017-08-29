@@ -85,4 +85,5 @@ if [[ ! $DISABLE_VENV_CD -eq 1 ]]; then
   if ! (( $chpwd_functions[(I)workon_cwd] )); then
     chpwd_functions+=(workon_cwd)
   fi
+  workon_cwd
 fi
