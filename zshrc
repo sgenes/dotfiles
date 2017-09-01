@@ -44,7 +44,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.go/bin:$PATH"
 export PATH="$HOME/.rvm/bin:$PATH"
 
-export MANPATH="$NPM_PACKAGES/share/man:$HOME/.local/share/man:$MANPATH"
+export MANPATH="$NPM_PACKAGES/share/man:$HOME/.local/share/man:$HOME/.bin/dasht/man:$MANPATH"
 export MANPATH="$HOME/.rvm/man:$MANPATH"
 
 export NVM_DIR="$HOME/.nvm"
@@ -61,6 +61,8 @@ fi
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 source $ZSH/function.zsh
 fpath+=/home/ramot/.zsh/function
+# fpath+=/home/ramot/.bin/dasht/etc/zsh/completions
+source $HOME/.bin/dasht/etc/zsh/completions.zsh
 eval `dircolors $ZSH/dircolors`
 
 # antigen init
