@@ -1,5 +1,6 @@
 # no need of this
 /vim/.netrwhist
+/vim/tags
 # /vim/bundle
 /zsh/cache
 # /zsh/antigen-hs
