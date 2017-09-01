@@ -38,7 +38,7 @@ export DEBEMAIL="tamado.sitohang@gmail.com"
 export DEBFULLNAME="Tamado Sitohang"
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
-export PATH="$HOME/.bin:$HOME/.bin/platform-tools:$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
+export PATH="$HOME/.bin:$HOME/.bin/platform-tools:$HOME/.bin/dasht/bin:$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.go/bin:$PATH"
