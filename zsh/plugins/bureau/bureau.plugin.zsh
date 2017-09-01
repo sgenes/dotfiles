@@ -1,4 +1,4 @@
-# oh-my-zsh Bureau Theme
+# fork of oh-my-zsh Bureau Theme
 
 setopt prompt_subst
 

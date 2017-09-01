@@ -1,4 +1,7 @@
 # oh-my-zsh arc Theme
+# (c) 2017 Tamado Ramot Sitohang
+# some codes are derivatives from Sindre Sorhus' Pure theme
+# MIT License
 
 autoload -Uz async && async
 

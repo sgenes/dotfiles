@@ -23,6 +23,7 @@ bundles =
   , local "/home/ramot/.zsh/plugins/directories"
   , local "/home/ramot/.zsh/plugins/fancy-ctrl-z"
   , local "/home/ramot/.zsh/plugins/dircycle"
+  , local "/home/ramot/.zsh/plugins/per-directory-history"
   , local "/home/ramot/.zsh/plugins/extract"
   , local "/home/ramot/.zsh/plugins/grep"
   -- , local "/home/ramot/.zsh/plugins/spectrum"

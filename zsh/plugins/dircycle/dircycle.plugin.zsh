@@ -1,3 +1,7 @@
+# forked from oh-my-zsh dircycle plugin
+# (c) 2017 Tamado Sitohang
+# MIT License
+
 # enables cycling through the directory stack using
 # Ctrl+Shift+Left/Right
 #

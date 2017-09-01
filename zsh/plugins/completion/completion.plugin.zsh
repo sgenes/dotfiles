@@ -1,3 +1,5 @@
+# oh-my-zsh completion library
+# modified to work with my zsh config
 # fixme - the load process here seems a bit bizarre
 
 WORDCHARS=''

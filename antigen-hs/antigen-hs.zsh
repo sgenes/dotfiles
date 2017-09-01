@@ -8,6 +8,7 @@ source /home/ramot/Documents/dotfiles/zsh/plugins/history/history.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/directories/directories.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/dircycle/dircycle.plugin.zsh
+source /home/ramot/Documents/dotfiles/zsh/plugins/per-directory-history/per-directory-history.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/extract/extract.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/grep/grep.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/nvm/nvm.plugin.zsh
@@ -29,6 +30,7 @@ fpath+=/home/ramot/.zsh/plugins/history
 fpath+=/home/ramot/.zsh/plugins/directories
 fpath+=/home/ramot/.zsh/plugins/fancy-ctrl-z
 fpath+=/home/ramot/.zsh/plugins/dircycle
+fpath+=/home/ramot/.zsh/plugins/per-directory-history
 fpath+=/home/ramot/.zsh/plugins/extract
 fpath+=/home/ramot/.zsh/plugins/grep
 fpath+=/home/ramot/.zsh/plugins/nvm

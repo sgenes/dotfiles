@@ -1,3 +1,6 @@
+# lazy load rvm
+# (c) 2017 Tamado Ramot Sitohang <ramottamado@gmail.com>
+
 load_rvm() {
   # If these already exist, then rvm won't override them.
   unset -f "${rvm_funcs[@]}"

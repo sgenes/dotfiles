@@ -1,3 +1,5 @@
+# lazy load virtualenv
+
 virtualenvwrapper='virtualenvwrapper_lazy.sh'
 
 if (( $+commands[$virtualenvwrapper] )); then

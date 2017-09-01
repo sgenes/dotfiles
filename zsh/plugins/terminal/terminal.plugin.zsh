@@ -1,4 +1,6 @@
 # Set terminal window and tab/icon title
+# forked from oh-my-zsh terminal library
+# modified to work with my config
 #
 # usage: title short_tab_title [long_window_title]
 #
