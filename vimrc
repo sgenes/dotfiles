@@ -3,7 +3,6 @@
 " Author: Tamado Ramot Sitohang "
 " License: MIT                  "
 " ============================= "
-
 if &term ==# 'xterm-256color' || &term ==# 'screen-256color'
 
 " vim-plug {{{

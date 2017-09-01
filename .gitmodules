@@ -88,3 +88,6 @@
 [submodule "vim/bundle/SimpylFold"]
 	path = vim/bundle/SimpylFold
 	url = https://github.com/tmhedberg/SimpylFold
+[submodule "bin/dasht"]
+	path = bin/dasht
+	url = https://github.com/sunaku/dasht.git

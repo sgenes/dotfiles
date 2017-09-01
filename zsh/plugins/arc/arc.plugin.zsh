@@ -144,14 +144,14 @@ arc_git_status () {
   local ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
   local _INDEX=$(git status --porcelain -b 2> /dev/null)
   local _STATUS=""
-  if [[ $_INDEX =~ $'\n[AMRDU]. ' ]]; then
-    _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_STAGED"
+  if [[ $_INDEX =~ '\?\? ' ]]; then
+    _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_UNTRACKED"
   fi
   if [[ $_INDEX =~ $'\n.[MTD] ' ]]; then
     _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_UNSTAGED"
   fi
-  if [[ $_INDEX =~ '\?\? ' ]]; then
-    _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_UNTRACKED"
+  if [[ $_INDEX =~ $'\n[AMRDU]. ' ]]; then
+    _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_STAGED"
   fi
   if [[ $_INDEX =~ '## .*ahead' ]]; then
     _STATUS="$_STATUS$ZSH_THEME_GIT_PROMPT_AHEAD"
