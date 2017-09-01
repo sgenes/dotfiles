@@ -25,6 +25,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1 # disable venv prompt
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Documents/workspace/python
 export PYTHONSTARTUP=~/.pythonrc
+export DASHT_DOCSETS_DIR=$HOME/.local/share/Zeal/Zeal/docsets
 
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'    # Use GTK for Java
 export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS" # Applications
@@ -38,13 +39,13 @@ export DEBEMAIL="tamado.sitohang@gmail.com"
 export DEBFULLNAME="Tamado Sitohang"
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
-export PATH="$HOME/.bin:$HOME/.bin/platform-tools:$HOME/.bin/dasht/bin:$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
+export PATH="$HOME/.bin:$HOME/.bin/platform-tools:$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.go/bin:$PATH"
 export PATH="$HOME/.rvm/bin:$PATH"
 
-export MANPATH="$NPM_PACKAGES/share/man:$HOME/.local/share/man:$HOME/.bin/dasht/man:$MANPATH"
+export MANPATH="$NPM_PACKAGES/share/man:$HOME/.local/share/man:$MANPATH"
 export MANPATH="$HOME/.rvm/man:$MANPATH"
 
 export NVM_DIR="$HOME/.nvm"
@@ -61,8 +62,6 @@ fi
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 source $ZSH/function.zsh
 fpath+=/home/ramot/.zsh/function
-# fpath+=/home/ramot/.bin/dasht/etc/zsh/completions
-source $HOME/.bin/dasht/etc/zsh/completions.zsh
 eval `dircolors $ZSH/dircolors`
 
 # antigen init
