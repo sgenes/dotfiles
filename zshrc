@@ -25,7 +25,6 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1 # disable venv prompt
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Documents/workspace/python
 export PYTHONSTARTUP=~/.pythonrc
-export DASHT_DOCSETS_DIR=$HOME/.local/share/Zeal/Zeal/docsets
 
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'    # Use GTK for Java
 export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS" # Applications
@@ -60,9 +59,9 @@ fi
 
 # sourcing
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+eval `dircolors $ZSH/dircolors`
 source $ZSH/function.zsh
 fpath+=/home/ramot/.zsh/function
-eval `dircolors $ZSH/dircolors`
 
 # antigen init
 if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then

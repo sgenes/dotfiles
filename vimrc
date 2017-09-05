@@ -31,7 +31,7 @@ Plug 'w0rp/ale'
 " Plug 'jordwalke/VimCompleteLikeAModernEditor'
 Plug 'godlygeek/tabular'
 Plug 'sjl/gundo.vim'
-Plug 'chrisbra/csv.vim'
+Plug 'chrisbra/csv.vim', { 'for' : ['csv'] }
 " Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex'
 Plug 'alvan/vim-closetag'
@@ -50,7 +50,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'tpope/vim-endwise'
 Plug 'majutsushi/tagbar'
 Plug 'tmhedberg/SimpylFold', { 'for' : ['python'] }
-
+Plug 'drzel/vim-line-no-indicator'
 call plug#end()
 " }}}
 
@@ -106,6 +106,20 @@ hi link TagbarScope TagbarKind
 " }}}
 
 " Airline settings {{{
+let g:airline#extensions#default#section_truncate_width = {
+      \ 'y': 79,
+      \ }
+      " \ 'c': 60,
+      " \ 'y': 45,
+      " \ 'z': 80,
+      " \ 'warning': 80,
+      " \ 'error': 80,
+      " \ }
+let g:line_no_indicator_chars = ['⎺', '⎻', '─', '⎼', '⎽']
+let g:airline_skip_empty_sections = 1
+let g:airline_section_c = '%<%t%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
+let g:airline_section_y = '%{WebDevIconsGetFileFormatSymbol()} %{LineNoIndicator()}'
+let g:airline_section_z = '%2v'
 let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
 let g:airline#extensions#quickfix#location_text = 'Location'
 let g:airline#extensions#tmuxline#enabled = 0
@@ -280,6 +294,8 @@ let g:gundo_preview_height = 10
 let g:WebDevIconsUnicodeDecorateFolderNodes = 0
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+let g:webdevicons_enable_airline_statusline = 0
+let g:webdevicons_enable_airline_statusline_fileformat_symbols = 0
 " }}}
 
 " Misc settings {{{
