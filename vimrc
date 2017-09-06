@@ -30,7 +30,7 @@ Plug 'scrooloose/syntastic', { 'for' : ['r'] }
 Plug 'w0rp/ale'
 " Plug 'jordwalke/VimCompleteLikeAModernEditor'
 Plug 'godlygeek/tabular'
-Plug 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim', { 'on' : 'GundoToggle' }
 Plug 'chrisbra/csv.vim', { 'for' : ['csv'] }
 " Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex'
@@ -48,7 +48,7 @@ Plug 'junegunn/vim-easy-align'
 Plug '~/.vim/bundle-local/vim-devicons'
 Plug 'edkolev/tmuxline.vim'
 Plug 'tpope/vim-endwise'
-Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar', { 'on' : 'TagbarToggle' }
 Plug 'tmhedberg/SimpylFold', { 'for' : ['python'] }
 Plug 'drzel/vim-line-no-indicator'
 call plug#end()
@@ -97,7 +97,7 @@ colorscheme MoonMaster
 let g:tagbar_show_visibility = 0
 let g:tagbar_compact = 1
 let g:tagbar_left = 0
-" let g:tagbar_width = 30
+let g:tagbar_width = 30
 let g:tagbar_indent = 3
 let g:tagbar_iconchars = ['▶ ', '▼ ']
 hi TagbarKind term=bold ctermfg=0 cterm=bold gui=bold guifg=#d3dae3
@@ -226,7 +226,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 " NERDTree settings {{{
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeStatusLine=-1
-" let g:NERDTreeWinSize=30
+let g:NERDTreeWinSize=30
 let g:NERDTreeHijackNetrw=1
 " let NERDTreeMapOpenInTab='<CR>'
 " }}}
@@ -286,7 +286,7 @@ let g:syntastic_xml_xmllint_quiet_messages = {
 
 " Gundo setings {{{
 let g:gundo_help = 0
-" let g:gundo_width = 30
+let g:gundo_width = 30
 let g:gundo_preview_height = 10
 " }}}
 
