@@ -117,7 +117,7 @@ let g:airline#extensions#default#section_truncate_width = {
       " \ }
 let g:line_no_indicator_chars = ['⎺', '⎻', '─', '⎼', '⎽']
 let g:airline_skip_empty_sections = 1
-let g:airline_section_c = '%<%t%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
+" let g:airline_section_c = '%<%t%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
 let g:airline_section_y = '%{WebDevIconsGetFileFormatSymbol()} %{LineNoIndicator()}'
 let g:airline_section_z = '%2v'
 let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
