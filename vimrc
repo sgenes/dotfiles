@@ -40,7 +40,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'svermeulen/vim-easyclip'
 Plug 'sheerun/vim-polyglot'
-Plug '~/.vim/bundle/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 " Plug 'pangloss/vim-javascript'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'plasticboy/vim-markdown'
@@ -334,7 +334,7 @@ let g:delimitMate_expand_space = 1
   " endif
 " endfunction
 " Virtualenv support
-py << EOF
+py3 << EOF
 import os
 import sys
 if 'VIRTUAL_ENV' in os.environ:
