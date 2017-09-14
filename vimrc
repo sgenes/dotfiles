@@ -39,7 +39,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'svermeulen/vim-easyclip'
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot', { 'for' : ['javascript'] }
 Plug 'davidhalter/jedi-vim'
 " Plug 'pangloss/vim-javascript'
 Plug 'terryma/vim-multiple-cursors'
@@ -90,8 +90,10 @@ set autoread
 set shortmess+=c
 set showtabline=0
 " set noshowmode
-let g:gitgutter_signs=1
-let g:tex_conceal=''
+" let g:polyglot_disabled = ['css', 'python']
+let g:gitgutter_signs = 1
+let g:sh_no_error = 1
+let g:tex_conceal = ''
 let g:EasyClipEnableBlackHoleRedirect=0
 colorscheme MoonMaster
 let g:tagbar_show_visibility = 0
@@ -340,7 +342,7 @@ import sys
 if 'VIRTUAL_ENV' in os.environ:
   project_base_dir = os.environ['VIRTUAL_ENV']
   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
+  exec(open(activate_this).read(), dict(__file__=activate_this))
 EOF
 " }}}
 

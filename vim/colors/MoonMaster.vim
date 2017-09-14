@@ -251,7 +251,7 @@ endfun
   let s:purple  = ['#af87af', '139'] "Repeat/Conditional
   let s:aqua    = ['#5fafdf', '74'] "Operator/Delimiter
 
-  let s:wine  = ['#af8787', '138']
+  let s:wine    = ['#af8787', '138']
 
   " Basics:
   let s:foreground   = ['#ffffff', '231']
@@ -665,7 +665,7 @@ call s:HL("cssClassName", s:pink, "", "")
   call s:HL("pythonPreCondit", s:purple, "", "")
   call s:HL("pythonExClass", s:orange, "", "")
   call s:HL("pythonOperator", s:purple, "", "bold")
-  call s:HL("pythonBuiltin", s:foreground, "", "bold")
+  call s:HL("pythonBuiltin", s:aqua, "", "")
   call s:HL("pythonDecorator", s:orange, "", "")
 
   call s:HL("pythonString", s:olive, "", "")
