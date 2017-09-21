@@ -39,7 +39,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'svermeulen/vim-easyclip'
-" Plug 'sheerun/vim-polyglot', { 'for' : ['javascript'] }
+Plug 'sheerun/vim-polyglot'
 Plug 'davidhalter/jedi-vim'
 " Plug 'pangloss/vim-javascript'
 Plug 'terryma/vim-multiple-cursors'
@@ -90,7 +90,7 @@ set autoread
 set shortmess+=c
 set showtabline=0
 " set noshowmode
-" let g:polyglot_disabled = ['css', 'python']
+let g:polyglot_disabled = ['css', 'python', 'haskell']
 let g:gitgutter_signs = 1
 let g:sh_no_error = 1
 let g:tex_conceal = ''
@@ -192,7 +192,7 @@ inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "
 " Completion settings {{{
 " set tags+=~/.vim/tags/cpp
 set completeopt-=preview
-let g:polyglot_disabled = ['haskell']
+" let g:polyglot_disabled = ['haskell']
 " set completeopt+=noinsert
 " let g:neocomplete#enable_at_startup = 1
 " let g:neocomplete#sources#syntax#min_keyword_length = 2
