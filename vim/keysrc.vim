@@ -25,7 +25,7 @@ nnoremap <C-J>                        <C-W><C-J>
 nnoremap <C-K>                        <C-W><C-K>
 nnoremap <C-L>                        <C-W><C-L>
 nnoremap <C-H>                        <C-W><C-H>
-map <silent><Leader>g                         :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <silent><Leader>g                 :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nmap <BS>                             <C-t>
 nmap <silent>                       ,ci
 vmap <silent>                       ,ci
@@ -41,23 +41,9 @@ nmap <silent><S-Tab>                  :bnext!<CR>
 " nmap <silent><C-\>                    :bp<CR>
 " nmap <silent><Space>                  :bnext<CR>
 nmap <silent><Del>                    :conf bdelete<CR>
-" inoremap <expr><TAB>                  pumvisible() ? "\<C-n><C-y>" : "\<C-R>=neosnippet#mappings#expand_or_jump_impl()"
-" inoremap <expr><C-h>                  neocomplete#smart_close_popup()."\<C-h>"
-" inoremap <expr><BS>                   pumvisible() ? "\<C-h>=neocomplete#smart_close_popup()" : "<Plug>delimitMateBS"
 nnoremap <silent><Leader><Leader>     :noh<CR>
-" imap <C-k>                            <Plug>(neosnippet_expand_or_jump)
-" smap <C-k>                            <Plug>(neosnippet_expand_or_jump)
-" xmap <C-k>                            <Plug>(neosnippet_expand_target)
 nnoremap <silent><F6>                 :TagbarToggle<CR>
 nnoremap <space>                      za
-
-" SuperTab like snippets behavior.
-" imap <expr><TAB>
-" \ pumvisible() ? "\<C-y>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-" \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For conceal markers.
 if has('conceal')

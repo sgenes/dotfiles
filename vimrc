@@ -46,7 +46,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/vim-easy-align'
 Plug '~/.vim/bundle-local/vim-devicons'
-Plug 'edkolev/tmuxline.vim'
 Plug 'tpope/vim-endwise'
 Plug 'majutsushi/tagbar', { 'on' : 'TagbarToggle' }
 Plug 'tmhedberg/SimpylFold', { 'for' : ['python'] }
@@ -55,6 +54,7 @@ call plug#end()
 " }}}
 
 " UI settings {{{
+colorscheme MoonMaster
 scriptencoding utf-8
 syntax on
 " set notitle
@@ -95,7 +95,6 @@ let g:gitgutter_signs = 1
 let g:sh_no_error = 1
 let g:tex_conceal = ''
 let g:EasyClipEnableBlackHoleRedirect=0
-colorscheme MoonMaster
 let g:tagbar_show_visibility = 0
 let g:tagbar_compact = 1
 let g:tagbar_left = 0
@@ -119,7 +118,6 @@ let g:airline#extensions#default#section_truncate_width = {
       " \ }
 let g:line_no_indicator_chars = ['⎺', '⎻', '─', '⎼', '⎽']
 let g:airline_skip_empty_sections = 1
-" let g:airline_section_c = '%<%t%m %#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
 let g:airline_section_y = '%{WebDevIconsGetFileFormatSymbol()} %{LineNoIndicator()}'
 let g:airline_section_z = '%2v'
 let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
@@ -146,28 +144,6 @@ let g:airline_symbols.crypt = ''
 let g:airline_symbols.notexists = ' '
 " }}}
 
-" Tmuxline Settings {{{
-let g:tmuxline_separators = {
-  \ 'left' : ' ',
-  \ 'left_alt' : ' ',
-  \ 'right' : ' ',
-  \ 'right_alt' : ' ',
-  \ 'space' : ' '}
-" let g:tmuxline_preset = {
-  " \'b'    : '#S',
-  " \'c'    : ['#(whoami)', '#(uptime | cud -d " " -f 1,2,3)'],
-  " \'win'  : ['#I', '#W'],
-  " \'cwin' : ['#I', '#W', '#F'],
-  " \'x'    : '#(date)',
-  " \'y'    : ['%R', '%a', '%Y'],
-  " \'z'    : '#H'}
-let g:tmuxline_preset = {
-  \'a'    : '#S',
-  \'c'    : '#W [#F] - Window #I',
-  \'x'    : ' #H ',
-  \'z'    : [' %R %a %Y']}
-" }}}
-
 " ALE settings {{{
 let g:ale_lint_on_save = 1
 let g:ale_vim_vint_show_style_issues = 0
@@ -192,8 +168,6 @@ inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "
 " Completion settings {{{
 " set tags+=~/.vim/tags/cpp
 set completeopt-=preview
-" let g:polyglot_disabled = ['haskell']
-" set completeopt+=noinsert
 " let g:neocomplete#enable_at_startup = 1
 " let g:neocomplete#sources#syntax#min_keyword_length = 2
 " let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
