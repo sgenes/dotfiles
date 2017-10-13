@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+cd /home/ramot/Documents/workspace/git/vim
+git fetch
+test=$(git status --porcelain -b 2> /dev/null)
+if [[ $test =~ \#\#\ .*behind ]]; then
+  git merge
+  sudo make uninstall
+  make distclean
+  ./configure --with-features=huge \
+  --enable-multibyte \
+  --enable-rubyinterp \
+  --enable-python3interp \
+  --enable-luainterp \
+  --enable-perlinterp \
+  --with-python3-config-dir=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu/ \
+  --disable-gui \
+  --enable-cscope \
+  --prefix=/usr/local \
+  --with-ruby-command=/usr/bin/ruby
+  make && sudo make install
+else
+  echo "Up-to-date"
+fi
