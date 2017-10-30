@@ -1,9 +1,9 @@
 # no need of this
 /vim/.netrwhist
 /vim/tags
-# /vim/bundle
+/vim/bundle
 /zsh/cache
-# /zsh/antigen-hs
+/zsh/antigen-hs
 *.pyc
 *~
 *.log
