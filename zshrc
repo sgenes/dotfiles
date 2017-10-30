@@ -38,6 +38,9 @@ export DEBEMAIL="tamado.sitohang@gmail.com"
 export DEBFULLNAME="Tamado Sitohang"
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200' --select-1 --exit-0"
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+
 export PATH="$HOME/.bin:$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -93,3 +96,6 @@ bindkey '\eOF'    end-of-line        # gnome-terminal
 
 # completion
 compinit
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

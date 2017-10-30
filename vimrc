@@ -50,6 +50,8 @@ Plug 'tpope/vim-endwise'
 Plug 'majutsushi/tagbar', { 'on' : 'TagbarToggle' }
 Plug 'tmhedberg/SimpylFold', { 'for' : ['python'] }
 Plug 'drzel/vim-line-no-indicator'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 " }}}
 
