@@ -64,6 +64,7 @@ set splitbelow
 set splitright
 set virtualedit=onemore
 set clipboard=unnamedplus
+set scrolloff=5
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -80,6 +81,7 @@ set cursorline
 set ttimeoutlen=50
 set smartcase
 set hlsearch
+set incsearch
 set formatoptions=cql
 set showmatch!
 set updatetime=4000
