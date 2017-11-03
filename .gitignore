@@ -3,7 +3,7 @@
 /vim/tags
 /vim/bundle
 /zsh/cache
-vim/autoload/plug.vim
+/vim/autoload/plug.vim
 /zsh/antigen-hs
 *.pyc
 *~
