@@ -16,8 +16,6 @@ load_rvm() {
 }
 
 if [[ $(type -w rvm) != "rvm: function" ]]; then
-  rvm_funcs=( rvm ruby irb gem erb rdoc rake ri rvm-prompt jekyll )
-
   for v in "${rvm_funcs[@]}"; do
     eval "$v() { load_rvm $v \"\$@\"; }"
   done

@@ -7,7 +7,7 @@
 let g:mapleader=','
 
 nnoremap ;                            :
-nnoremap <silent><F3>                 :noh<CR><Esc>
+nnoremap <silent><F3>                 :let @/ = ""<CR><Esc>
 " inoremap <expr><C-g>                  neocomplete#undo_completion()
 " inoremap <expr><C-k>                  neocomplete#complete_common_string()
 map <silent><F4>                      :set invpaste<CR>
@@ -31,9 +31,9 @@ nmap <silent>                       ,ci
 vmap <silent>                       ,ci
 imap <silent>                       <C-o>,ci
 nmap <C-M>                            %
-nnoremap -                            <C-w>-
-nnoremap +                            <C-w>+
-nnoremap =                            <C-w>=
+nnoremap <Leader>-                    <C-w>-
+nnoremap <Leader>+                    <C-w>+
+nnoremap <Leader>=                    <C-w>=
 map <C-S-Down>                        <C-w><C-w>
 map <C-S-Up>                          <C-w>w
 nmap <silent><Tab>                    :bp!<CR>

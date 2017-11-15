@@ -8,8 +8,6 @@
 
 # nvm loads really slowly, so load it on demand.
 if [[ $(type -w nvm) != "nvm: function" ]]; then
-  nvm_funcs=( nvm node npm )
-
   load_nvm() {
     # If these already exist, then nvm won't override them.
     unset -f "${nvm_funcs[@]}"

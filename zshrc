@@ -60,6 +60,10 @@ if [[ -z "$LC_CTYPE" && -z "$LC_ALL" ]]; then
   export LC_CTYPE=${LANG%%:*} # pick the first entry from LANG
 fi
 
+# rubygems, rvm and nvm
+export rvm_funcs=(rvm ruby irb gem erb rdoc rake ri rvm-prompt jekyll t)
+export nvm_funcs=(nvm node npm prettycss standard markdown-pdf learnyounode javascripting csslint coffee http-server)
+
 # sourcing
 [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 eval `dircolors $ZSH/dircolors`
