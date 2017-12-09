@@ -314,7 +314,7 @@ let g:delimitMate_expand_space = 1
   " endif
 " endfunction
 " Virtualenv support
-py3 << EOF
+py << EOF
 import os
 import sys
 if 'VIRTUAL_ENV' in os.environ:

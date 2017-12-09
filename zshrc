@@ -25,6 +25,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1 # disable venv prompt
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Documents/workspace/python
 export PYTHONSTARTUP=~/.pythonrc
+export MPD_PORT="6600"
 
 export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'    # Use GTK for Java
 export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS" # Applications
@@ -78,11 +79,11 @@ else
 fi
 
 # show todo
-# if [[ $(todo) != '' ]]; then
-#  JOAO="$fg_bold[white]TODO:$reset_color"
-#  echo $JOAO
-#  todo --filter -done +children
-# fi
+if [[ $(todo) != '' ]]; then
+ JOAO="$fg_bold[white]TODO:$reset_color"
+ echo $JOAO
+ todo --filter -done +children
+fi
 
 # stop mapping Ctrl+S
 # stty -ixon

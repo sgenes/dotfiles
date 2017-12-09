@@ -15,6 +15,7 @@ alias pbcopy='xclip -sel clip'
 alias pbpaste='xclip -sel clip -o'
 alias browsedir='browse . &> /dev/null'
 alias ls='ls --color=tty'
+alias ncmpcpp='ncmpcpp -q'
 
 man() {
   env \
