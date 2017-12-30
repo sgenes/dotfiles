@@ -16,9 +16,8 @@ inoremap <silent><F5>                 <C-o>:GundoToggle<CR>
 map <silent><C-e>                     :NERDTreeToggle<CR>
 map <C-o>                             :sp<space>
 map <silent><F2>                      :ene<CR>
-nmap <silent>q                        :conf q<CR>
-nmap <C-q>                            <nop>
-imap <silent><C-q>                    <C-o>:conf q<CR>
+" nmap <C-q>                            <nop>
+" imap <silent><C-q>                    <C-o>:conf q<CR>
 imap <silent><C-Z>                    <C-o>u
 imap <silent><C-R>                    <C-o><C-R>
 nnoremap <C-J>                        <C-W><C-J>

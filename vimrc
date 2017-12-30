@@ -19,16 +19,15 @@ Plug 'vim-airline/vim-airline'
 " Plug 'Shougo/neosnippet.vim'
 " Plug 'Shougo/neosnippet-snippets'
 " Plug 'Shougo/neoinclude.vim'
-Plug '~/.vim/bundle-local/golden-ratio'
+" Plug '~/.vim/bundle-local/golden-ratio'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', { 'on' :  'NERDTreeToggle'  }
+Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic', { 'for' : ['r'] }
 Plug 'w0rp/ale'
-" Plug 'jordwalke/VimCompleteLikeAModernEditor'
 Plug 'godlygeek/tabular'
 Plug 'sjl/gundo.vim', { 'on' : 'GundoToggle' }
 Plug 'chrisbra/csv.vim', { 'for' : ['csv'] }
@@ -172,35 +171,12 @@ inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "
 " Completion settings {{{
 " set tags+=~/.vim/tags/cpp
 set completeopt-=preview
-" let g:neocomplete#enable_at_startup = 1
-" let g:neocomplete#sources#syntax#min_keyword_length = 2
-" let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-" let g:neocomplete#enable_auto_select = 1
-" let g:neocomplete#enable_auto_close_preview = 1
-" let g:jedi#completions_enabled = 0
-" let g:jedi#auto_vim_configuration = 0
-" let g:jedi#smart_auto_mappings = 0
-" let g:jedi#popup_on_dot = 0
-" if !exists('g:neocomplete#force_omni_input_patterns')
-  " let g:neocomplete#force_omni_input_patterns = {}
-" endif
-" let g:neocomplete#force_omni_input_patterns.c =
-      " \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-" let g:neocomplete#force_omni_input_patterns.cpp =
-      " \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-" let g:neocomplete#force_omni_input_patterns.objc =
-      " \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)'
-" let g:neocomplete#force_omni_input_patterns.objcpp =
-      " \ '\[\h\w*\s\h\?\|\h\w*\%(\.\|->\)\|\h\w*::\w*'
-" let g:neocomplete#force_omni_input_patterns.ruby =
-      " \ '[^. *\t]\.\w*\|\h\w*::'
-" let g:neocomplete#force_omni_input_patterns.python =
-      " \ '[^. *\t]\.\w*\|\h\w*\'
-" \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
-" let g:neosnippet#data_directory = "~/.cache/neosnippet"
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_confirm_extra_conf = 1
+let g:ycm_python_binary_path = 'python'
+let g:ycm_key_list_stop_completion = ['<Right>']
 " }}}
 
 " NERDTree settings {{{
@@ -208,6 +184,7 @@ let g:NERDTreeMinimalUI=1
 let g:NERDTreeStatusLine=-1
 let g:NERDTreeWinSize=30
 let g:NERDTreeHijackNetrw=1
+let g:NERDTreeQuitOnOpen = 1
 " let NERDTreeMapOpenInTab='<CR>'
 " }}}
 
@@ -389,9 +366,6 @@ augroup clipboard_opt
 augroup END
 augroup filetype_help
   au BufWinEnter        *             if &l:buftype ==# 'help' | nmap <C-M> <C-]>| endif
-augroup END
-augroup vimfiles
-  au FileType           vim           let b:ale_enabled=0
 augroup END
 augroup zsh
   au FileType           zsh           set ts=2
