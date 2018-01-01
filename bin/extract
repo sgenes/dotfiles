@@ -25,7 +25,7 @@ _basename() {
 }
 
 _usage() {
-    printf "%s\\n" "Usage: $(_basename "${0}") [options] files ..."
+    printf "%s\\n" "Usage: ${progname} [options] files ..."
     printf "%s\\n" "Extract files."
     printf "\\n"
     printf "%s\\n" "  -v, --verbose   verbose mode"
@@ -62,7 +62,7 @@ _extract() {
                     *.rar)                  _exec "rar x '${_extract__file}'"                  ;;
                     *.gz)                   _exec "gunzip '${_extract__file}'"                 ;;
                     *.tar)                  _exec "tar xf '${_extract__file}'"                 ;;
-                    *.zip|*.xpi)            _exec "unzip '${_extract__file}'"                  ;;
+                    *.zip|*.xpi|*.war|*.jar|*.ear) _exec "unzip '${_extract__file}'"           ;;
                     *.7z)                   _exec "7z x '${_extract__file}'"                   ;;
                     *.jar)                  _exec "jar xf '${_extract__file}'"                 ;;
                     *.iso)                  _exec "7z x '${_extract__file}'"                   ;;
@@ -89,10 +89,12 @@ _extract() {
                 esac
             fi
         else
-            printf "%s\\n" "$(_basename "${0}"): '${_extract__file}' does not exist or is not readable" >&2
+            printf "%s\\n" "${progname}: '${_extract__file}' does not exist or is not readable" >&2
         fi
     done
 }
+
+progname="$(_basename "${0}")"
 
 if [ ! -t 0 ]; then
     #there is input comming from pipe or file, add to the end of $@
@@ -101,7 +103,7 @@ fi
 
 [ "${#}" -eq "0" ] && _die
 
-for arg; do #parse options
+for arg in "${@}"; do #parse options
     case "${arg}" in
         -h|--help) _usage && exit ;;
         -v|--verbose)
@@ -112,7 +114,7 @@ for arg; do #parse options
                 _extract "${@}"
                 exit "${?}"
             fi ;;
-        -*) _die "$(_basename "${0}"): unrecognized option '${arg}'" ;;
+        -*) _die "${progname}: unrecognized option '${arg}'" ;;
     esac
 done
 
