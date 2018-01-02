@@ -1,8 +1,8 @@
 #!/bin/sh
 #description: show code of scripting utilities located in the system PATH
-#usage: cat-show script
+#usage: less-show script
 
-#example: cat-show cat-show
+#example: less-show less-show
 #this
 #code
 #...
@@ -35,7 +35,7 @@ done
 script="${1}"
 
 if command -v "${script}" >/dev/null 2>&1; then
-    cat "$(command -v "${script}" 2>/dev/null)"
+    less "$(command -v "${script}" 2>/dev/null)"
 else
     printf "${progname}: %s\\n" "'${script}' was not found in \$PATH" >&2
     exit 1
