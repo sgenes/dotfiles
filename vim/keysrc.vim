@@ -35,14 +35,15 @@ nnoremap <Leader>+                    <C-w>+
 nnoremap <Leader>=                    <C-w>=
 map <C-S-Down>                        <C-w><C-w>
 map <C-S-Up>                          <C-w>w
-nmap <silent><Tab>                    :bp!<CR>
-nmap <silent><S-Tab>                  :bnext!<CR>
+nmap <silent><Tab>                    :bn!<CR>
+nmap <silent><S-Tab>                  :bp!<CR>
 " nmap <silent><C-\>                    :bp<CR>
 " nmap <silent><Space>                  :bnext<CR>
 nmap <silent><Del>                    :conf bdelete<CR>
 nnoremap <silent><Leader><Leader>     :noh<CR>
 nnoremap <silent><F6>                 :TagbarToggle<CR>
 nnoremap <space>                      za
+map <C-p>                             :FZF<CR>
 
 " For conceal markers.
 if has('conceal')

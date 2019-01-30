@@ -20,6 +20,7 @@ source /home/ramot/Documents/dotfiles/zsh/plugins/history-substring-search/histo
 source /home/ramot/Documents/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/async/async.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/arc/arc.plugin.zsh
+source /home/ramot/Documents/dotfiles/zsh/plugins/zsh-autoswitch-conda/autoswitch_conda.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/custom/custom.plugin.zsh
 fpath+=/home/ramot/.zsh/plugins/key-bindings
 fpath+=/home/ramot/.zsh/plugins/setopts
@@ -41,4 +42,5 @@ fpath+=/home/ramot/.zsh/plugins/history-substring-search
 fpath+=/home/ramot/.zsh/plugins/zsh-autosuggestions
 fpath+=/home/ramot/.zsh/plugins/async
 fpath+=/home/ramot/.zsh/plugins/arc
+fpath+=/home/ramot/.zsh/plugins/zsh-autoswitch-conda
 fpath+=/home/ramot/.zsh/plugins/custom

@@ -3,7 +3,7 @@
 " Author: Tamado Ramot Sitohang "
 " License: MIT                  "
 " ============================= "
-if &term ==# 'xterm-256color' || &term ==# 'screen-256color'
+if has ('gui_running') || &term ==# 'xterm-256color' || &term ==# 'screen-256color'
 
 " vim-plug {{{
 set nocompatible
@@ -12,7 +12,8 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ayu-theme/ayu-vim'
 " Plug 'eagletmt/neco-ghc'
 " Plug 'flazz/vim-colorschemes'
 " Plug 'Shougo/neocomplete.vim'
@@ -23,9 +24,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe'
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'mcchrish/nnn.vim'
 Plug 'scrooloose/syntastic', { 'for' : ['r'] }
 Plug 'w0rp/ale'
 Plug 'godlygeek/tabular'
@@ -44,18 +46,19 @@ Plug 'davidhalter/jedi-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/vim-easy-align'
-Plug '~/.vim/bundle-local/vim-devicons'
+" Plug '~/.vim/bundle-local/vim-devicons'
 Plug 'tpope/vim-endwise'
 Plug 'majutsushi/tagbar', { 'on' : 'TagbarToggle' }
 Plug 'tmhedberg/SimpylFold', { 'for' : ['python'] }
 Plug 'drzel/vim-line-no-indicator'
+Plug 'sunaku/vim-dasht'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 " }}}
 
 " UI settings {{{
-colorscheme MoonMaster
+" colorscheme MoonMaster
 scriptencoding utf-8
 syntax on
 " set notitle
@@ -72,9 +75,11 @@ set laststatus=2
 " set t_Co=256
 set termguicolors
 set background=dark
+let ayucolor="mirage"
+colorscheme ayu
 set number
 set backspace=2
-set switchbuf+=usetab,newtab
+" set switchbuf+=usetab,newtab
 set grepprg=grep\ -nH\ $*
 set cursorline
 set ttimeoutlen=50
@@ -91,8 +96,8 @@ set nolinebreak
 set autoread
 " set hidden
 set shortmess+=c
-set showtabline=0
 " set noshowmode
+set title
 let g:polyglot_disabled = ['css', 'python', 'haskell']
 let g:gitgutter_signs = 1
 let g:sh_no_error = 1
@@ -104,15 +109,15 @@ let g:tagbar_left = 0
 let g:tagbar_width = 30
 let g:tagbar_indent = 3
 let g:tagbar_iconchars = ['▶ ', '▼ ']
-hi TagbarKind term=bold ctermfg=0 cterm=bold gui=bold guifg=#d3dae3
+" hi TagbarKind term=bold ctermfg=0 cterm=bold gui=bold guifg=#d3dae3
 hi link TagbarFoldIcon Directory
 hi link TagbarScope TagbarKind
 " }}}
 
 " Airline settings {{{
-let g:airline#extensions#default#section_truncate_width = {
-      \ 'y': 79,
-      \ }
+let g:airline#extensions#default#section_truncate_width = {}
+      " \ 'y': 79,
+      " \ }
       " \ 'c': 60,
       " \ 'y': 45,
       " \ 'z': 80,
@@ -121,17 +126,19 @@ let g:airline#extensions#default#section_truncate_width = {
       " \ }
 let g:line_no_indicator_chars = ['⎺', '⎻', '─', '⎼', '⎽']
 let g:airline_skip_empty_sections = 1
-let g:airline_section_y = '%{WebDevIconsGetFileFormatSymbol()} %{LineNoIndicator()}'
+let g:airline_section_x = '%{airline#util#prepend(airline#extensions#tagbar#currenttag(),0)}%{airline#util#prepend("",0)}%{airline#util#prepend("",0)}%{&filetype}'
+let g:airline_section_y = '%{LineNoIndicator()}'
 let g:airline_section_z = '%2v'
 let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
 let g:airline#extensions#quickfix#location_text = 'Location'
 let g:airline#extensions#tmuxline#enabled = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'MoonMaster'
-let g:airline#extensions#tabline#enabled = 0
-let g:airline#extensions#tabline#show_splits = 0
-let g:airline#extensions#tabline#show_buffers = 0
-let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline_theme = 'ayu_mirage'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_splits = 1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#hunks#non_zero_only = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -175,7 +182,7 @@ let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_confirm_extra_conf = 1
-let g:ycm_python_binary_path = 'python'
+let g:ycm_python_binary_path = 'python3'
 let g:ycm_key_list_stop_completion = ['<Right>']
 " }}}
 
@@ -192,29 +199,6 @@ let g:NERDTreeQuitOnOpen = 1
 let g:NERDSpaceDelims=1
 let g:NERDRemoveExtraSpaces=1
 let g:NERDAltDelims_haskell=1
-" }}}
-
-" CtrlP settings {{{
-let g:ctrlp_map = '<C-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_by_filename = 1
-let g:ctrlp_regexp = 1
-let g:ctrlp_use_caching = 1
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_show_hidden = 0
-set wildignore+=*/.gvfs/*,*/.rpmdb/*,*/.cache/*,*/.gconf/*,*/tmp/*,*/.adobe/*,*/.dbus/*,*/.compiz/*,*/.ghc/*,*/.gimp-2.8/*,*/.gnome*/*,*/.gnupg/*,*/.go/*,*/.goldendict/*,*/.google*/*,*/.mozilla/*,*/.ordbrand/*,*/.purple/*,*/.rvm/*,*/.rsvm/*,*/.nvm/*,*/.*cache/*,*/Music/*,*/Videos/*,*/Documents/BOOKS/*,*/Documents/RESEARCH*/*,*/Documents/TORRENTS/*,*/WINDOWS/*,*/PAK/*
-set wildignore+=*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.JPG,*.jpeg,*.JPEG,*.xpm,*.gif,*.pdf,*.beam,*.mp3,*.ogg,*.mp4,*.m4a,*.mkv,*.mov,*.flv,*.oga,*.ogv,*.aac,*.mid,*.flac,*.wav,*.docx,*.doc,*.ppt,*.pptx,*.odt,*.xls,*.xlsx,*.odp,*.ods,*.old,*.log,*.tar.*,*.gz,*.zip,*.deb,*.rar,*.jar,*.pyc,*.pyo,*.gzip,*.7z,*.torrent,*.added,*cache,*.BIOS,*.apk,*.aux,*.gp*,*.sav,*.pls,*.sps,*.cab,*.CAB,*.msi,*.exe,*.epub
-let g:ctrlp_extensions = ['tag', 'buffertag', 'dir', 'mixed',
-                          \ 'bookmarkdir']
-let g:ctrlp_match_window = 'bottom,order:btt'
-let g:ctrlp_working_path_mode='ra'
-let g:ctrlp_max_files = 50000
-let g:ctrlp_max_depth = 15
-let g:ctrlp_open_new_file = 't'
-let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_regexp = 0
-let g:ctrlp_by_filename = 1
-let g:ctrlp_types = ['mru', 'fil']
 " }}}
 
 " Syntastic settings {{{
@@ -248,21 +232,38 @@ let g:gundo_preview_height = 10
 " }}}
 
 " DevIcons settings {{{
-let g:WebDevIconsUnicodeDecorateFolderNodes = 0
-let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
-let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
-let g:webdevicons_enable_airline_statusline = 0
-let g:webdevicons_enable_airline_statusline_fileformat_symbols = 0
+" let g:WebDevIconsUnicodeDecorateFolderNodes = 0
+" let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
+" let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+" let g:webdevicons_enable_airline_statusline = 0
+" let g:webdevicons_enable_airline_statusline_fileformat_symbols = 0
+" }}}
+
+" FZF Settings {{{
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Default fzf layout
+" - down / up / left / right
+let g:fzf_layout = { 'down': '~40%' }
+
+" Enable per-command history.
+" CTRL-N and CTRL-P will be automatically bound to next-history and
+" previous-history instead of down and up. If you don't like the change,
+" explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 " }}}
 
 " Misc settings {{{
 let g:username='Tamado Ramot Sitohang'
 let g:email='tamado.sitohang@gmail.com'
-let g:ycm_python_binary_path = 'python'
 set pastetoggle=<F2>
 set nobackup
 " set noswapfile
-let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.html.erb'
+let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.html.erb,*.md,*.svg'
 " let g:tagbar_left = 1
 " let g:tagbar_width = 30
 " let OmniCpp_NamespaceSearch = 1
@@ -373,6 +374,10 @@ augroup zsh
   au FileType           zsh           set sw=2
   au FileType           zsh           set expandtab
 augroup END
+augroup jekyll
+  au FileType           html          let g:delimitMate_quotes = "` ' \" %"
+  au FileType           markdown      let g:delimitMate_quotes = "` ' \" % *"
+augroup END
 " }}}
 
 " CSV Plugin {{{
@@ -393,6 +398,8 @@ source ~/.vim/keysrc.vim
 
 endif
 
+" set stal=2
 set t_RV=
+set t_SH=
 
 " vim:fdm=marker

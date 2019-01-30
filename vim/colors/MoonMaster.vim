@@ -1,5 +1,5 @@
 " Theme: MoonMaster
-" Author: Nguyen Nguyen <NLKNguyen@MSN.com>
+" Author: ramottamado <ramottamado@gmail.com>
 " License: MIT
 " Origin: http://github.com/NLKNguyen/papercolor-theme.git
 "
@@ -239,56 +239,54 @@ endfun
 
   " These color names are corresponding to the original light version,
   " and they don't represent the HEX code that they store in this block.
-  let s:red     = ['#5faf5f', '71'] "Include/Exception
-  let s:green   = ['#dfaf00', '178'] "Boolean/Special
-  let s:blue    = ['#00afaf', '12'] "Keyword
+  let s:red     = ['#39ea49', '71'] "Include/Exception
+  let s:green   = ['#f25056', '178'] "Boolean/Special
+  let s:blue    = ['#00cdcd', '12'] "Keyword
 
-  let s:pink    = ['#afdf00', '148'] "Type
-  let s:olive   = ['#dfaf5f', '179'] "String
-  let s:navy    = ['#df875f', '173'] "StorageClass
+  let s:pink    = ['#73d216', '148'] "Type
+  let s:olive   = ['#fac536', '179'] "String
+  let s:navy    = ['#f27835', '173'] "StorageClass
 
-  let s:orange  = ['#ff5faf', '205'] "Number
-  let s:purple  = ['#af87af', '139'] "Repeat/Conditional
-  let s:aqua    = ['#5fafdf', '74'] "Operator/Delimiter
+  let s:orange  = ['#ff5f87', '205'] "Number
+  let s:purple  = ['#cf87cf', '139'] "Repeat/Conditional
+  let s:aqua    = ['#5294e2', '74'] "Operator/Delimiter
 
-  let s:wine    = ['#af8787', '138']
+  let s:wine    = ['#cf87cf', '138']
 
   " Basics:
   let s:foreground   = ['#ffffff', '231']
   let s:background   = ['#2f343f', '15']
-  let s:selection    = ['#3a3a3a', '236']
-  let s:specialbg    = ['#252932', '236']
+  let s:selection    = ['#2a2e38', '236']
   let s:nontext      = ['#2f343f', '148']
-  let s:window       = ['#3a3a3a', '236']
-  let s:divider      = ['#5f8787', '66']
+  let s:window       = ['#2a2e38', '236']
   let s:linenumber   = ['#808080', '245']
-  let s:comment      = ['#d3dae3', '0']
-  let s:todo         = ['#ffff00', '208']
-  let s:todobg       = ['#0000ff', '11']
+  let s:comment      = ['#dcdfe3', '0']
+  let s:todo         = ['#fac536', '208']
+  let s:todobg       = ['#000099', '11']
   let s:cursorline   = ['#2a2e38', '7']
   let s:cursorlinenr = ['#ffff00', '245']
-  let s:cursorcolumn = ['#303030', '235']
-  let s:error        = ['#5f0000', '52']
-  let s:matchparen   = ['#4e4e4e', '239']
+  let s:cursorcolumn = ['#2a2e38', '235']
+  let s:error        = ['#990000', '52']
+  let s:matchparen   = ['#2f343f', '239']
 
   " Spelling:
-  let s:spellbad   = ['#5f0000', '52']
-  let s:spellcap   = ['#5f005f', '53']
-  let s:spellrare  = ['#005f00', '22']
-  let s:spelllocal = ['#00005f', '17']
+  let s:spellbad   = ['#990000', '52']
+  let s:spellcap   = ['#fac536', '17']
+  let s:spellrare  = ['#009900', '22']
+  let s:spelllocal = ['#000099', '53']
 
   " Tabline:
-  let s:tabline_bg          = ['#3a3a3a', '235']
-  let s:tabline_active_fg   = ['#1c1c1c', '233']
-  let s:tabline_active_bg   = ['#00afaf', '37']
-  let s:tabline_inactive_fg = ['#c6c6c6', '250']
-  let s:tabline_inactive_bg = ['#585858', '240']
+  let s:tabline_bg          = ['#2f343f', '235']
+  let s:tabline_active_fg   = ['#2f343f', '233']
+  let s:tabline_active_bg   = ['#ffffff', '37']
+  let s:tabline_inactive_fg = ['#2f343f', '250']
+  let s:tabline_inactive_bg = ['#5294e2', '240']
 
   " Statusline:
-  let s:statusline_active_fg   = ['#1c1c1c', '233']
-  let s:statusline_active_bg   = ['#5f8787', '66']
-  let s:statusline_inactive_fg = ['#c6c6c6', '250']
-  let s:statusline_inactive_bg = ['#444444', '237']
+  let s:statusline_active_fg   = ['#2f343f', '233']
+  let s:statusline_active_bg   = ['#ffffff', '66']
+  let s:statusline_inactive_fg = ['#2f343f', '250']
+  let s:statusline_inactive_bg = ['#5294e2', '237']
 
   " Search:
   let s:search_fg = ['#ffffff', '231']
@@ -304,7 +302,7 @@ endfun
 
   " WildMenu:
   let s:wildmenu_fg  = s:background
-  let s:wildmenu_bg  = ['#afdf00', '148']
+  let s:wildmenu_bg  = ['#5294e2', '148']
 
   " Diff:
   let s:diffadd_fg    = ['#ffffff', '16']
@@ -336,7 +334,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   " https://github.com/NLKNguyen/papercolor-theme/pull/20
   set background=dark
 
-  highlight LineNr term=bold cterm=NONE ctermfg=darkgrey ctermbg=NONE gui=NONE guifg=darkgrey guibg=NONE
   call s:HL("NonText", s:nontext, "", "")
   call s:HL("SpecialKey", s:comment, "", "")
   call s:HL("Search", s:search_fg, s:search_bg, "")
@@ -1101,7 +1098,7 @@ call s:HL("cssClassName", s:pink, "", "")
 
   " Plugin: Spell Checking
   call s:HL("SpellBad",   s:foreground, s:spellbad,   "")
-  call s:HL("SpellCap",   s:foreground, s:spellcap,   "")
+  call s:HL("SpellCap",   s:background, s:spellcap,   "")
   call s:HL("SpellRare",  s:foreground, s:spellrare,  "")
   call s:HL("SpellLocal", s:foreground, s:spelllocal, "")
 
@@ -1115,6 +1112,10 @@ call s:HL("cssClassName", s:pink, "", "")
   call s:HL("StartifySlash", s:navy, "", "")
   call s:HL("StartifyBracket", s:aqua, "", "")
   call s:HL("StartifySpecial", s:aqua, "", "")
+
+  " Plugin: ALE
+  call s:HL("ALEErrorSign", "", s:spellbad, "bold")
+  call s:HL("ALEWarningSign", s:background, s:spellcap, "bold")
 
   "=====================================================================
   " SYNTAX HIGHLIGHTING CODE BELOW THIS LINE ISN'T TESTED FOR THIS THEME
@@ -1138,7 +1139,7 @@ call s:HL("cssClassName", s:pink, "", "")
 
 
 
-  " " Scala "highlighting
+  " " Scala highlighting
   " call s:HL("scalaKeyword", s:purple, "", "")
   " call s:HL("scalaKeywordModifier", s:purple, "", "")
   " call s:HL("scalaOperator", s:blue, "", "")

@@ -29,9 +29,6 @@
 #  * Bruno Michel (https://github.com/nono)
 #
 # ------------------------------------------------------------------------------
-if [[ $(type -w ruby) == "ruby: function" ]]; then
-  load_rvm
-fi
 
 local curcontext="$curcontext" state line cmds ret=1
 

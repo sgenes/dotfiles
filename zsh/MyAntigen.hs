@@ -36,6 +36,7 @@ bundles =
   , local "/home/ramot/.zsh/plugins/zsh-autosuggestions"
   , local "/home/ramot/.zsh/plugins/async"
   , local "/home/ramot/.zsh/plugins/arc"
+  , local "/home/ramot/.zsh/plugins/zsh-autoswitch-conda"
   , local "/home/ramot/.zsh/plugins/custom"
   -- , local "/home/ramot/.zsh/plugins/thefuck"
 

@@ -16,6 +16,10 @@ alias pbpaste='xclip -sel clip -o'
 alias browsedir='browse . &> /dev/null'
 alias ls='ls --color=tty'
 alias ncmpcpp='ncmpcpp -q'
+alias gc='git clone'
+alias gA='git add -A'
+alias commit='git commit -am'
+alias docker='sudo docker'
 
 man() {
   env \

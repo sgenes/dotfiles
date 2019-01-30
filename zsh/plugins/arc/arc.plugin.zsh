@@ -196,6 +196,13 @@ _venv_status() {
   echo $venv_name
 }
 
+_cenv_status() {
+  if [[ -n $CONDA_DEFAULT_ENV ]]; then
+    cenv_name=" · %{$fg_bold[blue]%}${CONDA_DEFAULT_ENV:t}%{$reset_color%}"
+  fi
+  echo $cenv_name
+}
+
 arc_async_callback() {
   setopt localoptions noshwordsplit
   local job=$1 code=$2 output=$3 exec_time=$4
@@ -234,7 +241,7 @@ arc_render() {
     arc_rparts+=("${arc_vcs_info[time]}")
   fi
   arc_rparts+=($(suspend_symbol))
-  PROMPT="${(j..)arc_parts}$(_venv_status) "
+  PROMPT="${(j..)arc_parts}$(_venv_status)$(_cenv_status) "
   # PROMPT='$(_get_path)$(_venv_status)'
   RPROMPT="${(j. .)arc_rparts}"
   # RPROMPT='$(suspend_symbol)'

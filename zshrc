@@ -47,16 +47,18 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.go/bin:$PATH"
 export PATH="$HOME/.rvm/bin:$PATH"
+export PATH="$HOME/.dasht/bin:$PATH"
 
 export MANPATH="$NPM_PACKAGES/share/man:$HOME/.local/share/man:$MANPATH"
 export MANPATH="$HOME/.rvm/man:$MANPATH"
+export MANPATH="$HOME/.dasht/man:$MANPATH"
 
 export NVM_DIR="$HOME/.nvm"
 export RVM_DIR="$HOME/.rvm"
 
 export NPM_PACKAGES="$HOME/.local/share/npm-packages/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
-export GOPATH="$HOME/.go"
+
 if [[ -z "$LC_CTYPE" && -z "$LC_ALL" ]]; then
   export LC_CTYPE=${LANG%%:*} # pick the first entry from LANG
 fi
@@ -85,6 +87,9 @@ if [[ $(todo) != '' ]]; then
  todo --filter -done +children
 fi
 
+# dasht
+fpath+=$HOME/.dasht/etc/zsh/completions
+
 # stop mapping Ctrl+S
 # stty -ixon
 # stty -ixoff
@@ -99,8 +104,23 @@ bindkey '\e[4~'   end-of-line        # Linux console
 bindkey '\e[F'    end-of-line        # xterm
 bindkey '\eOF'    end-of-line        # gnome-terminal
 
-# completion
-compinit
+# virtualenv
+VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS='
+  --color fg:7,hl:15,fg+:15,bg+:#2a2e38,hl+:12
+  --color info:12,prompt:6,spinner:3,pointer:2,marker:5
+  --height 100% --no-bold --no-reverse
+'
+export FZF_CTRL_T_OPTS='--prompt=\/\ '
+export FZF_CTRL_R_OPTS="--expect=ctrl-i"
+bindkey '^F'                  fzf-file-widget
+bindkey '^E'                  fzf-cd-widget
+
+# conda
+. "/home/ramot/.miniconda/etc/profile.d/conda.sh"
+
+# completion
+compinit
