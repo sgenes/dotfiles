@@ -18,7 +18,7 @@ insert-cycledleft () {
 
   builtin pushd -q -0 &>/dev/null || true
   zle reset-prompt
-  omz_termsupport_precmd
+  arc_termsupport_precmd
   workon_cwd
   load-nvmrc
   sleep 0.1
@@ -32,7 +32,7 @@ insert-cycledright () {
 
   builtin pushd -q +1 &>/dev/null || true
   zle reset-prompt
-  omz_termsupport_precmd
+  arc_termsupport_precmd
   workon_cwd
   load-nvmrc
   sleep 0.1

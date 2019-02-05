@@ -9,7 +9,6 @@ ZSH_CACHE_DIR="$ZSH/cache/"
 # autoload
 autoload -Uz add-zsh-hook
 autoload -U colors && colors
-autoload -U compinit
 autoload -Uz vcs_info
 
 # zmodload
@@ -46,15 +45,16 @@ export PATH="$HOME/.bin:$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.go/bin:$PATH"
-export PATH="$HOME/.rvm/bin:$PATH"
 export PATH="$HOME/.dasht/bin:$PATH"
 
 export MANPATH="$NPM_PACKAGES/share/man:$HOME/.local/share/man:$MANPATH"
-export MANPATH="$HOME/.rvm/man:$MANPATH"
 export MANPATH="$HOME/.dasht/man:$MANPATH"
 
+if which ruby >/dev/null && which gem >/dev/null; then
+  PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
 export NVM_DIR="$HOME/.nvm"
-export RVM_DIR="$HOME/.rvm"
 
 export NPM_PACKAGES="$HOME/.local/share/npm-packages/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
@@ -64,7 +64,6 @@ if [[ -z "$LC_CTYPE" && -z "$LC_ALL" ]]; then
 fi
 
 # rubygems, rvm and nvm
-export rvm_funcs=(rvm ruby irb gem erb rdoc rake ri rvm-prompt jekyll t)
 export nvm_funcs=(nvm node npm prettycss standard markdown-pdf learnyounode javascripting csslint coffee http-server)
 
 # sourcing
@@ -75,7 +74,8 @@ fpath+=/home/ramot/.zsh/function
 
 # antigen init
 if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then
-  source $ZSH/antigen-hs/init.zsh
+  # source $ZSH/antigen-hs/init.zsh
+  source $HOME/.antigen-hs/antigen-hs.zsh
 else
   source $ZSH/plugins/history/history.plugin.zsh
 fi
@@ -85,6 +85,12 @@ if [[ $(todo) != '' ]]; then
  JOAO="$fg_bold[white]TODO:$reset_color"
  echo $JOAO
  todo --filter -done +children
+fi
+
+# show fortune
+if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then
+  local fortune=$(fortune $HOME/Documents/workspace/ubuntu/misc/fortune/bible/proverbs)
+  echo "$fg_bold[green]$fortune$reset_color"
 fi
 
 # dasht
@@ -110,7 +116,7 @@ VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='
-  --color fg:7,hl:15,fg+:15,bg+:#2a2e38,hl+:12
+  --color fg:7,hl:8,fg+:15,bg+:#242b38,hl+:12
   --color info:12,prompt:6,spinner:3,pointer:2,marker:5
   --height 100% --no-bold --no-reverse
 '
@@ -120,7 +126,13 @@ bindkey '^F'                  fzf-file-widget
 bindkey '^E'                  fzf-cd-widget
 
 # conda
-. "/home/ramot/.miniconda/etc/profile.d/conda.sh"
+# . "/home/ramot/.miniconda/etc/profile.d/conda.sh"
 
 # completion
-compinit
+autoload -U compinit
+for dump in $HOME/.zcompdump(N.mh+24); do
+  compinit
+  zcompile .zcompdump
+done
+
+compinit -C

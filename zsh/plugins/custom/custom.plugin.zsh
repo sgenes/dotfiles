@@ -51,14 +51,28 @@ function reload()
 }
 
 # zsh highlight
-if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then
-  ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-  ZSH_HIGHLIGHT_STYLES[precommand]=fg=green
-  ZSH_HIGHLIGHT_STYLES[path]=fg=39
-  ZSH_HIGHLIGHT_STYLES[path_prefix]=none
-  ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=226
-  ZSH_HIGHLIGHT_STYLES[assign]=fg=10
-  ZSH_HIGHLIGHT_STYLES[globbing]=fg=11
-  ZSH_HIGHLIGHT_STYLES[comment]=fg=7
-  export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=245'
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=green
+ZSH_HIGHLIGHT_STYLES[path]=fg=39
+ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=226
+ZSH_HIGHLIGHT_STYLES[assign]=fg=10
+ZSH_HIGHLIGHT_STYLES[globbing]=fg=11
+ZSH_HIGHLIGHT_STYLES[comment]=fg=7
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=7'
+
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="bg=39,fg=0"
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND="bg=9,fg=0"
+HISTORY_SUBSTRING_SEARCH_FUZZY=true
+
+# Bind terminal-specific up and down keys
+# Bind in both emacs and vi modes so it works in both, and is not
+# sensitive to whether this is loaded before or after the vi-mode plugin
+if [[ -n "$terminfo[kcuu1]" ]]; then
+  bindkey -M emacs "$terminfo[kcuu1]" history-substring-search-up
+  bindkey -M viins "$terminfo[kcuu1]" history-substring-search-up
+fi
+if [[ -n "$terminfo[kcud1]" ]]; then
+  bindkey -M emacs "$terminfo[kcud1]" history-substring-search-down
+  bindkey -M viins "$terminfo[kcud1]" history-substring-search-down
 fi

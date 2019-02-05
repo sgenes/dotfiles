@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<todo version="0.1.20">
+    <note priority="veryhigh" time="1511092692" done="1511523857">
+        Bikinin liturgi kebaktian ultah Paktua Gretty
+        <comment>
+            done
+        </comment>
+    </note>
+    <note priority="veryhigh" time="1501077730" done="1501077734">
+        Back up TV Shows to Drive
+        <comment>
+            done
+        </comment>
+    </note>
+    <note priority="verylow" time="1498270347" done="1511510729">
+        Check new package updates and vim updates
+        <comment>
+            done
+        </comment>
+    </note>
+    <note priority="veryhigh" time="1484486657" done="1499859441">
+        Backup film ke cloud
+        <comment>
+            done
+        </comment>
+    </note>
+    <note priority="veryhigh" time="1474986485" done="1483887871">
+        download final fantasy 3
+        <comment>
+            done
+        </comment>
+    </note>
+    <note priority="high" time="1474629147" done="1474953337">
+        spotify:album:0832LRZDeHUzDMBh9OPKA0
+        <comment>
+            done
+        </comment>
+    </note>
+    <note priority="veryhigh" time="1474629118" done="1474953333">
+        spotify:album:34PXMpG45YYByyuYG81BGv
+        <comment>
+            done
+        </comment>
+    </note>
+    <note priority="veryhigh" time="1474555985" done="1498474278">
+        Masukin tugas anum
+        <comment>
+            done
+        </comment>
+    </note>
+</todo>

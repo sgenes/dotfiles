@@ -12,13 +12,13 @@ source /home/ramot/Documents/dotfiles/zsh/plugins/extract/extract.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/grep/grep.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/nvm/nvm.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/rvm/rvm.plugin.zsh
+# source /home/ramot/Documents/dotfiles/zsh/plugins/rvm/rvm.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/terminal/terminal.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/autopair/autopair.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/colors/zsh-syntax-highlighting.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/history-substring-search/history-substring-search.plugin.zsh
+source /home/ramot/Documents/dotfiles/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/async/async.plugin.zsh
+source /home/ramot/Documents/dotfiles/zsh/plugins/zsh-async/async.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/arc/arc.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/zsh-autoswitch-conda/autoswitch_conda.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/custom/custom.plugin.zsh
@@ -34,13 +34,13 @@ fpath+=/home/ramot/.zsh/plugins/extract
 fpath+=/home/ramot/.zsh/plugins/grep
 fpath+=/home/ramot/.zsh/plugins/nvm
 fpath+=/home/ramot/.zsh/plugins/virtualenvwrapper
-fpath+=/home/ramot/.zsh/plugins/rvm
+# fpath+=/home/ramot/.zsh/plugins/rvm
 fpath+=/home/ramot/.zsh/plugins/terminal
 fpath+=/home/ramot/.zsh/plugins/autopair
 fpath+=/home/ramot/.zsh/plugins/colors
-fpath+=/home/ramot/.zsh/plugins/history-substring-search
+fpath+=/home/ramot/.zsh/plugins/zsh-history-substring-search
 fpath+=/home/ramot/.zsh/plugins/zsh-autosuggestions
-fpath+=/home/ramot/.zsh/plugins/async
+fpath+=/home/ramot/.zsh/plugins/zsh-async
 fpath+=/home/ramot/.zsh/plugins/arc
 fpath+=/home/ramot/.zsh/plugins/zsh-autoswitch-conda
 fpath+=/home/ramot/.zsh/plugins/custom

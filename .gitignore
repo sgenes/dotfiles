@@ -14,4 +14,5 @@
 /tmp
 *.old
 *.bak
+*.zwc
 /virtualenvs/*/

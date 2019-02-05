@@ -31,7 +31,7 @@ function title {
 }
 
 # Runs before showing the prompt
-function omz_termsupport_precmd {
+function arc_termsupport_precmd {
   emulate -L zsh
   if [[ $DISABLE_AUTO_TITLE == true ]]; then
     return
@@ -41,7 +41,7 @@ function omz_termsupport_precmd {
 }
 
 # Runs before executing the command
-function omz_termsupport_preexec {
+function arc_termsupport_preexec {
   emulate -L zsh
   if [[ $DISABLE_AUTO_TITLE == true ]]; then
     return
@@ -59,5 +59,5 @@ function omz_termsupport_preexec {
   # print -Pn "\a"
 }
 
-precmd_functions+=(omz_termsupport_precmd)
-preexec_functions+=(omz_termsupport_preexec)
+precmd_functions+=(arc_termsupport_precmd)
+preexec_functions+=(arc_termsupport_preexec)

@@ -1,7 +1,5 @@
 ## Command history configuration
-if [ -z "$HISTFILE" ]; then
-    HISTFILE=$HOME/.zsh_history
-fi
+HISTFILE=$HOME/.zsh_history
 
 HISTSIZE=1000000
 SAVEHIST=1000000
