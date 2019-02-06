@@ -1,4 +1,3 @@
-
 # pip zsh completion start
 function _pip_completion {
   local words cword
@@ -11,7 +10,6 @@ function _pip_completion {
 compctl -K _pip_completion pip
 # pip zsh completion end
 
-
 # pip zsh completion start
 function _pip_completion {
   local words cword
@@ -23,7 +21,6 @@ function _pip_completion {
 }
 compctl -K _pip_completion pip3
 # pip zsh completion end
-
 
 # pip zsh completion start
 function _pip_completion {
