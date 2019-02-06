@@ -27,7 +27,7 @@ Plug 'Valloric/YouCompleteMe'
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'mcchrish/nnn.vim'
+" Plug 'mcchrish/nnn.vim'
 Plug 'scrooloose/syntastic', { 'for' : ['r'] }
 Plug 'w0rp/ale'
 Plug 'godlygeek/tabular'

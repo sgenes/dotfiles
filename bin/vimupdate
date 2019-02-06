@@ -11,11 +11,11 @@ if [[ $test =~ \#\#\ .*behind ]]; then
   --enable-pythoninterp \
   --enable-luainterp \
   --enable-perlinterp \
-  --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu/ \
-  --disable-gui \
+  --with-python-config-dir=/usr/lib/python3.6/config-3.6m-x86_64-linux-gnu/ \
   --enable-cscope \
   --prefix=/usr/local \
-  --with-ruby-command=/usr/bin/ruby
+  --with-ruby-command=/usr/bin/ruby \
+  --enable-gui=gtk3
   make && sudo make install
 else
   echo "Up-to-date"
