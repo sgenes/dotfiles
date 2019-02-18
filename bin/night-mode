@@ -1,0 +1,19 @@
+#!/bin/bash
+
+SUNRISE=5
+SUNSET=18
+
+while :
+do
+  [[ -f $HOME/.cache/sunrise ]] && SUNRISE=$(<$HOME/.cache/sunrise)
+  [[ -f $HOME/.cache/sunset ]] && SUNSET=$(<$HOME/.cache/sunset)
+  HOUR=$(date +%H)
+  echo $HOUR
+  if [ "$HOUR" -ge "$SUNSET" ] || [ "$HOUR" -le "$SUNRISE" ]; then
+    echo $SUNRISE $SUNSET
+    /home/ramot/.bin/theme-changer-dark
+  else
+    /home/ramot/.bin/theme-changer
+  fi
+  sleep 1m
+done

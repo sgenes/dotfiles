@@ -10,7 +10,7 @@ source /home/ramot/Documents/dotfiles/zsh/plugins/fancy-ctrl-z/fancy-ctrl-z.plug
 source /home/ramot/Documents/dotfiles/zsh/plugins/dircycle/dircycle.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/extract/extract.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/grep/grep.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/nvm/nvm.plugin.zsh
+source /home/ramot/Documents/dotfiles/zsh/plugins/nvm-autoload/nvm-autoload.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
 # source /home/ramot/Documents/dotfiles/zsh/plugins/rvm/rvm.plugin.zsh
 source /home/ramot/Documents/dotfiles/zsh/plugins/terminal/terminal.plugin.zsh
@@ -32,7 +32,7 @@ fpath+=/home/ramot/.zsh/plugins/fancy-ctrl-z
 fpath+=/home/ramot/.zsh/plugins/dircycle
 fpath+=/home/ramot/.zsh/plugins/extract
 fpath+=/home/ramot/.zsh/plugins/grep
-fpath+=/home/ramot/.zsh/plugins/nvm
+fpath+=/home/ramot/.zsh/plugins/nvm-autoload
 fpath+=/home/ramot/.zsh/plugins/virtualenvwrapper
 # fpath+=/home/ramot/.zsh/plugins/rvm
 fpath+=/home/ramot/.zsh/plugins/terminal

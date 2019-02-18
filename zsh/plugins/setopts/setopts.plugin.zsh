@@ -32,4 +32,4 @@ setopt prompt_subst
 setopt multios
 
 # ZLE behaviour
-unsetopt beep
+setopt beep

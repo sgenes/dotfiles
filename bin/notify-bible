@@ -1,4 +1,6 @@
 #!/bin/bash
 
-verse=$(fortune $HOME/Documents/workspace/ubuntu/misc/fortune/bible/proverbs | tr "\n" " " | xargs --null)
-notify-send --urgency=critical --icon=/usr/share/icons/la-capitaine-icon-theme/actions/symbolic/bookmark-new-symbolic.svg "${verse#*--\ }" "${verse%--*}"
+# eval "export $(egrep -z DBUS_SESSION_BUS_ADDRESS /proc/$(pgrep -u $LOGNAME gnome-session)/environ)";
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+verse=$(/usr/games/fortune /home/ramot/Documents/workspace/ubuntu/misc/fortune/bible/proverbs | /usr/bin/tr "\n" " " | /usr/bin/xargs --null)
+/usr/bin/notify-send --icon=/usr/share/icons/la-capitaine-icon-theme/actions/symbolic/bookmark-new-symbolic.svg "${verse#*--\ }" "${verse%--*}"

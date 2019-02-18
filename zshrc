@@ -4,12 +4,13 @@
 ZSH="$HOME/.zsh"
 
 # define zsh cache
-ZSH_CACHE_DIR="$ZSH/cache/"
+ZSH_CACHE_DIR="$ZSH/cache"
 
 # autoload
 autoload -Uz add-zsh-hook
 autoload -U colors && colors
 autoload -Uz vcs_info
+autoload -U compinit
 
 # zmodload
 zmodload -i zsh/complist
@@ -56,18 +57,19 @@ fi
 
 export NVM_DIR="$HOME/.nvm"
 
-export NPM_PACKAGES="$HOME/.local/share/npm-packages/.npm-packages"
-export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
+# export NPM_PACKAGES="$HOME/.local/share/npm-packages/.npm-packages"
+# export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
 
 if [[ -z "$LC_CTYPE" && -z "$LC_ALL" ]]; then
   export LC_CTYPE=${LANG%%:*} # pick the first entry from LANG
 fi
 
 # rubygems, rvm and nvm
-export nvm_funcs=(nvm node npm prettycss standard markdown-pdf learnyounode javascripting csslint coffee http-server)
+# export nvm_funcs=(nvm node npm prettycss standard markdown-pdf learnyounode javascripting csslint coffee http-server)
 
 # sourcing
-[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 eval `dircolors $ZSH/dircolors`
 source $ZSH/function.zsh
 fpath+=/home/ramot/.zsh/function
@@ -129,10 +131,8 @@ bindkey '^E'                  fzf-cd-widget
 # . "/home/ramot/.miniconda/etc/profile.d/conda.sh"
 
 # completion
-autoload -U compinit
-for dump in $HOME/.zcompdump(N.mh+24); do
-  compinit
-  zcompile .zcompdump
+for dump in $ZSH_CACHE_DIR/zcompdump(N.mh+24); do
+  compinit -d $ZSH_CACHE_DIR/zcompdump
 done
 
-compinit -C
+compinit -C -d $ZSH_CACHE_DIR/zcompdump
