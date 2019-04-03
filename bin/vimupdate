@@ -8,7 +8,7 @@ if [[ $test =~ \#\#\ .*behind ]]; then
   ./configure --with-features=huge \
   --enable-multibyte \
   --enable-rubyinterp \
-  --enable-pythoninterp \
+  --enable-python3interp \
   --enable-luainterp \
   --enable-perlinterp \
   --with-python-config-dir=/usr/lib/python3.6/config-3.6m-x86_64-linux-gnu/ \

@@ -21,28 +21,27 @@ Plug 'ayu-theme/ayu-vim'
 " Plug 'Shougo/neosnippet-snippets'
 " Plug 'Shougo/neoinclude.vim'
 " Plug '~/.vim/bundle-local/golden-ratio'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
+Plug 'davidhalter/jedi-vim'
 Plug 'Valloric/YouCompleteMe'
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 " Plug 'mcchrish/nnn.vim'
-Plug 'scrooloose/syntastic', { 'for' : ['r'] }
+" Plug 'scrooloose/syntastic', { 'for' : ['r'] }
 Plug 'w0rp/ale'
 Plug 'godlygeek/tabular'
 Plug 'sjl/gundo.vim', { 'on' : 'GundoToggle' }
 Plug 'chrisbra/csv.vim', { 'for' : ['csv'] }
 " Plug 'airblade/vim-gitgutter'
-Plug 'lervag/vimtex'
+Plug 'lervag/vimtex', { 'for' : ['tex'] }
 Plug 'alvan/vim-closetag'
 Plug 'Raimondi/delimitMate'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'svermeulen/vim-easyclip'
+" Plug 'tpope/vim-repeat'
+" Plug 'tpope/vim-surround'
+" Plug 'svermeulen/vim-easyclip'
 Plug 'sheerun/vim-polyglot'
-Plug 'ljcooke/vim-fortune'
-Plug 'davidhalter/jedi-vim'
 " Plug 'pangloss/vim-javascript'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'plasticboy/vim-markdown'
@@ -50,9 +49,10 @@ Plug 'junegunn/vim-easy-align'
 " Plug '~/.vim/bundle-local/vim-devicons'
 Plug 'tpope/vim-endwise'
 Plug 'majutsushi/tagbar', { 'on' : 'TagbarToggle' }
-Plug 'tmhedberg/SimpylFold', { 'for' : ['python'] }
+" Plug 'tmhedberg/SimpylFold', { 'for' : ['python'] }
 Plug 'drzel/vim-line-no-indicator'
-Plug 'sunaku/vim-dasht'
+" Plug 'sunaku/vim-dasht'
+Plug 'wmvanvliet/jupyter-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 call plug#end()
@@ -158,6 +158,22 @@ let g:airline_symbols.notexists = ' '
 " ALE settings {{{
 let g:ale_lint_on_save = 1
 let g:ale_vim_vint_show_style_issues = 0
+let g:ale_linters = {
+  \   'csh': ['shell'],
+  \   'elixir': ['credo', 'dialyxir', 'dogma', 'elixir-ls'],
+  \   'go': ['gofmt', 'golint', 'go vet'],
+  \   'hack': ['hack'],
+  \   'help': [],
+  \   'perl': ['perlcritic'],
+  \   'perl6': [],
+  \   'python': ['flake8'],
+  \   'rust': ['cargo'],
+  \   'spec': [],
+  \   'text': [],
+  \   'vue': ['eslint', 'vls'],
+  \   'zsh': ['shell'],
+  \}
+let g:ale_python_flake8_executable = 'flake8'
 " }}}
 
 " UltiSnips settings {{{
@@ -182,9 +198,11 @@ set completeopt-=preview
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_confirm_extra_conf = 1
+let g:ycm_confirm_extra_conf = 0
 let g:ycm_python_binary_path = 'python3'
 let g:ycm_key_list_stop_completion = ['<Right>']
+let g:ycm_max_num_candidates = 10
+let g:jedi#show_call_signatures = "0"
 " }}}
 
 " NERDTree settings {{{
@@ -230,6 +248,7 @@ let g:syntastic_xml_xmllint_quiet_messages = {
 let g:gundo_help = 0
 let g:gundo_width = 30
 let g:gundo_preview_height = 10
+let g:gundo_prefer_python3 = 1
 " }}}
 
 " DevIcons settings {{{
@@ -260,7 +279,7 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " Misc settings {{{
 let g:username='Tamado Ramot Sitohang'
-let g:email='tamado.sitohang@gmail.com'
+let g:email='ramottamado@gmail.com'
 set pastetoggle=<F2>
 set nobackup
 " set noswapfile
@@ -293,7 +312,7 @@ let g:delimitMate_expand_space = 1
   " endif
 " endfunction
 " Virtualenv support
-py << EOF
+py3 << EOF
 import os
 import sys
 if 'VIRTUAL_ENV' in os.environ:
@@ -346,7 +365,7 @@ augroup END
 augroup folding
   au FileType           *             set foldtext=MyFoldText()
   au FileType           *             set foldmethod=manual
-  au FileType           python        nnoremap <Leader>= :0,$!yapf<CR>
+  " au FileType           python        nnoremap <Leader>= :0,$!yapf<CR>
 augroup END
 " au BufWritePost       *.js    silent !standard-format -w %
 " au FileType           ruby,eruby    let g:rubycomplete_buffer_loading = 1

@@ -41,6 +41,7 @@ export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200' --select-1 --exit-0"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+export AUTOSWITCH_SILENT=1
 
 export PATH="$HOME/.bin:$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
 export PATH="$NPM_PACKAGES/bin:$PATH"
@@ -124,8 +125,18 @@ export FZF_DEFAULT_OPTS='
 '
 export FZF_CTRL_T_OPTS='--prompt=\/\ '
 export FZF_CTRL_R_OPTS="--expect=ctrl-i"
-bindkey '^F'                  fzf-file-widget
 bindkey '^E'                  fzf-cd-widget
+function _fo() {
+  local sel
+  sel=($(__fsel))
+  sel=$(head -2 <<< "$sel" | tail -1)
+  if [ -n "$sel" ]; then
+    xdg-open $sel
+  fi
+  zle reset-prompt
+}
+zle -N _fo
+bindkey '^F'                  _fo
 
 # conda
 # . "/home/ramot/.miniconda/etc/profile.d/conda.sh"

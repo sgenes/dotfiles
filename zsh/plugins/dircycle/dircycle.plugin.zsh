@@ -21,6 +21,7 @@ insert-cycledleft () {
   arc_termsupport_precmd
   workon_cwd
   load-nvmrc
+  check_cenv
   sleep 0.1
   arc_precmd
 }
@@ -35,6 +36,7 @@ insert-cycledright () {
   arc_termsupport_precmd
   workon_cwd
   load-nvmrc
+  check_cenv
   sleep 0.1
   arc_precmd
 }

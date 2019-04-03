@@ -94,7 +94,7 @@ _git_time_since_commit() {
   fi
 }
 
-suspend_symbol () {
+_suspend_symbol () {
   local ZSH_SUSPEND=" %{$fg[yellow]%}⚐%{$reset_color%}"
   local _suspended=""
   if [[ $(jobs -l | wc -l ) -gt 0 ]]; then
@@ -223,6 +223,9 @@ arc_async_callback() {
       arc_vcs_info[top]=$info[top]
       arc_vcs_info[branch]=$info[branch]
       arc_vcs_info[time]=$info[time]
+      venv_status=$(_venv_status)
+      cenv_status=$(_cenv_status)
+      suspend_symbol=$(_suspend_symbol)
       arc_render
       ;;
   esac
@@ -240,8 +243,11 @@ arc_render() {
   if [[ -n $arc_vcs_info[time] ]]; then
     arc_rparts+=("${arc_vcs_info[time]}")
   fi
-  arc_rparts+=($(suspend_symbol))
-  PROMPT="${(j..)arc_parts}$(_venv_status)$(_cenv_status) "
+  arc_parts+=("${venv_status}")
+  arc_parts+=("${cenv_status}")
+  arc_rparts+=("${suspend_symbol}")
+  PROMPT="${(j..)arc_parts} "
+  # PROMPT="${(j..)arc_parts}$(_venv_status)$(_cenv_status) "
   # PROMPT='$(_get_path)$(_venv_status)'
   RPROMPT="${(j. .)arc_rparts}"
   # RPROMPT='$(suspend_symbol)'

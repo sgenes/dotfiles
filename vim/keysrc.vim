@@ -5,6 +5,7 @@
 " ============================= "
 
 let g:mapleader=','
+let g:maplocalleader=','
 
 nnoremap ;                            :
 nnoremap <silent><F3>                 :let @/ = ""<CR><Esc>
@@ -43,7 +44,7 @@ nmap <silent><Del>                    :conf bdelete<CR>
 nnoremap <silent><Leader><Leader>     :noh<CR>
 nnoremap <silent><F6>                 :TagbarToggle<CR>
 nnoremap <space>                      za
-map <C-p>                             :FZF<CR>
+map <C-f>                             :FZF<CR>
 
 " For conceal markers.
 if has('conceal')
