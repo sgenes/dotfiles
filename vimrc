@@ -11,6 +11,7 @@ set nocompatible
 call plug#begin('~/.vim/bundle')
 
 Plug 'tpope/vim-fugitive'
+Plug 'rhysd/committia.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ayu-theme/ayu-vim'
