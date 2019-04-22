@@ -20,6 +20,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'rhysd/committia.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
+Plug 'tyrannicaltoucan/vim-quantum'
+" Plug 'jacoborus/tender.vim'
+" Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'ayu-theme/ayu-vim'
 " Plug 'eagletmt/neco-ghc'
 " Plug 'flazz/vim-colorschemes'
@@ -83,8 +87,11 @@ set laststatus=2
 " set t_Co=256
 set termguicolors
 set background=dark
-let ayucolor="mirage"
-colorscheme ayu
+let ayucolor='mirage'
+" colorscheme ayu
+let g:quantum_black=1
+colorscheme quantum
+hi NonText ctermfg=1 guifg=#212121
 set number
 set backspace=2
 " set switchbuf+=usetab,newtab
@@ -141,7 +148,8 @@ let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
 let g:airline#extensions#quickfix#location_text = 'Location'
 let g:airline#extensions#tmuxline#enabled = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'ayu_mirage'
+" let g:airline_theme = 'ayu_mirage'
+let g:airline_theme = 'quantum'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 1
 let g:airline#extensions#tabline#show_buffers = 1

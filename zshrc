@@ -47,11 +47,9 @@ export AUTOSWITCH_SILENT=1
 export PATH="$HOME/.bin:$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.go/bin:$PATH"
-export PATH="$HOME/.dasht/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 
 export MANPATH="$NPM_PACKAGES/share/man:$HOME/.local/share/man:$MANPATH"
-export MANPATH="$HOME/.dasht/man:$MANPATH"
 
 if which ruby >/dev/null && which gem >/dev/null; then
   PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
@@ -96,9 +94,6 @@ if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then
   echo "$fg_bold[green]$fortune$reset_color"
 fi
 
-# dasht
-fpath+=$HOME/.dasht/etc/zsh/completions
-
 # stop mapping Ctrl+S
 # stty -ixon
 # stty -ixoff
@@ -119,7 +114,7 @@ VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='
-  --color fg:7,hl:8,fg+:15,bg+:#242b38,hl+:12
+  --color fg:7,hl:8,fg+:15,bg+:#212121,hl+:12
   --color info:12,prompt:6,spinner:3,pointer:2,marker:5
   --height 100% --no-bold --no-reverse
 '
