@@ -88,8 +88,8 @@ set laststatus=2
 set termguicolors
 set background=dark
 let ayucolor='mirage'
-" colorscheme ayu
 let g:quantum_black=1
+" colorscheme ayu
 colorscheme quantum
 hi NonText ctermfg=1 guifg=#212121
 set number
