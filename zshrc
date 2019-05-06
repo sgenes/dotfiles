@@ -28,8 +28,8 @@ export PYTHONSTARTUP=~/.pythonrc
 export MPD_PORT="6600"
 export GOPATH=$HOME/.go
 
-export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'    # Use GTK for Java
-export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS" # Applications
+# export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'    # Use GTK for Java
+# export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS" # Applications
 
 export PAGER="less"
 export LESS="-~R" # output raw control chars
@@ -107,6 +107,7 @@ bindkey '\e[3~'   delete-char        # Linux console, xterm, gnome-terminal
 bindkey '\e[4~'   end-of-line        # Linux console
 bindkey '\e[F'    end-of-line        # xterm
 bindkey '\eOF'    end-of-line        # gnome-terminal
+echo -e -n "\x1b[\x35 q"
 
 # virtualenv
 VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
