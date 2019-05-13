@@ -99,15 +99,18 @@ fi
 # stty -ixoff
 
 # key-binding for tmux
-bindkey '\e[1~'   beginning-of-line  # Linux console
-bindkey '\e[H'    beginning-of-line  # xterm
-bindkey '\eOH'    beginning-of-line  # gnome-terminal
-bindkey '\e[2~'   overwrite-mode     # Linux console, xterm, gnome-terminal
-bindkey '\e[3~'   delete-char        # Linux console, xterm, gnome-terminal
-bindkey '\e[4~'   end-of-line        # Linux console
-bindkey '\e[F'    end-of-line        # xterm
-bindkey '\eOF'    end-of-line        # gnome-terminal
-echo -e -n "\x1b[\x35 q"
+# bindkey '\e[1~'   beginning-of-line   # Linux console
+# bindkey '\e[H'    beginning-of-line   # xterm
+# bindkey '\eOH'    beginning-of-line   # gnome-terminal
+# bindkey '\e[2~'   overwrite-mode      # Linux console, xterm, gnome-terminal
+# bindkey '\e[3~'   delete-char         # Linux console, xterm, gnome-terminal
+# bindkey '\e[4~'   end-of-line         # Linux console
+# bindkey '\e[F'    end-of-line         # xterm
+# bindkey '\eOF'    end-of-line         # gnome-terminal
+echo -e -n "\x1b[\x35 q"              # xterm cursor
+
+# zsh-autosuggestions
+ZSH_AUTOSUGGEST_IGNORE_WIDGETS+=send-break  # fix no bell sound on Ctrl-G
 
 # virtualenv
 VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3

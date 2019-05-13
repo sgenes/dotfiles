@@ -32,8 +32,8 @@ Plug 'tyrannicaltoucan/vim-quantum'
 " Plug 'Shougo/neosnippet-snippets'
 " Plug 'Shougo/neoinclude.vim'
 " Plug '~/.vim/bundle-local/golden-ratio'
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'davidhalter/jedi-vim', {'for' : ['python'] }
 Plug 'Valloric/YouCompleteMe'
 " Plug 'ctrlpvim/ctrlp.vim'
@@ -201,7 +201,7 @@ function! <SID>ExpandSnippetOrReturn()
   if g:ulti_expand_or_jump_res > 0
     return b:snippet
   else
-    return "\<CR>"
+    return '\<CR>'
   endif
 endfunction
 inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "\<CR>\<C-R>=EndwiseDiscretionary()\<CR>"
