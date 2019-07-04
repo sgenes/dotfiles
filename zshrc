@@ -115,6 +115,11 @@ ZSH_AUTOSUGGEST_IGNORE_WIDGETS+=send-break  # fix no bell sound on Ctrl-G
 # virtualenv
 VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 
+# gitignore
+function gitignore() {
+  curl -sL https://www.gitignore.io/api/$1 -o .gitignore
+}
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='

@@ -48,7 +48,8 @@ Plug 'chrisbra/csv.vim', { 'for' : ['csv'] }
 " Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex', { 'for' : ['tex'] }
 Plug 'alvan/vim-closetag'
-Plug 'Raimondi/delimitMate'
+" Plug 'Raimondi/delimitMate'
+Plug 'tmsvg/pear-tree'
 " Plug 'tpope/vim-repeat'
 " Plug 'tpope/vim-surround'
 " Plug 'svermeulen/vim-easyclip'
@@ -58,14 +59,15 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/vim-easy-align'
 " Plug '~/.vim/bundle-local/vim-devicons'
-Plug 'tpope/vim-endwise'
+" Plug 'tpope/vim-endwise'
 Plug 'majutsushi/tagbar', { 'on' : 'TagbarToggle' }
 " Plug 'tmhedberg/SimpylFold', { 'for' : ['python'] }
 Plug 'drzel/vim-line-no-indicator'
 " Plug 'sunaku/vim-dasht'
-Plug 'wmvanvliet/jupyter-vim'
+Plug 'wmvanvliet/jupyter-vim', { 'for': ['python'] }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'jszakmeister/vim-togglecursor'
 call plug#end()
 " }}}
 
@@ -87,7 +89,7 @@ set laststatus=2
 " set t_Co=256
 set termguicolors
 set background=dark
-let ayucolor='mirage'
+" let ayucolor='mirage'
 let g:quantum_black=1
 " colorscheme ayu
 colorscheme quantum
@@ -189,6 +191,7 @@ let g:ale_linters = {
   \   'zsh': ['shell'],
   \}
 let g:ale_python_flake8_executable = 'flake8'
+let g:ale_python_flake8_options = '--ignore=E501'
 " }}}
 
 " UltiSnips settings {{{
@@ -201,10 +204,10 @@ function! <SID>ExpandSnippetOrReturn()
   if g:ulti_expand_or_jump_res > 0
     return b:snippet
   else
-    return '\<CR>'
+    return "\<CR>"
   endif
 endfunction
-inoremap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "\<CR>\<C-R>=EndwiseDiscretionary()\<CR>"
+imap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "\<Plug>(PearTreeExpand)"
 " }}}
 
 " Completion settings {{{
@@ -309,10 +312,16 @@ let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.html.erb,*.md,*.svg'
 " let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
 " let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 " let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-let g:delimitMate_matchpairs = '(:),[:],{:}'
-let g:delimitMate_balance_matchpairs = 0
-let g:delimitMate_expand_cr = 2
-let g:delimitMate_expand_space = 1
+" let g:delimitMate_matchpairs = '(:),[:],{:}'
+" let g:delimitMate_balance_matchpairs = 0
+" let g:delimitMate_expand_cr = 2
+" let g:delimitMate_expand_space = 1
+let g:pear_tree_smart_openers = 1
+let g:pear_tree_smart_closers = 1
+let g:pear_tree_smart_backspace = 1
+" let g:pear_tree_map_special_keys = 0
+" imap <BS> <Plug>(PearTreeBackspace)
+" imap <Esc> <Plug>(PearTreeFinishExpansion)
 " Called once right before you start selecting multiple cursors
 " function! Multiple_cursors_before()
   " if exists(':NeoCompleteLock')==2
@@ -388,10 +397,10 @@ augroup END
 " au FileType           ruby,eruby    let g:rubycomplete_rails = 1
 " au FileType           cpp           setlocal omnifunc=omni#cpp#complete#Main
 " au FileType           python        setlocal omnifunc=jedi#completions
-augroup pairing
-  au FileType           *             let delimitMate_matchpairs="(:),{:},[:]"
-  au FileType           ruby,eruby    let b:delimitMate_quotes="\" ' ` |"
-augroup END
+" augroup pairing
+  " au FileType           *             let delimitMate_matchpairs="(:),{:},[:]"
+  " au FileType           ruby,eruby    let b:delimitMate_quotes="\" ' ` |"
+" augroup END
 augroup title_string
   au BufEnter           *             let &titlestring = BufferName() . "\ \ —\ \ VIM"
   au BufWritePost       *             let &titlestring = BufferName() . "\ \ —\ \ VIM"
@@ -409,9 +418,17 @@ augroup zsh
   au FileType           zsh           set sw=2
   au FileType           zsh           set expandtab
 augroup END
-augroup jekyll
-  au FileType           html          let g:delimitMate_quotes = "` ' \" %"
-  au FileType           markdown      let g:delimitMate_quotes = "` ' \" % *"
+" augroup jekyll
+  " au FileType           html          let g:delimitMate_quotes = "` ' \" %"
+  " au FileType           markdown      let g:delimitMate_quotes = "` ' \" % *"
+" augroup END
+augroup xml
+  au FileType           xml           set noet
+  au FileType           xml           let b:pear_tree_pairs = extend(deepcopy(g:pear_tree_pairs), {
+      \ '<*>': {
+      \     'closer': '</*>',
+      \   }
+      \ }, 'keep')
 augroup END
 " }}}
 
