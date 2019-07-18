@@ -38,7 +38,7 @@ Plug 'davidhalter/jedi-vim', {'for' : ['python'] }
 Plug 'Valloric/YouCompleteMe'
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'  " , { 'on' : 'NERDTreeToggle' }
 " Plug 'mcchrish/nnn.vim'
 " Plug 'scrooloose/syntastic', { 'for' : ['r'] }
 Plug 'w0rp/ale'
