@@ -64,8 +64,8 @@ Plug 'majutsushi/tagbar', { 'on' : 'TagbarToggle' }
 " Plug 'tmhedberg/SimpylFold', { 'for' : ['python'] }
 Plug 'drzel/vim-line-no-indicator'
 " Plug 'sunaku/vim-dasht'
-Plug 'wmvanvliet/jupyter-vim', { 'for': ['python'] }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'wmvanvliet/jupyter-vim', { 'on' : 'JupyterConnect' }
+Plug 'junegunn/fzf', { 'dir' : '~/.fzf', 'do' : './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jszakmeister/vim-togglecursor'
 call plug#end()
@@ -443,6 +443,7 @@ let g:csv_autocmd_arrange = 1
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_json_frontmatter = 1
+let g:vim_markdown_folding_disabled = 1
 " }}}
 
 source ~/.vim/tagbar.vim

@@ -48,5 +48,5 @@ map <C-f>                             :FZF<CR>
 
 " For conceal markers.
 if has('conceal')
-  set conceallevel=2 concealcursor=niv
+  set conceallevel=2 concealcursor=nc
 endif

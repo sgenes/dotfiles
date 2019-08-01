@@ -1,0 +1,3 @@
+#!/bin/bash
+
+LD_LIBRARY_PATH=$HOME/.local/lib/spotify-temp-fix/usr/lib/x86_64-linux-gnu /usr/bin/spotify

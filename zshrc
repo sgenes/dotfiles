@@ -107,7 +107,10 @@ fi
 # bindkey '\e[4~'   end-of-line         # Linux console
 # bindkey '\e[F'    end-of-line         # xterm
 # bindkey '\eOF'    end-of-line         # gnome-terminal
-echo -e -n "\x1b[\x35 q"              # xterm cursor
+
+if [[ $TERM == 'xterm' || $TERM == 'xterm-256color' ]]; then
+  echo -e -n "\x1b[\x35 q"              # xterm cursor
+fi
 
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_IGNORE_WIDGETS+=send-break  # fix no bell sound on Ctrl-G
