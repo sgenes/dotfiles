@@ -81,10 +81,13 @@ set splitright
 set virtualedit=onemore
 set clipboard=unnamedplus
 set scrolloff=5
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=0
+set shiftwidth=4
 set expandtab
+set copyindent
+set preserveindent
+set cinoptions=(0,u0,U0
 set laststatus=2
 " set t_Co=256
 set termguicolors
@@ -115,6 +118,7 @@ set autoread
 set shortmess+=c
 " set noshowmode
 set title
+set diffopt=filler,internal,algorithm:histogram,indent-heuristic
 let g:polyglot_disabled = ['css', 'python', 'haskell']
 let g:gitgutter_signs = 1
 let g:sh_no_error = 1
