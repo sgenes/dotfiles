@@ -1,7 +1,0 @@
-#!/bin/bash
-
-pid=$(pgrep -u ramot gnome-session)
-dbus=$(grep -z DBUS_SESSION_BUS_ADDRESS /proc/$pid/environ | sed 's/DBUS_SESSION_BUS_ADDRESS=//')
-DBUS_SESSION_BUS_ADDRESS=$dbus
-verse=$(fortune /home/ramot/Documents/workspace/ubuntu/misc/fortune/bible/proverbs | tr "\n" " " | xargs --null)
-notify-send --icon=/usr/share/icons/la-capitaine-icon-theme/actions/symbolic/bookmark-new-symbolic.svg "${verse#*--\ }" "${verse%--*}"

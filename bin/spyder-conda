@@ -1,5 +1,0 @@
-#!/bin/bash
-
-source ~/.miniconda/etc/profile.d/conda.sh
-conda activate base
-/home/ramot/.miniconda/bin/spyder $1

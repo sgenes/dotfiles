@@ -44,12 +44,13 @@ Plug 'scrooloose/nerdtree'  " , { 'on' : 'NERDTreeToggle' }
 Plug 'w0rp/ale'
 Plug 'godlygeek/tabular'
 Plug 'sjl/gundo.vim', { 'on' : 'GundoToggle' }
-Plug 'chrisbra/csv.vim', { 'for' : ['csv'] }
+Plug 'chrisbra/csv.vim'
 " Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex', { 'for' : ['tex'] }
 Plug 'alvan/vim-closetag'
 " Plug 'Raimondi/delimitMate'
 Plug 'tmsvg/pear-tree'
+Plug 'gyim/vim-boxdraw'
 " Plug 'tpope/vim-repeat'
 " Plug 'tpope/vim-surround'
 " Plug 'svermeulen/vim-easyclip'
@@ -74,11 +75,12 @@ call plug#end()
 " UI settings {{{
 " colorscheme MoonMaster
 scriptencoding utf-8
+filetype plugin on
 syntax on
 " set notitle
 set splitbelow
 set splitright
-set virtualedit=onemore
+set virtualedit=all
 set clipboard=unnamedplus
 set scrolloff=5
 set tabstop=4
@@ -339,16 +341,6 @@ let g:pear_tree_smart_backspace = 1
     " exe 'NeoCompleteUnlock'
   " endif
 " endfunction
-" Virtualenv support
-py3 << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  exec(open(activate_this).read(), dict(__file__=activate_this))
-EOF
-" }}}
 
 " Listchars option {{{
 if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'

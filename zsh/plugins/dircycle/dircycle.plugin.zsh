@@ -19,9 +19,10 @@ insert-cycledleft () {
   builtin pushd -q -0 &>/dev/null || true
   zle reset-prompt
   arc_termsupport_precmd
-  workon_cwd
+  # workon_cwd
   load-nvmrc
-  check_cenv
+  _pyenv_virtualenv_hook
+  # check_cenv
   sleep 0.1
   arc_precmd
 }
@@ -34,9 +35,10 @@ insert-cycledright () {
   builtin pushd -q +1 &>/dev/null || true
   zle reset-prompt
   arc_termsupport_precmd
-  workon_cwd
+  # workon_cwd
   load-nvmrc
-  check_cenv
+  _pyenv_virtualenv_hook
+  # check_cenv
   sleep 0.1
   arc_precmd
 }

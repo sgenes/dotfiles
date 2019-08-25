@@ -1,2 +1,0 @@
-mount --bind /home/ramot/Music /home/ramot/.ftp/Music
-mount --bind /home/ramot/Videos /home/ramot/.ftp/Videos

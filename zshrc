@@ -22,9 +22,10 @@ zmodload zsh/zle
 export PROMPT_EOL_MARK=""
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1 # disable venv prompt
-export WORKON_HOME=$HOME/.virtualenvs
+# export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Documents/workspace/python
 export PYTHONSTARTUP=~/.pythonrc
+export PYENV_ROOT="$HOME/.pyenv"
 export MPD_PORT="6600"
 export GOPATH=$HOME/.go
 
@@ -44,10 +45,13 @@ export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat 
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 export AUTOSWITCH_SILENT=1
 
-export PATH="$HOME/.bin:$HOME/.local/bin:$HOME/.cabal/bin:$PATH"
+export PATH="$HOME/.bin:$HOME/.local/bin:$PATH"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+export GEM_HOME="$HOME/.gem/ruby/2.5.0"
 
 export MANPATH="$NPM_PACKAGES/share/man:$HOME/.local/share/man:$MANPATH"
 
@@ -90,7 +94,7 @@ fi
 
 # show fortune
 if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then
-  local fortune=$(fortune $HOME/Documents/workspace/ubuntu/misc/fortune/bible/proverbs)
+  local fortune=$(fortune $HOME/Documents/resources/fortune/bible/proverbs)
   echo "$fg_bold[green]$fortune$reset_color"
 fi
 
@@ -116,7 +120,7 @@ fi
 ZSH_AUTOSUGGEST_IGNORE_WIDGETS+=send-break  # fix no bell sound on Ctrl-G
 
 # virtualenv
-VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+# VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 
 # gitignore
 function gitignore() {
@@ -147,6 +151,12 @@ bindkey '^F'                  _fo
 
 # conda
 # . "/home/ramot/.miniconda/etc/profile.d/conda.sh"
+
+# pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
 
 # completion
 for dump in $ZSH_CACHE_DIR/zcompdump(N.mh+24); do

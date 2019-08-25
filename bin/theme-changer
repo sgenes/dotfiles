@@ -1,5 +1,0 @@
-#!/bin/bash
-
-gsettings set org.gnome.desktop.interface gtk-theme "Mojave-light-alt"
-gsettings set org.gnome.shell.extensions.user-theme name "Mojave-light-alt"
-gsettings set org.gnome.desktop.interface icon-theme "la-capitaine-icon-theme"

@@ -190,17 +190,12 @@ _get_path () {
 }
 
 _venv_status() {
-  if [[ -n $VIRTUAL_ENV ]]; then
+  if [[ -n $CONDA_DEFAULT_ENV ]]; then
+    venv_name=" · %{$fg_bold[blue]%}${CONDA_DEFAULT_ENV:t}%{$reset_color%}"
+  elif [[ -n $VIRTUAL_ENV ]]; then
     venv_name=" · %{$fg_bold[blue]%}${VIRTUAL_ENV:t}%{$reset_color%}"
   fi
   echo $venv_name
-}
-
-_cenv_status() {
-  if [[ -n $CONDA_DEFAULT_ENV ]]; then
-    cenv_name=" · %{$fg_bold[blue]%}${CONDA_DEFAULT_ENV:t}%{$reset_color%}"
-  fi
-  echo $cenv_name
 }
 
 arc_async_callback() {
@@ -224,7 +219,7 @@ arc_async_callback() {
       arc_vcs_info[branch]=$info[branch]
       arc_vcs_info[time]=$info[time]
       venv_status=$(_venv_status)
-      cenv_status=$(_cenv_status)
+      # cenv_status=$(_cenv_status)
       arc_render
       ;;
   esac
@@ -243,7 +238,7 @@ arc_render() {
     arc_rparts+=("${arc_vcs_info[time]}")
   fi
   arc_parts+=("${venv_status}")
-  arc_parts+=("${cenv_status}")
+  # arc_parts+=("${cenv_status}")
   arc_rparts+=$(_suspend_symbol)
   PROMPT="${(j..)arc_parts} "
   # PROMPT="${(j..)arc_parts}$(_venv_status)$(_cenv_status) "
