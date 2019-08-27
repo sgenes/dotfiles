@@ -80,7 +80,7 @@ syntax on
 " set notitle
 set splitbelow
 set splitright
-set virtualedit=all
+set virtualedit=onemore
 set clipboard=unnamedplus
 set scrolloff=5
 set tabstop=4
@@ -222,11 +222,28 @@ set completeopt-=preview
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_complete_in_comments = 1 " Completion in comments
+let g:ycm_complete_in_strings = 1 " Completion in string
+let g:ycm_seed_identifiers_with_syntax = 0
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_python_interpreter_path = ''
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_python_sys_path = []
+let g:ycm_extra_conf_vim_data = [
+  \  'g:ycm_python_interpreter_path',
+  \  'g:ycm_python_sys_path'
+  \]
+let g:ycm_global_ycm_extra_conf = '~/.global_extra_conf.py'
+let g:ycm_semantic_triggers = {
+  \   'python': [ 're!\w{3}' ]
+  \ }
 let g:ycm_python_binary_path = 'python3'
 let g:ycm_key_list_stop_completion = ['<Right>']
 let g:ycm_max_num_candidates = 10
-let g:jedi#show_call_signatures = "0"
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#show_call_signatures = "1"
+let g:jedi#show_call_signatures_modes = 'i'
 " }}}
 
 " NERDTree settings {{{
