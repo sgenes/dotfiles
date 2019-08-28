@@ -47,17 +47,18 @@ export AUTOSWITCH_SILENT=1
 
 export PATH="$HOME/.bin:$HOME/.local/bin:$PATH"
 export PATH="$NPM_PACKAGES/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
+# export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
 
-export GEM_HOME="$HOME/.gem/ruby/2.5.0"
+# export GEM_HOME="$HOME/.gem/ruby/2.5.0"
 
 export MANPATH="$NPM_PACKAGES/share/man:$HOME/.local/share/man:$MANPATH"
 
-if which ruby >/dev/null && which gem >/dev/null; then
-  PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-fi
+# if which ruby >/dev/null && which gem >/dev/null; then
+  # PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+# fi
 
 export NVM_DIR="$HOME/.nvm"
 
@@ -157,6 +158,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
 fi
+
+# rbenv
+eval "$(rbenv init -)"
 
 # completion
 for dump in $ZSH_CACHE_DIR/zcompdump(N.mh+24); do

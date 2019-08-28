@@ -235,7 +235,7 @@ let g:ycm_extra_conf_vim_data = [
   \]
 let g:ycm_global_ycm_extra_conf = '~/.global_extra_conf.py'
 let g:ycm_semantic_triggers = {
-  \   'python': [ 're!\w{3}' ]
+  \   'python': [ 're!\w{1}' ]
   \ }
 let g:ycm_python_binary_path = 'python3'
 let g:ycm_key_list_stop_completion = ['<Right>']
@@ -345,6 +345,7 @@ let g:pear_tree_smart_backspace = 1
 " let g:pear_tree_map_special_keys = 0
 " imap <BS> <Plug>(PearTreeBackspace)
 " imap <Esc> <Plug>(PearTreeFinishExpansion)
+imap <Space> <Plug>(PearTreeSpace)
 " Called once right before you start selecting multiple cursors
 " function! Multiple_cursors_before()
   " if exists(':NeoCompleteLock')==2
