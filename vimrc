@@ -65,7 +65,7 @@ Plug 'majutsushi/tagbar', { 'on' : 'TagbarToggle' }
 " Plug 'tmhedberg/SimpylFold', { 'for' : ['python'] }
 Plug 'drzel/vim-line-no-indicator'
 " Plug 'sunaku/vim-dasht'
-Plug 'wmvanvliet/jupyter-vim', { 'on' : 'JupyterConnect' }
+" Plug 'jupyter-vim/jupyter-vim', { 'on' : 'JupyterConnect' }
 Plug 'junegunn/fzf', { 'dir' : '~/.fzf', 'do' : './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jszakmeister/vim-togglecursor'
@@ -359,6 +359,7 @@ imap <Space> <Plug>(PearTreeSpace)
     " exe 'NeoCompleteUnlock'
   " endif
 " endfunction
+" }}}
 
 " Listchars option {{{
 if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
