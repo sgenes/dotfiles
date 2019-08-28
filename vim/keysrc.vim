@@ -7,7 +7,7 @@
 let g:mapleader=','
 let g:maplocalleader=','
 
-nnoremap ;                            :
+" nnoremap ;                            :
 nnoremap <silent><F3>                 :let @/ = ""<CR><Esc>
 " inoremap <expr><C-g>                  neocomplete#undo_completion()
 " inoremap <expr><C-k>                  neocomplete#complete_common_string()
