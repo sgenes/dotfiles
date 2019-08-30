@@ -83,9 +83,9 @@ set splitright
 set virtualedit=onemore
 set clipboard=unnamedplus
 set scrolloff=5
-set tabstop=4
+set tabstop=2
 set softtabstop=0
-set shiftwidth=4
+set shiftwidth=2
 set expandtab
 set copyindent
 set preserveindent
