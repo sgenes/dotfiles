@@ -37,7 +37,7 @@ export LESS="-~R" # output raw control chars
 export VISUAL='/usr/local/bin/vim'
 export EDITOR='/usr/local/bin/vim'
 export SELECTED_EDITOR='/usr/local/bin/vim'
-export DEBEMAIL="tamado.sitohang@gmail.com"
+export DEBEMAIL="ramot@ramottamado.dev"
 export DEBFULLNAME="Tamado Sitohang"
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
