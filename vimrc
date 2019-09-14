@@ -35,6 +35,7 @@ Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'davidhalter/jedi-vim', {'for' : ['python'] }
+Plug 'Vimjas/vim-python-pep8-indent', {'for' : ['python']}
 Plug 'Valloric/YouCompleteMe'
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -411,10 +412,13 @@ augroup END
 " au FileType           ruby,eruby    let g:rubycomplete_classes_in_global = 1
 " au FileType           ruby,eruby    let g:rubycomplete_rails = 1
 " au FileType           cpp           setlocal omnifunc=omni#cpp#complete#Main
-" au FileType           python        setlocal omnifunc=jedi#completions
 " augroup pairing
   " au FileType           *             let delimitMate_matchpairs="(:),{:},[:]"
   " au FileType           ruby,eruby    let b:delimitMate_quotes="\" ' ` |"
+" augroup END
+" augroup python
+  " au FileType           python        set ts=4
+  " au FileType           python        set sw=4
 " augroup END
 augroup title_string
   au BufEnter           *             let &titlestring = BufferName() . "\ \ —\ \ VIM"
