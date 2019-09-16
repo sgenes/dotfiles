@@ -150,7 +150,7 @@ let g:airline#extensions#default#section_truncate_width = {}
       " \ }
 let g:line_no_indicator_chars = ['⎺', '⎻', '─', '⎼', '⎽']
 let g:airline_skip_empty_sections = 1
-let g:airline_section_x = '%{airline#util#prepend(airline#extensions#tagbar#currenttag(),0)}%{airline#util#prepend("",0)}%{airline#util#prepend("",0)}%{&filetype}'
+let g:airline_section_x = '%{airline#util#prepend(airline#extensions#tagbar#currenttag(),0)}%{airline#util#prepend("",0)}%{airline#util#prepend("",0)}%{&filetype} %{airline#util#wrap(airline#parts#ffenc(),0)}'
 let g:airline_section_y = '%{LineNoIndicator()}'
 let g:airline_section_z = '%2v'
 let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
@@ -454,6 +454,8 @@ augroup END
 " CSV Plugin {{{
 hi link CSVColumnOdd  Normal
 hi link CSVColumnEven Normal
+let g:csv_delim = ','
+let g:csv_nl = 1
 let g:csv_highlight_column = 1
 let g:csv_autocmd_arrange = 1
 " }}}
