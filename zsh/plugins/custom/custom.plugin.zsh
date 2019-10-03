@@ -20,7 +20,6 @@ alias ncmpcpp='ncmpcpp -q'
 alias gc='git clone'
 alias gA='git add -A'
 alias commit='git commit -am'
-alias docker='sudo docker'
 
 # man() {
   # env \
