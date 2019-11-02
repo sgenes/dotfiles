@@ -1,3 +1,10 @@
-set guioptions=Ace
+set guioptions=Acedi
 set guifont=Monaco\ 9
+set stal=2
+set guicursor=n-v-c:ver25-Cursor/lCursor
+set guicursor+=o:ver25-Cursor/lCursor
+set guicursor+=sm:block-Cursor
+set guicursor+=r-cr:hor20-Cursor/lCursor
+let g:airline#extensions#tabline#enabled = 0
+set lines=24
 " vim:fdm=marker

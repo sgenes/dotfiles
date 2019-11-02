@@ -389,9 +389,9 @@ endfunction
 " }}}
 
 " Autocommand setings {{{
-augroup autoremove_trail
-  au BufWritePre        *.*           :%s/\s\+$//e
-augroup END
+" augroup autoremove_trail
+  " au BufWritePre        *.*           :%s/\s\+$//e
+" augroup END
 augroup markdown_formatting
   au FileType           markdown      setlocal wrap
 augroup END
