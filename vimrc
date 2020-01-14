@@ -257,7 +257,7 @@ let g:NERDTreeQuitOnOpen = 1
 " }}}
 
 " NERDCommenter settings {{{
-let g:NERDSpaceDelims=1
+let g:NERDSpaceDelims=0
 let g:NERDRemoveExtraSpaces=1
 let g:NERDAltDelims_haskell=1
 " }}}
