@@ -28,6 +28,7 @@ export PYTHONSTARTUP=~/.pythonrc
 export PYENV_ROOT="$HOME/.pyenv"
 export MPD_PORT="6600"
 export GOPATH=$HOME/.go
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 
 # export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'    # Use GTK for Java
 # export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS" # Applications
@@ -39,12 +40,13 @@ export EDITOR='/usr/local/bin/vim'
 export SELECTED_EDITOR='/usr/local/bin/vim'
 export DEBEMAIL="ramot@ramottamado.dev"
 export DEBFULLNAME="Tamado Sitohang"
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
+# export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200' --select-1 --exit-0"
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 export AUTOSWITCH_SILENT=1
 
+export PATH=$PATH:$JAVA_HOME/bin
 export PATH="$HOME/.bin:$HOME/.local/bin:$PATH"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 # export PATH="$HOME/.cargo/bin:$PATH"
@@ -128,6 +130,10 @@ function gitignore() {
   curl -sL https://www.gitignore.io/api/$1 -o .gitignore
 }
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/ramot/.sdkman"
+[[ -s "/home/ramot/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ramot/.sdkman/bin/sdkman-init.sh"
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='
@@ -168,3 +174,6 @@ for dump in $ZSH_CACHE_DIR/zcompdump(N.mh+24); do
 done
 
 compinit -C -d $ZSH_CACHE_DIR/zcompdump
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /home/ramot/.go/bin/gocomplete go

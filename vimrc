@@ -24,18 +24,23 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tyrannicaltoucan/vim-quantum'
 " Plug 'jacoborus/tender.vim'
 " Plug 'sonph/onehalf', {'rtp': 'vim/'}
-" Plug 'ayu-theme/ayu-vim'
+Plug 'ayu-theme/ayu-vim'
 " Plug 'eagletmt/neco-ghc'
 " Plug 'flazz/vim-colorschemes'
 " Plug 'Shougo/neocomplete.vim'
 " Plug 'Shougo/neosnippet.vim'
 " Plug 'Shougo/neosnippet-snippets'
 " Plug 'Shougo/neoinclude.vim'
+
+Plug 'derekwyatt/vim-scala', { 'for' : ['scala'] }
+Plug 'neoclide/coc.nvim', { 'branch' : 'release', 'for' : ['scala'] }
+
 " Plug '~/.vim/bundle-local/golden-ratio'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'davidhalter/jedi-vim', {'for' : ['python'] }
-Plug 'Vimjas/vim-python-pep8-indent', {'for' : ['python']}
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
+Plug 'fatih/vim-go', { 'for' : ['go'], 'do' : ':GoUpdateBinaries' }
+Plug 'davidhalter/jedi-vim', { 'for' : ['python'] }
+Plug 'Vimjas/vim-python-pep8-indent', { 'for' : ['python'] }
 Plug 'Valloric/YouCompleteMe'
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -49,8 +54,8 @@ Plug 'chrisbra/csv.vim'
 " Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex', { 'for' : ['tex'] }
 Plug 'alvan/vim-closetag'
-" Plug 'Raimondi/delimitMate'
-Plug 'tmsvg/pear-tree'
+Plug 'Raimondi/delimitMate'
+Plug 'tmsvg/pear-tree', { 'for' : ['ruby', 'eruby', 'html', 'xml', 'markdown'] }
 Plug 'gyim/vim-boxdraw'
 " Plug 'tpope/vim-repeat'
 " Plug 'tpope/vim-surround'
@@ -99,7 +104,10 @@ set background=dark
 let g:quantum_black=1
 " colorscheme ayu
 colorscheme quantum
-hi NonText ctermfg=1 guifg=#212121
+hi EndOfBuffer ctermfg=1 guifg=#212121
+hi Pmenu guibg=#292929
+" hi clear PmenuSel
+hi PmenuSel cterm=reverse gui=reverse guibg=#292929 guifg=#b7bdc0
 set number
 set backspace=2
 " set switchbuf+=usetab,newtab
@@ -111,7 +119,7 @@ set hlsearch
 set incsearch
 set formatoptions=cql
 set showmatch!
-set updatetime=4000
+set updatetime=300
 set nowrap
 set history=10000
 " set wrapmargin=0
@@ -190,7 +198,7 @@ let g:ale_linters = {
   \   'help': [],
   \   'perl': ['perlcritic'],
   \   'perl6': [],
-  \   'python': ['flake8'],
+  \   'python': ['pycodestyle'],
   \   'rust': ['cargo'],
   \   'spec': [],
   \   'text': [],
@@ -202,19 +210,19 @@ let g:ale_python_flake8_options = '--ignore=E501'
 " }}}
 
 " UltiSnips settings {{{
-let g:UltiSnipsExpandTrigger = '<F10>'
-let g:UltiSnipsJumpForwardTrigger = '<Tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
-let g:ulti_expand_or_jump_res = 0
-function! <SID>ExpandSnippetOrReturn()
-  let b:snippet = UltiSnips#ExpandSnippetOrJump()
-  if g:ulti_expand_or_jump_res > 0
-    return b:snippet
-  else
-    return "\<CR>"
-  endif
-endfunction
-imap <expr> <CR> pumvisible() ? "<C-R>=<SID>ExpandSnippetOrReturn()<CR>" : "\<Plug>(PearTreeExpand)"
+" let g:UltiSnipsExpandTrigger = '<F10>'
+" let g:UltiSnipsJumpForwardTrigger = '<Tab>'
+" let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+" let g:ulti_expand_or_jump_res = 0
+" function! <SID>ExpandSnippetOrReturn()
+  " let b:snippet = UltiSnips#ExpandSnippetOrJump()
+  " if g:ulti_expand_or_jump_res > 0
+    " return b:snippet
+  " else
+    " return '\<CR>'
+  " endif
+" endfunction
+" imap <expr> <CR> pumvisible() ? '<C-R>=<SID>ExpandSnippetOrReturn()<CR>' : '\<Plug>(PearTreeExpand)'
 " }}}
 
 " Completion settings {{{
@@ -223,8 +231,9 @@ set completeopt-=preview
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_complete_in_comments = 1 " Completion in comments
-let g:ycm_complete_in_strings = 1 " Completion in string
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_complete_in_comments = 0 " Completion in comments
+let g:ycm_complete_in_strings = 0 " Completion in string
 let g:ycm_seed_identifiers_with_syntax = 0
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_python_interpreter_path = ''
@@ -236,15 +245,26 @@ let g:ycm_extra_conf_vim_data = [
   \]
 let g:ycm_global_ycm_extra_conf = '~/.global_extra_conf.py'
 let g:ycm_semantic_triggers = {
-  \   'python': [ 're!\w{1}' ]
+  \   'python': [ 're!\w{1}' ],
+  \ }
+let g:ycm_filetype_blacklist = {
+  \   'scala' : 1,
   \ }
 let g:ycm_python_binary_path = 'python3'
-let g:ycm_key_list_stop_completion = ['<Right>']
 let g:ycm_max_num_candidates = 10
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#show_call_signatures = "1"
 let g:jedi#show_call_signatures_modes = 'i'
+" let g:ycm_key_list_stop_completion = ['<C-y>', '<Right>']
+let g:ycm_key_list_previous_completion=[]
+imap <expr> <CR> pumvisible()
+      \ ? "\<C-Y>"
+      \ : "<Plug>delimitMateCR"
+imap <expr> <S-Tab> pumvisible()
+      \ ? "\<C-P>"
+      \ : "<Plug>delimitMateS-Tab"
+imap <expr> <BS> "<Plug>delimitMateBS"
 " }}}
 
 " NERDTree settings {{{
@@ -257,9 +277,12 @@ let g:NERDTreeQuitOnOpen = 1
 " }}}
 
 " NERDCommenter settings {{{
-let g:NERDSpaceDelims=0
+let g:NERDSpaceDelims=1
 let g:NERDRemoveExtraSpaces=1
 let g:NERDAltDelims_haskell=1
+let g:NERDCustomDelimiters = {
+      \ 'python': { 'left': '#', 'right': '' }
+      \ }
 " }}}
 
 " Syntastic settings {{{
@@ -324,6 +347,9 @@ let g:username='Tamado Ramot Sitohang'
 let g:email='ramottamado@gmail.com'
 set pastetoggle=<F2>
 set nobackup
+set nowritebackup
+" set cmdheight=2
+set signcolumn=yes
 " set noswapfile
 let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.html.erb,*.md,*.svg'
 " let g:tagbar_left = 1
@@ -336,17 +362,18 @@ let g:closetag_filenames = '*.html,*.xhtml,*.xml,*.html.erb,*.md,*.svg'
 " let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
 " let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
 " let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-" let g:delimitMate_matchpairs = '(:),[:],{:}'
-" let g:delimitMate_balance_matchpairs = 0
-" let g:delimitMate_expand_cr = 2
-" let g:delimitMate_expand_space = 1
-let g:pear_tree_smart_openers = 1
-let g:pear_tree_smart_closers = 1
-let g:pear_tree_smart_backspace = 1
+let g:delimitMate_matchpairs = '(:),[:],{:}'
+let g:delimitMate_balance_matchpairs = 0
+let g:delimitMate_expand_cr = 2
+let g:delimitMate_expand_space = 1
+" let g:pear_tree_smart_openers = 1
+" let g:pear_tree_smart_closers = 1
+" let g:pear_tree_smart_backspace = 1
+" let g:pear_tree_repeatable_expand = 0
 " let g:pear_tree_map_special_keys = 0
 " imap <BS> <Plug>(PearTreeBackspace)
 " imap <Esc> <Plug>(PearTreeFinishExpansion)
-imap <Space> <Plug>(PearTreeSpace)
+" imap <Space> <Plug>(PearTreeSpace)
 " Called once right before you start selecting multiple cursors
 " function! Multiple_cursors_before()
   " if exists(':NeoCompleteLock')==2
@@ -392,6 +419,10 @@ endfunction
 " augroup autoremove_trail
   " au BufWritePre        *.*           :%s/\s\+$//e
 " augroup END
+augroup scala_sbt
+  au BufRead,BufNewFile *.sbt         set filetype=scala
+  au FileType           json          syntax match Comment +\/\/.\+$+
+augroup END
 augroup markdown_formatting
   au FileType           markdown      setlocal wrap
 augroup END
@@ -412,10 +443,11 @@ augroup END
 " au FileType           ruby,eruby    let g:rubycomplete_classes_in_global = 1
 " au FileType           ruby,eruby    let g:rubycomplete_rails = 1
 " au FileType           cpp           setlocal omnifunc=omni#cpp#complete#Main
-" augroup pairing
-  " au FileType           *             let delimitMate_matchpairs="(:),{:},[:]"
+augroup pairing
+  au FileType           ruby,eruby    let b:loaded_delimitMate = 1
+  au FileType           *             let delimitMate_matchpairs="(:),{:},[:]"
   " au FileType           ruby,eruby    let b:delimitMate_quotes="\" ' ` |"
-" augroup END
+augroup END
 " augroup python
   " au FileType           python        set ts=4
   " au FileType           python        set sw=4
@@ -437,17 +469,22 @@ augroup zsh
   au FileType           zsh           set sw=2
   au FileType           zsh           set expandtab
 augroup END
-" augroup jekyll
+augroup jekyll
+  au FileType           html,markdown let b:loaded_delimitMate = 1
   " au FileType           html          let g:delimitMate_quotes = "` ' \" %"
   " au FileType           markdown      let g:delimitMate_quotes = "` ' \" % *"
-" augroup END
+augroup END
 augroup xml
+  au FileType           xml           let b:loaded_delimitMate = 1
   au FileType           xml           set noet
   au FileType           xml           let b:pear_tree_pairs = extend(deepcopy(g:pear_tree_pairs), {
       \ '<*>': {
       \     'closer': '</*>',
       \   }
       \ }, 'keep')
+augroup END
+augroup ycm
+  autocmd CmdwinEnter   *             inoremap <expr><buffer> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 augroup END
 " }}}
 
