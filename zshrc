@@ -115,9 +115,9 @@ fi
 # bindkey '\e[F'    end-of-line         # xterm
 # bindkey '\eOF'    end-of-line         # gnome-terminal
 
-if [[ $TERM == 'xterm' || $TERM == 'xterm-256color' ]]; then
-  echo -e -n "\x1b[\x35 q"              # xterm cursor
-fi
+# if [[ $TERM == 'xterm' || $TERM == 'xterm-256color' ]]; then
+  # echo -e -n "\x1b[\x35 q"              # xterm cursor
+# fi
 
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_IGNORE_WIDGETS+=send-break  # fix no bell sound on Ctrl-G

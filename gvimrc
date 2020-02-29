@@ -1,5 +1,5 @@
 set guioptions=Acedi
-set guifont=Monaco\ 9
+set guifont=Monaco\ 10
 set stal=2
 set guicursor=n-v-c:ver25-Cursor/lCursor
 set guicursor+=o:ver25-Cursor/lCursor

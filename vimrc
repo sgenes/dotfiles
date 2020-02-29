@@ -31,7 +31,7 @@ Plug 'ayu-theme/ayu-vim'
 " Plug 'Shougo/neosnippet.vim'
 " Plug 'Shougo/neosnippet-snippets'
 " Plug 'Shougo/neoinclude.vim'
-
+Plug 'edkolev/tmuxline.vim'
 Plug 'derekwyatt/vim-scala', { 'for' : ['scala'] }
 Plug 'neoclide/coc.nvim', { 'branch' : 'release', 'for' : ['scala'] }
 
