@@ -28,7 +28,7 @@ export PYTHONSTARTUP=~/.pythonrc
 export PYENV_ROOT="$HOME/.pyenv"
 export MPD_PORT="6600"
 export GOPATH=$HOME/.go
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 # export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'    # Use GTK for Java
 # export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS" # Applications

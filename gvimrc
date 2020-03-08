@@ -6,5 +6,5 @@ set guicursor+=o:ver25-Cursor/lCursor
 set guicursor+=sm:block-Cursor
 set guicursor+=r-cr:hor20-Cursor/lCursor
 let g:airline#extensions#tabline#enabled = 0
-set lines=24
+set lines=30
 " vim:fdm=marker

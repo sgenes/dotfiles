@@ -137,9 +137,12 @@ let g:tex_conceal = ''
 let g:EasyClipEnableBlackHoleRedirect=0
 let g:tagbar_show_visibility = 0
 let g:tagbar_compact = 1
+let g:tagbar_autofocus = 1
+let g:tagbar_expand = 1
+let g:tagbar_zoomwidth = 0
 let g:tagbar_left = 0
 let g:tagbar_width = 30
-let g:tagbar_indent = 3
+let g:tagbar_indent = 2
 let g:tagbar_iconchars = ['▶ ', '▼ ']
 " hi TagbarKind term=bold ctermfg=0 cterm=bold gui=bold guifg=#d3dae3
 hi link TagbarFoldIcon Directory
@@ -191,17 +194,10 @@ let g:airline_symbols.notexists = ' '
 let g:ale_lint_on_save = 1
 let g:ale_vim_vint_show_style_issues = 0
 let g:ale_linters = {
-  \   'csh': ['shell'],
-  \   'elixir': ['credo', 'dialyxir', 'dogma', 'elixir-ls'],
   \   'go': ['gofmt', 'golint', 'go vet'],
   \   'hack': ['hack'],
-  \   'help': [],
-  \   'perl': ['perlcritic'],
-  \   'perl6': [],
-  \   'python': ['pycodestyle'],
+  \   'python': ['pycodestyle', 'flake8'],
   \   'rust': ['cargo'],
-  \   'spec': [],
-  \   'text': [],
   \   'vue': ['eslint', 'vls'],
   \   'zsh': ['shell'],
   \}
@@ -226,7 +222,7 @@ let g:ale_python_flake8_options = '--ignore=E501'
 " }}}
 
 " Completion settings {{{
-" set tags+=~/.vim/tags/cpp
+" set tags+=~/.vim/tags
 set completeopt-=preview
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
@@ -238,6 +234,7 @@ let g:ycm_seed_identifiers_with_syntax = 0
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_python_interpreter_path = ''
 let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_auto_trigger = 1
 let g:ycm_python_sys_path = []
 let g:ycm_extra_conf_vim_data = [
   \  'g:ycm_python_interpreter_path',
@@ -246,6 +243,7 @@ let g:ycm_extra_conf_vim_data = [
 let g:ycm_global_ycm_extra_conf = '~/.global_extra_conf.py'
 let g:ycm_semantic_triggers = {
   \   'python': [ 're!\w{1}' ],
+  \   'go': [ 're!\w{1}' ],
   \ }
 let g:ycm_filetype_blacklist = {
   \   'scala' : 1,
@@ -256,6 +254,10 @@ let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#show_call_signatures = "1"
 let g:jedi#show_call_signatures_modes = 'i'
+let g:jedi#goto_command = "<C-]>"
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
 " let g:ycm_key_list_stop_completion = ['<C-y>', '<Right>']
 let g:ycm_key_list_previous_completion=[]
 imap <expr> <CR> pumvisible()
@@ -265,6 +267,15 @@ imap <expr> <S-Tab> pumvisible()
       \ ? "\<C-P>"
       \ : "<Plug>delimitMateS-Tab"
 imap <expr> <BS> "<Plug>delimitMateBS"
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
 " }}}
 
 " NERDTree settings {{{
@@ -422,6 +433,7 @@ endfunction
 augroup scala_sbt
   au BufRead,BufNewFile *.sbt         set filetype=scala
   au FileType           json          syntax match Comment +\/\/.\+$+
+  au FileType           scala         nmap <silent> <C-]> <Plug>(coc-definition)
 augroup END
 augroup markdown_formatting
   au FileType           markdown      setlocal wrap
