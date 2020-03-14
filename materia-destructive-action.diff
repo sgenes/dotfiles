@@ -1,7 +1,7 @@
-diff --git src/_sass/gtk/_common-3.20.scss src/_sass/gtk/_common-3.20.scss
+diff --git a/src/_sass/gtk/_common-3.20.scss b/src/_sass/gtk/_common-3.20.scss
 index 71a979fd..2ddf32ab 100644
---- src/_sass/gtk/_common-3.20.scss
-+++ src/_sass/gtk/_common-3.20.scss
+--- a/src/_sass/gtk/_common-3.20.scss
++++ b/src/_sass/gtk/_common-3.20.scss
 @@ -3442,7 +3442,7 @@ messagedialog { // Message Dialog styling
    }
  
@@ -11,3 +11,37 @@ index 71a979fd..2ddf32ab 100644
    }
  }
  
+diff --git a/src/_sass/gtk/_drawing-3.20.scss b/src/_sass/gtk/_drawing-3.20.scss
+index da8cffa7..754fcd91 100644
+--- a/src/_sass/gtk/_drawing-3.20.scss
++++ b/src/_sass/gtk/_drawing-3.20.scss
+@@ -181,11 +181,11 @@ $ripple-active-transition-duration: $duration, $ripple-fade-in-duration, 0ms, 0m
+     $_position: $side center;
+   }
+ 
+-  background-image: -gtk-gradient(radial,
+-                                  $_position, 0,
+-                                  $_position, 0.75,
+-                                  to(rgba($primary, 0.24)),
+-                                  to(transparent));
++  // background-image: -gtk-gradient(radial,
++                                  // $_position, 0,
++                                  // $_position, 0.75,
++                                  // to(rgba($primary, 0.24)),
++                                  // to(transparent));
+ 
+   background-repeat: no-repeat;
+   background-position: $_position;
+@@ -220,9 +220,9 @@ $ripple-active-transition-duration: $duration, $ripple-fade-in-duration, 0ms, 0m
+ 
+   background-color: transparent; // shouldn't be needed, but better to be sure
+ 
+-  background-image: linear-gradient(to $_gradient_dir, // this is the dashed line
+-                                    $_undershoot_color_light 50%,
+-                                    $_undershoot_color_dark 50%);
++  // background-image: linear-gradient(to $_gradient_dir, // this is the dashed line
++                                    // $_undershoot_color_light 50%,
++                                    // $_undershoot_color_dark 50%);
+ 
+   padding-#{$side}: 1px;
+   background-size: $_dash_bg_size;
