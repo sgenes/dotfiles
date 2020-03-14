@@ -35,9 +35,9 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 export PAGER="less"
 export LESS="-~R" # output raw control chars
-export VISUAL='/usr/local/bin/vim'
-export EDITOR='/usr/local/bin/vim'
-export SELECTED_EDITOR='/usr/local/bin/vim'
+export VISUAL='/usr/bin/vim'
+export EDITOR='/usr/bin/vim'
+export SELECTED_EDITOR='/usr/bin/vim'
 export DEBEMAIL="ramot@ramottamado.dev"
 export DEBFULLNAME="Tamado Sitohang"
 # export LSCOLORS="Gxfxcxdxbxegedabagacad"

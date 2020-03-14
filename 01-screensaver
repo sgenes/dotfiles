@@ -1,0 +1,17 @@
+[org/gnome/desktop/interface]
+clock-show-date=false
+clock-show-weekday=true
+cursor-theme='Suru'
+icon-theme='Paper'
+
+[org/gnome/desktop/screensaver]
+picture-uri='file:///usr/share/backgrounds/gnome/Symbolics-2.jpg'
+
+[org/gnome/desktop/peripherals/touchpad]
+tap-to-click=true
+
+[org/gnome/desktop/session]
+idle-delay=30
+
+[org/gnome/login-screen]
+logo=''
