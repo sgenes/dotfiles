@@ -1,16 +1,3 @@
-diff --git a/src/_sass/gtk/_common-3.20.scss b/src/_sass/gtk/_common-3.20.scss
-index 71a979fd..2ddf32ab 100644
---- a/src/_sass/gtk/_common-3.20.scss
-+++ b/src/_sass/gtk/_common-3.20.scss
-@@ -3442,7 +3442,7 @@ messagedialog { // Message Dialog styling
-   }
- 
-   &.destructive-action:not(:disabled) {
--    @include ink-color($error);
-+    @include ink-color($error, $activated: true);
-   }
- }
- 
 diff --git a/src/_sass/gtk/_drawing-3.20.scss b/src/_sass/gtk/_drawing-3.20.scss
 index da8cffa7..754fcd91 100644
 --- a/src/_sass/gtk/_drawing-3.20.scss
