@@ -19,12 +19,12 @@ call plug#begin('~/.vim/bundle')
 Plug 'tpope/vim-fugitive'
 Plug 'rhysd/committia.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline-themes'
 " Plug 'morhetz/gruvbox'
 Plug 'tyrannicaltoucan/vim-quantum'
 " Plug 'jacoborus/tender.vim'
 " Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'ayu-theme/ayu-vim'
+" Plug 'ayu-theme/ayu-vim'
 " Plug 'eagletmt/neco-ghc'
 " Plug 'flazz/vim-colorschemes'
 " Plug 'Shougo/neocomplete.vim'
@@ -32,9 +32,8 @@ Plug 'ayu-theme/ayu-vim'
 " Plug 'Shougo/neosnippet-snippets'
 " Plug 'Shougo/neoinclude.vim'
 Plug 'edkolev/tmuxline.vim'
-Plug 'derekwyatt/vim-scala', { 'for' : ['scala'] }
-Plug 'neoclide/coc.nvim', { 'branch' : 'release', 'for' : ['scala'] }
-
+Plug 'derekwyatt/vim-scala', { 'for' : ['scala', 'sbt.scala'] }
+Plug 'neoclide/coc.nvim', { 'branch' : 'release', 'for' : ['scala', 'sbt.scala'] }
 " Plug '~/.vim/bundle-local/golden-ratio'
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
@@ -52,11 +51,11 @@ Plug 'godlygeek/tabular'
 Plug 'sjl/gundo.vim', { 'on' : 'GundoToggle' }
 Plug 'chrisbra/csv.vim'
 " Plug 'airblade/vim-gitgutter'
-Plug 'lervag/vimtex', { 'for' : ['tex'] }
+" Plug 'lervag/vimtex', { 'for' : ['tex'] }
 Plug 'alvan/vim-closetag'
 Plug 'Raimondi/delimitMate'
 Plug 'tmsvg/pear-tree', { 'for' : ['ruby', 'eruby', 'html', 'xml', 'markdown'] }
-Plug 'gyim/vim-boxdraw'
+" Plug 'gyim/vim-boxdraw'
 " Plug 'tpope/vim-repeat'
 " Plug 'tpope/vim-surround'
 " Plug 'svermeulen/vim-easyclip'
@@ -129,6 +128,7 @@ set autoread
 set shortmess+=c
 " set noshowmode
 set title
+set mouse=a
 set diffopt=filler,internal,algorithm:histogram,indent-heuristic
 let g:polyglot_disabled = ['css', 'python', 'haskell']
 let g:gitgutter_signs = 1
@@ -160,7 +160,7 @@ let g:airline#extensions#default#section_truncate_width = {}
       " \ 'error': 80,
       " \ }
 let g:line_no_indicator_chars = ['⎺', '⎻', '─', '⎼', '⎽']
-let g:airline_skip_empty_sections = 1
+let g:airline_skip_empty_sections = 0
 let g:airline_section_x = '%{airline#util#prepend(airline#extensions#tagbar#currenttag(),0)}%{airline#util#prepend("",0)}%{airline#util#prepend("",0)}%{&filetype} %{airline#util#wrap(airline#parts#ffenc(),0)}'
 let g:airline_section_y = '%{LineNoIndicator()}'
 let g:airline_section_z = '%2v'
@@ -188,6 +188,7 @@ let g:airline_symbols.linenr = '☰  '
 let g:airline_symbols.maxlinenr = ' '
 let g:airline_symbols.crypt = ''
 let g:airline_symbols.notexists = ' '
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 " }}}
 
 " ALE settings {{{
@@ -377,6 +378,7 @@ let g:delimitMate_matchpairs = '(:),[:],{:}'
 let g:delimitMate_balance_matchpairs = 0
 let g:delimitMate_expand_cr = 2
 let g:delimitMate_expand_space = 1
+let g:scala_sort_across_groups=1
 " let g:pear_tree_smart_openers = 1
 " let g:pear_tree_smart_closers = 1
 " let g:pear_tree_smart_backspace = 1
@@ -431,9 +433,20 @@ endfunction
   " au BufWritePre        *.*           :%s/\s\+$//e
 " augroup END
 augroup scala_sbt
-  au BufRead,BufNewFile *.sbt         set filetype=scala
+  " au BufRead,BufNewFile *.sbt         set filetype=scala
   au FileType           json          syntax match Comment +\/\/.\+$+
-  au FileType           scala         nmap <silent> <C-]> <Plug>(coc-definition)
+  au FileType           scala         nmap <silent>.  <Plug>(coc-definition)
+  au FileType           scala         nmap <leader>rn <Plug>(coc-rename)
+  au FileType           scala         xmap <leader>f  <Plug>(coc-format-selected)
+  au FileType           scala         nmap <leader>f  <Plug>(coc-format-selected)
+  au FileType           scala         nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+  au FileType           scala         nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+  au FileType           scala         nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+  au FileType           scala         nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+  au FileType           scala         nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+  au FileType           scala         nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+  au FileType           scala         nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+  au FileType           scala         nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 augroup END
 augroup markdown_formatting
   au FileType           markdown      setlocal wrap

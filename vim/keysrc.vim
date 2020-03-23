@@ -47,6 +47,8 @@ nnoremap <space>                      za
 map <C-f>                             :FZF<CR>
 
 " For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=nc
+if &term ==# 'xterm-256color' || &term ==# 'screen-256color'
+  if has('conceal')
+    set conceallevel=2 concealcursor=nc
+  endif
 endif
