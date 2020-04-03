@@ -19,24 +19,11 @@ call plug#begin('~/.vim/bundle')
 Plug 'tpope/vim-fugitive'
 Plug 'rhysd/committia.vim'
 Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-" Plug 'morhetz/gruvbox'
 Plug 'tyrannicaltoucan/vim-quantum'
-" Plug 'jacoborus/tender.vim'
-" Plug 'sonph/onehalf', {'rtp': 'vim/'}
 " Plug 'ayu-theme/ayu-vim'
-" Plug 'eagletmt/neco-ghc'
-" Plug 'flazz/vim-colorschemes'
-" Plug 'Shougo/neocomplete.vim'
-" Plug 'Shougo/neosnippet.vim'
-" Plug 'Shougo/neosnippet-snippets'
-" Plug 'Shougo/neoinclude.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'derekwyatt/vim-scala', { 'for' : ['scala', 'sbt.scala'] }
 Plug 'neoclide/coc.nvim', { 'branch' : 'release', 'for' : ['scala', 'sbt.scala'] }
-" Plug '~/.vim/bundle-local/golden-ratio'
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
 Plug 'fatih/vim-go', { 'for' : ['go'], 'do' : ':GoUpdateBinaries' }
 Plug 'davidhalter/jedi-vim', { 'for' : ['python'] }
 Plug 'Vimjas/vim-python-pep8-indent', { 'for' : ['python'] }
@@ -44,7 +31,6 @@ Plug 'Valloric/YouCompleteMe'
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'  " , { 'on' : 'NERDTreeToggle' }
-" Plug 'mcchrish/nnn.vim'
 " Plug 'scrooloose/syntastic', { 'for' : ['r'] }
 Plug 'w0rp/ale'
 Plug 'godlygeek/tabular'
@@ -63,17 +49,18 @@ Plug 'tmsvg/pear-tree', { 'for' : ['ruby', 'eruby', 'html', 'xml', 'markdown'] }
 " Plug 'pangloss/vim-javascript'
 " Plug 'terryma/vim-multiple-cursors'
 Plug 'plasticboy/vim-markdown'
+Plug 'b4b4r07/vim-sqlfmt'
 Plug 'junegunn/vim-easy-align'
-" Plug '~/.vim/bundle-local/vim-devicons'
 " Plug 'tpope/vim-endwise'
 Plug 'majutsushi/tagbar', { 'on' : 'TagbarToggle' }
 " Plug 'tmhedberg/SimpylFold', { 'for' : ['python'] }
 Plug 'drzel/vim-line-no-indicator'
-" Plug 'sunaku/vim-dasht'
 " Plug 'jupyter-vim/jupyter-vim', { 'on' : 'JupyterConnect' }
+Plug 'farmergreg/vim-lastplace'
 Plug 'junegunn/fzf', { 'dir' : '~/.fzf', 'do' : './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jszakmeister/vim-togglecursor'
+Plug 'airblade/vim-rooter'
 call plug#end()
 " }}}
 
@@ -96,13 +83,17 @@ set copyindent
 set preserveindent
 set cinoptions=(0,u0,U0
 set laststatus=2
-" set t_Co=256
+set t_Co=256
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 set background=dark
 " let ayucolor='mirage'
 let g:quantum_black=1
 " colorscheme ayu
+let g:quantum_italics=1
 colorscheme quantum
+" hi Comment gui=italic
 hi EndOfBuffer ctermfg=1 guifg=#212121
 hi Pmenu guibg=#292929
 " hi clear PmenuSel
@@ -187,7 +178,7 @@ let g:airline#extensions#ctrlp#show_adjacent_modes = 0
 let g:airline_symbols.linenr = '☰  '
 let g:airline_symbols.maxlinenr = ' '
 let g:airline_symbols.crypt = ''
-let g:airline_symbols.notexists = ' '
+let g:airline_symbols.notexists = ' 🞮'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 " }}}
 
@@ -286,6 +277,7 @@ let g:NERDTreeWinSize=30
 let g:NERDTreeHijackNetrw=1
 let g:NERDTreeQuitOnOpen = 1
 " let NERDTreeMapOpenInTab='<CR>'
+let g:NERDTreeShowBookmarks = 1
 " }}}
 
 " NERDCommenter settings {{{
@@ -352,6 +344,19 @@ let g:fzf_layout = { 'down': '~40%' }
 " previous-history instead of down and up. If you don't like the change,
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Comment'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'Normal'],
+  \ 'bg+':     ['bg', 'Normal'],
+  \ 'hl+':     ['fg', 'Directory'],
+  \ 'info':    ['fg', 'Directory'],
+  \ 'prompt':  ['fg', 'Operator'],
+  \ 'pointer': ['fg', 'String'],
+  \ 'marker':  ['fg', 'Statement'],
+  \ 'spinner': ['fg', 'Type'] }
+command! -bang -nargs=? -complete=dir Directories
+      \ call fzf#vim#files(<q-args>, {'options': ['--prompt=> ']}, <bang>0)
 " }}}
 
 " Misc settings {{{
@@ -400,6 +405,33 @@ let g:scala_sort_across_groups=1
     " exe 'NeoCompleteUnlock'
   " endif
 " endfunction
+let g:rooter_patterns = ['build.sbt', '.git/', '.python-version', 'Rakefile']
+let g:rooter_silent_chdir = 1
+let g:sqlfmt_command = "sqlformat"
+let g:sqlfmt_options = "-r -k upper"
+" }}}
+
+" {{{ CtrlP
+" let g:ctrlp_map = '<C-p>'
+" let g:ctrlp_cmd = 'CtrlP'
+" let g:ctrlp_by_filename = 1
+" let g:ctrlp_regexp = 1
+" let g:ctrlp_use_caching = 1
+" let g:ctrlp_clear_cache_on_exit = 0
+" let g:ctrlp_show_hidden = 0
+" set wildignore+=*/.gvfs/*,*/.rpmdb/*,*/.cache/*,*/.gconf/*,*/tmp/*,*/.adobe/*,*/.dbus/*,*/.compiz/*,*/.ghc/*,*/.gimp-2.8/*,*/.gnome*/*,*/.gnupg/*,*/.go/*,*/.goldendict/*,*/.google*/*,*/.mozilla/*,*/.ordbrand/*,*/.purple/*,*/.rvm/*,*/.rsvm/*,*/.nvm/*,*/.*cache/*,*/Music/*,*/Videos/*,*/Documents/books/*,*/Downloads/*
+" set wildignore+=*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.JPG,*.jpeg,*.JPEG,*.xpm,*.gif,*.pdf,*.beam,*.mp3,*.ogg,*.mp4,*.m4a,*.mkv,*.mov,*.flv,*.oga,*.ogv,*.aac,*.mid,*.flac,*.wav,*.docx,*.doc,*.ppt,*.pptx,*.odt,*.xls,*.xlsx,*.odp,*.ods,*.old,*.log,*.tar.*,*.gz,*.zip,*.deb,*.rar,*.jar,*.pyc,*.pyo,*.gzip,*.7z,*.torrent,*.added,*cache,*.BIOS,*.apk,*.aux,*.gp*,*.sav,*.pls,*.sps,*.cab,*.CAB,*.msi,*.exe,*.epub
+" let g:ctrlp_extensions = ['tag', 'buffertag', 'dir', 'mixed',
+                          " \ 'bookmarkdir']
+" let g:ctrlp_match_window = 'bottom,order:btt'
+" let g:ctrlp_working_path_mode='ra'
+" let g:ctrlp_max_files = 50000
+" let g:ctrlp_max_depth = 15
+" let g:ctrlp_open_new_file = 't'
+" let g:ctrlp_follow_symlinks = 1
+" let g:ctrlp_regexp = 0
+" let g:ctrlp_by_filename = 1
+" let g:ctrlp_types = ['mru', 'fil']
 " }}}
 
 " Listchars option {{{
@@ -511,6 +543,13 @@ augroup END
 augroup ycm
   autocmd CmdwinEnter   *             inoremap <expr><buffer> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 augroup END
+augroup fzf
+  autocmd! FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+augroup END
+" augroup autocd
+  " autocmd BufEnter * silent! lcd %:p:h
+" augroup END
 " }}}
 
 " CSV Plugin {{{

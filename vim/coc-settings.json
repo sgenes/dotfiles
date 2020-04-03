@@ -1,3 +1,6 @@
 {
-  "metals.sbtScript": "/usr/bin/sbt"
+  "metals.sbtScript": "/usr/bin/sbt",
+  "metals.javaHome": "/usr/lib/jvm/java-8-openjdk-amd64",
+  "coc.preferences.formatOnSaveFiletypes": ["scala"],
+  "metals.trace.server": "verbose"
 }
