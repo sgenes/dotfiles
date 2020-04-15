@@ -1,7 +1,7 @@
 # define general things here
 
 # define zsh home
-ZSH="$HOME/.zsh"
+ZSH="$HOME/.config/zsh"
 
 # define zsh cache
 ZSH_CACHE_DIR="$ZSH/cache"
@@ -25,9 +25,11 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1 # disable venv prompt
 # export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Documents/workspace/python
 export PYTHONSTARTUP=~/.pythonrc
-export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_ROOT="$HOME/.local/share/pyenv"
+export RBENV_ROOT="$HOME/.local/share/rbenv"
+export NODENV_ROOT="$HOME/.local/share/nodenv"
 export MPD_PORT="6600"
-export GOPATH=$HOME/.go
+export GOPATH="$HOME/.local/share/go"
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 # export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'    # Use GTK for Java
@@ -46,23 +48,22 @@ export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat 
 export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 export AUTOSWITCH_SILENT=1
 
-export PATH=$PATH:$JAVA_HOME/bin
+export PATH="$PATH:$JAVA_HOME/bin"
 export PATH="$HOME/.bin:$HOME/.local/bin:$PATH"
-export PATH="$NPM_PACKAGES/bin:$PATH"
 # export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$PYENV_ROOT/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$RBENV_ROOT/bin:$PATH"
+export PATH="$NODENV_ROOT/bin:$PATH"
 
 # export GEM_HOME="$HOME/.gem/ruby/2.5.0"
 
-export MANPATH="$NPM_PACKAGES/share/man:$HOME/.local/share/man:$MANPATH"
+# export MANPATH="$NPM_PACKAGES/share/man:$HOME/.local/share/man:$MANPATH"
+export MANPATH="$HOME/.local/share/man:$MANPATH"
 
 # if which ruby >/dev/null && which gem >/dev/null; then
   # PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 # fi
-
-export NVM_DIR="$HOME/.nvm"
 
 # export NPM_PACKAGES="$HOME/.local/share/npm-packages/.npm-packages"
 # export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
@@ -71,19 +72,14 @@ if [[ -z "$LC_CTYPE" && -z "$LC_ALL" ]]; then
   export LC_CTYPE=${LANG%%:*} # pick the first entry from LANG
 fi
 
-# rubygems, rvm and nvm
-# export nvm_funcs=(nvm node npm prettycss standard markdown-pdf learnyounode javascripting csslint coffee http-server)
-
 # sourcing
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 eval `dircolors $ZSH/dircolors`
 source $ZSH/function.zsh
-fpath+=/home/ramot/.zsh/function
+fpath+=$ZSH/function
 
 # init
 if [[ $TERM == "xterm-256color" || $TERM == "screen-256color" ]]; then
-  source $HOME/.zsh/init.zsh
+  source $ZSH/init.zsh
 else
   source $ZSH/plugins/history/history.plugin.zsh
 fi
@@ -131,8 +127,8 @@ function gitignore() {
 }
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/ramot/.sdkman"
-[[ -s "/home/ramot/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ramot/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.local/share/sdkman"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -156,6 +152,9 @@ function _fo() {
 zle -N _fo
 bindkey '^F'                  _fo
 
+# vim terminal
+[[ -n "$VIM" ]] && echo -e -n "\x1b[\x35 q"
+
 # conda
 # . "/home/ramot/.miniconda/etc/profile.d/conda.sh"
 
@@ -164,6 +163,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
 fi
+
+# nodenv
+eval "$(nodenv init -)"
 
 # rbenv
 eval "$(rbenv init -)"
@@ -176,4 +178,4 @@ done
 compinit -C -d $ZSH_CACHE_DIR/zcompdump
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /home/ramot/.go/bin/gocomplete go
+complete -o nospace -C $GOPATH/bin/gocomplete go

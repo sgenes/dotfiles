@@ -20,7 +20,7 @@ insert-cycledleft () {
   zle reset-prompt
   arc_termsupport_precmd
   # workon_cwd
-  load-nvmrc
+  # load-nvmrc
   _pyenv_virtualenv_hook
   # check_cenv
   sleep 0.1
@@ -36,7 +36,7 @@ insert-cycledright () {
   zle reset-prompt
   arc_termsupport_precmd
   # workon_cwd
-  load-nvmrc
+  # load-nvmrc
   _pyenv_virtualenv_hook
   # check_cenv
   sleep 0.1

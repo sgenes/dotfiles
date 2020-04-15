@@ -19,7 +19,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'tpope/vim-fugitive'
 Plug 'rhysd/committia.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'ramottamado/vim-quantum'
 " Plug 'ayu-theme/ayu-vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'derekwyatt/vim-scala', { 'for' : ['scala', 'sbt.scala'] }
@@ -138,6 +138,12 @@ let g:tagbar_iconchars = ['▶ ', '▼ ']
 " hi TagbarKind term=bold ctermfg=0 cterm=bold gui=bold guifg=#d3dae3
 hi link TagbarFoldIcon Directory
 hi link TagbarScope TagbarKind
+let g:terminal_ansi_colors = [
+  \ "#212121", "#DD7186", "#87BB7C", "#D5B875",
+  \ "#70ACE5", "#A48ADD", "#69C5CE", "#6A6C6C",
+  \ "#D0D2D3", "#ED8499", "#97D589", "#E9CB88",
+  \ "#87BFF5", "#89A0EF", "#7BDBE4", "#BCBEC0"
+  \]
 " }}}
 
 " Airline settings {{{
@@ -150,7 +156,8 @@ let g:airline#extensions#default#section_truncate_width = {}
       " \ 'warning': 80,
       " \ 'error': 80,
       " \ }
-let g:line_no_indicator_chars = ['⎺', '⎻', '─', '⎼', '⎽']
+" let g:line_no_indicator_chars = ['⎺', '⎻', '─', '⎼', '⎽']
+let g:line_no_indicator_chars = ['⎺', '⎻', '⎼', '⎽']
 let g:airline_skip_empty_sections = 0
 let g:airline_section_x = '%{airline#util#prepend(airline#extensions#tagbar#currenttag(),0)}%{airline#util#prepend("",0)}%{airline#util#prepend("",0)}%{&filetype} %{airline#util#wrap(airline#parts#ffenc(),0)}'
 let g:airline_section_y = '%{LineNoIndicator()}'
@@ -177,8 +184,9 @@ let g:airline_right_alt_sep = ''
 let g:airline#extensions#ctrlp#show_adjacent_modes = 0
 let g:airline_symbols.linenr = '☰  '
 let g:airline_symbols.maxlinenr = ' '
-let g:airline_symbols.crypt = ''
-let g:airline_symbols.notexists = ' 🞮'
+let g:airline_symbols.crypt = ' '
+let g:airline_symbols.notexists = ' ✘'
+let g:airline_symbols.dirty=' '
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 " }}}
 
@@ -265,6 +273,7 @@ let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
+let g:coc_node_path = "~/.local/share/nodenv/shims/node"
 " nmap <silent> gy <Plug>(coc-type-definition)
 " nmap <silent> gi <Plug>(coc-implementation)
 " nmap <silent> gr <Plug>(coc-references)
@@ -406,6 +415,7 @@ let g:scala_sort_across_groups=1
   " endif
 " endfunction
 let g:rooter_patterns = ['build.sbt', '.git/', '.python-version', 'Rakefile']
+let g:rooter_change_directory_for_non_project_files = 'current'
 let g:rooter_silent_chdir = 1
 let g:sqlfmt_command = "sqlformat"
 let g:sqlfmt_options = "-r -k upper"
@@ -467,10 +477,10 @@ endfunction
 augroup scala_sbt
   " au BufRead,BufNewFile *.sbt         set filetype=scala
   au FileType           json          syntax match Comment +\/\/.\+$+
-  au FileType           scala         nmap <silent>.  <Plug>(coc-definition)
-  au FileType           scala         nmap <leader>rn <Plug>(coc-rename)
-  au FileType           scala         xmap <leader>f  <Plug>(coc-format-selected)
-  au FileType           scala         nmap <leader>f  <Plug>(coc-format-selected)
+  au FileType           scala         nmap <silent>.  <Plug>(coc-definition)<cr>
+  au FileType           scala         nmap <leader>rn <Plug>(coc-rename)<cr>
+  au FileType           scala         xmap <leader>f  <Plug>(coc-format-selected)<cr>
+  au FileType           scala         nmap <leader>f  <Plug>(coc-format-selected)<cr>
   au FileType           scala         nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
   au FileType           scala         nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
   au FileType           scala         nnoremap <silent> <space>c  :<C-u>CocList commands<cr>

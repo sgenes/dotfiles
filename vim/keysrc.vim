@@ -15,7 +15,7 @@ map <silent><F4>                      :set invpaste<CR>
 nnoremap <silent><F5>                 :GundoToggle<CR>
 inoremap <silent><F5>                 <C-o>:GundoToggle<CR>
 map <silent><C-e>                     :NERDTreeCWD<CR>
-au BufEnter NERD_tree_*               map <silent><C-e> :NERDTreeClose<CR>
+au BufEnter NERD_tree_*               nnoremap <buffer><silent><C-e> :NERDTreeClose<CR>
 au BufLeave NERD_tree_*               map <silent><C-e> :NERDTreeCWD<CR>
 map <C-o>                             :sp<space>
 map <silent><F2>                      :ene<CR>

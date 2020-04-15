@@ -1,44 +1,44 @@
-source /home/ramot/Documents/dotfiles/zsh/plugins/key-bindings/key-bindings.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/setopts/setopts.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/completion/completion.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/history/history.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/directories/directories.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/dircycle/dircycle.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/extract/extract.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/grep/grep.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/nvm-autoload/nvm-autoload.plugin.zsh
-# source /home/ramot/Documents/dotfiles/zsh/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
-# source /home/ramot/Documents/dotfiles/zsh/plugins/rvm/rvm.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/terminal/terminal.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/autopair/autopair.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/colors/zsh-syntax-highlighting.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/zsh-async/async.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/arc/arc.plugin.zsh
-# source /home/ramot/Documents/dotfiles/zsh/plugins/zsh-autoswitch-conda/autoswitch_conda.plugin.zsh
-source /home/ramot/Documents/dotfiles/zsh/plugins/custom/custom.plugin.zsh
-fpath+=/home/ramot/.zsh/plugins/key-bindings
-fpath+=/home/ramot/.zsh/plugins/setopts
-fpath+=/home/ramot/.zsh/plugins/completion
-fpath+=/home/ramot/.zsh/plugins/zsh-completions
-fpath+=/home/ramot/.zsh/plugins/history
-fpath+=/home/ramot/.zsh/plugins/directories
-fpath+=/home/ramot/.zsh/plugins/fancy-ctrl-z
-fpath+=/home/ramot/.zsh/plugins/dircycle
-fpath+=/home/ramot/.zsh/plugins/extract
-fpath+=/home/ramot/.zsh/plugins/grep
-fpath+=/home/ramot/.zsh/plugins/nvm-autoload
-# fpath+=/home/ramot/.zsh/plugins/virtualenvwrapper
-# fpath+=/home/ramot/.zsh/plugins/rvm
-fpath+=/home/ramot/.zsh/plugins/terminal
-fpath+=/home/ramot/.zsh/plugins/autopair
-fpath+=/home/ramot/.zsh/plugins/colors
-fpath+=/home/ramot/.zsh/plugins/zsh-history-substring-search
-fpath+=/home/ramot/.zsh/plugins/zsh-autosuggestions
-fpath+=/home/ramot/.zsh/plugins/zsh-async
-fpath+=/home/ramot/.zsh/plugins/arc
-# fpath+=/home/ramot/.zsh/plugins/zsh-autoswitch-conda
-fpath+=/home/ramot/.zsh/plugins/custom
+source $ZSH/plugins/key-bindings/key-bindings.plugin.zsh
+source $ZSH/plugins/setopts/setopts.plugin.zsh
+source $ZSH/plugins/completion/completion.plugin.zsh
+source $ZSH/plugins/zsh-completions/zsh-completions.plugin.zsh
+source $ZSH/plugins/history/history.plugin.zsh
+source $ZSH/plugins/directories/directories.plugin.zsh
+source $ZSH/plugins/fancy-ctrl-z/fancy-ctrl-z.plugin.zsh
+source $ZSH/plugins/dircycle/dircycle.plugin.zsh
+source $ZSH/plugins/extract/extract.plugin.zsh
+source $ZSH/plugins/grep/grep.plugin.zsh
+# source $ZSH/plugins/nvm-autoload/nvm-autoload.plugin.zsh
+# source $ZSH/plugins/virtualenvwrapper/virtualenvwrapper.plugin.zsh
+# source $ZSH/plugins/rvm/rvm.plugin.zsh
+source $ZSH/plugins/terminal/terminal.plugin.zsh
+source $ZSH/plugins/autopair/autopair.plugin.zsh
+source $ZSH/plugins/colors/zsh-syntax-highlighting.plugin.zsh
+source $ZSH/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
+source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source $ZSH/plugins/zsh-async/async.plugin.zsh
+source $ZSH/plugins/arc/arc.plugin.zsh
+# source $ZSH/plugins/zsh-autoswitch-conda/autoswitch_conda.plugin.zsh
+source $ZSH/plugins/custom/custom.plugin.zsh
+fpath+=$ZSH/plugins/key-bindings
+fpath+=$ZSH/plugins/setopts
+fpath+=$ZSH/plugins/completion
+fpath+=$ZSH/plugins/zsh-completions
+fpath+=$ZSH/plugins/history
+fpath+=$ZSH/plugins/directories
+fpath+=$ZSH/plugins/fancy-ctrl-z
+fpath+=$ZSH/plugins/dircycle
+fpath+=$ZSH/plugins/extract
+fpath+=$ZSH/plugins/grep
+# fpath+=$ZSH/plugins/nvm-autoload
+# fpath+=$ZSH/plugins/virtualenvwrapper
+# fpath+=$ZSH/plugins/rvm
+fpath+=$ZSH/plugins/terminal
+fpath+=$ZSH/plugins/autopair
+fpath+=$ZSH/plugins/colors
+fpath+=$ZSH/plugins/zsh-history-substring-search
+fpath+=$ZSH/plugins/zsh-autosuggestions
+fpath+=$ZSH/plugins/zsh-async
+fpath+=$ZSH/plugins/arc
+# fpath+=$ZSH/plugins/zsh-autoswitch-conda
+fpath+=$ZSH/plugins/custom
