@@ -126,10 +126,6 @@ function gitignore() {
   curl -sL https://www.gitignore.io/api/$1 -o .gitignore
 }
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.local/share/sdkman"
-[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
-
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='
@@ -169,6 +165,10 @@ eval "$(nodenv init -)"
 
 # rbenv
 eval "$(rbenv init -)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/ramot/.local/share/sdkman"
+[[ -s "/home/ramot/.local/share/sdkman/bin/sdkman-init.sh" ]] && source "/home/ramot/.local/share/sdkman/bin/sdkman-init.sh"
 
 # completion
 for dump in $ZSH_CACHE_DIR/zcompdump(N.mh+24); do
