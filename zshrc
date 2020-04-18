@@ -135,7 +135,7 @@ export FZF_DEFAULT_OPTS='
 '
 export FZF_CTRL_T_OPTS='--prompt=\/\ '
 export FZF_CTRL_R_OPTS="--expect=ctrl-i"
-bindkey '^E'                  fzf-cd-widget
+bindkey '^E' fzf-cd-widget
 function _fo() {
   local sel
   sel=($(__fsel))
@@ -146,7 +146,7 @@ function _fo() {
   zle reset-prompt
 }
 zle -N _fo
-bindkey '^F'                  _fo
+bindkey '^F' _fo
 
 # vim terminal
 [[ -n "$VIM" ]] && echo -e -n "\x1b[\x35 q"
