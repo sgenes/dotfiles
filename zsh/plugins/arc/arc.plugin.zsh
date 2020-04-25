@@ -140,7 +140,7 @@ arc_git_branch () {
 ### Git master ●▾
 
 arc_git_status () {
-  local ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[cyan]%}▴%{$reset_color%}"
+  local ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg_bold[cyan]%}▴%{$reset_color%}"
   local ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[magenta]%}▾%{$reset_color%}"
   local ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}●%{$reset_color%}"
   local ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg[yellow]%}●%{$reset_color%}"

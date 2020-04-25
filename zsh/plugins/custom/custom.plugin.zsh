@@ -73,7 +73,7 @@ function reload()
 # zsh highlight
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=green
-ZSH_HIGHLIGHT_STYLES[path]=fg=blue
+ZSH_HIGHLIGHT_STYLES[path]=fg=12
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=3
 ZSH_HIGHLIGHT_STYLES[assign]=fg=10
