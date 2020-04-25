@@ -58,7 +58,7 @@ Plug 'majutsushi/tagbar', { 'on' : 'TagbarToggle' }
 Plug 'drzel/vim-line-no-indicator'
 " Plug 'jupyter-vim/jupyter-vim', { 'on' : 'JupyterConnect' }
 Plug 'farmergreg/vim-lastplace'
-Plug 'junegunn/fzf', { 'dir' : '~/.fzf', 'do' : './install --all' }
+Plug 'junegunn/fzf', { 'dir' : '~/.config/fzf', 'do' : './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'airblade/vim-rooter'
@@ -294,6 +294,7 @@ let g:NERDTreeQuitOnOpen = 1
 " let NERDTreeMapOpenInTab='<CR>'
 let g:NERDTreeShowBookmarks = 1
 let g:NERDTreeNaturalSort = 1
+let g:NERDTreeBookmarksFile = '~/.config/.NERDTreeBookmarks'
 " }}}
 
 " NERDCommenter settings {{{

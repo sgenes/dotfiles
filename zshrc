@@ -23,14 +23,14 @@ export PROMPT_EOL_MARK=""
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1 # disable venv prompt
 # export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Documents/workspace/python
+export PROJECT_HOME="$HOME/Documents/workspace/python"
 export PYTHONSTARTUP=~/.pythonrc
 export PYENV_ROOT="$HOME/.local/share/pyenv"
 export RBENV_ROOT="$HOME/.local/share/rbenv"
 export NODENV_ROOT="$HOME/.local/share/nodenv"
 export MPD_PORT="6600"
 export GOPATH="$HOME/Documents/workspace/go"
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 
 # export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'    # Use GTK for Java
 # export JAVA_TOOL_OPTIONS="-javaagent:/usr/share/java/jayatanaag.jar $JAVA_TOOL_OPTIONS" # Applications
@@ -127,7 +127,7 @@ function gitignore() {
 }
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.config/fzf.zsh ] && source ~/.config/fzf.zsh
 export FZF_DEFAULT_OPTS='
   --color fg:#6a737d,hl:12,fg+:7,bg+:#fffbdd,hl+:12
   --color info:9,prompt:12,pointer:9,spinner:4,marker:13

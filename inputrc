@@ -1,0 +1,15 @@
+$include /etc/inputrc
+
+## arrow up
+"\e[A":history-search-backward
+## arrow down
+"\e[B":history-search-forward
+
+"\C-s":kill-region
+
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+"\eOH": beginning-of-line
+"\eOF": end-of-line
+
+set convert-meta on
