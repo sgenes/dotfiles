@@ -134,17 +134,17 @@ arc_git_branch () {
       r="|%{$fg[blue]%}BISECTING%{$reset_color%}"
     fi
   fi
-  echo "%{$fg_bold[green]%}%-45<..<${ref#refs/heads/}%<<%{$reset_color%}$r"
+  echo "%{$fg[green]%}%-45<..<${ref#refs/heads/}%<<%{$reset_color%}$r"
 }
 
 ### Git master ●▾
 
 arc_git_status () {
-  local ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg_bold[cyan]%}▴%{$reset_color%}"
-  local ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg_bold[magenta]%}▾%{$reset_color%}"
-  local ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●%{$reset_color%}"
-  local ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●%{$reset_color%}"
-  local ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
+  local ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[cyan]%}▴%{$reset_color%}"
+  local ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[magenta]%}▾%{$reset_color%}"
+  local ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}●%{$reset_color%}"
+  local ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg[yellow]%}●%{$reset_color%}"
+  local ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[red]%}●%{$reset_color%}"
   local _INDEX=$(git status --porcelain -b 2> /dev/null)
   local _STATUS=""
   if [[ $_INDEX =~ '\?\? ' ]]; then
@@ -185,15 +185,15 @@ arc_git_prompt () {
 
 _get_path () {
   local _PATH=""
-  _PATH="%{$fg[cyan]%}%-60<..<%1~%<<%{$reset_color%} "
+  _PATH="%{$fg[blue]%}%-60<..<%1~%<<%{$reset_color%} "
   echo $_PATH
 }
 
 _venv_status() {
   if [[ -n $CONDA_DEFAULT_ENV ]]; then
-    venv_name=" · %{$fg_bold[blue]%}${CONDA_DEFAULT_ENV:t}%{$reset_color%}"
+    venv_name=" · %{$fg[blue]%}${CONDA_DEFAULT_ENV:t}%{$reset_color%}"
   elif [[ -n $VIRTUAL_ENV ]]; then
-    venv_name=" · %{$fg_bold[blue]%}${VIRTUAL_ENV:t}%{$reset_color%}"
+    venv_name=" · %{$fg[blue]%}${VIRTUAL_ENV:t}%{$reset_color%}"
   fi
   echo $venv_name
 }
@@ -246,7 +246,7 @@ arc_render() {
   RPROMPT="${(j. .)arc_rparts}"
   # RPROMPT='$(suspend_symbol)'
   PROMPT2="  %{$fg[green]%}>%{$reset_color%} "
-  SPROMPT="Correct $fg_bold[red]%R$reset_color to $fg_bold[green]%r$reset_color [Yes, No, Abort, Edit]? "
+  SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [Yes, No, Abort, Edit]? "
   local expanded_prompt
   expanded_prompt="${(S%%)PROMPT}"
   if [[ $1 != "precmd" ]] && [[ $arc_last_prompt != $expanded_prompt ]]; then

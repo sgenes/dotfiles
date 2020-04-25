@@ -1,4 +1,4 @@
-set guioptions=Aedi
+set guioptions=Aei
 set lines=30
 set columns=132
 set guifont=Iosevka\ Fixed\ SS07\ Semibold\ 11

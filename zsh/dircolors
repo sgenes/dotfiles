@@ -107,8 +107,8 @@ TERM xterm-termite
 NORMAL 00;38;5;7 # no color code at all
 #FILE 00 # regular file: use no color at all
 RESET 0 # reset to "normal" color
-DIR 00;38;5;39 # directory 01;34
-LINK 00;38;5;44 # symbolic link. (If you set this to 'target' instead of a
+DIR 00;38;5;4 # directory 01;34
+LINK 00;38;5;12 # symbolic link. (If you set this to 'target' instead of a
  # numerical value, the color is as for the file pointed to.)
 MULTIHARDLINK 00 # regular file with more than one link
 FIFO 38;5;13;01 # pipe
@@ -117,208 +117,209 @@ DOOR 38;5;13;01 # door
 BLK 38;5;13;01 # block device driver
 CHR 38;5;13;01 # character device driver
 ORPHAN 48;5;235;38;5;160 # symlink to nonexistent file, or non-stat'able file
-SETUID 48;5;160;38;5;230 # file that is setuid (u+s)
-SETGID 48;5;136;38;5;230 # file that is setgid (g+s)
-CAPABILITY 30;41 # file with capability
+SETUID 48;5;3;38;5;0 # file that is setuid (u+s)
+SETGID 48;5;5;38;5;0 # file that is setgid (g+s)
+CAPABILITY 30;2 # file with capability
 STICKY_OTHER_WRITABLE 48;5;10;38;5;0 # dir that is sticky and other-writable (+t,o+w)
 OTHER_WRITABLE 48;5;11;38;5;0 # dir that is other-writable (o+w) and not sticky
-STICKY 48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writable
+STICKY 48;5;12;38;5;0 # dir with the sticky bit set (+t) and not other-writable
 # This is for files with execute permission:
-EXEC 00;38;5;10
+EXEC 00;38;5;2
 
 ## Archives or compressed (violet + bold for compression)
-.tar    00;38;5;226
-.tgz    00;38;5;226
-.arj    00;38;5;226
-.taz    00;38;5;226
-.lzh    00;38;5;226
-.lzma   00;38;5;226
-.tlz    00;38;5;226
-.txz    00;38;5;226
-.zip    00;38;5;226
-.z      00;38;5;226
-.Z      00;38;5;226
-.dz     00;38;5;226
-.gz     00;38;5;226
-.lz     00;38;5;226
-.xz     00;38;5;226
-.bz2    00;38;5;226
-.bz     00;38;5;226
-.tbz    00;38;5;226
-.tbz2   00;38;5;226
-.tz     00;38;5;226
-.deb    00;38;5;226
-.rpm    00;38;5;226
-.jar    00;38;5;226
-.rar    00;38;5;226
-.ace    00;38;5;226
-.zoo    00;38;5;226
-.cpio   00;38;5;226
-.7z     00;38;5;226
-.rz     00;38;5;226
-.apk    00;38;5;226
-.gem    00;38;5;226
+.tar    00;38;5;5
+.tgz    00;38;5;5
+.arj    00;38;5;5
+.taz    00;38;5;5
+.lzh    00;38;5;5
+.lzma   00;38;5;5
+.tlz    00;38;5;5
+.txz    00;38;5;5
+.zip    00;38;5;5
+.z      00;38;5;5
+.Z      00;38;5;5
+.dz     00;38;5;5
+.gz     00;38;5;5
+.lz     00;38;5;5
+.xz     00;38;5;5
+.bz2    00;38;5;5
+.bz     00;38;5;5
+.tbz    00;38;5;5
+.tbz2   00;38;5;5
+.tz     00;38;5;5
+.deb    00;38;5;5
+.rpm    00;38;5;5
+.jar    00;38;5;5
+.rar    00;38;5;5
+.ace    00;38;5;5
+.zoo    00;38;5;5
+.cpio   00;38;5;5
+.7z     00;38;5;5
+.rz     00;38;5;5
+.apk    00;38;5;5
+.gem    00;38;5;5
 
-# Books (cyan)
-# .pdf    00;38;5;14
-# .cbr    00;38;5;14
-# .cbz    00;38;5;14
-# .epub   00;38;5;14
-# .mobi   00;38;5;14
+## Books (cyan)
+.pdf    00;38;5;14
+.cbr    00;38;5;14
+.cbz    00;38;5;14
+.epub   00;38;5;14
+.mobi   00;38;5;14
 
-# Image formats (yellow)
-.jpg    00;38;5;136
-.JPG    00;38;5;136 #stupid but needed
-.jpeg   00;38;5;136
-.gif    00;38;5;136
-.bmp    00;38;5;136
-.pbm    00;38;5;136
-.pgm    00;38;5;136
-.ppm    00;38;5;136
-.tga    00;38;5;136
-.xbm    00;38;5;136
-.xpm    00;38;5;136
-.tif    00;38;5;136
-.tiff   00;38;5;136
-.png    00;38;5;136
-.PNG    00;38;5;136
-.svg    00;38;5;136
-.svgz   00;38;5;136
-.mng    00;38;5;136
-.pcx    00;38;5;136
-.dl     00;38;5;136
-.xcf    00;38;5;136
-.xwd    00;38;5;136
-.yuv    00;38;5;136
-.cgm    00;38;5;136
-.emf    00;38;5;136
-.eps    00;38;5;136
-.CR2    00;38;5;136
-.ico    00;38;5;136
-.nef    00;38;5;136 # Nikon RAW format
-.NEF    00;38;5;136
+## Image formats (yellow)
+.jpg    00;38;5;11
+.JPG    00;38;5;11 #stupid but needed
+.jpeg   00;38;5;11
+.gif    00;38;5;11
+.bmp    00;38;5;11
+.pbm    00;38;5;11
+.pgm    00;38;5;11
+.ppm    00;38;5;11
+.tga    00;38;5;11
+.xbm    00;38;5;11
+.xpm    00;38;5;11
+.tif    00;38;5;11
+.tiff   00;38;5;11
+.png    00;38;5;11
+.PNG    00;38;5;11
+.svg    00;38;5;11
+.svgz   00;38;5;11
+.mng    00;38;5;11
+.pcx    00;38;5;11
+.dl     00;38;5;11
+.xcf    00;38;5;11
+.xwd    00;38;5;11
+.yuv    00;38;5;11
+.cgm    00;38;5;11
+.emf    00;38;5;11
+.eps    00;38;5;11
+.CR2    00;38;5;11
+.ico    00;38;5;11
+.nef    00;38;5;11 # Nikon RAW format
+.NEF    00;38;5;11
 
-# Files of special interest (base1)
-.tex             00;38;5;204
-.rdf             00;38;5;204
-.owl             00;38;5;204
-.n3              00;38;5;204
-.ttl             00;38;5;204
-.nt              00;38;5;204
-.torrent         00;38;5;204
-.xml             00;38;5;204
-*Makefile        00;38;5;204
-*Rakefile        00;38;5;204
-*Dockerfile      00;38;5;204
-*build.xml       00;38;5;204
-*rc              00;38;5;204
-*profile         00;38;5;204
-*1               00;38;5;204
-.nfo             00;38;5;204
-*README          00;38;5;204
-*README.txt      00;38;5;204
-*readme.txt      00;38;5;204
-.md              00;38;5;204
-*README.markdown 00;38;5;204
-.ini             00;38;5;204
-.yml             00;38;5;204
-.cfg             00;38;5;204
-.conf            00;38;5;204
-.h               00;38;5;204
-.hpp             00;38;5;204
-.c               00;38;5;204
-.cpp             00;38;5;204
-.cxx             00;38;5;204
-.cc              00;38;5;204
-.objc            00;38;5;204
-.sqlite          00;38;5;204
-.go              00;38;5;204
-.sql             00;38;5;204
-.csv             00;38;5;204
-.py              00;38;5;204
-.rb              00;38;5;204
-.js              00;38;5;204
-.html            00;38;5;204
-.erb             00;38;5;204
-.hs              00;38;5;204
-.php             00;38;5;204
+## Files of special interest (base1)
+.tex             00;38;5;12
+.rdf             00;38;5;12
+.owl             00;38;5;12
+.n3              00;38;5;12
+.ttl             00;38;5;12
+.nt              00;38;5;12
+.torrent         00;38;5;12
+.xml             00;38;5;12
+*Makefile        00;38;5;12
+*Rakefile        00;38;5;12
+*Dockerfile      00;38;5;12
+*build.xml       00;38;5;12
+*rc              00;38;5;12
+*profile         00;38;5;12
+*1               00;38;5;12
+.nfo             00;38;5;12
+*README          00;38;5;12
+*README.txt      00;38;5;12
+*readme.txt      00;38;5;12
+.md              00;38;5;12
+*README.markdown 00;38;5;12
+.ini             00;38;5;12
+.yml             00;38;5;12
+.cfg             00;38;5;12
+.conf            00;38;5;12
+.h               00;38;5;12
+.hpp             00;38;5;12
+.c               00;38;5;12
+.cpp             00;38;5;12
+.cxx             00;38;5;12
+.cc              00;38;5;12
+.objc            00;38;5;12
+.sqlite          00;38;5;12
+.go              00;38;5;12
+.sql             00;38;5;12
+.csv             00;38;5;12
+.py              00;38;5;12
+.rb              00;38;5;12
+.js              00;38;5;12
+.html            00;38;5;12
+.erb             00;38;5;12
+.hs              00;38;5;12
+.php             00;38;5;12
+.scala           00;38;5;12
 
-# "unimportant" files as logs and backups (base01)
-.log        00;38;5;245
-.bak        00;38;5;245
-.aux        00;38;5;245
-.lof        00;38;5;245
-.lol        00;38;5;245
-.lot        00;38;5;245
-.out        00;38;5;245
-.toc        00;38;5;245
-.bbl        00;38;5;245
-.blg        00;38;5;245
-*~          00;38;5;245
-*#          00;38;5;245
-*-          00;38;5;245
-.part       00;38;5;245
-.incomplete 00;38;5;245
-.swp        00;38;5;245
-.tmp        00;38;5;245
-.temp       00;38;5;245
-.o          00;38;5;245
-.pyc        00;38;5;245
-.pyo        00;38;5;245
-.class      00;38;5;245
-.cache      00;38;5;245
-*history    00;38;5;245
+## "unimportant" files as logs and backups (base01)
+.log        00;38;5;15
+.bak        00;38;5;15
+.aux        00;38;5;15
+.lof        00;38;5;15
+.lol        00;38;5;15
+.lot        00;38;5;15
+.out        00;38;5;15
+.toc        00;38;5;15
+.bbl        00;38;5;15
+.blg        00;38;5;15
+*~          00;38;5;15
+*#          00;38;5;15
+*-          00;38;5;15
+.part       00;38;5;15
+.incomplete 00;38;5;15
+.swp        00;38;5;15
+.tmp        00;38;5;15
+.temp       00;38;5;15
+.o          00;38;5;15
+.pyc        00;38;5;15
+.pyo        00;38;5;15
+.class      00;38;5;15
+.cache      00;38;5;15
+*history    00;38;5;15
 
-# Audio formats (orange)
-.aac    00;38;5;166
-.au     00;38;5;166
-.flac   00;38;5;166
-.mid    00;38;5;166
-.midi   00;38;5;166
-.mka    00;38;5;166
-.mp3    00;38;5;166
-.mpc    00;38;5;166
-.ogg    00;38;5;166
-.opus   00;38;5;166
-.ra     00;38;5;166
-.wav    00;38;5;166
-.m4a    00;38;5;166
+## Audio formats (orange)
+.aac    00;38;5;3
+.au     00;38;5;3
+.flac   00;38;5;3
+.mid    00;38;5;3
+.midi   00;38;5;3
+.mka    00;38;5;3
+.mp3    00;38;5;3
+.mpc    00;38;5;3
+.ogg    00;38;5;3
+.opus   00;38;5;3
+.ra     00;38;5;3
+.wav    00;38;5;3
+.m4a    00;38;5;3
 # http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
-.axa    00;38;5;166
-.oga    00;38;5;166
-.spx    00;38;5;166
-.xspf   00;38;5;166
+.axa    00;38;5;3
+.oga    00;38;5;3
+.spx    00;38;5;3
+.xspf   00;38;5;3
 
-# Video formats (as audio + bold)
-.mov    00;38;5;166
-.MOV    00;38;5;166
-.mpg    00;38;5;166
-.mpeg   00;38;5;166
-.m2v    00;38;5;166
-.mkv    00;38;5;166
-.ogm    00;38;5;166
-.mp4    00;38;5;166
-.m4v    00;38;5;166
-.mp4v   00;38;5;166
-.vob    00;38;5;166
-.qt     00;38;5;166
-.nuv    00;38;5;166
-.wmv    00;38;5;166
-.asf    00;38;5;166
-.rm     00;38;5;166
-.rmvb   00;38;5;166
-.flc    00;38;5;166
-.avi    00;38;5;166
-.fli    00;38;5;166
-.flv    00;38;5;166
-.gl     00;38;5;166
-.m2ts   00;38;5;166
-.divx   00;38;5;166
-.webm   00;38;5;166
+## Video formats (as audio + bold)
+.mov    00;38;5;3
+.MOV    00;38;5;3
+.mpg    00;38;5;3
+.mpeg   00;38;5;3
+.m2v    00;38;5;3
+.mkv    00;38;5;3
+.ogm    00;38;5;3
+.mp4    00;38;5;3
+.m4v    00;38;5;3
+.mp4v   00;38;5;3
+.vob    00;38;5;3
+.qt     00;38;5;3
+.nuv    00;38;5;3
+.wmv    00;38;5;3
+.asf    00;38;5;3
+.rm     00;38;5;3
+.rmvb   00;38;5;3
+.flc    00;38;5;3
+.avi    00;38;5;3
+.fli    00;38;5;3
+.flv    00;38;5;3
+.gl     00;38;5;3
+.m2ts   00;38;5;3
+.divx   00;38;5;3
+.webm   00;38;5;3
 # http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
-.axv 00;38;5;166
-.anx 00;38;5;166
-.ogv 00;38;5;166
-.ogx 00;38;5;166
+.axv 00;38;5;3
+.anx 00;38;5;3
+.ogv 00;38;5;3
+.ogx 00;38;5;3
 
 

@@ -19,7 +19,8 @@ call plug#begin('~/.vim/bundle')
 Plug 'tpope/vim-fugitive'
 Plug 'rhysd/committia.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'ramottamado/vim-quantum'
+" Plug 'ramottamado/vim-quantum'
+Plug 'ramottamado/vim-colors-github'
 " Plug 'ayu-theme/ayu-vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'derekwyatt/vim-scala', { 'for' : ['scala', 'sbt.scala'] }
@@ -83,21 +84,24 @@ set copyindent
 set preserveindent
 set cinoptions=(0,u0,U0
 set laststatus=2
+set wmnu
 set t_Co=256
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
-set background=dark
+set background=light
 " let ayucolor='mirage'
-let g:quantum_black=1
+" let g:quantum_black=1
 " colorscheme ayu
-let g:quantum_italics=1
-colorscheme quantum
-" hi Comment gui=italic
-hi EndOfBuffer ctermfg=1 guifg=#212121
-hi Pmenu guibg=#292929
+" let g:quantum_italics=1
+" colorscheme quantum
+let g:github_colors_soft = 0
+colorscheme github
+hi Comment gui=italic
+hi EndOfBuffer ctermfg=1 guifg=#ffffff guibg=#ffffff
+" hi Pmenu guibg=#292929
 " hi clear PmenuSel
-hi PmenuSel cterm=reverse gui=reverse guibg=#292929 guifg=#b7bdc0
+" hi PmenuSel cterm=reverse gui=reverse guibg=#292929 guifg=#b7bdc0
 set number
 set backspace=2
 " set switchbuf+=usetab,newtab
@@ -139,10 +143,10 @@ let g:tagbar_iconchars = ['▶ ', '▼ ']
 hi link TagbarFoldIcon Directory
 hi link TagbarScope TagbarKind
 let g:terminal_ansi_colors = [
-  \ "#212121", "#DD7186", "#87BB7C", "#D5B875",
-  \ "#70ACE5", "#A48ADD", "#69C5CE", "#6A6C6C",
-  \ "#D0D2D3", "#ED8499", "#97D589", "#E9CB88",
-  \ "#87BFF5", "#89A0EF", "#7BDBE4", "#BCBEC0"
+  \ "#ffffff", "#b31d28", "#22863a", "#e36209",
+  \ "#032f62", "#45267d", "#669cc2", "#24292e",
+  \ "#41484f", "#d73a49", "#3ebc5c", "#f18338",
+  \ "#005cc5", "#6f42c1", "#669cc2", "#6a737d"
   \]
 " }}}
 
@@ -167,7 +171,8 @@ let g:airline#extensions#quickfix#location_text = 'Location'
 let g:airline#extensions#tmuxline#enabled = 0
 let g:airline_powerline_fonts = 1
 " let g:airline_theme = 'ayu_mirage'
-let g:airline_theme = 'quantum'
+" let g:airline_theme = 'quantum'
+let g:airline_theme = 'github'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 1
 let g:airline#extensions#tabline#show_buffers = 1
@@ -273,6 +278,7 @@ let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
+let g:go_imports_autosave = 0
 let g:coc_node_path = "~/.local/share/nodenv/shims/node"
 " nmap <silent> gy <Plug>(coc-type-definition)
 " nmap <silent> gi <Plug>(coc-implementation)
@@ -287,6 +293,7 @@ let g:NERDTreeHijackNetrw=1
 let g:NERDTreeQuitOnOpen = 1
 " let NERDTreeMapOpenInTab='<CR>'
 let g:NERDTreeShowBookmarks = 1
+let g:NERDTreeNaturalSort = 1
 " }}}
 
 " NERDCommenter settings {{{

@@ -29,7 +29,7 @@ export PYENV_ROOT="$HOME/.local/share/pyenv"
 export RBENV_ROOT="$HOME/.local/share/rbenv"
 export NODENV_ROOT="$HOME/.local/share/nodenv"
 export MPD_PORT="6600"
-export GOPATH="$HOME/.local/share/go"
+export GOPATH="$HOME/Documents/workspace/go"
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 # export _JAVA_OPTIONS='-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'    # Use GTK for Java
@@ -129,8 +129,9 @@ function gitignore() {
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='
-  --color fg:7,hl:8,fg+:15,bg+:#212121,hl+:12
-  --color info:12,prompt:6,spinner:3,pointer:2,marker:5
+  --color fg:#6a737d,hl:12,fg+:7,bg+:#fffbdd,hl+:12
+  --color info:9,prompt:12,pointer:9,spinner:4,marker:13
+  --color border:#eceef1,header:4
   --height 100% --no-bold --no-reverse
 '
 export FZF_CTRL_T_OPTS='--prompt=\/\ '
