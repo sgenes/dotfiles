@@ -294,7 +294,7 @@ let g:NERDTreeQuitOnOpen = 1
 " let NERDTreeMapOpenInTab='<CR>'
 let g:NERDTreeShowBookmarks = 1
 let g:NERDTreeNaturalSort = 1
-let g:NERDTreeBookmarksFile = '~/.config/.NERDTreeBookmarks'
+let g:NERDTreeBookmarksFile = '/home/ramot/.config/.NERDTreeBookmarks'
 " }}}
 
 " NERDCommenter settings {{{
