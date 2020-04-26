@@ -132,7 +132,7 @@ export FZF_DEFAULT_OPTS='
   --color fg:#6a737d,hl:12,fg+:7,bg+:#fffbdd,hl+:12
   --color info:9,prompt:12,pointer:9,spinner:4,marker:13
   --color border:#eceef1,header:4
-  --height 100% --no-bold --no-reverse
+  --height 100% --no-bold --reverse
 '
 export FZF_CTRL_T_OPTS='--prompt=\/\ '
 export FZF_CTRL_R_OPTS="--expect=ctrl-i"
