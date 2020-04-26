@@ -141,10 +141,10 @@ arc_git_branch () {
 
 arc_git_status () {
   local ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg_bold[cyan]%}▴%{$reset_color%}"
-  local ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[magenta]%}▾%{$reset_color%}"
-  local ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}●%{$reset_color%}"
-  local ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg[yellow]%}●%{$reset_color%}"
-  local ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[red]%}●%{$reset_color%}"
+  local ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg_bold[magenta]%}▾%{$reset_color%}"
+  local ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●%{$reset_color%}"
+  local ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●%{$reset_color%}"
+  local ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
   local _INDEX=$(git status --porcelain -b 2> /dev/null)
   local _STATUS=""
   if [[ $_INDEX =~ '\?\? ' ]]; then
